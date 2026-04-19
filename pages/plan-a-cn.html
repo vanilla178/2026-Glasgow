@@ -1,0 +1,1471 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan A 中文版 | Glasgow 行程 | 05/23-05/28</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --paper: rgba(255, 250, 244, 0.78);
+      --paper-strong: rgba(255, 250, 244, 0.94);
+      --ink: #1f2a33;
+      --muted: #5e6a73;
+      --line: rgba(31, 42, 51, 0.12);
+      --brand: #0f6c7b;
+      --brand-2: #c96f41;
+      --brand-3: #254f6f;
+      --good: #3f7853;
+      --warn: #a65828;
+      --shadow: 0 24px 80px rgba(25, 36, 46, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max: 1320px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(201, 111, 65, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(15, 108, 123, 0.16), transparent 28%),
+        linear-gradient(180deg, #efe5d8 0%, #f7f1e8 38%, #f4efe6 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 92%);
+      opacity: 0.35;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 22px auto 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(236, 205, 166, 0.22), transparent 28%),
+        linear-gradient(140deg, #173646 0%, #1f5666 48%, #2f4358 100%);
+      color: #fff8ef;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% 30%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(236, 205, 166, 0.34), transparent 60%);
+      filter: blur(12px);
+    }
+
+    .hero-copy,
+    .hero-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 239, 0.24);
+      background: rgba(255, 248, 239, 0.08);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.5rem, 4.3vw, 4.2rem);
+      line-height: 1.02;
+      font-weight: 700;
+      max-width: 12ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 56ch;
+      color: rgba(255, 248, 239, 0.88);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .hero-panel {
+      align-self: end;
+      border-radius: 28px;
+      padding: 22px;
+      background: rgba(255, 250, 244, 0.12);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 248, 239, 0.16);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+    }
+
+    .hero-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(255, 248, 239, 0.9);
+      line-height: 1.7;
+    }
+
+    .hero-strap {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 239, 0.14);
+      background: rgba(255, 248, 239, 0.1);
+      color: rgba(255, 248, 239, 0.86);
+      font-size: 0.92rem;
+    }
+
+    .toolbar {
+      margin: 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pill-row,
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill,
+    .ghost-btn,
+    .map-btn,
+    .link-chip,
+    .day-tab {
+      border: 1px solid transparent;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .pill {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      border-color: rgba(31, 42, 51, 0.08);
+      color: var(--muted);
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+    }
+
+    .pill strong {
+      color: var(--ink);
+    }
+
+    .ghost-btn,
+    .map-btn,
+    .link-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.88);
+      border-color: rgba(31, 42, 51, 0.08);
+      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .ghost-btn:hover,
+    .map-btn:hover,
+    .link-chip:hover,
+    .day-tab:hover {
+      transform: translateY(-2px);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .side-panel,
+    .main-panel {
+      background: var(--paper);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .side-panel {
+      padding: 24px;
+      position: sticky;
+      top: 18px;
+    }
+
+    .side-panel h3,
+    .main-panel h3,
+    .summary-card h3,
+    .gallery-card h3,
+    .day-card h3 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .day-tab-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .day-tab {
+      width: 100%;
+      text-align: left;
+      border-radius: 18px;
+      padding: 16px;
+      border-color: rgba(31, 42, 51, 0.08);
+      background: rgba(255, 250, 244, 0.72);
+      cursor: pointer;
+    }
+
+    .day-tab.active {
+      background: linear-gradient(135deg, rgba(15, 108, 123, 0.14), rgba(201, 111, 65, 0.18));
+      border-color: rgba(15, 108, 123, 0.24);
+      box-shadow: 0 14px 28px rgba(15, 108, 123, 0.12);
+    }
+
+    .day-tab strong,
+    .day-tab span {
+      display: block;
+    }
+
+    .day-tab strong {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .day-tab span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .mini-note {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(15, 108, 123, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .mini-note strong {
+      color: var(--ink);
+    }
+
+    .main-panel {
+      padding: 24px;
+    }
+
+    .panel-head {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .panel-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.02;
+    }
+
+    .panel-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 62ch;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .summary-card,
+    .gallery-card,
+    .day-card,
+    .timeline-item,
+    .booking-card {
+      background: var(--paper-strong);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(31, 42, 51, 0.07);
+    }
+
+    .summary-card {
+      padding: 18px;
+      min-height: 150px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 0.95rem;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      margin-bottom: 22px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(201, 111, 65, 0.12), transparent 24%),
+        linear-gradient(180deg, rgba(255, 250, 244, 0.98), rgba(249, 243, 235, 0.96));
+    }
+
+    .gallery-copy {
+      display: grid;
+      gap: 10px;
+    }
+
+    .gallery-copy h4 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.08;
+    }
+
+    .gallery-copy p {
+      margin: 0;
+      max-width: 68ch;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .gallery-meta {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: rgba(37, 79, 111, 0.08);
+      color: var(--brand-3);
+      font-size: 0.9rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.82fr);
+      gap: 18px;
+    }
+
+    .day-card {
+      padding: 22px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 88px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(15, 108, 123, 0.24), rgba(201, 111, 65, 0.24));
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 82px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 0 7px rgba(15, 108, 123, 0.08);
+    }
+
+    .time {
+      font-size: 0.9rem;
+      color: var(--brand-3);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .timeline-body {
+      padding-left: 20px;
+    }
+
+    .timeline-body h4 {
+      margin: 0 0 6px;
+      font-size: 1.12rem;
+    }
+
+    .timeline-body .place {
+      margin: 0 0 8px;
+      font-size: 0.96rem;
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .timeline-body p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 0.95rem;
+    }
+
+    .link-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .link-chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      background: rgba(37, 79, 111, 0.08);
+      border-color: rgba(37, 79, 111, 0.1);
+      color: var(--brand-3);
+      box-shadow: none;
+    }
+
+    .aside-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .booking-card {
+      padding: 18px;
+    }
+
+    .booking-card ol,
+    .booking-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .booking-card li + li {
+      margin-top: 4px;
+    }
+
+    .intensity {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      background: rgba(201, 111, 65, 0.12);
+      color: var(--warn);
+      margin-bottom: 12px;
+    }
+
+    .intensity.low {
+      background: rgba(63, 120, 83, 0.12);
+      color: var(--good);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .fade-in {
+      animation: rise 380ms ease;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .layout,
+      .content-grid,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .timeline::before {
+        left: 74px;
+      }
+
+      .timeline-item::before {
+        left: 68px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(var(--max), calc(100% - 18px));
+        margin-top: 10px;
+      }
+
+      .hero,
+      .main-panel,
+      .side-panel {
+        padding: 20px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .panel-head {
+        flex-direction: column;
+      }
+
+      .timeline::before {
+        left: 60px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .timeline-item::before {
+        left: 54px;
+      }
+
+      .timeline-body {
+        padding-left: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">英国行程</div>
+        <h1>Plan A｜以 Glasgow 为据点</h1>
+        <p>
+          这是一版适合快速浏览的行程页面：可以按日期切换、顺着时间线查看安排，也能一键跳到 Google 地图。重点不是把信息堆满，而是让每天的移动节奏一眼看清。
+        </p>
+        <div class="hero-strap">
+          <div class="hero-chip">05/23-05/28</div>
+          <div class="hero-chip">住宿地：Glasgow</div>
+          <div class="hero-chip">当地时间：BST</div>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>每日概览</h2>
+        <ul>
+          <li>05/23｜抵达 Glasgow，入住、吃饭、早点休息</li>
+          <li>05/24｜爱丁堡城堡、Royal Mile、Calton Hill</li>
+          <li>05/25｜Glasgow Cathedral 一带 + 海报展示</li>
+          <li>05/26｜Highlands 一日游</li>
+          <li>05/27｜约克大教堂与老城漫步</li>
+          <li>05/28｜Kelvingrove + 口头报告</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="toolbar">
+      <div class="pill-row">
+        <div class="pill"><strong>日期：</strong>05/23-05/28</div>
+        <div class="pill"><strong>时区：</strong>当地时间（BST）</div>
+        <div class="pill"><strong>据点城市：</strong>Glasgow</div>
+      </div>
+      <div class="quick-actions">
+        <button class="ghost-btn" type="button" id="jumpFeatured">跳转到今日重点</button>
+      </div>
+    </div>
+
+    <section class="layout">
+      <aside class="side-panel">
+        <h3>日期切换</h3>
+        <div class="day-tab-list" id="dayTabs"></div>
+        <div class="mini-note">
+          <strong>阅读提示：</strong>建议先切换日期，快速比较每天的节奏。像 York 和 Highlands 这种交通较重的一天，最好都多留一点机动时间。
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <div class="panel-head">
+          <div>
+            <h2 id="dayTitle">05/23｜抵达 Glasgow</h2>
+            <p id="dayIntro">
+              这是抵达后的缓冲日，核心就是顺利进城、入住、吃顿饭，然后早点休息。
+            </p>
+          </div>
+          <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
+        </div>
+
+        <section class="summary-grid" id="summaryGrid"></section>
+
+        <section class="gallery-card fade-in" id="featuredCard">
+          <div class="gallery-copy">
+            <h3>今日重点</h3>
+            <h4 id="featuredTitle"></h4>
+            <p id="featuredText"></p>
+          </div>
+          <div class="gallery-meta">
+            <div class="meta-tags" id="featuredTags"></div>
+            <div class="quick-actions">
+              <a class="map-btn" id="featuredMap" href="#" target="_blank" rel="noreferrer">在地图中查看重点地点</a>
+              <a class="ghost-btn" id="featuredInfo" href="#" target="_blank" rel="noreferrer">官网 / 参考</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <article class="day-card">
+            <h3>时间线</h3>
+            <div class="timeline" id="timeline"></div>
+          </article>
+
+          <aside class="aside-stack">
+            <section class="booking-card">
+              <h3>优先预订</h3>
+              <ol id="bookingList"></ol>
+            </section>
+            <section class="booking-card">
+              <h3>行程提示</h3>
+              <ul id="noteList"></ul>
+            </section>
+            <section class="booking-card">
+              <h3>地图快速跳转</h3>
+              <div class="link-row" id="mapJumpList"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <script>
+    const bookingPriorities = [
+      "05/24 爱丁堡城堡",
+      "05/24 The Real Mary King's Close",
+      "05/26 Highlands 一日游",
+      "05/27 Glasgow 往返 York 火车",
+      "05/28 如果晚上想看固定演出，建议提前订"
+    ];
+
+    const dayNotes = [
+      "York 这一趟是可行的，但来回火车时间比较长，建议只背轻便小包。",
+      "05/28 的观光安排故意压得比较紧凑，主要是为了给口头报告留出体力和余量。",
+      "买火车票前可以先对比 Avanti、ScotRail 和 Trainline。",
+      "Highlands 一日游可以同时比较 Rabbie's、Timberbush 和 Discover Scotland Tours。"
+    ];
+
+    const itinerary = [
+      {
+        id: "0523",
+        short: "05/23",
+        dayLabel: "周六",
+        title: "抵达 Glasgow",
+        intro: "这一天不追求塞景点，重点是顺利进城、在住处附近吃饭，并在长途飞行后尽快休息。",
+        vibe: "轻松落地",
+        intensity: "low",
+        window: "18:45 onward",
+        travel: "机场进城",
+        anchor: "Merchant City / Aparthotel Adagio Glasgow Central",
+        mapQuery: "Glasgow city centre",
+        featured: {
+          title: "Merchant City",
+          text: "很适合作为抵达当晚的活动范围：位置居中、步行友好，也能在正式展开行程前先缓一缓。",
+          mapQuery: "Merchant City Glasgow",
+          infoUrl: "https://peoplemakeglasgow.com"
+        },
+        spots: ["Glasgow Airport", "Merchant City", "Aparthotel Adagio Glasgow Central"],
+        items: [
+          {
+            time: "18:45-19:30",
+            title: "落地并完成入境",
+            location: "Glasgow Airport",
+            notes: "给入境和取行李预留一些时间。",
+            links: [{ label: "机场", url: "http://glasgowairport.com" }]
+          },
+          {
+            time: "19:30-20:00",
+            title: "前往酒店",
+            location: "GLA -> city centre",
+            routeOrigin: "Glasgow Airport",
+            routeDest: "Aparthotel Adagio Glasgow Central",
+            notes: "可以打车或坐机场巴士，通常约 20 到 30 分钟，视路况而定。",
+            links: [{ label: "酒店", url: "https://all.accor.com/hotel/B8A2/index.en.shtml" }]
+          },
+          {
+            time: "20:00-21:30",
+            title: "晚餐加短距离散步",
+            location: "Merchant City / Aparthotel Adagio Glasgow Central area",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Merchant City, Glasgow",
+            notes: "考虑到长途飞行，当晚建议只安排轻松活动。",
+            links: [
+              { label: "VisitScotland", url: "http://visitscotland.com" },
+              { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
+            ]
+          },
+          {
+            time: "21:30 onward",
+            title: "休息",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "建议早点睡。",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0524",
+        short: "05/24",
+        dayLabel: "周日",
+        title: "爱丁堡一日往返",
+        intro: "这一天按爱丁堡老城最顺的动线来走：先上城堡，再沿 Royal Mile 往下，最后以 Calton Hill 收尾。",
+        vibe: "高密度观光日",
+        intensity: "high",
+        window: "07:30-19:15",
+        travel: "从 Glasgow 往返火车",
+        anchor: "爱丁堡城堡",
+        mapQuery: "Edinburgh Castle",
+        featured: {
+          title: "爱丁堡城堡",
+          text: "这是爱丁堡这一天最核心的景点，放在最前面最稳，也能让后面的 Royal Mile 行程顺着一路往下走。",
+          mapQuery: "Edinburgh Castle",
+          infoUrl: "http://edinburghcastle.scot"
+        },
+        spots: ["Edinburgh Castle", "St Giles' Cathedral", "Mary King's Close", "Palace of Holyroodhouse", "Calton Hill"],
+        items: [
+          {
+            time: "07:30-08:30",
+            title: "乘火车前往 Edinburgh",
+            location: "Glasgow Queen Street -> Edinburgh Waverley",
+            routeOrigin: "Glasgow Queen Street Station",
+            routeDest: "Edinburgh Waverley Station",
+            notes: "直达车班次较多，通常约每 30 分钟一班，车程大约 50 到 75 分钟。",
+            links: [
+              { label: "ScotRail", url: "http://scotrail.co.uk" },
+              { label: "Trainline", url: "http://thetrainline.com" }
+            ]
+          },
+          {
+            time: "09:00-11:30",
+            title: "爱丁堡城堡",
+            location: "Old Town",
+            routeOrigin: "Edinburgh Waverley Station",
+            routeDest: "Edinburgh Castle",
+            notes: "建议第一站就去，这是当天最值得优先锁定时间的景点。",
+            links: [{ label: "官网", url: "http://edinburghcastle.scot" }]
+          },
+          {
+            time: "11:30-12:00",
+            title: "圣吉尔斯大教堂",
+            location: "Royal Mile",
+            notes: "虽然停留时间不必太长，但顺路而且值得看。",
+            links: [{ label: "指南", url: "http://scotlandschurchestrust.org.uk" }]
+          },
+          {
+            time: "12:00-12:45",
+            title: "The Real Mary King's Close",
+            location: "Royal Mile",
+            notes: "强烈建议提前预约。",
+            links: [{ label: "官网", url: "http://realmarykingsclose.com" }]
+          },
+          {
+            time: "12:45-14:00",
+            title: "午餐",
+            location: "Royal Mile / Old Town",
+            notes: "午餐不必拖太久，把时间尽量留给下午行程。",
+            links: [{ label: "区域指南", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "14:00-15:30",
+            title: "荷里路德宫",
+            location: "Holyrood",
+            notes: "沿着 Royal Mile 一路走到这里，动线最自然。",
+            links: [{ label: "官网", url: "http://rct.uk" }]
+          },
+          {
+            time: "15:30-16:15",
+            title: "步行前往 Calton Hill",
+            location: "Edinburgh",
+            notes: "这段路本身就很适合边走边看。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "16:15-17:00",
+            title: "卡尔顿山",
+            location: "Edinburgh",
+            notes: "看城市全景的性价比很高，而且时间很灵活。",
+            links: [{ label: "指南", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "17:00-18:00",
+            title: "回到车站",
+            location: "Edinburgh Waverley",
+            notes: "回程前预留一点机动时间。",
+            links: []
+          },
+          {
+            time: "18:00-19:15",
+            title: "乘火车返回 Glasgow",
+            location: "Edinburgh -> Glasgow",
+            notes: "晚上直接返回即可。",
+            links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "After 19:15",
+            title: "晚餐",
+            location: "Glasgow",
+            notes: "这顿饭以恢复体力为主，不必安排太重。",
+            links: [{ label: "美食指南", url: "http://wanderlustchloe.com" }]
+          }
+        ]
+      },
+      {
+        id: "0525",
+        short: "05/25",
+        dayLabel: "周一",
+        title: "Glasgow 市区 + 海报展示日",
+        intro: "上午先看一段 Glasgow 的历史城区，随后回酒店整理状态，再去会场完成海报展示。",
+        vibe: "城市观光 + 会议",
+        intensity: "medium",
+        window: "09:30-evening",
+        travel: "市内移动",
+        anchor: "Glasgow Cathedral",
+        mapQuery: "Glasgow Cathedral",
+        featured: {
+          title: "Glasgow Cathedral",
+          text: "很适合放在上午开场，既能马上进入 Glasgow 的历史脉络，也方便和 Necropolis、St Mungo Museum 连起来看。",
+          mapQuery: "Glasgow Cathedral",
+          infoUrl: "http://historicenvironment.scot"
+        },
+        spots: ["Glasgow Cathedral", "Necropolis", "St Mungo Museum", "SEC"],
+        items: [
+          {
+            time: "09:30-10:15",
+            title: "Glasgow Cathedral",
+            location: "East End",
+            notes: "适合作为第一站，是理解这座城市历史的起点。",
+            links: [{ label: "官网", url: "http://historicenvironment.scot" }]
+          },
+          {
+            time: "10:15-11:00",
+            title: "Necropolis",
+            location: "Near Cathedral",
+            notes: "可以顺路上去看视野，再简单走一圈。",
+            links: [{ label: "指南", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "11:00-12:00",
+            title: "St Mungo Museum",
+            location: "Cathedral precinct",
+            notes: "馆不大，和教堂一起看很合适。",
+            links: [{ label: "参考信息", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "12:00-13:00",
+            title: "午餐",
+            location: "High Street / nearby",
+            notes: "吃得简单一点就好。",
+            links: []
+          },
+          {
+            time: "13:00-15:30",
+            title: "回酒店准备海报展示",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "回去换装、整理材料，顺便稍微休息一下。",
+            links: []
+          },
+          {
+            time: "15:30-16:30",
+            title: "前往会场",
+            location: "SEC / conference venue",
+            notes: "给布置和熟悉现场留一点余量。",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "16:45-17:30",
+            title: "海报展示",
+            location: "Exhibit Hall",
+            notes: "WC-INTERACTIVE-03.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "17:30-19:00",
+            title: "晚餐 / 放松",
+            location: "Glasgow",
+            notes: "晚上不要再排太重的活动。",
+            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "Evening",
+            title: "早点休息",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "第二天要早起去 Highlands，今晚尽量早点睡。",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0526",
+        short: "05/26",
+        dayLabel: "周二",
+        title: "Scottish Highlands 一日游",
+        intro: "这是一整天都比较长的 Highlands 行程，重点是风景和整体体验，不是城市里那种细碎打卡。",
+        vibe: "风景主导的一天",
+        intensity: "high",
+        window: "06:45-21:00",
+        travel: "巴士一日团",
+        anchor: "Glencoe / Loch Ness 路线",
+        mapQuery: "Glencoe Scotland",
+        featured: {
+          title: "Glencoe",
+          text: "这是 Highlands 这一天最有氛围感的一段，风景开阔、起伏大，也最有电影感。",
+          mapQuery: "Glencoe Scotland",
+          infoUrl: "http://rabbies.com"
+        },
+        spots: ["Buchanan Bus Station", "Loch Lomond", "Glencoe", "Loch Ness", "Pitlochry"],
+        items: [
+          {
+            time: "06:45-07:30",
+            title: "前往 Buchanan Bus Station",
+            location: "Glasgow",
+            notes: "建议预留时间，并带上零食和保暖层。",
+            links: [{ label: "汽车站", url: "http://spt.co.uk" }]
+          },
+          {
+            time: "07:30-07:45",
+            title: "签到 / 上车",
+            location: "Buchanan Bus Station",
+            notes: "Rabbie's、Timberbush 和 Discover Scotland 都可以一起比较。",
+            links: [
+              { label: "Rabbie's", url: "http://rabbies.com" },
+              { label: "Timberbush", url: "http://timberbush-tours.co.uk" },
+              { label: "Discover Scotland", url: "http://discoverscotlandtours.com" }
+            ]
+          },
+          {
+            time: "07:45-19:15",
+            title: "Highlands / Loch Ness / Glencoe 行程",
+            location: "Scottish Highlands",
+            notes: "常见路线一般会经过 Loch Lomond、Glencoe、Fort Augustus / Loch Ness 和 Pitlochry。",
+            links: [
+              { label: "Rabbie's", url: "http://rabbies.com" },
+              { label: "Timberbush", url: "http://timberbush-tours.co.uk" }
+            ]
+          },
+          {
+            time: "19:15-20:00",
+            title: "返回酒店附近",
+            location: "Glasgow",
+            notes: "一日团结束后回城。",
+            links: []
+          },
+          {
+            time: "20:00-21:00",
+            title: "晚餐",
+            location: "Glasgow",
+            notes: "晚上以恢复体力为主。",
+            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
+          }
+        ]
+      },
+      {
+        id: "0527",
+        short: "05/27",
+        dayLabel: "周三",
+        title: "York 一日往返",
+        intro: "这是车程较长但回报也很高的一天，核心围绕约克大教堂、老城、城墙步行和车站附近的博物馆。",
+        vibe: "长距离火车日",
+        intensity: "high",
+        window: "07:00-21:30",
+        travel: "长距离火车往返",
+        anchor: "约克大教堂",
+        mapQuery: "York Minster",
+        featured: {
+          title: "约克大教堂",
+          text: "约克这一天最值得先看的就是这里，它会先把整座城市的气质立起来，再往老城慢慢展开。",
+          mapQuery: "York Minster",
+          infoUrl: "http://yorkminster.org"
+        },
+        spots: ["York Minster", "The Shambles", "York City Walls", "National Railway Museum", "Museum Gardens"],
+        items: [
+          {
+            time: "07:00-07:30",
+            title: "前往车站",
+            location: "Glasgow Central",
+            notes: "建议只带当天用的小包。",
+            links: []
+          },
+          {
+            time: "07:30-11:30",
+            title: "乘火车前往 York",
+            location: "Glasgow Central -> York",
+            notes: "尽量选直达，越早出发越从容，因为这一天整体比较长。",
+            links: [
+              { label: "Trainline", url: "http://thetrainline.com" },
+              { label: "Avanti", url: "http://avantiwestcoast.co.uk" }
+            ]
+          },
+          {
+            time: "11:30-12:30",
+            title: "约克大教堂",
+            location: "York city centre",
+            notes: "这是当天核心景点，抵达后优先去最合适。",
+            links: [
+              { label: "York Minster", url: "http://yorkminster.org" },
+              { label: "Visit York", url: "http://visityork.org" }
+            ]
+          },
+          {
+            time: "12:30-13:30",
+            title: "The Shambles 老街 + 午餐",
+            location: "York old town",
+            notes: "从大教堂过去很顺，节奏也刚好。",
+            links: [{ label: "Visit York", url: "http://visityork.org" }]
+          },
+          {
+            time: "13:30-15:00",
+            title: "York 城墙步行",
+            location: "York",
+            notes: "不必硬走完整圈，挑一段最值得的路走就可以。",
+            links: [{ label: "Walls guide", url: "http://yorkwalls.org.uk" }]
+          },
+          {
+            time: "15:00-16:00",
+            title: "National Railway Museum",
+            location: "Near York station",
+            notes: "如果体力还可以，这是返程前很不错的加选点。",
+            links: [{ label: "官网", url: "http://railwaymuseum.org.uk" }]
+          },
+          {
+            time: "16:00-16:30",
+            title: "Museum Gardens",
+            location: "York",
+            notes: "如果时间和体力都允许，可以顺路停一下。",
+            links: [{ label: "城市指南", url: "http://visityork.org" }]
+          },
+          {
+            time: "16:30-17:00",
+            title: "简单晚餐 / 补给",
+            location: "York centre",
+            notes: "注意别把回程火车时间压得太紧。",
+            links: [{ label: "Visit York", url: "http://visityork.org" }]
+          },
+          {
+            time: "17:00-17:30",
+            title: "回到车站",
+            location: "York",
+            notes: "Buffer before boarding.",
+            links: []
+          },
+          {
+            time: "17:30-21:30",
+            title: "乘火车返回 Glasgow",
+            location: "York -> Glasgow",
+            notes: "回程时间不短，到 Glasgow 后建议直接回酒店。",
+            links: [{ label: "Trainline", url: "http://thetrainline.com" }]
+          }
+        ]
+      },
+      {
+        id: "0528",
+        short: "05/28",
+        dayLabel: "周四",
+        title: "Glasgow 市区 + 口头报告 + 晚间安排",
+        intro: "最后一个完整日安排得比较克制：上午看 West End 的重点馆藏，下午留给报告，晚上再轻松庆祝一下。",
+        vibe: "报告日",
+        intensity: "medium",
+        window: "08:30-22:00+",
+        travel: "West End -> SEC -> 市中心",
+        anchor: "Kelvingrove 与 University of Glasgow",
+        mapQuery: "Kelvingrove Art Gallery and Museum",
+        featured: {
+          title: "Kelvingrove Art Gallery and Museum",
+          text: "这很适合作为报告日上午的重点：内容丰富、视觉也好，关键是距离和节奏都不至于把人拖累。",
+          mapQuery: "Kelvingrove Art Gallery and Museum",
+          infoUrl: "http://glasgowlife.org.uk"
+        },
+        spots: ["Kelvingrove", "University of Glasgow", "SEC", "Riverside Museum", "Merchant City"],
+        items: [
+          {
+            time: "08:30-09:30",
+            title: "吃早餐后前往 West End",
+            location: "Aparthotel Adagio Glasgow Central -> West End",
+            notes: "今天是报告日，上午的节奏尽量轻一点。",
+            links: [{ label: "Glasgow guide", url: "http://wanderlustchloe.com" }]
+          },
+          {
+            time: "09:30-11:00",
+            title: "Kelvingrove Art Gallery and Museum",
+            location: "West End",
+            notes: "如果上午只能看一个馆，这里最合适。",
+            links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "11:00-12:00",
+            title: "University of Glasgow / Cloisters",
+            location: "West End",
+            notes: "建筑很出片，也很适合顺路停留。",
+            links: [{ label: "访问信息", url: "http://gla.ac.uk" }]
+          },
+          {
+            time: "12:00-12:30",
+            title: "简短午餐",
+            location: "West End",
+            notes: "午餐不要拖太久，给去会场留余量。",
+            links: []
+          },
+          {
+            time: "12:30-13:00",
+            title: "前往会场",
+            location: "SEC",
+            notes: "给自己留一点调整状态的时间。",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "13:00-14:15",
+            title: "最后确认 / 简短预演",
+            location: "Venue",
+            notes: "这是给报告预留的缓冲。",
+            links: []
+          },
+          {
+            time: "14:25-15:55",
+            title: "口头报告环节",
+            location: "Alsh 2",
+            notes: "WS25-S1, 10th paper, 8 minutes.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "16:00-17:00",
+            title: "Riverside Museum 或河边放松",
+            location: "Near Clyde / West End",
+            notes: "报告结束后如果还有体力，可以二选一安排。",
+            links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "17:15-19:00",
+            title: "庆祝晚餐",
+            location: "Merchant City",
+            notes: "很适合作为最后一晚吃饭的区域。",
+            links: [
+              { label: "夜生活指南", url: "http://hotels.com/go/scotland/best-nightlife-glasgow" },
+              { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
+            ]
+          },
+          {
+            time: "19:30-22:00",
+            title: "晚间活动",
+            location: "Theatre Royal / The 13th Note / King Tut's / cocktails",
+            notes: "可以按当天状态选：看戏、去 livehouse，或者安静喝一杯。",
+            links: [{ label: "指南", url: "http://hotels.com/go/scotland/best-nightlife-glasgow" }]
+          },
+          {
+            time: "After 22:00",
+            title: "回去收拾行李",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "为第二天的早班飞机做好准备。",
+            links: []
+          }
+        ]
+      }
+    ];
+
+    // Helper: Basic Google 地图 Search
+    function mapsUrl(query) {
+      const safeQuery = query.toLowerCase().includes("uk") ? query : query + ", UK";
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(safeQuery)}`;
+    }
+
+    // Helper: Google 地图 Directions
+    function dirUrl(origin, destination) {
+      return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
+    }
+
+    // Helper: Add context to generic locations to prevent cross-country mapping errors
+    function addLocationContext(loc, day) {
+      const l = loc.toLowerCase();
+      // If it already contains a major anchor city, just append UK if missing
+      if (l.includes('glasgow') || l.includes('gla') || l.includes('edinburgh') || l.includes('york') || l.includes('highland') || l.includes('uk')) {
+        return loc + (l.includes('uk') ? '' : ', UK');
+      }
+      
+      // Determine base city for the day to give context
+      let city = 'Glasgow';
+      if (day.id === '0524') city = 'Edinburgh';
+      else if (day.id === '0526') city = 'Scotland';
+      else if (day.id === '0527') city = 'York';
+      
+      return `${loc}, ${city}, UK`;
+    }
+
+    function escapeHtml(value) {
+      return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    const dayTabs = document.getElementById("dayTabs");
+    const dayTitle = document.getElementById("dayTitle");
+    const dayIntro = document.getElementById("dayIntro");
+    const dayMapButton = document.getElementById("dayMapButton");
+    const summaryGrid = document.getElementById("summaryGrid");
+    const featuredTitle = document.getElementById("featuredTitle");
+    const featuredText = document.getElementById("featuredText");
+    const featuredTags = document.getElementById("featuredTags");
+    const featuredMap = document.getElementById("featuredMap");
+    const featuredInfo = document.getElementById("featuredInfo");
+    const timeline = document.getElementById("timeline");
+    const bookingList = document.getElementById("bookingList");
+    const noteList = document.getElementById("noteList");
+    const mapJumpList = document.getElementById("mapJumpList");
+    const featuredCard = document.getElementById("featuredCard");
+    const jumpFeatured = document.getElementById("jumpFeatured");
+
+    function renderTabs(activeId) {
+      dayTabs.innerHTML = itinerary.map((day) => `
+        <button class="day-tab ${day.id === activeId ? "active" : ""}" type="button" data-day="${day.id}">
+          <strong>${day.short} | ${escapeHtml(day.dayLabel)}</strong>
+          <span>${escapeHtml(day.title)}</span>
+          <span>${escapeHtml(day.window)}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderLists() {
+      bookingList.innerHTML = bookingPriorities.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    }
+
+    function renderDay(dayId) {
+      const day = itinerary.find((entry) => entry.id === dayId) || itinerary[0];
+
+      renderTabs(day.id);
+
+      dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
+      dayIntro.textContent = day.intro;
+      dayMapButton.href = mapsUrl(day.mapQuery);
+
+      summaryGrid.innerHTML = `
+        <article class="summary-card fade-in">
+          <h3>当天节奏</h3>
+          <div class="intensity ${day.intensity === "low" ? "low" : ""}">${day.vibe}</div>
+          <p>${escapeHtml(day.intensity === "high" ? "这是强度较高的一天，最好给交通和排队预留余量，不要再额外塞太多项目。" : day.intensity === "medium" ? "这一天整体张弛适中，但前后衔接最好还是按计划走，体验会更顺。" : "这一天节奏相对轻松，更适合恢复体力或为后面的重点安排留出缓冲。" )}</p>
+        </article>
+        <article class="summary-card fade-in">
+          <h3>时间范围</h3>
+          <strong>${escapeHtml(day.window)}</strong>
+          <p>${escapeHtml(day.travel)}</p>
+        </article>
+        <article class="summary-card fade-in">
+          <h3>核心安排</h3>
+          <strong>${escapeHtml(day.anchor)}</strong>
+          <p>如果只想快速记住这一天的重点，看这里就够了。</p>
+        </article>
+      `;
+
+      featuredTitle.textContent = day.featured.title;
+      featuredText.textContent = day.featured.text;
+      featuredMap.href = mapsUrl(day.featured.mapQuery);
+      featuredInfo.href = day.featured.infoUrl;
+      featuredTags.innerHTML = day.spots.map((spot) => `<span class="meta-tag">${escapeHtml(spot)}</span>`).join("");
+
+      timeline.innerHTML = day.items.map((item, index) => {
+        // --- Calculate Dynamic Google 地图 Directions ---
+        let dirLinkHtml = '';
+        const currLocRaw = item.location;
+
+        let startLoc = '';
+        let endLoc = '';
+
+        // 1. 如果 JSON 数据里定义了精确的底层映射，直接无脑信任它
+        if (item.routeOrigin && item.routeDest) {
+          startLoc = item.routeOrigin;
+          endLoc = item.routeDest;
+        } 
+        // 2. 否则，如果是个带箭头的行程点，自动解析两边
+        else if (currLocRaw.includes('->')) {
+          const parts = currLocRaw.split('->');
+          startLoc = addLocationContext(parts[0].split('/')[0].trim(), day);
+          endLoc = addLocationContext(parts[parts.length - 1].split('/')[0].trim(), day);
+        } 
+        // 3. 最后，自动继承上一步的终点作为当前起点
+        else if (index > 0) {
+          const prevItem = day.items[index - 1];
+          let prevEndLoc = '';
+          
+          if (prevItem.routeDest) {
+            prevEndLoc = prevItem.routeDest; // 上一步如果有精确终点，继承它
+          } else if (prevItem.location.includes('->')) {
+            const parts = prevItem.location.split('->');
+            prevEndLoc = addLocationContext(parts[parts.length - 1].split('/')[0].trim(), day);
+          } else {
+            prevEndLoc = addLocationContext(prevItem.location.split('/')[0].trim(), day);
+          }
+          
+          const currDest = addLocationContext(currLocRaw.split('/')[0].trim(), day);
+          
+          startLoc = prevEndLoc;
+          endLoc = currDest;
+        }
+
+        // 只有起点终点不同，才显示导航按钮
+        if (startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase()) {
+          const directionsUrl = dirUrl(startLoc, endLoc);
+          dirLinkHtml = `<a class="link-chip" href="${directionsUrl}" target="_blank" rel="noreferrer">路线</a>`;
+        }
+        // -------------------------------------------------
+
+        return `
+        <article class="timeline-item fade-in">
+          <div class="time">${escapeHtml(item.time)}</div>
+          <div class="timeline-body">
+            <h4>${escapeHtml(item.title)}</h4>
+            <div class="place">${escapeHtml(item.location)}</div>
+            <p>${escapeHtml(item.notes)}</p>
+            <div class="link-row">
+              <a class="link-chip" href="${mapsUrl(item.location)}" target="_blank" rel="noreferrer">Google 地图</a>
+              ${dirLinkHtml}
+              ${item.links.map((link) => `<a class="link-chip" href="${link.url}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
+            </div>
+          </div>
+        </article>
+        `;
+      }).join("");
+
+      mapJumpList.innerHTML = day.spots.map((spot) => `
+        <a class="link-chip" href="${mapsUrl(spot)}" target="_blank" rel="noreferrer">${escapeHtml(spot)}</a>
+      `).join("");
+
+      featuredCard.classList.remove("fade-in");
+      void featuredCard.offsetWidth;
+      featuredCard.classList.add("fade-in");
+    }
+
+    dayTabs.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-day]");
+      if (!button) return;
+      renderDay(button.dataset.day);
+    });
+
+    jumpFeatured.addEventListener("click", () => {
+      featuredCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    renderLists();
+    renderDay(itinerary[0].id);
+  </script>
+</body>
+</html>
+

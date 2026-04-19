@@ -1,0 +1,1720 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan B 中文版 | 英国行程 | London 与 Glasgow | 05/23-05/30</title>
+  <style>
+    :root {
+      --paper: rgba(255, 250, 244, 0.78);
+      --paper-strong: rgba(255, 250, 244, 0.94);
+      --ink: #1f2a33;
+      --muted: #5e6a73;
+      --brand: #0f6c7b;
+      --brand-2: #c96f41;
+      --brand-3: #254f6f;
+      --good: #3f7853;
+      --warn: #a65828;
+      --shadow: 0 24px 80px rgba(25, 36, 46, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --max: 1320px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(201, 111, 65, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(15, 108, 123, 0.16), transparent 28%),
+        linear-gradient(180deg, #efe5d8 0%, #f7f1e8 38%, #f4efe6 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 92%);
+      opacity: 0.35;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 22px auto 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(236, 205, 166, 0.22), transparent 28%),
+        linear-gradient(140deg, #173646 0%, #1f5666 48%, #2f4358 100%);
+      color: #fff8ef;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% 30%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(236, 205, 166, 0.34), transparent 60%);
+      filter: blur(12px);
+    }
+
+    .hero-copy,
+    .hero-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 239, 0.24);
+      background: rgba(255, 248, 239, 0.08);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.5rem, 4.3vw, 4.2rem);
+      line-height: 1.02;
+      font-weight: 700;
+      max-width: 13ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 58ch;
+      color: rgba(255, 248, 239, 0.88);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .hero-panel {
+      align-self: end;
+      border-radius: 28px;
+      padding: 22px;
+      background: rgba(255, 250, 244, 0.12);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 248, 239, 0.16);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+    }
+
+    .hero-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(255, 248, 239, 0.9);
+      line-height: 1.7;
+    }
+
+    .hero-strap {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 239, 0.14);
+      background: rgba(255, 248, 239, 0.1);
+      color: rgba(255, 248, 239, 0.86);
+      font-size: 0.92rem;
+    }
+
+    .toolbar {
+      margin: 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pill-row,
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill,
+    .ghost-btn,
+    .map-btn,
+    .link-chip,
+    .day-tab {
+      border: 1px solid transparent;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .pill {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      border-color: rgba(31, 42, 51, 0.08);
+      color: var(--muted);
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+    }
+
+    .pill strong {
+      color: var(--ink);
+    }
+
+    .ghost-btn,
+    .map-btn,
+    .link-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.88);
+      border-color: rgba(31, 42, 51, 0.08);
+      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .ghost-btn:hover,
+    .map-btn:hover,
+    .link-chip:hover,
+    .day-tab:hover {
+      transform: translateY(-2px);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .side-panel,
+    .main-panel {
+      background: var(--paper);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .side-panel {
+      padding: 24px;
+      position: sticky;
+      top: 18px;
+    }
+
+    .side-panel h3,
+    .main-panel h3,
+    .summary-card h3,
+    .gallery-card h3,
+    .day-card h3 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .day-tab-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .day-tab {
+      width: 100%;
+      text-align: left;
+      border-radius: 18px;
+      padding: 16px;
+      border-color: rgba(31, 42, 51, 0.08);
+      background: rgba(255, 250, 244, 0.72);
+      cursor: pointer;
+    }
+
+    .day-tab.active {
+      background: linear-gradient(135deg, rgba(15, 108, 123, 0.14), rgba(201, 111, 65, 0.18));
+      border-color: rgba(15, 108, 123, 0.24);
+      box-shadow: 0 14px 28px rgba(15, 108, 123, 0.12);
+    }
+
+    .day-tab strong,
+    .day-tab span {
+      display: block;
+    }
+
+    .day-tab strong {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .day-tab span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .mini-note {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(15, 108, 123, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .mini-note strong {
+      color: var(--ink);
+    }
+
+    .main-panel {
+      padding: 24px;
+    }
+
+    .panel-head {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .panel-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.02;
+    }
+
+    .panel-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 62ch;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .summary-card,
+    .gallery-card,
+    .day-card,
+    .timeline-item,
+    .booking-card {
+      background: var(--paper-strong);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(31, 42, 51, 0.07);
+    }
+
+    .summary-card {
+      padding: 18px;
+      min-height: 150px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 0.95rem;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      margin-bottom: 22px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top right, rgba(201, 111, 65, 0.12), transparent 24%),
+        linear-gradient(180deg, rgba(255, 250, 244, 0.98), rgba(249, 243, 235, 0.96));
+    }
+
+    .gallery-copy {
+      display: grid;
+      gap: 10px;
+    }
+
+    .gallery-copy h4 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.08;
+    }
+
+    .gallery-copy p {
+      margin: 0;
+      max-width: 68ch;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .gallery-meta {
+      padding-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: rgba(37, 79, 111, 0.08);
+      color: var(--brand-3);
+      font-size: 0.9rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.82fr);
+      gap: 18px;
+    }
+
+    .day-card {
+      padding: 22px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 88px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(15, 108, 123, 0.24), rgba(201, 111, 65, 0.24));
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 82px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 0 7px rgba(15, 108, 123, 0.08);
+    }
+
+    .time {
+      font-size: 0.9rem;
+      color: var(--brand-3);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .timeline-body {
+      padding-left: 20px;
+    }
+
+    .timeline-body h4 {
+      margin: 0 0 6px;
+      font-size: 1.12rem;
+    }
+
+    .timeline-body .place {
+      margin: 0 0 8px;
+      font-size: 0.96rem;
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .timeline-body p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 0.95rem;
+    }
+
+    .link-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .link-chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      background: rgba(37, 79, 111, 0.08);
+      border-color: rgba(37, 79, 111, 0.1);
+      color: var(--brand-3);
+      box-shadow: none;
+    }
+
+    .aside-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .booking-card {
+      padding: 18px;
+    }
+
+    .booking-card ol,
+    .booking-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .booking-card li + li {
+      margin-top: 4px;
+    }
+
+    .intensity {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      background: rgba(201, 111, 65, 0.12);
+      color: var(--warn);
+      margin-bottom: 12px;
+    }
+
+    .intensity.low {
+      background: rgba(63, 120, 83, 0.12);
+      color: var(--good);
+    }
+
+    .fade-in {
+      animation: rise 380ms ease;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .layout,
+      .content-grid,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .timeline::before {
+        left: 74px;
+      }
+
+      .timeline-item::before {
+        left: 68px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(var(--max), calc(100% - 18px));
+        margin-top: 10px;
+      }
+
+      .hero,
+      .main-panel,
+      .side-panel {
+        padding: 20px;
+      }
+
+      .panel-head {
+        flex-direction: column;
+      }
+
+      .timeline::before {
+        left: 60px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .timeline-item::before {
+        left: 54px;
+      }
+
+      .timeline-body {
+        padding-left: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">英国行程</div>
+        <h1>Plan B｜先 London，后 Glasgow</h1>
+        <p>
+          这一版把 London 落地、转场去 Glasgow 参加会议，以及最后几天的行程串成了一条清晰路线。页面重点是先看每天怎么走，再看关键移动节点，地图也都能一键打开。
+        </p>
+        <div class="hero-strap">
+          <div class="hero-chip">05/23-05/30</div>
+          <div class="hero-chip">London + Glasgow</div>
+          <div class="hero-chip">全程当地时间</div>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>日期与每日概览</h2>
+        <ul>
+          <li>05/23｜抵达 Heathrow，入住 Southwark，轻松过渡</li>
+          <li>05/24｜伦敦塔、South Bank、Westminster，晚上可分支安排</li>
+          <li>05/25｜从 London Euston 到 Glasgow，放行李后参加海报展示</li>
+          <li>05/26｜Highlands 一日游</li>
+          <li>05/27｜爱丁堡老城一日往返</li>
+          <li>05/28｜Glasgow 观光与口头报告</li>
+          <li>05/29｜早退房并从 Glasgow 出发</li>
+          <li>05/30｜回到上海</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="toolbar">
+      <div class="pill-row">
+        <div class="pill"><strong>日期：</strong>05/23-05/30</div>
+        <div class="pill"><strong>London 住宿：</strong>Premier Inn London Southwark (Bankside)</div>
+        <div class="pill"><strong>Glasgow 住宿：</strong>Aparthotel Adagio Glasgow Central</div>
+      </div>
+      <div class="quick-actions">
+        <button class="ghost-btn" type="button" id="jumpFeatured">跳转到今日重点</button>
+      </div>
+    </div>
+
+    <section class="layout">
+      <aside class="side-panel">
+        <h3>日期切换</h3>
+        <div class="day-tab-list" id="dayTabs"></div>
+        <div class="mini-note">
+          <strong>阅读提示：</strong>这版行程里，交通重的日子都优先按“酒店到车站”或“酒店到机场”的逻辑来排，再考虑观光。London 部分默认住在 Premier Inn London Southwark (Bankside)。
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <div class="panel-head">
+          <div>
+            <h2 id="dayTitle">05/23｜周六｜抵达 London</h2>
+            <p id="dayIntro">这一天不往北赶路，重点是从 Heathrow 顺利到酒店，晚上在 South Bank 附近稍微活动一下就好。</p>
+          </div>
+          <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
+        </div>
+
+        <section class="summary-grid" id="summaryGrid"></section>
+
+        <section class="gallery-card fade-in" id="featuredCard">
+          <div class="gallery-copy">
+            <h3>今日重点</h3>
+            <h4 id="featuredTitle"></h4>
+            <p id="featuredText"></p>
+          </div>
+          <div class="gallery-meta">
+            <div class="meta-tags" id="featuredTags"></div>
+            <div class="quick-actions">
+              <a class="map-btn" id="featuredMap" href="#" target="_blank" rel="noreferrer">在地图中查看重点地点</a>
+              <a class="ghost-btn" id="featuredInfo" href="#" target="_blank" rel="noreferrer">官网 / 参考</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <article class="day-card">
+            <h3>时间线</h3>
+            <div class="timeline" id="timeline"></div>
+          </article>
+
+          <aside class="aside-stack">
+            <section class="booking-card">
+              <h3>优先预订</h3>
+              <ol id="bookingList"></ol>
+            </section>
+            <section class="booking-card">
+              <h3>行程提示</h3>
+              <ul id="noteList"></ul>
+            </section>
+            <section class="booking-card">
+              <h3>地图快速跳转</h3>
+              <div class="link-row" id="mapJumpList"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <script>
+    const bookingPriorities = [
+      "确认并预订 London 酒店",
+      "预订 05/25 London Euston -> Glasgow Central 直达火车",
+      "预订 05/26 Highlands 一日游",
+      "如果采用定时入场，提前预订 05/27 爱丁堡城堡和 Mary King's Close",
+      "提前决定 05/24 晚上走 West End 演出线还是轻松夜游线"
+    ];
+
+    const dayNotes = [
+      "这一版默认 London 住在 Premier Inn London Southwark (Bankside)。",
+      "05/23 的合理收尾是在 London 酒店休息，不建议当天继续北上。",
+      "05/25 是标准转场日，顺序建议按酒店 -> Euston -> Glasgow Central -> Aparthotel Adagio Glasgow Central -> 会场。",
+      "05/24 晚上保留两条分支：看演出或轻松夜游都可以。",
+      "如果 London 到 Glasgow 的发车时间还没完全定，弹性票值得考虑。"
+    ];
+
+    const itinerary = [
+      {
+        id: "0523",
+        short: "05/23",
+        dayLabel: "周六",
+        title: "抵达 London",
+        intro: "这一天以平稳落地为主：到 Heathrow 后进城、入住 Southwark、吃晚饭、休息，不建议当晚再继续折腾转场。",
+        vibe: "抵达与调整",
+        intensity: "low",
+        window: "18:45 onward",
+        travel: "Heathrow -> London 酒店",
+        anchor: "Premier Inn London Southwark (Bankside)",
+        mapQuery: "Premier Inn London Southwark Bankside",
+        featured: {
+          title: "South Bank",
+          text: "很适合作为抵达当晚的活动区域：步行方便、景色好，而且离酒店不远，不会让第一晚太累。",
+          mapQuery: "South Bank London",
+          infoUrl: "http://southbanklondon.com"
+        },
+        spots: [
+          "Heathrow 机场",
+          "Premier Inn London Southwark (Bankside)",
+          "South Bank London"
+        ],
+        items: [
+          {
+            time: "18:45",
+            title: "抵达 London",
+            location: "Heathrow 机场",
+            notes: "BA168 抵达 London。",
+            links: [{ label: "Heathrow", url: "http://heathrow.com" }]
+          },
+          {
+            time: "18:45-19:45",
+            title: "入境与取行李",
+            location: "Heathrow 机场",
+            notes: "落地手续建议按较宽松的时间来估计。",
+            links: [{ label: "机场地图", url: "http://heathrow.com" }]
+          },
+          {
+            time: "19:45-20:30",
+            title: "进城前往酒店",
+            location: "Heathrow 机场 -> Premier Inn London Southwark (Bankside)",
+            routeOrigin: "Heathrow 机场",
+            routeDest: "Premier Inn London Southwark (Bankside)",
+            notes: "带着行李建议先直奔酒店，不要在入住前先绕去景点。",
+            links: [
+              { label: "Heathrow Express", url: "http://heathrowexpress.com" },
+              { label: "TfL", url: "http://tfl.gov.uk" }
+            ]
+          },
+          {
+            time: "20:30-21:00",
+            title: "入住并放下行李",
+            location: "Premier Inn London Southwark (Bankside)",
+            notes: "这是这版行程默认采用的 London 酒店。",
+            links: [{ label: "Premier Inn", url: "http://premierinn.com" }]
+          },
+          {
+            time: "21:00-22:30",
+            title: "轻松吃饭并简单散步",
+            location: "South Bank / Bankside",
+            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeDest: "South Bank London",
+            notes: "入住后的晚上尽量安排得轻一点。",
+            links: [{ label: "South Bank", url: "http://southbanklondon.com" }]
+          },
+          {
+            time: "22:30 onward",
+            title: "休息",
+            location: "Premier Inn London Southwark (Bankside)",
+            notes: "建议早点休息。",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0524",
+        short: "05/24",
+        dayLabel: "周日",
+        title: "London 完整观光日",
+        intro: "这一天按伦敦市中心最顺的线路来走：从 Tower Hill 一带开始，顺着河边到 Westminster，晚上再根据状态选看演出或轻松夜游。",
+        vibe: "经典 London 串联日",
+        intensity: "high",
+        window: "08:00-22:45",
+        travel: "以 Southwark 为据点的市内动线",
+        anchor: "Tower of London 与 South Bank 动线",
+        mapQuery: "Tower of London",
+        featured: {
+          title: "伦敦塔",
+          text: "很适合作为 London 这一天的第一站，因为它能自然把后面的 Tower Bridge 和 South Bank 串起来。",
+          mapQuery: "Tower of London",
+          infoUrl: "http://hrp.org.uk"
+        },
+        spots: [
+          "Tower of London",
+          "Tower Bridge",
+          "Borough 市场官网",
+          "Westminster Abbey",
+          "Covent Garden"
+        ],
+        items: [
+          {
+            time: "08:00-09:00",
+            title: "早餐",
+            location: "Premier Inn London Southwark (Bankside) / nearby cafe",
+            notes: "早上轻松开始就好。",
+            links: []
+          },
+          {
+            time: "09:00-10:30",
+            title: "伦敦塔",
+            location: "Tower Hill",
+            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeDest: "Tower of London",
+            notes: "很适合作为当天第一站重点景点。",
+            links: [
+              { label: "门票", url: "http://hrp.org.uk" },
+              { label: "Visit London", url: "http://visitlondon.com" }
+            ]
+          },
+          {
+            time: "10:30-11:00",
+            title: "Tower Bridge 拍照停留",
+            location: "Tower Bridge",
+            notes: "如果有兴趣，也可以顺便看桥内展览。",
+            links: [{ label: "官网", url: "http://towerbridge.org.uk" }]
+          },
+          {
+            time: "11:00-12:30",
+            title: "沿 South Bank 散步",
+            location: "Tower Bridge -> Borough 市场官网 -> riverside",
+            routeOrigin: "Tower Bridge",
+            routeDest: "Borough 市场官网 London",
+            notes: "这段更适合当作沿河慢走，而不是赶路。",
+            links: [
+              { label: "South Bank", url: "http://southbanklondon.com" },
+              { label: "Borough 市场官网", url: "http://boroughmarket.org.uk" }
+            ]
+          },
+          {
+            time: "12:30-13:30",
+            title: "Lunch",
+            location: "Borough 市场官网 / nearby",
+            notes: "Flexible lunch block.",
+            links: [{ label: "市场官网", url: "http://boroughmarket.org.uk" }]
+          },
+          {
+            time: "13:30-15:00",
+            title: "Westminster 集中观光",
+            location: "Westminster",
+            routeOrigin: "Borough 市场官网 London",
+            routeDest: "Westminster Abbey",
+            notes: "这一段主要看 Big Ben、Westminster Abbey 和周边核心地标。",
+            links: [
+              { label: "Westminster Abbey", url: "http://westminster-abbey.org" },
+              { label: "Visit London", url: "http://visitlondon.com" }
+            ]
+          },
+          {
+            time: "15:00-16:00",
+            title: "St James's Park / Whitehall 漫步",
+            location: "Central London",
+            notes: "这段主要作为弹性缓冲。",
+            links: [{ label: "Royal Parks", url: "http://royalparks.org.uk" }]
+          },
+          {
+            time: "16:00-17:30",
+            title: "回酒店整理一下",
+            location: "Premier Inn London Southwark (Bankside)",
+            routeOrigin: "Westminster Abbey",
+            routeDest: "Premier Inn London Southwark (Bankside)",
+            notes: "这是晚上分支安排前的重要调整时间。",
+            links: []
+          },
+          {
+            time: "17:30-22:45",
+            title: "晚上方案 A：West End",
+            location: "Covent Garden / Soho / theatre district",
+            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeDest: "Covent Garden London",
+            notes: "可以先吃晚饭，再去剧院区看周日有场次的演出，结束后回酒店。Phantom 不适合这一天的日期安排。",
+            links: [
+              { label: "官网 London Theatre", url: "http://officiallondontheatre.com" },
+              { label: "TodayTix", url: "http://todaytix.com" }
+            ]
+          },
+          {
+            time: "17:30-21:30",
+            title: "晚上方案 B：轻松 London 夜游",
+            location: "South Bank / Soho / Sky Garden",
+            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeDest: "South Bank London",
+            notes: "如果不看戏，就把晚上留给吃饭、夜景或河边散步，整体更轻松。",
+            links: [
+              { label: "South Bank", url: "http://southbanklondon.com" },
+              { label: "Sky Garden", url: "http://skygarden.london" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "0525",
+        short: "05/25",
+        dayLabel: "周一",
+        title: "London 转场 Glasgow + 海报展示日",
+        intro: "这一天本质上是转场日：从 London 退房后直接去 Euston，坐直达车到 Glasgow，放下行李后去会场参加海报展示。",
+        vibe: "转场 + 会议",
+        intensity: "high",
+        window: "06:30-evening",
+        travel: "酒店 -> Euston -> Glasgow Central -> 酒店 -> 会场",
+        anchor: "Aparthotel Adagio Glasgow Central",
+        mapQuery: "Aparthotel Adagio Glasgow Central",
+        featured: {
+          title: "Glasgow Central",
+          text: "这是当天最关键的转折点：抵达这里、把行李处理好之后，后面的节奏就会顺很多。",
+          mapQuery: "Glasgow Central Station",
+          infoUrl: "http://networkrail.co.uk"
+        },
+        spots: [
+          "Premier Inn London Southwark (Bankside)",
+          "London Euston",
+          "Glasgow Central",
+          "Aparthotel Adagio Glasgow Central",
+          "SEC Glasgow"
+        ],
+        items: [
+          {
+            time: "06:30-07:00",
+            title: "早餐与退房准备",
+            location: "Premier Inn London Southwark (Bankside)",
+            notes: "上午尽量利落一点，别拖节奏。",
+            links: []
+          },
+          {
+            time: "07:00-07:30",
+            title: "前往 London Euston",
+            location: "Premier Inn London Southwark (Bankside) -> London Euston",
+            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeDest: "London Euston Station",
+            notes: "这一段应该从酒店直接出发，并带着行李去车站。",
+            links: [
+              { label: "TfL", url: "http://tfl.gov.uk" },
+              { label: "Station info", url: "http://networkrail.co.uk" }
+            ]
+          },
+          {
+            time: "07:30-07:50",
+            title: "提前到站并候车",
+            location: "London Euston",
+            notes: "直达车建议稍早一点到站。",
+            links: [
+              { label: "Avanti", url: "http://avantiwestcoast.co.uk" },
+              { label: "National Rail", url: "http://nationalrail.co.uk" }
+            ]
+          },
+          {
+            time: "Morning",
+            title: "直达 Glasgow Central",
+            location: "London Euston -> Glasgow Central",
+            routeOrigin: "London Euston Station",
+            routeDest: "Glasgow Central Station",
+            notes: "建议优先选 Avanti West Coast 直达车。",
+            links: [
+              { label: "Avanti", url: "http://avantiwestcoast.co.uk" },
+              { label: "Trainline", url: "http://thetrainline.com" }
+            ]
+          },
+          {
+            time: "Early afternoon",
+            title: "放行李并稍作调整",
+            location: "Glasgow Central -> Aparthotel Adagio Glasgow Central",
+            routeOrigin: "Glasgow Central Station",
+            routeDest: "Aparthotel Adagio Glasgow Central",
+            notes: "到 Glasgow 后先去酒店放行李，再去会场会更从容。",
+            links: [{ label: "酒店", url: "https://all.accor.com/hotel/B8A2/index.en.shtml" }]
+          },
+          {
+            time: "15:30-16:15",
+            title: "前往会场",
+            location: "Aparthotel Adagio Glasgow Central -> SEC Glasgow",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "SEC Centre Glasgow",
+            notes: "海报展示前记得留够缓冲时间。",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "16:45-17:30",
+            title: "海报展示",
+            location: "Exhibit Hall",
+            notes: "WC-INTERACTIVE-03.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "19:00-20:00",
+            title: "在酒店附近轻松吃晚饭",
+            location: "City Centre / Aparthotel Adagio Glasgow Central area",
+            routeOrigin: "SEC Centre Glasgow",
+            routeDest: "Aparthotel Adagio Glasgow Central",
+            notes: "火车加展示结束后，晚上尽量安排得轻一点。",
+            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "20:00-21:00",
+            title: "为 Highlands 一日游做准备",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "可以提前准备防水外套、充电宝、零食和证件。",
+            links: [{ label: "Rabbie's", url: "http://rabbies.com" }]
+          },
+          {
+            time: "21:30 onward",
+            title: "早点休息",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "第二天要早起。",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0526",
+        short: "05/26",
+        dayLabel: "周二",
+        title: "Scottish Highlands 一日游",
+        intro: "这是一整天的风景线行程：从 Glasgow 酒店出发，走 Highlands 环线，晚上回城后安静休息。",
+        vibe: "风景主导的一天",
+        intensity: "high",
+        window: "06:45-19:30+",
+        travel: "酒店 -> Buchanan -> Highlands -> Glasgow",
+        anchor: "Glencoe 与 Loch Ness 路线",
+        mapQuery: "Glencoe Scotland",
+        featured: {
+          title: "Glencoe",
+          text: "这是 Highlands 这一天最出片、也最有电影感的一段。",
+          mapQuery: "Glencoe Scotland",
+          infoUrl: "http://rabbies.com"
+        },
+        spots: [
+          "Aparthotel Adagio Glasgow Central",
+          "Buchanan Bus Station",
+          "Glencoe",
+          "Fort Augustus",
+          "Pitlochry"
+        ],
+        items: [
+          {
+            time: "06:45-07:15",
+            title: "前往 Buchanan Bus Station",
+            location: "Aparthotel Adagio Glasgow Central -> Buchanan Bus Station",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Buchanan Bus Station Glasgow",
+            notes: "早上出发前请预留充足时间。",
+            links: [{ label: "汽车站", url: "http://spt.co.uk" }]
+          },
+          {
+            time: "07:30-07:45",
+            title: "签到并上车",
+            location: "Buchanan Bus Station",
+            notes: "Rabbie's 和其他列出的运营方都可以一起比较。",
+            links: [
+              { label: "Rabbie's", url: "http://rabbies.com" },
+              { label: "Timberbush", url: "http://timberbush-tours.co.uk" },
+              { label: "Discover Scotland", url: "http://discoverscotlandtours.com" }
+            ]
+          },
+          {
+            time: "Morning",
+            title: "Loch Lomond、Rannoch Moor 与 Glencoe 路线",
+            location: "Scottish Highlands",
+            notes: "这是当天看风景和拍照最集中的一段。",
+            links: [
+              { label: "Rabbie's itinerary", url: "http://rabbies.com" },
+              { label: "Discover Scotland", url: "http://discoverscotlandtours.com" }
+            ]
+          },
+          {
+            time: "12:30-13:30",
+            title: "午餐停留",
+            location: "Fort Augustus / Loch Ness area",
+            notes: "停留时间会随运营方安排略有不同。",
+            links: [{ label: "Rabbie's", url: "http://rabbies.com" }]
+          },
+          {
+            time: "Afternoon",
+            title: "返程并经停 Pitlochry",
+            location: "Highlands -> Perthshire",
+            notes: "返程这一段依然是风景线。",
+            links: [{ label: "Rabbie's itinerary", url: "http://rabbies.com" }]
+          },
+          {
+            time: "~19:15-19:30",
+            title: "返回 Glasgow",
+            location: "Buchanan Bus Station",
+            notes: "Highlands 一日游到这里结束。",
+            links: [
+              { label: "Rabbie's", url: "http://rabbies.com" },
+              { label: "Timberbush", url: "http://timberbush-tours.co.uk" }
+            ]
+          },
+          {
+            time: "Evening",
+            title: "晚餐与休息",
+            location: "Aparthotel Adagio Glasgow Central area",
+            routeOrigin: "Buchanan Bus Station Glasgow",
+            routeDest: "Aparthotel Adagio Glasgow Central",
+            notes: "晚上以恢复体力为主。",
+            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
+          }
+        ]
+      },
+      {
+        id: "0527",
+        short: "05/27",
+        dayLabel: "周三",
+        title: "爱丁堡一日往返",
+        intro: "这一天集中在爱丁堡老城：先看城堡，再顺着 Royal Mile 往下，最后看情况加一个补充景点后返回 Glasgow。",
+        vibe: "节奏快但顺的日程",
+        intensity: "high",
+        window: "07:30-evening",
+        travel: "Glasgow Queen Street -> Edinburgh Waverley",
+        anchor: "爱丁堡城堡",
+        mapQuery: "Edinburgh Castle",
+        featured: {
+          title: "Edinburgh Castle",
+          text: "这是爱丁堡这一天的核心，先从这里开始，后面的 Royal Mile 动线会顺很多。",
+          mapQuery: "Edinburgh Castle",
+          infoUrl: "http://edinburghcastle.scot"
+        },
+        spots: [
+          "Edinburgh Castle",
+          "St Giles' Cathedral",
+          "Mary King's Close",
+          "Holyroodhouse",
+          "Calton Hill"
+        ],
+        items: [
+          {
+            time: "07:30-08:40",
+            title: "乘火车前往 Edinburgh",
+            location: "Glasgow Queen Street -> Edinburgh Waverley",
+            routeOrigin: "Glasgow Queen Street Station",
+            routeDest: "Edinburgh Waverley Station",
+            notes: "建议搭较早的 ScotRail 直达车。",
+            links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "09:00-11:00",
+            title: "Edinburgh Castle",
+            location: "Old Town",
+            routeOrigin: "Edinburgh Waverley Station",
+            routeDest: "Edinburgh Castle",
+            notes: "早点去最合适，作为第一站效率最高。",
+            links: [
+              { label: "官方门票", url: "http://edinburghcastle.scot" },
+              { label: "参考信息", url: "http://abroadwithash.com" }
+            ]
+          },
+          {
+            time: "11:05-11:35",
+            title: "Royal Mile 与圣吉尔斯大教堂",
+            location: "Royal Mile",
+            notes: "这一段适合紧凑地顺路走完。",
+            links: [
+              { label: "Royal Mile guide", url: "http://edinburgh.org" },
+              { label: "St Giles", url: "http://scotlandschurchestrust.org.uk" }
+            ]
+          },
+          {
+            time: "11:40-12:30",
+            title: "The Real Mary King's Close",
+            location: "Royal Mile",
+            notes: "如果想补一个室内历史景点，这里很合适。",
+            links: [{ label: "官方门票", url: "http://realmarykingsclose.com" }]
+          },
+          {
+            time: "12:30-13:15",
+            title: "Lunch",
+            location: "Old Town / Royal Mile",
+            notes: "午餐建议简单快速，别把节奏拖慢。",
+            links: [{ label: "指南", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "13:20-14:30",
+            title: "荷里路德宫",
+            location: "Holyrood",
+            notes: "如果想省时间，只看外观也完全可以。",
+            links: [
+              { label: "门票", url: "http://rct.uk" },
+              { label: "VisitBritain reference", url: "http://visitbritainshop.com" }
+            ]
+          },
+          {
+            time: "14:40-15:10",
+            title: "Scottish Parliament 外观",
+            location: "Holyrood",
+            notes: "离得近，适合顺手看一下。",
+            links: [{ label: "Parliament", url: "http://parliament.scot" }]
+          },
+          {
+            time: "15:20-16:10",
+            title: "Calton Hill",
+            location: "Edinburgh",
+            notes: "很轻松的制高点，但视野回报不错。",
+            links: [{ label: "Info", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "16:20-17:20",
+            title: "National Museum of Scotland 或 Victoria Street",
+            location: "Old Town",
+            notes: "如果还有体力，可以从这两个里挑一个加进去。",
+            links: [{ label: "Museum", url: "http://nms.ac.uk" }]
+          },
+          {
+            time: "17:30-18:30",
+            title: "早点吃晚饭",
+            location: "Edinburgh city centre",
+            notes: "返程前留一个弹性的晚餐时间。",
+            links: [{ label: "美食指南", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "19:00-20:15",
+            title: "乘火车返回 Glasgow",
+            location: "Edinburgh Waverley -> Glasgow Queen Street",
+            routeOrigin: "Edinburgh Waverley Station",
+            routeDest: "Glasgow Queen Street Station",
+            notes: "跑完一整天后返回 Glasgow。",
+            links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "Evening",
+            title: "简单整理并休息",
+            location: "Aparthotel Adagio Glasgow Central",
+            routeOrigin: "Glasgow Queen Street Station",
+            routeDest: "Aparthotel Adagio Glasgow Central",
+            notes: "给第二天报告保留足够体力。",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0528",
+        short: "05/28",
+        dayLabel: "周四",
+        title: "Glasgow 市区 + 口头报告日",
+        intro: "这一天控制得比较紧：上午先看一组历史点位，再看一个博物馆，之后切到口头报告模式，晚上收得平稳一点。",
+        vibe: "报告日 + 克制观光",
+        intensity: "medium",
+        window: "08:30-21:00",
+        travel: "East End -> West End -> 会场 -> 市中心",
+        anchor: "Kelvingrove 与口头报告",
+        mapQuery: "Kelvingrove Art Gallery and Museum",
+        featured: {
+          title: "Kelvingrove Art Gallery and Museum",
+          text: "如果 Glasgow 上午只能选一个馆，这里最值得，而且能和下午会议形成很好的节奏对比。",
+          mapQuery: "Kelvingrove Art Gallery and Museum",
+          infoUrl: "http://glasgowlife.org.uk"
+        },
+        spots: [
+          "Glasgow Cathedral",
+          "Necropolis",
+          "St Mungo Museum",
+          "Kelvingrove",
+          "University of Glasgow"
+        ],
+        items: [
+          {
+            time: "08:30-09:00",
+            title: "早餐",
+            location: "Aparthotel Adagio Glasgow Central / nearby cafe",
+            notes: "早上轻一点、利落一点就好。",
+            links: []
+          },
+          {
+            time: "09:00-09:45",
+            title: "Glasgow Cathedral",
+            location: "East End",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Glasgow Cathedral",
+            notes: "很适合作为上午最先看的点。",
+            links: [{ label: "官网 info", url: "http://historicenvironment.scot" }]
+          },
+          {
+            time: "09:45-10:15",
+            title: "Necropolis 观景点",
+            location: "Near Cathedral",
+            notes: "适合短暂停留看个全景。",
+            links: [{ label: "参考信息", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "10:20-11:00",
+            title: "St Mungo Museum",
+            location: "Cathedral precinct",
+            notes: "馆不大，和教堂连着看最顺。",
+            links: [{ label: "参考信息", url: "http://whichmuseum.com" }]
+          },
+          {
+            time: "11:00-11:30",
+            title: "转去 West End",
+            location: "East End -> Kelvingrove area",
+            routeOrigin: "St Mungo Museum of Religious Life and Art",
+            routeDest: "Kelvingrove Art Gallery and Museum",
+            notes: "可以按当时节奏选打车、地铁或公交。",
+            links: [{ label: "交通信息", url: "http://spt.co.uk" }]
+          },
+          {
+            time: "11:30-12:45",
+            title: "Kelvingrove Art Gallery and Museum",
+            location: "West End",
+            notes: "如果当天只能看一个博物馆，这里最值得。",
+            links: [
+              { label: "官网", url: "http://glasgowlife.org.uk" },
+              { label: "参考信息", url: "http://fullsuitcase.com" }
+            ]
+          },
+          {
+            time: "12:45-13:15",
+            title: "简短午餐",
+            location: "West End / venue cafe / nearby",
+            notes: "午餐后记得给报告留出缓冲。",
+            links: []
+          },
+          {
+            time: "13:15-14:00",
+            title: "前往会场",
+            location: "Kelvingrove area -> conference venue",
+            routeOrigin: "Kelvingrove Art Gallery and Museum",
+            routeDest: "SEC Centre Glasgow",
+            notes: "去会场后给自己留一点安顿和整理状态的时间。",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "14:25-15:55",
+            title: "口头报告环节",
+            location: "Alsh 2",
+            notes: "WS25-S1, 10th paper, 8 minutes.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "16:15-17:15",
+            title: "University of Glasgow / Cloisters",
+            location: "West End",
+            routeOrigin: "SEC Centre Glasgow",
+            routeDest: "University of Glasgow",
+            notes: "如果报告后还有体力，这里是最适合补看的建筑点。",
+            links: [
+              { label: "访问信息", url: "http://gla.ac.uk" },
+              { label: "参考信息", url: "http://fullsuitcase.com" }
+            ]
+          },
+          {
+            time: "17:20-18:00",
+            title: "Botanic Gardens 或河边散步",
+            location: "West End",
+            notes: "适合作为收一收节奏的散步安排。",
+            links: [{ label: "参考信息", url: "http://fullsuitcase.com" }]
+          },
+          {
+            time: "18:30-20:00",
+            title: "晚餐与收尾",
+            location: "Merchant City / city centre",
+            routeOrigin: "University of Glasgow",
+            routeDest: "Merchant City Glasgow",
+            notes: "很适合作为 Glasgow 最后一晚的收尾。",
+            links: [
+              { label: "Merchant City", url: "http://fullsuitcase.com" },
+              { label: "城市指南", url: "http://peoplemakeglasgow.com" }
+            ]
+          },
+          {
+            time: "20:00-21:00",
+            title: "整理行李准备离开",
+            location: "Aparthotel Adagio Glasgow Central",
+            routeOrigin: "Merchant City Glasgow",
+            routeDest: "Aparthotel Adagio Glasgow Central",
+            notes: "为第二天早退房做准备。",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0529",
+        short: "05/29",
+        dayLabel: "周五",
+        title: "从 Glasgow 返程",
+        intro: "这一天很简单：早退房，直接去 Glasgow Airport，然后经 Frankfurt 转机。",
+        vibe: "返程日",
+        intensity: "low",
+        window: "06:30-15:40",
+        travel: "酒店 -> GLA -> FRA",
+        anchor: "Glasgow Airport 出发",
+        mapQuery: "Glasgow Airport",
+        featured: {
+          title: "Glasgow Airport",
+          text: "这一天几乎没有观光内容，关键就是按机场时间线顺顺利利完成出发。",
+          mapQuery: "Glasgow Airport",
+          infoUrl: "http://glasgowairport.com"
+        },
+        spots: [
+          "Aparthotel Adagio Glasgow Central",
+          "Glasgow Airport",
+          "Frankfurt 机场"
+        ],
+        items: [
+          {
+            time: "06:30",
+            title: "酒店退房",
+            location: "Aparthotel Adagio Glasgow Central",
+            notes: "这是个偏早的出发早晨。",
+            links: [{ label: "酒店", url: "https://all.accor.com/hotel/B8A2/index.en.shtml" }]
+          },
+          {
+            time: "06:30-07:15",
+            title: "前往 Glasgow Airport",
+            location: "Aparthotel Adagio Glasgow Central -> Glasgow Airport",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Glasgow Airport",
+            notes: "带着行李从酒店直接去机场即可。",
+            links: [{ label: "机场", url: "http://glasgowairport.com" }]
+          },
+          {
+            time: "09:25",
+            title: "从 Glasgow 起飞",
+            location: "GLA",
+            notes: "LH973.",
+            links: [{ label: "机场", url: "http://glasgowairport.com" }]
+          },
+          {
+            time: "12:25-15:40",
+            title: "Frankfurt 转机",
+            location: "Frankfurt 机场",
+            notes: "在登上 LH728 之前完成转机。",
+            links: [{ label: "Frankfurt 机场", url: "http://frankfurt-airport.com" }]
+          }
+        ]
+      },
+      {
+        id: "0530",
+        short: "05/30",
+        dayLabel: "周六",
+        title: "回到上海",
+        intro: "整趟行程到这里正式收尾：经过 Frankfurt 的夜航后，抵达上海。",
+        vibe: "回程到家",
+        intensity: "low",
+        window: "09:15",
+        travel: "Frankfurt -> 上海",
+        anchor: "浦东机场 T2",
+        mapQuery: "Shanghai Pudong International 机场 Terminal 2",
+        featured: {
+          title: "浦东机场",
+          text: "行程在这里干净利落地结束：落地浦东机场 T2。",
+          mapQuery: "Shanghai Pudong International 机场 Terminal 2",
+          infoUrl: "http://shanghaiairport.com"
+        },
+        spots: [
+          "Shanghai Pudong International 机场 Terminal 2"
+        ],
+        items: [
+          {
+            time: "09:15",
+            title: "抵达上海",
+            location: "PVG T2",
+            notes: "LH728 抵达浦东机场。",
+            links: [{ label: "浦东机场", url: "http://shanghaiairport.com" }]
+          }
+        ]
+      }
+    ];
+
+    function mapsUrl(query) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    }
+
+    function dirUrl(origin, destination) {
+      return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
+    }
+
+    function addLocationContext(loc, day) {
+      const raw = loc.trim();
+      const lower = raw.toLowerCase();
+
+      if (
+        lower.includes("london") ||
+        lower.includes("heathrow") ||
+        lower.includes("southwark") ||
+        lower.includes("bankside") ||
+        lower.includes("covent garden") ||
+        lower.includes("soho") ||
+        lower.includes("westminster") ||
+        lower.includes("tower") ||
+        lower.includes("borough") ||
+        lower.includes("glasgow") ||
+        lower.includes("edinburgh") ||
+        lower.includes("york") ||
+        lower.includes("frankfurt") ||
+        lower.includes("shanghai") ||
+        lower.includes("pvg") ||
+        lower.includes("uk")
+      ) {
+        return raw;
+      }
+
+      if (day.id === "0523" || day.id === "0524" || day.id === "0525") return `${raw}, London, UK`;
+      if (day.id === "0527") return `${raw}, Edinburgh, UK`;
+      if (day.id === "0530") return `${raw}, Shanghai, China`;
+      return `${raw}, Glasgow, UK`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    const dayTabs = document.getElementById("dayTabs");
+    const dayTitle = document.getElementById("dayTitle");
+    const dayIntro = document.getElementById("dayIntro");
+    const dayMapButton = document.getElementById("dayMapButton");
+    const summaryGrid = document.getElementById("summaryGrid");
+    const featuredTitle = document.getElementById("featuredTitle");
+    const featuredText = document.getElementById("featuredText");
+    const featuredTags = document.getElementById("featuredTags");
+    const featuredMap = document.getElementById("featuredMap");
+    const featuredInfo = document.getElementById("featuredInfo");
+    const timeline = document.getElementById("timeline");
+    const bookingList = document.getElementById("bookingList");
+    const noteList = document.getElementById("noteList");
+    const mapJumpList = document.getElementById("mapJumpList");
+    const featuredCard = document.getElementById("featuredCard");
+    const jumpFeatured = document.getElementById("jumpFeatured");
+
+    function renderTabs(activeId) {
+      dayTabs.innerHTML = itinerary.map((day) => `
+        <button class="day-tab ${day.id === activeId ? "active" : ""}" type="button" data-day="${day.id}">
+          <strong>${day.short} | ${escapeHtml(day.dayLabel)}</strong>
+          <span>${escapeHtml(day.title)}</span>
+          <span>${escapeHtml(day.window)}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderLists() {
+      bookingList.innerHTML = bookingPriorities.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    }
+
+    function renderDay(dayId) {
+      const day = itinerary.find((entry) => entry.id === dayId) || itinerary[0];
+
+      renderTabs(day.id);
+      dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
+      dayIntro.textContent = day.intro;
+      dayMapButton.href = mapsUrl(day.mapQuery);
+
+      const styleCopy =
+        day.intensity === "high"
+          ? "这一天安排较紧，交通和换乘时间最好都按保守一点来估计。"
+          : day.intensity === "medium"
+            ? "这一天整体算平衡，但关键节点如果能按时推进，体验会更顺。"
+            : "这一天重点是顺利移动，不是拼命堆景点。";
+
+      summaryGrid.innerHTML = `
+        <article class="summary-card fade-in">
+          <h3>当天节奏</h3>
+          <div class="intensity ${day.intensity === "low" ? "low" : ""}">${escapeHtml(day.vibe)}</div>
+          <p>${escapeHtml(styleCopy)}</p>
+        </article>
+        <article class="summary-card fade-in">
+          <h3>时间范围</h3>
+          <strong>${escapeHtml(day.window)}</strong>
+          <p>${escapeHtml(day.travel)}</p>
+        </article>
+        <article class="summary-card fade-in">
+          <h3>核心安排</h3>
+          <strong>${escapeHtml(day.anchor)}</strong>
+          <p>如果只想抓住这一天最重要的主线，看这里就够了。</p>
+        </article>
+      `;
+
+      featuredTitle.textContent = day.featured.title;
+      featuredText.textContent = day.featured.text;
+      featuredMap.href = mapsUrl(day.featured.mapQuery);
+      featuredInfo.href = day.featured.infoUrl;
+      featuredTags.innerHTML = day.spots.map((spot) => `<span class="meta-tag">${escapeHtml(spot)}</span>`).join("");
+
+      timeline.innerHTML = day.items.map((item, index) => {
+        // --- Calculate Dynamic Google 地图 Directions ---
+        let dirLinkHtml = '';
+        const currLocRaw = item.location;
+
+        let startLoc = '';
+        let endLoc = '';
+
+        // 1. 如果 JSON 数据里定义了精确的底层映射，直接无脑信任它
+        if (item.routeOrigin && item.routeDest) {
+          startLoc = item.routeOrigin;
+          endLoc = item.routeDest;
+        } 
+        // 2. 否则，如果是个带箭头的行程点，自动解析两边
+        else if (currLocRaw.includes('->')) {
+          const parts = currLocRaw.split('->');
+          startLoc = addLocationContext(parts[0].split('/')[0].trim(), day);
+          endLoc = addLocationContext(parts[parts.length - 1].split('/')[0].trim(), day);
+        } 
+        // 3. 最后，自动继承上一步的终点作为当前起点
+        else if (index > 0) {
+          const prevItem = day.items[index - 1];
+          let prevEndLoc = '';
+          
+          if (prevItem.routeDest) {
+            prevEndLoc = prevItem.routeDest; // 上一步如果有精确终点，继承它
+          } else if (prevItem.location.includes('->')) {
+            const parts = prevItem.location.split('->');
+            prevEndLoc = addLocationContext(parts[parts.length - 1].split('/')[0].trim(), day);
+          } else {
+            prevEndLoc = addLocationContext(prevItem.location.split('/')[0].trim(), day);
+          }
+          
+          const currDest = addLocationContext(currLocRaw.split('/')[0].trim(), day);
+          
+          startLoc = prevEndLoc;
+          endLoc = currDest;
+        }
+
+        // 只有起点终点不同，才显示导航按钮
+        if (startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase()) {
+          const directionsUrl = dirUrl(startLoc, endLoc);
+          dirLinkHtml = `<a class="link-chip" href="${directionsUrl}" target="_blank" rel="noreferrer">路线</a>`;
+        }
+        // -------------------------------------------------
+
+        return `
+        <article class="timeline-item fade-in">
+          <div class="time">${escapeHtml(item.time)}</div>
+          <div class="timeline-body">
+            <h4>${escapeHtml(item.title)}</h4>
+            <div class="place">${escapeHtml(item.location)}</div>
+            <p>${escapeHtml(item.notes)}</p>
+            <div class="link-row">
+              <a class="link-chip" href="${mapsUrl(addLocationContext(item.location.split("/")[0].trim(), day))}" target="_blank" rel="noreferrer">Google 地图</a>
+              ${dirLinkHtml}
+              ${item.links.map((link) => `<a class="link-chip" href="${link.url}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
+            </div>
+          </div>
+        </article>
+        `;
+      }).join("");
+
+      mapJumpList.innerHTML = day.spots.map((spot) => `
+        <a class="link-chip" href="${mapsUrl(spot)}" target="_blank" rel="noreferrer">${escapeHtml(spot)}</a>
+      `).join("");
+
+      featuredCard.classList.remove("fade-in");
+      void featuredCard.offsetWidth;
+      featuredCard.classList.add("fade-in");
+    }
+
+    dayTabs.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-day]");
+      if (!button) return;
+      renderDay(button.dataset.day);
+    });
+
+    jumpFeatured.addEventListener("click", () => {
+      featuredCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    renderLists();
+    renderDay(itinerary[0].id);
+  </script>
+</body>
+</html>
+
