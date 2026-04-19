@@ -700,7 +700,7 @@
           <div>
             <h2 id="dayTitle">05/23｜抵达 Glasgow</h2>
             <p id="dayIntro">
-              这是抵达后的缓冲日，核心就是顺利进城、入住、吃顿饭，然后早点休息。
+              这是抵达后的缓冲日，核心就是顺利进城、入住。
             </p>
           </div>
           <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
@@ -922,7 +922,7 @@
             time: "After 19:15",
             title: "晚餐",
             location: "Glasgow",
-            notes: "这顿饭以恢复体力为主，不必安排太重。",
+            notes: " ",
             links: [{ label: "美食指南", url: "http://wanderlustchloe.com" }]
           }
         ]
@@ -932,7 +932,7 @@
         short: "05/25",
         dayLabel: "周一",
         title: "Glasgow 市区 + 海报展示日",
-        intro: "上午先看一段 Glasgow 的历史城区",
+        intro: "上午先看 Glasgow 的历史城区，随后顺着市中心和 Clyde 河一带往会场走，不再回酒店准备海报展示。",
         vibe: "城市观光 + 会议",
         intensity: "medium",
         window: "09:30-evening",
@@ -945,49 +945,84 @@
           mapQuery: "Glasgow Cathedral",
           infoUrl: "http://historicenvironment.scot"
         },
-        spots: ["Glasgow Cathedral", "Necropolis", "St Mungo Museum", "SEC"],
+        spots: ["Glasgow Cathedral", "Necropolis", "St Mungo Museum", "George Square", "Gallery of Modern Art", "SEC"],
         items: [
           {
-            time: "09:30-10:15",
+            time: "09:30-10:10",
             title: "Glasgow Cathedral",
             location: "East End",
             notes: "适合作为第一站，是理解这座城市历史的起点。",
             links: [{ label: "官网", url: "http://historicenvironment.scot" }]
           },
           {
-            time: "10:15-11:00",
+            time: "10:10-10:40",
             title: "Necropolis",
             location: "Near Cathedral",
             notes: "可以顺路上去看视野，再简单走一圈。",
             links: [{ label: "指南", url: "http://peoplemakeglasgow.com" }]
           },
           {
-            time: "11:00-12:00",
+            time: "10:40-11:20",
             title: "St Mungo Museum",
             location: "Cathedral precinct",
             notes: "馆不大，和教堂一起看很合适。",
             links: [{ label: "参考信息", url: "http://glasgowlife.org.uk" }]
           },
           {
-            time: "12:00-13:00",
+            time: "11:20-11:40",
+            title: "转去市中心",
+            location: "East End -> City Centre",
+            notes: "坐公交或打车前往 George Square 一带。",
+            links: [
+              { label: "交通信息", url: "http://spt.co.uk" },
+              { label: "城市指南", url: "http://peoplemakeglasgow.com" }
+            ]
+          },
+          {
+            time: "11:40-12:10",
+            title: "George Square + City Chambers 外观",
+            location: "City Centre",
+            notes: "时间不长，但属于经典市中心地标。",
+            links: [{ label: "指南", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "12:10-12:40",
+            title: "Gallery of Modern Art (GoMA)",
+            location: "Royal Exchange Square",
+            notes: "市中心一个很经典的免费点位。",
+            links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "12:40-13:30",
             title: "午餐",
-            location: "High Street / nearby",
-            notes: "吃得简单一点就好。",
-            links: []
+            location: "City Centre",
+            notes: "可以在 Buchanan Street 或 St Vincent Place 一带解决。",
+            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
           },
           {
-            time: "13:00-15:30",
-            title: "回酒店准备海报展示",
-            location: "Aparthotel Adagio Glasgow Central",
-            notes: "回去换装、整理材料，顺便稍微休息一下。",
-            links: []
+            time: "13:30-15:00",
+            title: "Riverside Museum / Glasgow Science Centre / Clydeside Distillery 三选一",
+            location: "Clyde Riverside",
+            notes: "按兴趣选一个作为下午主行程，然后顺势往会场方向走。",
+            links: [
+              { label: "Riverside Museum", url: "http://glasgowlife.org.uk" },
+              { label: "Science Centre", url: "http://glasgowsciencecentre.org" },
+              { label: "Clydeside Distillery", url: "http://theclydeside.com" }
+            ]
           },
           {
-            time: "15:30-16:30",
-            title: "前往会场",
-            location: "SEC / conference venue",
-            notes: "给布置和熟悉现场留一点余量。",
+            time: "15:00-15:15",
+            title: "转去会场附近",
+            location: "Riverside -> SEC",
+            notes: "到会场区域的移动距离很短。",
             links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "15:15-16:30",
+            title: "沿 Clyde 河边走走 / 在 Finnieston 喝杯咖啡",
+            location: "SEC / Finnieston",
+            notes: " ",
+            links: [{ label: "区域指南", url: "http://peoplemakeglasgow.com" }]
           },
           {
             time: "16:45-17:30",
@@ -1007,7 +1042,7 @@
             time: "Evening",
             title: "早点休息",
             location: "Aparthotel Adagio Glasgow Central",
-            notes: "第二天要早起去 Highlands，今晚尽量早点睡。",
+            notes: "第二天要早起去 Highlands",
             links: []
           }
         ]
@@ -1141,14 +1176,14 @@
             time: "15:00-16:00",
             title: "National Railway Museum",
             location: "Near York station",
-            notes: "如果体力还可以，这是返程前很不错的加选点。",
+            notes: "这是返程前很不错的加选点。",
             links: [{ label: "官网", url: "http://railwaymuseum.org.uk" }]
           },
           {
             time: "16:00-16:30",
             title: "Museum Gardens",
             location: "York",
-            notes: "如果时间和体力都允许，可以顺路停一下。",
+            notes: "可以顺路停一下。",
             links: [{ label: "城市指南", url: "http://visityork.org" }]
           },
           {
@@ -1247,7 +1282,7 @@
             time: "16:00-17:00",
             title: "Riverside Museum 或河边放松",
             location: "Near Clyde / West End",
-            notes: "报告结束后如果还有体力，可以二选一安排。",
+            notes: "可以二选一安排。",
             links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
           },
           {
