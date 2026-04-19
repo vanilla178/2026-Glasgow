@@ -652,9 +652,9 @@
     <section class="hero">
       <div class="hero-copy">
         <div class="eyebrow">英国行程</div>
-        <h1>Plan A｜以 Glasgow 为据点</h1>
+        <h1>Plan A｜ Glasgow</h1>
         <p>
-          这是一版适合快速浏览的行程页面：可以按日期切换、顺着时间线查看安排，也能一键跳到 Google 地图。重点不是把信息堆满，而是让每天的移动节奏一眼看清。
+          苏格兰地区为主，包含格拉斯哥、爱丁堡、苏格兰高地、约克（也可替换成温特米尔湖区）
         </p>
         <div class="hero-strap">
           <div class="hero-chip">05/23-05/28</div>
@@ -665,12 +665,12 @@
       <aside class="hero-panel">
         <h2>每日概览</h2>
         <ul>
-          <li>05/23｜抵达 Glasgow，入住、吃饭、早点休息</li>
+          <li>05/23｜抵达 Glasgow</li>
           <li>05/24｜爱丁堡城堡、Royal Mile、Calton Hill</li>
-          <li>05/25｜Glasgow Cathedral 一带 + 海报展示</li>
-          <li>05/26｜Highlands 一日游</li>
+          <li>05/25｜Glasgow Cathedral 一带 + 参会海报展示</li>
+          <li>05/26｜苏格兰高地 一日游</li>
           <li>05/27｜约克大教堂与老城漫步</li>
-          <li>05/28｜Kelvingrove + 口头报告</li>
+          <li>05/28｜Kelvingrove + 参会报告</li>
         </ul>
       </aside>
     </section>
@@ -691,7 +691,7 @@
         <h3>日期切换</h3>
         <div class="day-tab-list" id="dayTabs"></div>
         <div class="mini-note">
-          <strong>阅读提示：</strong>建议先切换日期，快速比较每天的节奏。像 York 和 Highlands 这种交通较重的一天，最好都多留一点机动时间。
+          <strong>阅读提示：</strong>可切换日期预览每日安排
         </div>
       </aside>
 
@@ -758,8 +758,7 @@
     ];
 
     const dayNotes = [
-      "York 这一趟是可行的，但来回火车时间比较长，建议只背轻便小包。",
-      "05/28 的观光安排故意压得比较紧凑，主要是为了给口头报告留出体力和余量。",
+      "York 来回火车时间比较长，建议只背轻便小包。",
       "买火车票前可以先对比 Avanti、ScotRail 和 Trainline。",
       "Highlands 一日游可以同时比较 Rabbie's、Timberbush 和 Discover Scotland Tours。"
     ];
@@ -770,7 +769,7 @@
         short: "05/23",
         dayLabel: "周六",
         title: "抵达 Glasgow",
-        intro: "这一天不追求塞景点，重点是顺利进城、在住处附近吃饭，并在长途飞行后尽快休息。",
+        intro: " ",
         vibe: "轻松落地",
         intensity: "low",
         window: "18:45 onward",
@@ -779,7 +778,7 @@
         mapQuery: "Glasgow city centre",
         featured: {
           title: "Merchant City",
-          text: "很适合作为抵达当晚的活动范围：位置居中、步行友好，也能在正式展开行程前先缓一缓。",
+          text: "很适合作为抵达当晚的活动范围：位置居中、步行友好",
           mapQuery: "Merchant City Glasgow",
           infoUrl: "https://peoplemakeglasgow.com"
         },
@@ -807,7 +806,7 @@
             location: "Merchant City / Aparthotel Adagio Glasgow Central area",
             routeOrigin: "Aparthotel Adagio Glasgow Central",
             routeDest: "Merchant City, Glasgow",
-            notes: "考虑到长途飞行，当晚建议只安排轻松活动。",
+            notes: " ",
             links: [
               { label: "VisitScotland", url: "http://visitscotland.com" },
               { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
@@ -817,7 +816,7 @@
             time: "21:30 onward",
             title: "休息",
             location: "Aparthotel Adagio Glasgow Central",
-            notes: "建议早点睡。",
+            notes: " ",
             links: []
           }
         ]
@@ -933,7 +932,7 @@
         short: "05/25",
         dayLabel: "周一",
         title: "Glasgow 市区 + 海报展示日",
-        intro: "上午先看一段 Glasgow 的历史城区，随后回酒店整理状态，再去会场完成海报展示。",
+        intro: "上午先看一段 Glasgow 的历史城区",
         vibe: "城市观光 + 会议",
         intensity: "medium",
         window: "09:30-evening",
@@ -1001,7 +1000,7 @@
             time: "17:30-19:00",
             title: "晚餐 / 放松",
             location: "Glasgow",
-            notes: "晚上不要再排太重的活动。",
+            notes: " ",
             links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
           },
           {
@@ -1037,7 +1036,7 @@
             time: "06:45-07:30",
             title: "前往 Buchanan Bus Station",
             location: "Glasgow",
-            notes: "建议预留时间，并带上零食和保暖层。",
+            notes: "建议预留时间。",
             links: [{ label: "汽车站", url: "http://spt.co.uk" }]
           },
           {
@@ -1072,7 +1071,7 @@
             time: "20:00-21:00",
             title: "晚餐",
             location: "Glasgow",
-            notes: "晚上以恢复体力为主。",
+            notes: " ",
             links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
           }
         ]
@@ -1189,7 +1188,7 @@
         mapQuery: "Kelvingrove Art Gallery and Museum",
         featured: {
           title: "Kelvingrove Art Gallery and Museum",
-          text: "这很适合作为报告日上午的重点：内容丰富、视觉也好，关键是距离和节奏都不至于把人拖累。",
+          text: "这很适合作为报告日上午的重点：内容丰富、视觉也好。",
           mapQuery: "Kelvingrove Art Gallery and Museum",
           infoUrl: "http://glasgowlife.org.uk"
         },
@@ -1361,7 +1360,7 @@
         <article class="summary-card fade-in">
           <h3>当天节奏</h3>
           <div class="intensity ${day.intensity === "low" ? "low" : ""}">${day.vibe}</div>
-          <p>${escapeHtml(day.intensity === "high" ? "这是强度较高的一天，最好给交通和排队预留余量，不要再额外塞太多项目。" : day.intensity === "medium" ? "这一天整体张弛适中，但前后衔接最好还是按计划走，体验会更顺。" : "这一天节奏相对轻松，更适合恢复体力或为后面的重点安排留出缓冲。" )}</p>
+          <p>${escapeHtml(day.intensity === "high" ? "这是强度较高的一天，最好给交通和排队预留余量，不要再额外塞太多项目。" : day.intensity === "medium" ? "这一天整体张弛适中，但前后衔接最好还是按计划走，体验会更顺。" : "这一天节奏相对轻松" )}</p>
         </article>
         <article class="summary-card fade-in">
           <h3>时间范围</h3>
