@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UK Travel Plan A | Glasgow 05/23-05/28</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --paper: rgba(255, 250, 244, 0.78);
+      --paper-strong: rgba(255, 250, 244, 0.94);
+      --ink: #1f2a33;
+      --muted: #5e6a73;
+      --line: rgba(31, 42, 51, 0.12);
+      --brand: #0f6c7b;
+      --brand-2: #c96f41;
+      --brand-3: #254f6f;
+      --good: #3f7853;
+      --warn: #a65828;
+      --shadow: 0 24px 80px rgba(25, 36, 46, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max: 1320px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(201, 111, 65, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(15, 108, 123, 0.16), transparent 28%),
+        linear-gradient(180deg, #efe5d8 0%, #f7f1e8 38%, #f4efe6 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 92%);
+      opacity: 0.35;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 22px auto 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      background:
+        linear-gradient(125deg, rgba(20, 44, 57, 0.86), rgba(16, 83, 99, 0.58)),
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/00_104_0403_Glasgow_-_Rathaus.jpg/1200px-00_104_0403_Glasgow_-_Rathaus.jpg") center/cover no-repeat;
+      color: #fff8ef;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% 30%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(236, 205, 166, 0.34), transparent 60%);
+      filter: blur(12px);
+    }
+
+    .hero-copy,
+    .hero-panel {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 248, 239, 0.24);
+      background: rgba(255, 248, 239, 0.08);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(2.7rem, 5vw, 4.8rem);
+      line-height: 0.96;
+      font-weight: 700;
+      max-width: 8ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 56ch;
+      color: rgba(255, 248, 239, 0.88);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .hero-stats {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      border-radius: 20px;
+      padding: 16px;
+      background: rgba(255, 248, 239, 0.12);
+      border: 1px solid rgba(255, 248, 239, 0.16);
+      backdrop-filter: blur(10px);
+    }
+
+    .stat .label {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 248, 239, 0.66);
+      margin-bottom: 8px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.12rem;
+      line-height: 1.3;
+    }
+
+    .hero-panel {
+      align-self: end;
+      border-radius: 28px;
+      padding: 22px;
+      background: rgba(255, 250, 244, 0.12);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 248, 239, 0.16);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+    }
+
+    .hero-panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: rgba(255, 248, 239, 0.9);
+      line-height: 1.7;
+    }
+
+    .toolbar {
+      margin: 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pill-row,
+    .quick-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill,
+    .ghost-btn,
+    .map-btn,
+    .link-chip,
+    .day-tab {
+      border: 1px solid transparent;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .pill {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      border-color: rgba(31, 42, 51, 0.08);
+      color: var(--muted);
+      font-size: 0.95rem;
+      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+    }
+
+    .pill strong {
+      color: var(--ink);
+    }
+
+    .ghost-btn,
+    .map-btn,
+    .link-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.88);
+      border-color: rgba(31, 42, 51, 0.08);
+      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    .ghost-btn:hover,
+    .map-btn:hover,
+    .link-chip:hover,
+    .day-tab:hover {
+      transform: translateY(-2px);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .side-panel,
+    .main-panel {
+      background: var(--paper);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .side-panel {
+      padding: 24px;
+      position: sticky;
+      top: 18px;
+    }
+
+    .side-panel h3,
+    .main-panel h3,
+    .summary-card h3,
+    .gallery-card h3,
+    .day-card h3 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .day-tab-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .day-tab {
+      width: 100%;
+      text-align: left;
+      border-radius: 18px;
+      padding: 16px;
+      border-color: rgba(31, 42, 51, 0.08);
+      background: rgba(255, 250, 244, 0.72);
+      cursor: pointer;
+    }
+
+    .day-tab.active {
+      background: linear-gradient(135deg, rgba(15, 108, 123, 0.14), rgba(201, 111, 65, 0.18));
+      border-color: rgba(15, 108, 123, 0.24);
+      box-shadow: 0 14px 28px rgba(15, 108, 123, 0.12);
+    }
+
+    .day-tab strong,
+    .day-tab span {
+      display: block;
+    }
+
+    .day-tab strong {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .day-tab span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .mini-note {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(15, 108, 123, 0.08);
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .mini-note strong {
+      color: var(--ink);
+    }
+
+    .main-panel {
+      padding: 24px;
+    }
+
+    .panel-head {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .panel-head h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.02;
+    }
+
+    .panel-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 62ch;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .summary-card,
+    .gallery-card,
+    .day-card,
+    .timeline-item,
+    .booking-card {
+      background: var(--paper-strong);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px rgba(31, 42, 51, 0.07);
+    }
+
+    .summary-card {
+      padding: 18px;
+      min-height: 150px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 0.95rem;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .gallery-media {
+      position: relative;
+      min-height: 320px;
+      background: #d0dde2;
+    }
+
+    .gallery-media img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(18, 29, 37, 0.05), rgba(18, 29, 37, 0.82));
+      color: #fff9f3;
+    }
+
+    .gallery-overlay h3 {
+      color: rgba(255, 249, 243, 0.72);
+      margin-bottom: 8px;
+    }
+
+    .gallery-overlay h4 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    .gallery-overlay p {
+      margin: 0;
+      max-width: 62ch;
+      color: rgba(255, 249, 243, 0.88);
+      line-height: 1.7;
+    }
+
+    .gallery-meta {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: rgba(37, 79, 111, 0.08);
+      color: var(--brand-3);
+      font-size: 0.9rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.82fr);
+      gap: 18px;
+    }
+
+    .day-card {
+      padding: 22px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 88px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(15, 108, 123, 0.24), rgba(201, 111, 65, 0.24));
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 82px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 0 7px rgba(15, 108, 123, 0.08);
+    }
+
+    .time {
+      font-size: 0.9rem;
+      color: var(--brand-3);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .timeline-body {
+      padding-left: 20px;
+    }
+
+    .timeline-body h4 {
+      margin: 0 0 6px;
+      font-size: 1.12rem;
+    }
+
+    .timeline-body .place {
+      margin: 0 0 8px;
+      font-size: 0.96rem;
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .timeline-body p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 0.95rem;
+    }
+
+    .link-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .link-chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      background: rgba(37, 79, 111, 0.08);
+      border-color: rgba(37, 79, 111, 0.1);
+      color: var(--brand-3);
+      box-shadow: none;
+    }
+
+    .aside-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .booking-card {
+      padding: 18px;
+    }
+
+    .booking-card ol,
+    .booking-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .booking-card li + li {
+      margin-top: 4px;
+    }
+
+    .intensity {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      background: rgba(201, 111, 65, 0.12);
+      color: var(--warn);
+      margin-bottom: 12px;
+    }
+
+    .intensity.low {
+      background: rgba(63, 120, 83, 0.12);
+      color: var(--good);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .fade-in {
+      animation: rise 380ms ease;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1120px) {
+      .hero,
+      .layout,
+      .content-grid,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        position: static;
+      }
+
+      .timeline::before {
+        left: 74px;
+      }
+
+      .timeline-item::before {
+        left: 68px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(var(--max), calc(100% - 18px));
+        margin-top: 10px;
+      }
+
+      .hero,
+      .main-panel,
+      .side-panel {
+        padding: 20px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-head {
+        flex-direction: column;
+      }
+
+      .timeline::before {
+        left: 60px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 60px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .timeline-item::before {
+        left: 54px;
+      }
+
+      .timeline-body {
+        padding-left: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">UK Travel Plan A | Glasgow Base</div>
+        <h1>See the trip at a glance.</h1>
+        <p>
+          A visual, interactive itinerary for 05/23-05/28 built from your Notion page.
+          The page is designed to make each day's rhythm obvious: when to move, where to go,
+          what needs booking, and which classic sight is worth mentally anchoring the day around.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="label">Trip Shape</span>
+            <strong>Glasgow stay with 3 day trips and 2 conference-focused days</strong>
+          </div>
+          <div class="stat">
+            <span class="label">Pace</span>
+            <strong>Edinburgh, Highlands, York, and a presentation-day finale</strong>
+          </div>
+          <div class="stat">
+            <span class="label">Maps Ready</span>
+            <strong>Each featured sight and major stop can open in Google Maps</strong>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>Journey arc</h2>
+        <ul>
+          <li>05/23 Arrival and easy evening in Glasgow</li>
+          <li>05/24 Edinburgh day trip along the Royal Mile</li>
+          <li>05/25 Historic Glasgow plus poster session</li>
+          <li>05/26 Highlands / Loch Ness / Glencoe tour</li>
+          <li>05/27 Long York railway day</li>
+          <li>05/28 Presentation day with a celebratory final evening</li>
+        </ul>
+      </aside>
+    </section>
+
+    <div class="toolbar">
+      <div class="pill-row">
+        <div class="pill"><strong>Dates:</strong> 05/23-05/28</div>
+        <div class="pill"><strong>Timezone:</strong> Local time (BST)</div>
+        <div class="pill"><strong>Base city:</strong> Glasgow</div>
+      </div>
+      <div class="quick-actions">
+        <a class="ghost-btn" href="https://www.notion.so/34750147703a80319237f014839096d7" target="_blank" rel="noreferrer">Open Notion Source</a>
+        <button class="ghost-btn" type="button" id="jumpFeatured">Jump to featured sight</button>
+      </div>
+    </div>
+
+    <section class="layout">
+      <aside class="side-panel">
+        <h3>Day Switcher</h3>
+        <div class="day-tab-list" id="dayTabs"></div>
+        <div class="mini-note">
+          <strong>Reading tip:</strong> use the day switcher to compare pace. The orange-heavy days are the ones to protect with buffers, especially the Highlands and York runs.
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <div class="panel-head">
+          <div>
+            <h2 id="dayTitle">05/23 - Arrival in Glasgow</h2>
+            <p id="dayIntro">
+              A soft landing day: airport arrival, hotel transfer, dinner, and rest.
+            </p>
+          </div>
+          <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">Open day in Google Maps</a>
+        </div>
+
+        <section class="summary-grid" id="summaryGrid"></section>
+
+        <section class="gallery-card fade-in" id="featuredCard">
+          <div class="gallery-media">
+            <img id="featuredImage" alt="" />
+            <div class="gallery-overlay">
+              <h3>Featured Sight</h3>
+              <h4 id="featuredTitle"></h4>
+              <p id="featuredText"></p>
+            </div>
+          </div>
+          <div class="gallery-meta">
+            <div class="meta-tags" id="featuredTags"></div>
+            <div class="quick-actions">
+              <a class="map-btn" id="featuredMap" href="#" target="_blank" rel="noreferrer">Open featured sight</a>
+              <a class="ghost-btn" id="featuredInfo" href="#" target="_blank" rel="noreferrer">Official / Guide</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <article class="day-card">
+            <h3>Timeline</h3>
+            <div class="timeline" id="timeline"></div>
+          </article>
+
+          <aside class="aside-stack">
+            <section class="booking-card">
+              <h3>Booking Priorities</h3>
+              <ol id="bookingList"></ol>
+            </section>
+            <section class="booking-card">
+              <h3>Day Notes</h3>
+              <ul id="noteList"></ul>
+            </section>
+            <section class="booking-card">
+              <h3>Quick Map Jumps</h3>
+              <div class="link-row" id="mapJumpList"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <script>
+    const bookingPriorities = [
+      "05/24 Edinburgh Castle",
+      "05/24 The Real Mary King's Close",
+      "05/26 Highlands day tour",
+      "05/27 Glasgow <-> York train",
+      "05/28 evening plan if you want a fixed show"
+    ];
+
+    const dayNotes = [
+      "York is feasible, but it is a long railway day, so use a small bag only.",
+      "05/28 keeps sightseeing close and manageable before the oral presentation.",
+      "For trains, compare Avanti, ScotRail, and Trainline before buying.",
+      "For the Highlands, Rabbie's is primary; Timberbush and Discover Scotland Tours are backups."
+    ];
+
+    const itinerary = [
+      {
+        id: "0523",
+        short: "05/23",
+        dayLabel: "Saturday",
+        title: "Arrival in Glasgow",
+        intro: "A soft landing day focused on getting into the city, eating nearby, and sleeping early after long-haul travel.",
+        vibe: "Low-pressure arrival",
+        intensity: "low",
+        window: "18:45 onward",
+        travel: "Airport transfer only",
+        anchor: "Merchant City / hotel area",
+        mapQuery: "Glasgow city centre",
+        featured: {
+          title: "Merchant City",
+          text: "An easy first-evening district: central, walkable, and a good reset after the airport before the heavier sightseeing days begin.",
+          image: "assets/feature-merchant-city.jpg",
+          mapQuery: "Merchant City Glasgow",
+          infoUrl: "https://peoplemakeglasgow.com"
+        },
+        spots: ["Glasgow Airport", "Merchant City", "Hotel"],
+        items: [
+          {
+            time: "18:45-19:30",
+            title: "Arrive and clear airport",
+            location: "Glasgow Airport",
+            notes: "Allow time for immigration and baggage.",
+            links: [{ label: "Airport", url: "http://glasgowairport.com" }]
+          },
+          {
+            time: "19:30-20:00",
+            title: "Transfer to hotel",
+            location: "GLA -> city centre",
+            notes: "Taxi or airport bus, around 20-30 minutes depending on traffic.",
+            links: [{ label: "Hotel", url: "http://all.accor.com" }]
+          },
+          {
+            time: "20:00-21:30",
+            title: "Dinner and short walk",
+            location: "Merchant City / hotel area",
+            notes: "Keep the evening light because of long-haul travel.",
+            links: [
+              { label: "VisitScotland", url: "http://visitscotland.com" },
+              { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
+            ]
+          },
+          {
+            time: "21:30 onward",
+            title: "Rest",
+            location: "Hotel",
+            notes: "Early night recommended.",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0524",
+        short: "05/24",
+        dayLabel: "Sunday",
+        title: "Edinburgh day trip",
+        intro: "A classic Royal Mile progression: castle first, then cathedral, Mary King's Close, Holyroodhouse, and a scenic finish at Calton Hill.",
+        vibe: "Big sightseeing day",
+        intensity: "high",
+        window: "07:30-19:15",
+        travel: "Round-trip train from Glasgow",
+        anchor: "Edinburgh Castle",
+        mapQuery: "Edinburgh Castle",
+        featured: {
+          title: "Edinburgh Castle",
+          text: "The anchor attraction of the Edinburgh day. Doing it first protects the schedule and makes the rest of the Royal Mile route flow naturally downhill.",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/City_of_Edinburgh_-_Edinburgh_Castle_-_20140421004403.jpg/1200px-City_of_Edinburgh_-_Edinburgh_Castle_-_20140421004403.jpg",
+          mapQuery: "Edinburgh Castle",
+          infoUrl: "http://edinburghcastle.scot"
+        },
+        spots: ["Edinburgh Castle", "St Giles' Cathedral", "Mary King's Close", "Palace of Holyroodhouse", "Calton Hill"],
+        items: [
+          {
+            time: "07:30-08:30",
+            title: "Train to Edinburgh",
+            location: "Glasgow Queen Street -> Edinburgh Waverley",
+            notes: "Direct trains roughly every 30 minutes; around 50-75 minutes.",
+            links: [
+              { label: "ScotRail", url: "http://scotrail.co.uk" },
+              { label: "Trainline", url: "http://thetrainline.com" }
+            ]
+          },
+          {
+            time: "09:00-11:30",
+            title: "Edinburgh Castle",
+            location: "Old Town",
+            notes: "Go first; most important timed attraction of the day.",
+            links: [{ label: "Official", url: "http://edinburghcastle.scot" }]
+          },
+          {
+            time: "11:30-12:00",
+            title: "St Giles' Cathedral",
+            location: "Royal Mile",
+            notes: "Quick but worthwhile stop on the main route.",
+            links: [{ label: "Guide", url: "http://scotlandschurchestrust.org.uk" }]
+          },
+          {
+            time: "12:00-12:45",
+            title: "The Real Mary King's Close",
+            location: "Royal Mile",
+            notes: "Pre-book strongly recommended.",
+            links: [{ label: "Official", url: "http://realmarykingsclose.com" }]
+          },
+          {
+            time: "12:45-14:00",
+            title: "Lunch",
+            location: "Royal Mile / Old Town",
+            notes: "Keep lunch efficient to save sightseeing time.",
+            links: [{ label: "Area guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "14:00-15:30",
+            title: "Palace of Holyroodhouse",
+            location: "Holyrood",
+            notes: "End-to-end Royal Mile routing works best.",
+            links: [{ label: "Official", url: "http://rct.uk" }]
+          },
+          {
+            time: "15:30-16:15",
+            title: "Walk toward Calton Hill",
+            location: "Edinburgh",
+            notes: "Easy scenic transition.",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "16:15-17:00",
+            title: "Calton Hill",
+            location: "Edinburgh",
+            notes: "Great city view; flexible and free.",
+            links: [{ label: "Guide", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "17:00-18:00",
+            title: "Return to station",
+            location: "Edinburgh Waverley",
+            notes: "Buffer before train.",
+            links: []
+          },
+          {
+            time: "18:00-19:15",
+            title: "Train back to Glasgow",
+            location: "Edinburgh -> Glasgow",
+            notes: "Evening direct return.",
+            links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
+          },
+          {
+            time: "After 19:15",
+            title: "Dinner",
+            location: "Glasgow",
+            notes: "Light recovery dinner.",
+            links: [{ label: "Food guide", url: "http://wanderlustchloe.com" }]
+          }
+        ]
+      },
+      {
+        id: "0525",
+        short: "05/25",
+        dayLabel: "Monday",
+        title: "Glasgow + Poster Day",
+        intro: "Historic Glasgow in the morning, then a deliberate transition into conference mode with hotel reset, venue transfer, and poster session.",
+        vibe: "City history + conference",
+        intensity: "medium",
+        window: "09:30-evening",
+        travel: "Local city movement",
+        anchor: "Glasgow Cathedral",
+        mapQuery: "Glasgow Cathedral",
+        featured: {
+          title: "Glasgow Cathedral",
+          text: "A strong morning anchor because it gives the city historical depth right away, and it pairs neatly with Necropolis and the St Mungo Museum.",
+          image: "assets/feature-glasgow-cathedral.jpg",
+          mapQuery: "Glasgow Cathedral",
+          infoUrl: "http://historicenvironment.scot"
+        },
+        spots: ["Glasgow Cathedral", "Necropolis", "St Mungo Museum", "SEC"],
+        items: [
+          {
+            time: "09:30-10:15",
+            title: "Glasgow Cathedral",
+            location: "East End",
+            notes: "Good first stop; historic core of city.",
+            links: [{ label: "Official", url: "http://historicenvironment.scot" }]
+          },
+          {
+            time: "10:15-11:00",
+            title: "Necropolis",
+            location: "Near Cathedral",
+            notes: "Short uphill viewpoint and cemetery walk.",
+            links: [{ label: "Guide", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "11:00-12:00",
+            title: "St Mungo Museum",
+            location: "Cathedral precinct",
+            notes: "Compact museum and easy pairing with the cathedral.",
+            links: [{ label: "Reference", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "12:00-13:00",
+            title: "Lunch",
+            location: "High Street / nearby",
+            notes: "Keep it simple.",
+            links: []
+          },
+          {
+            time: "13:00-15:30",
+            title: "Return to hotel and poster prep",
+            location: "Hotel",
+            notes: "Change, prepare materials, and rest briefly.",
+            links: []
+          },
+          {
+            time: "15:30-16:30",
+            title: "Travel to venue",
+            location: "SEC / conference venue",
+            notes: "Leave margin for setup.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "16:45-17:30",
+            title: "Poster session",
+            location: "Exhibit Hall",
+            notes: "WC-INTERACTIVE-03.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "17:30-19:00",
+            title: "Dinner / decompress",
+            location: "Glasgow",
+            notes: "Do not schedule anything heavy.",
+            links: [{ label: "City guide", url: "http://peoplemakeglasgow.com" }]
+          },
+          {
+            time: "Evening",
+            title: "Early rest",
+            location: "Hotel",
+            notes: "Need an early start for the Highlands next day.",
+            links: []
+          }
+        ]
+      },
+      {
+        id: "0526",
+        short: "05/26",
+        dayLabel: "Tuesday",
+        title: "Scottish Highlands day tour",
+        intro: "A classic long coach day through the Highlands, shaped around scenery and endurance rather than fine-grained urban stops.",
+        vibe: "Epic scenery day",
+        intensity: "high",
+        window: "06:45-21:00",
+        travel: "Full-day coach tour",
+        anchor: "Glencoe / Loch Ness route",
+        mapQuery: "Glencoe Scotland",
+        featured: {
+          title: "Glencoe",
+          text: "The emotional high point of the Highlands day: dramatic scenery, scale, and the sense that this is the most cinematic day in the whole plan.",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/GlencoeVillage.jpg/1200px-GlencoeVillage.jpg",
+          mapQuery: "Glencoe Scotland",
+          infoUrl: "http://rabbies.com"
+        },
+        spots: ["Buchanan Bus Station", "Loch Lomond", "Glencoe", "Loch Ness", "Pitlochry"],
+        items: [
+          {
+            time: "06:45-07:30",
+            title: "Travel to Buchanan Bus Station",
+            location: "Glasgow",
+            notes: "Leave buffer and bring snacks and layers.",
+            links: [{ label: "Bus station", url: "http://spt.co.uk" }]
+          },
+          {
+            time: "07:30-07:45",
+            title: "Check-in / boarding",
+            location: "Buchanan Bus Station",
+            notes: "Rabbie's recommended; Timberbush and Discover Scotland are backups.",
+            links: [
+              { label: "Rabbie's", url: "http://rabbies.com" },
+              { label: "Timberbush", url: "http://timberbush-tours.co.uk" },
+              { label: "Discover Scotland", url: "http://discoverscotlandtours.com" }
+            ]
+          },
+          {
+            time: "07:45-19:15",
+            title: "Highlands / Loch Ness / Glencoe tour",
+            location: "Scottish Highlands",
+            notes: "Classic route generally includes Loch Lomond, Glencoe, Fort Augustus / Loch Ness, and Pitlochry.",
+            links: [
+              { label: "Rabbie's", url: "http://rabbies.com" },
+              { label: "Timberbush", url: "http://timberbush-tours.co.uk" }
+            ]
+          },
+          {
+            time: "19:15-20:00",
+            title: "Return to hotel area",
+            location: "Glasgow",
+            notes: "End of tour day.",
+            links: []
+          },
+          {
+            time: "20:00-21:00",
+            title: "Dinner",
+            location: "Glasgow",
+            notes: "Recovery evening.",
+            links: [{ label: "City guide", url: "http://peoplemakeglasgow.com" }]
+          }
+        ]
+      },
+      {
+        id: "0527",
+        short: "05/27",
+        dayLabel: "Wednesday",
+        title: "York day trip",
+        intro: "A long but rewarding rail day to York, centered on Minster, the old town, a partial walls walk, and a museum stop near the station.",
+        vibe: "Long railway day",
+        intensity: "high",
+        window: "07:00-21:30",
+        travel: "Long round-trip rail day",
+        anchor: "York Minster",
+        mapQuery: "York Minster",
+        featured: {
+          title: "York Minster",
+          text: "The architectural heart of the York day and the stop that gives the trip its clearest sense of arrival before you spiral outward into the old town.",
+          image: "assets/feature-york-minster.jpg",
+          mapQuery: "York Minster",
+          infoUrl: "http://yorkminster.org"
+        },
+        spots: ["York Minster", "The Shambles", "York City Walls", "National Railway Museum", "Museum Gardens"],
+        items: [
+          {
+            time: "07:00-07:30",
+            title: "Go to station",
+            location: "Glasgow Central",
+            notes: "Bring a day bag only.",
+            links: []
+          },
+          {
+            time: "07:30-11:30",
+            title: "Train to York",
+            location: "Glasgow Central -> York",
+            notes: "Use direct service when possible; early departure matters because it is a long day.",
+            links: [
+              { label: "Trainline", url: "http://thetrainline.com" },
+              { label: "Avanti", url: "http://avantiwestcoast.co.uk" }
+            ]
+          },
+          {
+            time: "11:30-12:30",
+            title: "York Minster",
+            location: "York city centre",
+            notes: "Core attraction; do this first after arrival.",
+            links: [
+              { label: "York Minster", url: "http://yorkminster.org" },
+              { label: "Visit York", url: "http://visityork.org" }
+            ]
+          },
+          {
+            time: "12:30-13:30",
+            title: "The Shambles and lunch",
+            location: "York old town",
+            notes: "Good compact stop right after the Minster.",
+            links: [{ label: "Visit York", url: "http://visityork.org" }]
+          },
+          {
+            time: "13:30-15:00",
+            title: "York City Walls walk",
+            location: "York",
+            notes: "Walk only a meaningful section, not necessarily the full loop.",
+            links: [{ label: "Walls guide", url: "http://yorkwalls.org.uk" }]
+          },
+          {
+            time: "15:00-16:00",
+            title: "National Railway Museum",
+            location: "Near York station",
+            notes: "A strong optional museum stop before the return.",
+            links: [{ label: "Official", url: "http://railwaymuseum.org.uk" }]
+          },
+          {
+            time: "16:00-16:30",
+            title: "Museum Gardens",
+            location: "York",
+            notes: "Flexible short stop if energy allows.",
+            links: [{ label: "City guide", url: "http://visityork.org" }]
+          },
+          {
+            time: "16:30-17:00",
+            title: "Early dinner / snack",
+            location: "York centre",
+            notes: "Keep timing safe for the train back.",
+            links: [{ label: "Visit York", url: "http://visityork.org" }]
+          },
+          {
+            time: "17:00-17:30",
+            title: "Return to station",
+            location: "York",
+            notes: "Buffer before boarding.",
+            links: []
+          },
+          {
+            time: "17:30-21:30",
+            title: "Train back to Glasgow",
+            location: "York -> Glasgow",
+            notes: "Long return; go straight back to the hotel after arrival.",
+            links: [{ label: "Trainline", url: "http://thetrainline.com" }]
+          }
+        ]
+      },
+      {
+        id: "0528",
+        short: "05/28",
+        dayLabel: "Thursday",
+        title: "Glasgow + Oral Presentation + Evening Plan",
+        intro: "A carefully balanced final full day: one manageable West End museum block, presentation buffer, the oral session, and then a celebratory evening.",
+        vibe: "Presentation day",
+        intensity: "medium",
+        window: "08:30-22:00+",
+        travel: "West End -> SEC -> city centre",
+        anchor: "Kelvingrove and University of Glasgow",
+        mapQuery: "Kelvingrove Art Gallery and Museum",
+        featured: {
+          title: "Kelvingrove Art Gallery and Museum",
+          text: "A strong featured stop for presentation day: visually rich, close enough to keep the morning elegant and manageable before you switch into conference mode.",
+          image: "assets/feature-kelvingrove.jpg",
+          mapQuery: "Kelvingrove Art Gallery and Museum",
+          infoUrl: "http://glasgowlife.org.uk"
+        },
+        spots: ["Kelvingrove", "University of Glasgow", "SEC", "Riverside Museum", "Merchant City"],
+        items: [
+          {
+            time: "08:30-09:30",
+            title: "Breakfast and head west",
+            location: "Hotel -> West End",
+            notes: "Start gently because this is presentation day.",
+            links: [{ label: "Glasgow guide", url: "http://wanderlustchloe.com" }]
+          },
+          {
+            time: "09:30-11:00",
+            title: "Kelvingrove Art Gallery and Museum",
+            location: "West End",
+            notes: "Best museum choice for a short Glasgow morning.",
+            links: [{ label: "Official", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "11:00-12:00",
+            title: "University of Glasgow / Cloisters",
+            location: "West End",
+            notes: "Great architecture and an easy walking stop.",
+            links: [{ label: "Visit info", url: "http://gla.ac.uk" }]
+          },
+          {
+            time: "12:00-12:30",
+            title: "Quick lunch",
+            location: "West End",
+            notes: "Keep margin before venue transfer.",
+            links: []
+          },
+          {
+            time: "12:30-13:00",
+            title: "Travel to conference venue",
+            location: "SEC",
+            notes: "Leave time to settle mentally.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "13:00-14:15",
+            title: "Final setup / rehearsal",
+            location: "Venue",
+            notes: "Presentation buffer.",
+            links: []
+          },
+          {
+            time: "14:25-15:55",
+            title: "Oral presentation session",
+            location: "Alsh 2",
+            notes: "WS25-S1, 10th paper, 8 minutes.",
+            links: [{ label: "ICC 2026", url: "http://icc2026.ieee-icc.org" }]
+          },
+          {
+            time: "16:00-17:00",
+            title: "Riverside Museum or riverside break",
+            location: "Near Clyde / West End",
+            notes: "Optional depending on energy after the presentation.",
+            links: [{ label: "Official", url: "http://glasgowlife.org.uk" }]
+          },
+          {
+            time: "17:15-19:00",
+            title: "Celebration dinner",
+            location: "Merchant City",
+            notes: "Best final-night dinner area.",
+            links: [
+              { label: "Nightlife guide", url: "http://hotels.com/go/scotland/best-nightlife-glasgow" },
+              { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
+            ]
+          },
+          {
+            time: "19:30-22:00",
+            title: "Evening plan",
+            location: "Theatre Royal / The 13th Note / King Tut's / cocktails",
+            notes: "Choose based on mood: theatre, gig venue, or a relaxed cocktail bar.",
+            links: [{ label: "Guide", url: "http://hotels.com/go/scotland/best-nightlife-glasgow" }]
+          },
+          {
+            time: "After 22:00",
+            title: "Return and pack",
+            location: "Hotel",
+            notes: "Prepare for the early flight the next day.",
+            links: []
+          }
+        ]
+      }
+    ];
+
+    function mapsUrl(query) {
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    }
+
+    function escapeHtml(value) {
+      return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    const dayTabs = document.getElementById("dayTabs");
+    const dayTitle = document.getElementById("dayTitle");
+    const dayIntro = document.getElementById("dayIntro");
+    const dayMapButton = document.getElementById("dayMapButton");
+    const summaryGrid = document.getElementById("summaryGrid");
+    const featuredImage = document.getElementById("featuredImage");
+    const featuredTitle = document.getElementById("featuredTitle");
+    const featuredText = document.getElementById("featuredText");
+    const featuredTags = document.getElementById("featuredTags");
+    const featuredMap = document.getElementById("featuredMap");
+    const featuredInfo = document.getElementById("featuredInfo");
+    const timeline = document.getElementById("timeline");
+    const bookingList = document.getElementById("bookingList");
+    const noteList = document.getElementById("noteList");
+    const mapJumpList = document.getElementById("mapJumpList");
+    const featuredCard = document.getElementById("featuredCard");
+    const jumpFeatured = document.getElementById("jumpFeatured");
+
+    function renderTabs(activeId) {
+      dayTabs.innerHTML = itinerary.map((day) => `
+        <button class="day-tab ${day.id === activeId ? "active" : ""}" type="button" data-day="${day.id}">
+          <strong>${day.short} | ${escapeHtml(day.dayLabel)}</strong>
+          <span>${escapeHtml(day.title)}</span>
+          <span>${escapeHtml(day.window)}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderLists() {
+      bookingList.innerHTML = bookingPriorities.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    }
+
+    function renderDay(dayId) {
+      const day = itinerary.find((entry) => entry.id === dayId) || itinerary[0];
+
+      renderTabs(day.id);
+
+      dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
+      dayIntro.textContent = day.intro;
+      dayMapButton.href = mapsUrl(day.mapQuery);
+
+      summaryGrid.innerHTML = `
+        <article class="summary-card fade-in">
+          <h3>Pace</h3>
+          <div class="intensity ${day.intensity === "low" ? "low" : ""}">${day.vibe}</div>
+          <p>${escapeHtml(day.intensity === "high" ? "High-intensity day: protect buffers and avoid stacking extras." : day.intensity === "medium" ? "Balanced but still structured: enough room to breathe if transitions stay on time." : "Gentle day: useful as a recovery window before the heavier schedule." )}</p>
+        </article>
+        <article class="summary-card fade-in">
+          <h3>Time Window</h3>
+          <strong>${escapeHtml(day.window)}</strong>
+          <p>${escapeHtml(day.travel)}</p>
+        </article>
+        <article class="summary-card fade-in">
+          <h3>Anchor</h3>
+          <strong>${escapeHtml(day.anchor)}</strong>
+          <p>This is the mental center of the day and the easiest point to remember when scanning the itinerary quickly.</p>
+        </article>
+      `;
+
+      featuredImage.src = day.featured.image;
+      featuredImage.alt = day.featured.title;
+      featuredTitle.textContent = day.featured.title;
+      featuredText.textContent = day.featured.text;
+      featuredMap.href = mapsUrl(day.featured.mapQuery);
+      featuredInfo.href = day.featured.infoUrl;
+      featuredTags.innerHTML = day.spots.map((spot) => `<span class="meta-tag">${escapeHtml(spot)}</span>`).join("");
+
+      timeline.innerHTML = day.items.map((item) => `
+        <article class="timeline-item fade-in">
+          <div class="time">${escapeHtml(item.time)}</div>
+          <div class="timeline-body">
+            <h4>${escapeHtml(item.title)}</h4>
+            <div class="place">${escapeHtml(item.location)}</div>
+            <p>${escapeHtml(item.notes)}</p>
+            <div class="link-row">
+              <a class="link-chip" href="${mapsUrl(item.location)}" target="_blank" rel="noreferrer">Google Maps</a>
+              ${item.links.map((link) => `<a class="link-chip" href="${link.url}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      mapJumpList.innerHTML = day.spots.map((spot) => `
+        <a class="link-chip" href="${mapsUrl(spot)}" target="_blank" rel="noreferrer">${escapeHtml(spot)}</a>
+      `).join("");
+
+      featuredCard.classList.remove("fade-in");
+      void featuredCard.offsetWidth;
+      featuredCard.classList.add("fade-in");
+    }
+
+    dayTabs.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-day]");
+      if (!button) return;
+      renderDay(button.dataset.day);
+    });
+
+    jumpFeatured.addEventListener("click", () => {
+      featuredCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    renderLists();
+    renderDay(itinerary[0].id);
+  </script>
+</body>
+</html>
