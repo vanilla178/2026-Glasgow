@@ -4,25 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan A 中文版 | Glasgow 行程 | 05/23-05/28</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4efe6;
-      --paper: rgba(255, 250, 244, 0.78);
-      --paper-strong: rgba(255, 250, 244, 0.94);
-      --ink: #1f2a33;
-      --muted: #5e6a73;
-      --line: rgba(31, 42, 51, 0.12);
-      --brand: #0f6c7b;
-      --brand-2: #c96f41;
-      --brand-3: #254f6f;
-      --good: #3f7853;
-      --warn: #a65828;
-      --shadow: 0 24px 80px rgba(25, 36, 46, 0.14);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max: 1320px;
+      --bg: #f0ebe0;
+      --paper: rgba(255, 252, 246, 0.82);
+      --paper-strong: rgba(255, 252, 246, 0.97);
+      --ink: #1a2330;
+      --muted: #5a6672;
+      --line: rgba(26, 35, 48, 0.1);
+      --brand: #0b6470;
+      --brand-2: #c4622e;
+      --brand-3: #1e4060;
+      --good: #3a7050;
+      --warn: #9e5220;
+      --shadow: 0 20px 60px rgba(20, 30, 44, 0.13);
+      --shadow-lg: 0 32px 80px rgba(20, 30, 44, 0.18);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --max: 1340px;
+      --rail-left: 96px;
+      --dot-size: 12px;
     }
 
     * {
@@ -35,26 +41,14 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Noto Serif SC", Georgia, serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(201, 111, 65, 0.16), transparent 28%),
-        radial-gradient(circle at 85% 10%, rgba(15, 108, 123, 0.16), transparent 28%),
-        linear-gradient(180deg, #efe5d8 0%, #f7f1e8 38%, #f4efe6 100%);
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4622e' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(ellipse at top left, rgba(196, 98, 46, 0.12), transparent 40%),
+        radial-gradient(ellipse at 80% 5%, rgba(11, 100, 112, 0.14), transparent 35%),
+        linear-gradient(170deg, #e8ddd0 0%, #f0ebe0 40%, #ede8dd 100%);
       min-height: 100vh;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 92%);
-      opacity: 0.35;
     }
 
     a {
@@ -69,7 +63,7 @@
 
     .shell {
       width: min(var(--max), calc(100% - 32px));
-      margin: 22px auto 48px;
+      margin: 24px auto 60px;
       position: relative;
       z-index: 1;
     }
@@ -77,106 +71,154 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 300px;
-      border-radius: 36px;
-      box-shadow: var(--shadow);
-      padding: 36px;
+      min-height: 320px;
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+      padding: 0;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      background:
-        radial-gradient(circle at top right, rgba(236, 205, 166, 0.22), transparent 28%),
-        linear-gradient(140deg, #173646 0%, #1f5666 48%, #2f4358 100%);
-      color: #fff8ef;
+      grid-template-columns: 1fr 380px;
+      background: linear-gradient(128deg, #122838 0%, #1a4a5a 50%, #23384d 100%);
+      color: #fdf8f0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='500' height='320' viewBox='0 0 500 320' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 420 20 Q 380 60 350 100 Q 310 150 280 130 Q 240 108 200 140 Q 160 172 130 200 Q 90 235 60 280' stroke='rgba(255,248,230,0.06)' stroke-width='1.5' fill='none' stroke-dasharray='5 8'/%3E%3Ccircle cx='420' cy='20' r='4' fill='rgba(196,98,46,0.5)'/%3E%3Ccircle cx='280' cy='130' r='3' fill='rgba(255,248,230,0.3)'/%3E%3Ccircle cx='130' cy='200' r='3' fill='rgba(255,248,230,0.3)'/%3E%3Ccircle cx='60' cy='280' r='4' fill='rgba(11,100,112,0.6)'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: contain;
+      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto -10% -30% 30%;
-      height: 60%;
-      background: radial-gradient(circle, rgba(236, 205, 166, 0.34), transparent 60%);
-      filter: blur(12px);
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 380px;
+      background: rgba(255,248,230,0.04);
+      border-left: 1px solid rgba(255,248,230,0.1);
+      backdrop-filter: blur(8px);
+      pointer-events: none;
     }
 
     .hero-copy,
     .hero-panel {
       position: relative;
-      z-index: 1;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      padding: 44px 40px;
+    }
+
+    .hero-panel {
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
+      gap: 8px;
+      padding: 7px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 248, 239, 0.24);
-      background: rgba(255, 248, 239, 0.08);
-      backdrop-filter: blur(10px);
-      font-size: 13px;
-      letter-spacing: 0.08em;
+      border: 1px solid rgba(255, 248, 239, 0.2);
+      background: rgba(255, 248, 239, 0.07);
+      font-size: 11px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: rgba(255,248,239,0.7);
     }
 
     h1 {
-      margin: 18px 0 14px;
-      font-size: clamp(2.5rem, 4.3vw, 4.2rem);
-      line-height: 1.02;
+      margin: 16px 0 12px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+      line-height: 1;
       font-weight: 700;
-      max-width: 12ch;
+      letter-spacing: -0.01em;
     }
 
     .hero-copy p {
       margin: 0;
-      max-width: 56ch;
-      color: rgba(255, 248, 239, 0.88);
-      font-size: 1.02rem;
-      line-height: 1.72;
-    }
-
-    .hero-panel {
-      align-self: end;
-      border-radius: 28px;
-      padding: 22px;
-      background: rgba(255, 250, 244, 0.12);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 248, 239, 0.16);
+      max-width: 52ch;
+      color: rgba(255, 248, 239, 0.78);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      font-weight: 300;
     }
 
     .hero-panel h2 {
-      margin: 0 0 12px;
-      font-size: 1.15rem;
+      margin: 0 0 16px;
+      font-family: "Playfair Display", serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(255,248,239,0.6);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .hero-panel ul {
       margin: 0;
-      padding-left: 18px;
-      color: rgba(255, 248, 239, 0.9);
-      line-height: 1.7;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0;
+    }
+
+    .hero-panel ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,248,239,0.08);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,248,239,0.85);
+    }
+
+    .hero-panel ul li:last-child {
+      border-bottom: none;
+    }
+
+    .hero-panel ul li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      margin-top: 6px;
+      border-radius: 50%;
+      background: var(--brand-2);
     }
 
     .hero-strap {
-      margin-top: 22px;
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .hero-chip {
-      padding: 10px 14px;
+      padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 248, 239, 0.14);
-      background: rgba(255, 248, 239, 0.1);
-      color: rgba(255, 248, 239, 0.86);
-      font-size: 0.92rem;
+      border: 1px solid rgba(255, 248, 239, 0.16);
+      background: rgba(255, 248, 239, 0.08);
+      color: rgba(255, 248, 239, 0.78);
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
     }
 
     .toolbar {
-      margin: 24px 0;
+      margin: 22px 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
       justify-content: space-between;
     }
@@ -184,7 +226,7 @@
     .pill-row,
     .quick-actions {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
@@ -194,18 +236,18 @@
     .link-chip,
     .day-tab {
       border: 1px solid transparent;
-      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
     }
 
     .pill {
-      padding: 11px 16px;
+      padding: 9px 16px;
       border-radius: 999px;
       background: var(--paper);
       backdrop-filter: blur(10px);
-      border-color: rgba(31, 42, 51, 0.08);
+      border-color: rgba(26, 35, 48, 0.09);
       color: var(--muted);
-      font-size: 0.95rem;
-      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+      font-size: 0.88rem;
+      box-shadow: 0 6px 20px rgba(26, 35, 48, 0.06);
     }
 
     .pill strong {
@@ -213,32 +255,31 @@
     }
 
     .ghost-btn,
-    .map-btn,
-    .link-chip {
+    .map-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      padding: 12px 16px;
+      padding: 10px 18px;
       border-radius: 999px;
-      background: rgba(255, 250, 244, 0.88);
-      border-color: rgba(31, 42, 51, 0.08);
-      box-shadow: 0 10px 30px rgba(31, 42, 51, 0.06);
+      background: rgba(255, 252, 246, 0.9);
+      border-color: rgba(26, 35, 48, 0.1);
+      box-shadow: 0 6px 20px rgba(26, 35, 48, 0.08);
       color: var(--ink);
-      font-size: 0.95rem;
+      font-size: 0.88rem;
+      font-family: "Noto Serif SC", serif;
+      cursor: pointer;
     }
 
     .ghost-btn:hover,
     .map-btn:hover,
-    .link-chip:hover,
     .day-tab:hover {
       transform: translateY(-2px);
     }
 
     .layout {
       display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
-      gap: 22px;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 20px;
       align-items: start;
     }
 
@@ -345,47 +386,20 @@
       max-width: 62ch;
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .summary-card,
     .gallery-card,
     .day-card,
     .timeline-item,
     .booking-card {
       background: var(--paper-strong);
-      border: 1px solid rgba(31, 42, 51, 0.08);
+      border: 1px solid rgba(26, 35, 48, 0.08);
       border-radius: var(--radius-lg);
       box-shadow: 0 12px 30px rgba(31, 42, 51, 0.07);
-    }
-
-    .summary-card {
-      padding: 18px;
-      min-height: 150px;
-    }
-
-    .summary-card strong {
-      display: block;
-      font-size: 1.45rem;
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .summary-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.68;
-      font-size: 0.95rem;
     }
 
     .gallery-card {
       overflow: hidden;
       margin-bottom: 22px;
-      padding: 24px;
+      padding: 22px;
       background:
         radial-gradient(circle at top right, rgba(201, 111, 65, 0.12), transparent 24%),
         linear-gradient(180deg, rgba(255, 250, 244, 0.98), rgba(249, 243, 235, 0.96));
@@ -430,6 +444,22 @@
       background: rgba(37, 79, 111, 0.08);
       color: var(--brand-3);
       font-size: 0.9rem;
+    }
+
+    .featured-guide-panel {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(31, 42, 51, 0.06);
+    }
+
+    .featured-guide-panel h5 {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .content-grid {
@@ -509,21 +539,138 @@
       font-size: 0.95rem;
     }
 
-    .link-row {
+    .timeline-tip {
+      margin-top: 8px;
+      padding-left: 10px;
+      border-left: 2px solid rgba(15, 108, 123, 0.18);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .micro-guide {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(37, 79, 111, 0.045);
+      border: 1px solid rgba(37, 79, 111, 0.08);
+      display: grid;
+      gap: 6px;
+    }
+
+    .micro-guide-row {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      font-size: 0.83rem;
+      line-height: 1.58;
+      color: var(--muted);
+    }
+
+    .micro-guide-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-3);
+      font-weight: 700;
+    }
+
+    .timeline-link-group + .timeline-link-group {
+      margin-top: 10px;
+    }
+
+    .timeline-link-label {
+      display: block;
       margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .link-row {
+      margin-top: 8px;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .link-chip {
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      background: rgba(37, 79, 111, 0.08);
-      border-color: rgba(37, 79, 111, 0.1);
+      position: relative;
+      min-height: 0;
+      padding: 6px 10px 6px 12px;
+      border-radius: 14px;
+      background: rgba(255, 250, 244, 0.58);
+      border-color: rgba(37, 79, 111, 0.08);
       color: var(--brand-3);
       box-shadow: none;
+      overflow: hidden;
+    }
+
+    .link-chip::before {
+      content: "";
+      position: absolute;
+      inset: 5px auto 5px 4px;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--brand), var(--brand-2));
+      opacity: 0.72;
+    }
+
+    .link-chip::after {
+      content: "";
+      margin-left: 0;
+    }
+
+    .link-chip:hover {
+      border-color: rgba(15, 108, 123, 0.18);
+      background: rgba(255, 250, 244, 0.96);
+      transform: translateY(-1px);
+    }
+
+    .link-chip.xhs::before {
+      background: linear-gradient(180deg, #df5a49, #f08b61);
+    }
+
+    .link-chip.map::before {
+      background: linear-gradient(180deg, #2f7d5b, #6caf6d);
+    }
+
+    .link-chip.route::before {
+      background: linear-gradient(180deg, #9b5f1d, #d48a38);
+    }
+
+    .link-chip.official::before {
+      background: linear-gradient(180deg, #315f87, #4f88b3);
+    }
+
+    .link-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: rgba(31, 42, 51, 0.06);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .link-copy {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .link-title {
+      font-size: 0.84rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    .link-meta {
+      display: none;
     }
 
     .aside-stack {
@@ -545,6 +692,98 @@
 
     .booking-card li + li {
       margin-top: 4px;
+    }
+
+    .booking-checklist {
+      display: grid;
+      gap: 10px;
+    }
+
+    .booking-item {
+      padding: 10px 0 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .booking-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .booking-item h4 {
+      margin: 0 0 7px;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+
+    .booking-meta-grid {
+      display: grid;
+      gap: 7px;
+    }
+
+    .booking-meta {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+    }
+
+    .booking-meta-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .booking-meta-value {
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--brand-3);
+    }
+
+    .booking-official {
+      margin-top: 8px;
+    }
+
+    .service-guide-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .service-guide-group + .service-guide-group {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .service-guide-group h4 {
+      margin: 0 0 8px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .guide-item + .guide-item {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .guide-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      color: var(--brand-3);
+    }
+
+    .empty-copy {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
     }
 
     .intensity {
@@ -587,10 +826,6 @@
       .hero,
       .layout,
       .content-grid,
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-
       .side-panel {
         position: static;
       }
@@ -699,14 +934,9 @@
         <div class="panel-head">
           <div>
             <h2 id="dayTitle">05/23｜抵达 Glasgow</h2>
-            <p id="dayIntro">
-              这是抵达后的缓冲日，核心就是顺利进城、入住。
-            </p>
           </div>
           <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
         </div>
-
-        <section class="summary-grid" id="summaryGrid"></section>
 
         <section class="gallery-card fade-in" id="featuredCard">
           <div class="gallery-copy">
@@ -720,6 +950,7 @@
               <a class="map-btn" id="featuredMap" href="#" target="_blank" rel="noreferrer">在地图中查看重点地点</a>
               <a class="ghost-btn" id="featuredInfo" href="#" target="_blank" rel="noreferrer">官网 / 参考</a>
             </div>
+            <div class="featured-guide-panel" id="featuredGuidePanel"></div>
           </div>
         </section>
 
@@ -731,8 +962,8 @@
 
           <aside class="aside-stack">
             <section class="booking-card">
-              <h3>优先预订</h3>
-              <ol id="bookingList"></ol>
+              <h3>预约清单</h3>
+              <div id="bookingList"></div>
             </section>
             <section class="booking-card">
               <h3>行程提示</h3>
@@ -742,6 +973,10 @@
               <h3>地图快速跳转</h3>
               <div class="link-row" id="mapJumpList"></div>
             </section>
+            <section class="booking-card">
+              <h3>附近可选</h3>
+              <div id="serviceGuideList"></div>
+            </section>
           </aside>
         </section>
       </main>
@@ -749,18 +984,21 @@
   </div>
 
   <script>
-    const bookingPriorities = [
-      "05/24 爱丁堡城堡",
-      "05/24 The Real Mary King's Close",
-      "05/26 Highlands 一日游",
-      "05/27 Glasgow 往返 York 火车",
-      "05/28 如果晚上想看固定演出，建议提前订"
-    ];
-
     const dayNotes = [
-      "York 来回火车时间比较长，建议只背轻便小包。",
+      "York 往返火车时间较长，建议只带轻便小包。",
       "买火车票前可以先对比 Avanti、ScotRail 和 Trainline。",
       "Highlands 一日游可以同时比较 Rabbie's、Timberbush 和 Discover Scotland Tours。"
+    ];
+
+    const globalRouteLinks = [
+      // 示例：
+      // {
+      //   title: "伦敦一日游经典路线",
+      //   links: [
+      //     { label: "小红书 1", url: "https://..." },
+      //     { label: "小红书 2", url: "https://..." }
+      //   ]
+      // }
     ];
 
     const itinerary = [
@@ -776,11 +1014,15 @@
         travel: "机场进城",
         anchor: "Merchant City / Aparthotel Adagio Glasgow Central",
         mapQuery: "Glasgow city centre",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "Merchant City",
-          text: "很适合作为抵达当晚的活动范围：位置居中、步行友好",
+          text: "位置居中，步行连接方便。",
           mapQuery: "Merchant City Glasgow",
-          infoUrl: "https://peoplemakeglasgow.com"
+          infoUrl: "https://peoplemakeglasgow.com",
+          guideLinks: []
         },
         spots: ["Glasgow Airport", "Merchant City", "Aparthotel Adagio Glasgow Central"],
         items: [
@@ -826,20 +1068,87 @@
         short: "05/24",
         dayLabel: "周日",
         title: "爱丁堡一日往返",
-        intro: "这一天按爱丁堡老城最顺的动线来走：先上城堡，再沿 Royal Mile 往下，最后以 Calton Hill 收尾。",
+        intro: "",
         vibe: "高密度观光日",
         intensity: "high",
         window: "07:30-19:15",
         travel: "从 Glasgow 往返火车",
-        anchor: "爱丁堡城堡",
+        anchor: "Waverley Bridge + 爱丁堡城堡 + Royal Mile",
         mapQuery: "Edinburgh Castle",
+        bookingChecklist: [
+          {
+            title: "爱丁堡城堡",
+            officialUrl: "https://www.edinburghcastle.scot/plan-your-visit/opening-times",
+            fee: "£23.50（官网在线成人票）",
+            hours: "9:30-18:00（最晚入场 17:00）",
+            lead: "提前 1 周（建议最晚 05/17）",
+            refund: "不可退；仅闭馆/取消时退款",
+            prepay: "需要预付款"
+          },
+          {
+            title: "The Real Mary King's Close",
+            officialUrl: "https://www.realmarykingsclose.com/tickets",
+            fee: "£28.50（Standard 成人票）",
+            hours: "按官网日历场次",
+            lead: "建议提前数天至 1 周",
+            refund: "不可退；可在 tour 前 4 小时内改期",
+            prepay: "需要预付款"
+          }
+        ],
+        routeLinks: [],
+        spotGuides: [],
+        serviceGuides: {
+          restaurants: [
+            {
+              title: "老城午餐 / 正餐",
+              links: [
+                { label: "Oink（Victoria Street，快吃快走首选）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" },
+                { label: "Makars Mash Bar（苏格兰菜正餐备选）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                { label: "The Dome（如果想走氛围晚餐路线）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ],
+          cafes: [
+            {
+              title: "顺路咖啡 / 休息点",
+              links: [
+                { label: "The Milkman（老城经典咖啡打卡点）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "Waterstones Cafe（观景休息点）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ],
+          souvenirs: [
+            {
+              title: "伴手礼 / 纪念品",
+              links: [
+                { label: "Hotel Chocolat（巧克力伴手礼）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "Royal Mile 羊绒围巾 / 威士忌店", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                { label: "Victoria Street 纪念品店", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" },
+                { label: "PERRE 饰品店", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡黄油饼干测评 / 送礼参考", url: "https://www.xiaohongshu.com/explore/677ccc32000000001800e9b3?xsec_token=ABUugmbW1Le_zvS2twKCR2zrJ7xd_13d7qvvQANzxPaoY=&xsec_source=pc_search&source=web_explore_feed" }
+              ]
+            }
+          ]
+        },
         featured: {
           title: "爱丁堡城堡",
-          text: "这是爱丁堡这一天最核心的景点，放在最前面最稳，也能让后面的 Royal Mile 行程顺着一路往下走。",
+          text: "爱丁堡城堡位于 Castle Rock 之上，是老城天际线中最醒目的地标之一。",
           mapQuery: "Edinburgh Castle",
-          infoUrl: "http://edinburghcastle.scot"
+          infoUrl: "http://edinburghcastle.scot",
+          guideLinks: [
+            {
+              title: "小红书攻略",
+              links: [
+                { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡 Citywalk / 老城经典路线", url: "https://www.xiaohongshu.com/explore/69d053b0000000002301edde?xsec_token=ABnEw3bgKa3xkrUi5PHhMGO6-FTpnAr57XkIgZ-YqQ6r8=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡攻略 / 一天暴走版", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ]
         },
-        spots: ["Edinburgh Castle", "St Giles' Cathedral", "Mary King's Close", "Palace of Holyroodhouse", "Calton Hill"],
+        spots: ["Waverley Bridge", "Edinburgh Castle", "St Giles' Cathedral", "Victoria Street", "Calton Hill"],
         items: [
           {
             time: "07:30-08:30",
@@ -854,62 +1163,181 @@
             ]
           },
           {
-            time: "09:00-11:30",
-            title: "爱丁堡城堡",
-            location: "Old Town",
+            time: "08:30-09:00",
+            title: "Waverley Bridge / 近车站经典机位",
+            location: "Waverley Bridge Edinburgh",
             routeOrigin: "Edinburgh Waverley Station",
-            routeDest: "Edinburgh Castle",
-            notes: "建议第一站就去，这是当天最值得优先锁定时间的景点。",
-            links: [{ label: "官网", url: "http://edinburghcastle.scot" }]
+            routeDest: "Waverley Bridge Edinburgh",
+            notes: "不少攻略都会先在这里或附近桥位停一下，先把城堡和老城天际线的经典视角收掉。",
+            microGuide: [
+              { label: "备注", text: "老城天际线和城堡方向的大视角可先查看。" },
+              { label: "时间", text: "约 10-15 分钟。" }
+            ],
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
           },
           {
-            time: "11:30-12:00",
-            title: "圣吉尔斯大教堂",
+            time: "09:00-11:00",
+            title: "爱丁堡城堡",
+            location: "Old Town",
+            routeOrigin: "Waverley Bridge Edinburgh",
+            routeDest: "Edinburgh Castle",
+            notes: "可排在第一站。",
+            microGuide: [
+              { label: "备注", text: "主城堡线和高位视角可优先查看。" },
+              { label: "时间", text: "停留时间容易超过 90 分钟。" }
+            ],
+            links: [{ label: "官网", url: "http://edinburghcastle.scot" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "11:00-11:25",
+            title: "The Vennel / Grassmarket 经典机位",
+            location: "The Vennel Edinburgh",
+            routeOrigin: "Edinburgh Castle",
+            routeDest: "The Vennel Edinburgh",
+            notes: "如果想拍到城堡压在楼梯尽头的经典画面，这里是最常见的打卡点；时间紧也可以只快停几分钟。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "11:25-12:05",
+            title: "Victoria Street + Grassmarket",
+            location: "Victoria Street Edinburgh",
+            routeOrigin: "The Vennel Edinburgh",
+            routeDest: "Victoria Street Edinburgh",
+            notes: "这一段在很多攻略里都属于高频点，彩色街景和哈利波特氛围都集中在这里。",
+            microGuide: [
+              { label: "备注", text: "彩色坡道、转角街景和 Grassmarket 方向视角可一并查看。" },
+              { label: "餐饮", text: "Oink 可作为这一带的简餐选项。" },
+              { label: "咖啡", text: "The Milkman 位于顺路范围内。" },
+              { label: "伴手礼", text: "纪念品店和设计小店主要分布在 Victoria Street 一带。" }
+            ],
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "12:05-12:30",
+            title: "圣吉尔斯大教堂 + Royal Mile",
             location: "Royal Mile",
-            notes: "虽然停留时间不必太长，但顺路而且值得看。",
+            routeOrigin: "Victoria Street Edinburgh",
+            routeDest: "St Giles' Cathedral",
+            notes: "主街、教堂外观与 Close 小巷入口集中在这一段。",
+            microGuide: [
+              { label: "备注", text: "Royal Mile 主街、教堂外观、Close 小巷入口可一并查看。" },
+              { label: "伴手礼", text: "羊绒、威士忌、巧克力和纪念品店主要分布在 Royal Mile 与 Victoria Street 一带。" }
+            ],
             links: [{ label: "指南", url: "http://scotlandschurchestrust.org.uk" }]
           },
           {
-            time: "12:00-12:45",
+            time: "12:30-12:50",
+            title: "Warriston's Close / Advocate's Close 小巷机位",
+            location: "Advocate's Close Edinburgh",
+            notes: "这类 Close 小巷是爱丁堡老城很出片的一部分，如果天气好很值得补一个。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "12:50-13:35",
             title: "The Real Mary King's Close",
             location: "Royal Mile",
-            notes: "强烈建议提前预约。",
+            notes: "需提前预约。",
             links: [{ label: "官网", url: "http://realmarykingsclose.com" }]
           },
           {
-            time: "12:45-14:00",
+            time: "13:35-14:15",
             title: "午餐",
-            location: "Royal Mile / Old Town",
-            notes: "午餐不必拖太久，把时间尽量留给下午行程。",
-            links: [{ label: "区域指南", url: "http://edinburgh.org" }]
+            location: "Royal Mile / Victoria Street",
+            notes: "午餐可放在老城段处理，Victoria Street 一带店铺更集中。",
+            microGuide: [
+              { label: "餐饮", text: "Victoria Street 可作简餐区，Makars Mash Bar 可作正餐备选。" },
+              { label: "咖啡", text: "咖啡店可与午餐一起处理。" }
+            ],
+            links: [{ label: "区域指南", url: "http://edinburgh.org" }],
+            tips: ["可优先参考 Victoria Street / Grassmarket 一带的餐厅攻略。"]
           },
           {
-            time: "14:00-15:30",
-            title: "荷里路德宫",
-            location: "Holyrood",
-            notes: "沿着 Royal Mile 一路走到这里，动线最自然。",
-            links: [{ label: "官网", url: "http://rct.uk" }]
+            time: "14:20-15:20",
+        title: "National Museum of Scotland 或继续老城步行",
+            location: "Old Town Edinburgh",
+            notes: "按这些攻略来看，国博是最常见的免费补充项；如果不想进馆，也可以把这段继续留给老城和商店。",
+            links: [{ label: "Museum", url: "http://nms.ac.uk" }]
           },
           {
-            time: "15:30-16:15",
-            title: "步行前往 Calton Hill",
-            location: "Edinburgh",
-            notes: "这段路本身就很适合边走边看。",
+            time: "15:20-16:00",
+            title: "Scott Monument / Princes Street 一带",
+            location: "Princes Street Edinburgh",
+            notes: "往 Calton Hill 走之前经过这里最顺，也能把新城区这一侧的城市感补上。",
             links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
           },
           {
-            time: "16:15-17:00",
+            time: "16:00-16:50",
             title: "卡尔顿山",
             location: "Edinburgh",
-            notes: "看城市全景的性价比很高，而且时间很灵活。",
-            links: [{ label: "指南", url: "http://scotrail.co.uk" }]
+            routeOrigin: "Princes Street Edinburgh",
+            routeDest: "Calton Hill Edinburgh",
+            notes: "常见于一日游收尾段，可查看城市全景。",
+            microGuide: [
+              { label: "备注", text: "观景点位集中在山顶平台一带。" }
+            ],
+            links: [{ label: "指南", url: "http://scotrail.co.uk" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
           },
           {
-            time: "17:00-18:00",
+            time: "16:50-18:00",
             title: "回到车站",
             location: "Edinburgh Waverley",
-            notes: "回程前预留一点机动时间。",
-            links: []
+            notes: "回程前预留一点机动时间，可以顺手补买伴手礼或在车站附近休息。",
+            microGuide: [
+              { label: "伴手礼", text: "返程前可集中补买巧克力、饼干和已选定的伴手礼。" }
+            ],
+            links: [],
+            tips: ["如果想买伴手礼，可以优先看 Royal Mile 或 Waverley 附近纪念品攻略。"]
           },
           {
             time: "18:00-19:15",
@@ -932,18 +1360,22 @@
         short: "05/25",
         dayLabel: "周一",
         title: "Glasgow 市区 + 海报展示日",
-        intro: "上午先看 Glasgow 的历史城区，随后顺着市中心和 Clyde 河一带往会场走，不再回酒店准备海报展示。",
+        intro: "",
         vibe: "城市观光 + 会议",
         intensity: "medium",
         window: "09:30-evening",
         travel: "市内移动",
         anchor: "Glasgow Cathedral",
         mapQuery: "Glasgow Cathedral",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "Glasgow Cathedral",
-          text: "很适合放在上午开场，既能马上进入 Glasgow 的历史脉络，也方便和 Necropolis、St Mungo Museum 连起来看。",
+          text: "Glasgow Cathedral 是苏格兰中世纪宗教建筑的重要代表之一。",
           mapQuery: "Glasgow Cathedral",
-          infoUrl: "http://historicenvironment.scot"
+          infoUrl: "http://historicenvironment.scot",
+          guideLinks: []
         },
         spots: ["Glasgow Cathedral", "Necropolis", "St Mungo Museum", "George Square", "Gallery of Modern Art", "SEC"],
         items: [
@@ -951,7 +1383,7 @@
             time: "09:30-10:10",
             title: "Glasgow Cathedral",
             location: "East End",
-            notes: "适合作为第一站，是理解这座城市历史的起点。",
+            notes: "可作为第一站。",
             links: [{ label: "官网", url: "http://historicenvironment.scot" }]
           },
           {
@@ -1052,18 +1484,22 @@
         short: "05/26",
         dayLabel: "周二",
         title: "Scottish Highlands 一日游",
-        intro: "这是一整天都比较长的 Highlands 行程，重点是风景和整体体验，不是城市里那种细碎打卡。",
+        intro: "",
         vibe: "风景主导的一天",
         intensity: "high",
         window: "06:45-21:00",
         travel: "巴士一日团",
         anchor: "Glencoe / Loch Ness 路线",
         mapQuery: "Glencoe Scotland",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "Glencoe",
-          text: "这是 Highlands 这一天最有氛围感的一段，风景开阔、起伏大，也最有电影感。",
+          text: "Glencoe 以峡谷地形、山坡线条和高地景观闻名。",
           mapQuery: "Glencoe Scotland",
-          infoUrl: "http://rabbies.com"
+          infoUrl: "http://rabbies.com",
+          guideLinks: []
         },
         spots: ["Buchanan Bus Station", "Loch Lomond", "Glencoe", "Loch Ness", "Pitlochry"],
         items: [
@@ -1071,7 +1507,7 @@
             time: "06:45-07:30",
             title: "前往 Buchanan Bus Station",
             location: "Glasgow",
-            notes: "建议预留时间。",
+            notes: "需预留参观时间。",
             links: [{ label: "汽车站", url: "http://spt.co.uk" }]
           },
           {
@@ -1116,26 +1552,76 @@
         short: "05/27",
         dayLabel: "周三",
         title: "York 一日往返",
-        intro: "这是车程较长但回报也很高的一天，核心围绕约克大教堂、老城、城墙步行和车站附近的博物馆。",
+        intro: "",
         vibe: "长距离火车日",
         intensity: "high",
         window: "07:00-21:30",
         travel: "长距离火车往返",
-        anchor: "约克大教堂",
+        anchor: "城墙机位 + 约克大教堂 + 肉铺街",
         mapQuery: "York Minster",
+        bookingChecklist: [],
+        routeLinks: [
+          {
+            title: "约克一日游小红书路线",
+            links: [
+              { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
+              { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
+              { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
+              { label: "约克一日CITYWALK保姆级攻略，附各景点详解", url: "https://www.xiaohongshu.com/explore/68af0835000000001b03c252?xsec_token=ABMxv_FRdQN3VU86YeGYfRHCJpyE1Sm4qy4pZJxQ09A2w=&xsec_source=pc_search&source=unknown" },
+              { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" },
+              { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+            ]
+          }
+        ],
+        spotGuides: [
+          {
+            title: "York City Walls / 火车站机位",
+            links: [
+              { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
+              { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
+              { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" }
+            ]
+          },
+          {
+            title: "York Minster / The Shambles",
+            links: [
+              { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
+              { label: "约克一日CITYWALK保姆级攻略，附各景点详解", url: "https://www.xiaohongshu.com/explore/68af0835000000001b03c252?xsec_token=ABMxv_FRdQN3VU86YeGYfRHCJpyE1Sm4qy4pZJxQ09A2w=&xsec_source=pc_search&source=unknown" },
+              { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+            ]
+          }
+        ],
+        serviceGuides: {
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
         featured: {
           title: "约克大教堂",
-          text: "约克这一天最值得先看的就是这里，它会先把整座城市的气质立起来，再往老城慢慢展开。",
+          text: "York Minster 是英国最大的哥特式教堂建筑之一，也是约克老城的核心地标。",
           mapQuery: "York Minster",
-          infoUrl: "http://yorkminster.org"
+          infoUrl: "http://yorkminster.org",
+          guideLinks: [
+            {
+              title: "小红书攻略",
+              links: [
+                { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
+                { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
+                { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
+                { label: "约克一日CITYWALK保姆级攻略，附各景点详解", url: "https://www.xiaohongshu.com/explore/68af0835000000001b03c252?xsec_token=ABMxv_FRdQN3VU86YeGYfRHCJpyE1Sm4qy4pZJxQ09A2w=&xsec_source=pc_search&source=unknown" },
+                { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ]
         },
-        spots: ["York Minster", "The Shambles", "York City Walls", "National Railway Museum", "Museum Gardens"],
+        spots: ["York City Walls", "Museum Gardens", "York Minster", "The Shambles", "Clifford's Tower"],
         items: [
           {
             time: "07:00-07:30",
             title: "前往车站",
             location: "Glasgow Central",
-            notes: "建议只带当天用的小包。",
+            notes: "只带当天用的小包。",
             links: []
           },
           {
@@ -1149,62 +1635,149 @@
             ]
           },
           {
-            time: "11:30-12:30",
-            title: "约克大教堂",
-            location: "York city centre",
-            notes: "这是当天核心景点，抵达后优先去最合适。",
+            time: "11:30-12:00",
+            title: "约克城墙经典机位",
+            location: "York Station / York City Walls",
+            routeOrigin: "York Railway Station",
+            routeDest: "York City Walls",
+            notes: "离车站近，可作为入城后的第一个点位。",
+            microGuide: [
+              { label: "备注", text: "城墙与车站方向视角可先查看。" }
+            ],
             links: [
-              { label: "York Minster", url: "http://yorkminster.org" },
+              { label: "Walls guide", url: "http://yorkwalls.org.uk" },
               { label: "Visit York", url: "http://visityork.org" }
+            ],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
+                  { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
+                  { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
             ]
           },
           {
-            time: "12:30-13:30",
-            title: "The Shambles 老街 + 午餐",
+            time: "12:00-12:35",
+            title: "Museum Gardens + 圣玛丽修道院遗址",
+            location: "Museum Gardens York",
+            notes: "从城墙进入老城时可顺路经过，修道院遗址和草坪位于这一段。",
+            microGuide: [
+              { label: "备注", text: "修道院遗址与草坪区域可顺路查看。" }
+            ],
+            links: [{ label: "Visit York", url: "http://visityork.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
+                  { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "12:40-13:35",
+            title: "约克大教堂",
+            location: "York city centre",
+            notes: "这里仍然是当天核心景点，但放在城墙和花园之后更顺，而且视角会更完整。",
+            microGuide: [
+              { label: "备注", text: "外立面与周边广场视角可一并查看。" }
+            ],
+            links: [
+              { label: "York Minster", url: "http://yorkminster.org" },
+              { label: "Visit York", url: "http://visityork.org" }
+            ],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "13:35-14:10",
+            title: "午餐 / Bettys 备选",
+            location: "York Minster area",
+            notes: "如果想走攻略里很常见的经典组合，可以在这段时间吃饭，或者去 Bettys 附近看看排队情况。",
+            microGuide: [
+              { label: "餐饮", text: "Bettys 可先查看排队情况；如等待较长，可在大教堂周边就餐。" }
+            ],
+            links: [{ label: "Visit York", url: "http://visityork.org" }],
+            tips: ["餐厅可优先看 York Minster 周边或 Bettys 相关攻略。"]
+          },
+          {
+            time: "14:10-15:10",
+            title: "The Shambles 老街 + 小店",
             location: "York old town",
-            notes: "从大教堂过去很顺，节奏也刚好。",
+            notes: "肉铺街、小店、小吃多集中在这一段。",
+            microGuide: [
+              { label: "备注", text: "窄巷转角、主题小店和街景集中在这一段。" },
+              { label: "伴手礼", text: "糖果、茶点与小纪念品可在这一段查看。" }
+            ],
+            links: [{ label: "Visit York", url: "http://visityork.org" }],
+            tips: ["可顺手查看茶点、糖果和小纪念品攻略。"],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
+                  { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "15:10-15:50",
+            title: "克利福德塔 / 城堡区",
+            location: "Clifford's Tower",
+            notes: "不少约克一日游会把这里作为老城段的收尾。即使不进塔，只在外面看和拍照也很值。",
+            microGuide: [
+              { label: "备注", text: "外观与周边高点视角可作为老城段收尾。" }
+            ],
+            links: [{ label: "English Heritage", url: "http://english-heritage.org.uk" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
+                  { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "15:50-16:35",
+            title: "乌斯河边 / 城墙补拍 / 自由机动",
+            location: "York riverside",
+            notes: "可用于补拍、逛店或沿河步行。",
             links: [{ label: "Visit York", url: "http://visityork.org" }]
           },
           {
-            time: "13:30-15:00",
-            title: "York 城墙步行",
-            location: "York",
-            notes: "不必硬走完整圈，挑一段最值得的路走就可以。",
-            links: [{ label: "Walls guide", url: "http://yorkwalls.org.uk" }]
-          },
-          {
-            time: "15:00-16:00",
-            title: "National Railway Museum",
+            time: "16:35-17:05",
+            title: "National Railway Museum 或回车站前补给",
             location: "Near York station",
-            notes: "这是返程前很不错的加选点。",
+            notes: "铁路博物馆保留为返程前可选项。几个攻略都更推荐把主线时间优先给城墙、教堂和老城。",
             links: [{ label: "官网", url: "http://railwaymuseum.org.uk" }]
           },
           {
-            time: "16:00-16:30",
-            title: "Museum Gardens",
+            time: "17:05-17:30",
+            title: "回到车站并准备返程",
             location: "York",
-            notes: "可以顺路停一下。",
-            links: [{ label: "城市指南", url: "http://visityork.org" }]
-          },
-          {
-            time: "16:30-17:00",
-            title: "简单晚餐 / 补给",
-            location: "York centre",
-            notes: "注意别把回程火车时间压得太紧。",
-            links: [{ label: "Visit York", url: "http://visityork.org" }]
-          },
-          {
-            time: "17:00-17:30",
-            title: "回到车站",
-            location: "York",
-            notes: "Buffer before boarding.",
+            notes: "注意给站内找站台和上车预留一点时间。",
             links: []
           },
           {
             time: "17:30-21:30",
             title: "乘火车返回 Glasgow",
             location: "York -> Glasgow",
-            notes: "回程时间不短，到 Glasgow 后建议直接回酒店。",
+            notes: "回程时间较长，到 Glasgow 后可直接回酒店。",
             links: [{ label: "Trainline", url: "http://thetrainline.com" }]
           }
         ]
@@ -1214,18 +1787,27 @@
         short: "05/28",
         dayLabel: "周四",
         title: "Glasgow 市区 + 口头报告 + 晚间安排",
-        intro: "最后一个完整日安排得比较克制：上午看 West End 的重点馆藏，下午留给报告，晚上再轻松庆祝一下。",
+        intro: "",
         vibe: "报告日",
         intensity: "medium",
         window: "08:30-22:00+",
         travel: "West End -> SEC -> 市中心",
         anchor: "Kelvingrove 与 University of Glasgow",
         mapQuery: "Kelvingrove Art Gallery and Museum",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
+        serviceGuides: {
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
         featured: {
           title: "Kelvingrove Art Gallery and Museum",
-          text: "这很适合作为报告日上午的重点：内容丰富、视觉也好。",
+          text: "Kelvingrove Art Gallery and Museum 是 Glasgow 最重要的综合博物馆之一。",
           mapQuery: "Kelvingrove Art Gallery and Museum",
-          infoUrl: "http://glasgowlife.org.uk"
+          infoUrl: "http://glasgowlife.org.uk",
+          guideLinks: []
         },
         spots: ["Kelvingrove", "University of Glasgow", "SEC", "Riverside Museum", "Merchant City"],
         items: [
@@ -1233,7 +1815,7 @@
             time: "08:30-09:30",
             title: "吃早餐后前往 West End",
             location: "Aparthotel Adagio Glasgow Central -> West End",
-            notes: "今天是报告日，上午的节奏尽量轻一点。",
+            notes: "报告日当天，上午安排以简洁为主。",
             links: [{ label: "Glasgow guide", url: "http://wanderlustchloe.com" }]
           },
           {
@@ -1247,7 +1829,7 @@
             time: "11:00-12:00",
             title: "University of Glasgow / Cloisters",
             location: "West End",
-            notes: "建筑很出片，也很适合顺路停留。",
+            notes: "建筑立面与回廊可顺路查看。",
             links: [{ label: "访问信息", url: "http://gla.ac.uk" }]
           },
           {
@@ -1255,7 +1837,8 @@
             title: "简短午餐",
             location: "West End",
             notes: "午餐不要拖太久，给去会场留余量。",
-            links: []
+            links: [],
+            tips: ["West End 午餐可优先看学校和博物馆周边的轻食攻略。"]
           },
           {
             time: "12:30-13:00",
@@ -1289,11 +1872,12 @@
             time: "17:15-19:00",
             title: "庆祝晚餐",
             location: "Merchant City",
-            notes: "很适合作为最后一晚吃饭的区域。",
+            notes: "可作为最后一晚晚餐区域。",
             links: [
               { label: "夜生活指南", url: "http://hotels.com/go/scotland/best-nightlife-glasgow" },
               { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
-            ]
+            ],
+            tips: ["如果想顺手买伴手礼，可以优先看 Merchant City / 市中心纪念品点攻略。"]
           },
           {
             time: "19:30-22:00",
@@ -1352,20 +1936,140 @@
 
     const dayTabs = document.getElementById("dayTabs");
     const dayTitle = document.getElementById("dayTitle");
-    const dayIntro = document.getElementById("dayIntro");
     const dayMapButton = document.getElementById("dayMapButton");
-    const summaryGrid = document.getElementById("summaryGrid");
     const featuredTitle = document.getElementById("featuredTitle");
     const featuredText = document.getElementById("featuredText");
     const featuredTags = document.getElementById("featuredTags");
     const featuredMap = document.getElementById("featuredMap");
     const featuredInfo = document.getElementById("featuredInfo");
+    const featuredGuidePanel = document.getElementById("featuredGuidePanel");
     const timeline = document.getElementById("timeline");
     const bookingList = document.getElementById("bookingList");
     const noteList = document.getElementById("noteList");
     const mapJumpList = document.getElementById("mapJumpList");
+    const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
     const jumpFeatured = document.getElementById("jumpFeatured");
+
+    function getLinkMeta(link) {
+      const label = (link.label || "").toLowerCase();
+      const url = (link.url || "").toLowerCase();
+
+      if (url.includes("xiaohongshu.com") || label.includes("小红书")) {
+        return { className: "xhs", badge: "XHS", meta: "小红书攻略" };
+      }
+      if (label.includes("google 地图") || label === "路线" || url.includes("/maps/dir/") || url.includes("/maps/search/")) {
+        return label === "路线"
+          ? { className: "route", badge: "Route", meta: "导航入口" }
+          : { className: "map", badge: "Map", meta: "地图定位" };
+      }
+      if (label.includes("门票") || label.includes("ticket")) {
+        return { className: "official", badge: "Book", meta: "订票信息" };
+      }
+      return { className: "official", badge: "Info", meta: "参考链接" };
+    }
+
+    function normalizeGuideTitle(title) {
+      return title && title.includes("小红书") ? "小红书攻略" : title;
+    }
+
+    function renderMicroGuide(rows) {
+      if (!rows || !rows.length) return "";
+
+      return `
+        <div class="micro-guide">
+          ${rows.map((row) => `
+            <div class="micro-guide-row">
+              <span class="micro-guide-label">${escapeHtml(row.label)}</span>
+              <span>${escapeHtml(row.text)}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderLinkRow(links) {
+      return `
+        <div class="link-row">
+          ${links.map((link) => {
+            const meta = getLinkMeta(link);
+            return `
+              <a class="link-chip ${meta.className}" href="${link.url}" target="_blank" rel="noreferrer">
+                <span class="link-copy">
+                  <span class="link-badge">${escapeHtml(meta.badge)}</span>
+                  <span class="link-title">${escapeHtml(link.label)}</span>
+                  <span class="link-meta">${escapeHtml(meta.meta)}</span>
+                </span>
+              </a>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function renderGuideSection(groups, emptyText) {
+      if (!groups.length) {
+        return `<p class="empty-copy">${escapeHtml(emptyText)}</p>`;
+      }
+
+      return `
+        <div class="guide-list">
+          ${groups.map((group) => `
+            <div class="guide-item">
+              <strong>${escapeHtml(group.title)}</strong>
+              ${renderLinkRow(group.links)}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderInlineGuideGroups(groups) {
+      if (!groups || !groups.length) return "";
+
+      return groups.map((group) => `
+        <div class="timeline-link-group">
+          <span class="timeline-link-label">${escapeHtml(normalizeGuideTitle(group.title))}</span>
+          ${renderLinkRow(group.links)}
+        </div>
+      `).join("");
+    }
+
+    function renderFeaturedGuides(groups) {
+      if (!groups || !groups.length) {
+        return `<p class="empty-copy">这里可以补充当天重点的小红书攻略、路线参考或避坑帖。</p>`;
+      }
+
+      const links = groups.flatMap((group) => group.links || []);
+
+      return `
+        <h5>小红书攻略</h5>
+        ${renderLinkRow(links)}
+      `;
+    }
+
+    function renderServiceGuides(serviceGuides) {
+      const groups = [
+        { title: "备选餐厅", items: serviceGuides?.restaurants || [] },
+        { title: "咖啡店", items: serviceGuides?.cafes || [] },
+        { title: "纪念品点", items: serviceGuides?.souvenirs || [] }
+      ].filter((group) => group.items.length);
+
+      if (!groups.length) {
+        return `<p class="empty-copy">这一天如果提前存了餐厅、咖啡店或纪念品攻略，会显示在这里。</p>`;
+      }
+
+      return `
+        <div class="service-guide-stack">
+          ${groups.map((group) => `
+            <div class="service-guide-group">
+              <h4>${escapeHtml(group.title)}</h4>
+              ${renderGuideSection(group.items, "")}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
 
     function renderTabs(activeId) {
       dayTabs.innerHTML = itinerary.map((day) => `
@@ -1377,8 +2081,46 @@
       `).join("");
     }
 
+    function renderBookingChecklist(items) {
+      if (!items || !items.length) {
+        return `<p class="empty-copy">当天没有需要提前处理的景点预约项。</p>`;
+      }
+
+      return `
+        <div class="booking-checklist">
+          ${items.map((item) => `
+            <article class="booking-item">
+              <h4>${escapeHtml(item.title)}</h4>
+              <div class="booking-meta-grid">
+                <div class="booking-meta">
+                  <span class="booking-meta-label">费用</span>
+                  <span class="booking-meta-value">${escapeHtml(item.fee)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">开放时间</span>
+                  <span class="booking-meta-value">${escapeHtml(item.hours)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">提前预约</span>
+                  <span class="booking-meta-value">${escapeHtml(item.lead)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">是否可退</span>
+                  <span class="booking-meta-value">${escapeHtml(item.refund)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">预付款</span>
+                  <span class="booking-meta-value">${escapeHtml(item.prepay)}</span>
+                </div>
+              </div>
+              ${item.officialUrl ? `<div class="booking-official">${renderLinkRow([{ label: "官网", url: item.officialUrl }])}</div>` : ""}
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
     function renderLists() {
-      bookingList.innerHTML = bookingPriorities.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
       noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
     }
 
@@ -1388,32 +2130,15 @@
       renderTabs(day.id);
 
       dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
-      dayIntro.textContent = day.intro;
       dayMapButton.href = mapsUrl(day.mapQuery);
-
-      summaryGrid.innerHTML = `
-        <article class="summary-card fade-in">
-          <h3>当天节奏</h3>
-          <div class="intensity ${day.intensity === "low" ? "low" : ""}">${day.vibe}</div>
-          <p>${escapeHtml(day.intensity === "high" ? "这是强度较高的一天，最好给交通和排队预留余量，不要再额外塞太多项目。" : day.intensity === "medium" ? "这一天整体张弛适中，但前后衔接最好还是按计划走，体验会更顺。" : "这一天节奏相对轻松" )}</p>
-        </article>
-        <article class="summary-card fade-in">
-          <h3>时间范围</h3>
-          <strong>${escapeHtml(day.window)}</strong>
-          <p>${escapeHtml(day.travel)}</p>
-        </article>
-        <article class="summary-card fade-in">
-          <h3>核心安排</h3>
-          <strong>${escapeHtml(day.anchor)}</strong>
-          <p>如果只想快速记住这一天的重点，看这里就够了。</p>
-        </article>
-      `;
 
       featuredTitle.textContent = day.featured.title;
       featuredText.textContent = day.featured.text;
       featuredMap.href = mapsUrl(day.featured.mapQuery);
       featuredInfo.href = day.featured.infoUrl;
       featuredTags.innerHTML = day.spots.map((spot) => `<span class="meta-tag">${escapeHtml(spot)}</span>`).join("");
+      featuredGuidePanel.innerHTML = renderFeaturedGuides(day.featured.guideLinks);
+      bookingList.innerHTML = renderBookingChecklist(day.bookingChecklist);
 
       timeline.innerHTML = day.items.map((item, index) => {
         // --- Calculate Dynamic Google 地图 Directions ---
@@ -1461,6 +2186,12 @@
         }
         // -------------------------------------------------
 
+        const baseLinks = [
+          { label: "Google 地图", url: mapsUrl(item.location) },
+          ...(startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase() ? [{ label: "路线", url: dirUrl(startLoc, endLoc) }] : []),
+          ...(item.links || [])
+        ];
+
         return `
         <article class="timeline-item fade-in">
           <div class="time">${escapeHtml(item.time)}</div>
@@ -1468,19 +2199,17 @@
             <h4>${escapeHtml(item.title)}</h4>
             <div class="place">${escapeHtml(item.location)}</div>
             <p>${escapeHtml(item.notes)}</p>
-            <div class="link-row">
-              <a class="link-chip" href="${mapsUrl(item.location)}" target="_blank" rel="noreferrer">Google 地图</a>
-              ${dirLinkHtml}
-              ${item.links.map((link) => `<a class="link-chip" href="${link.url}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
-            </div>
+            ${renderMicroGuide(item.microGuide)}
+            ${item.tips?.length ? `<div class="timeline-tip">${item.tips.map((tip) => escapeHtml(tip)).join(" / ")}</div>` : ""}
+            ${renderLinkRow(baseLinks)}
+            ${renderInlineGuideGroups(item.guideLinks)}
           </div>
         </article>
         `;
       }).join("");
 
-      mapJumpList.innerHTML = day.spots.map((spot) => `
-        <a class="link-chip" href="${mapsUrl(spot)}" target="_blank" rel="noreferrer">${escapeHtml(spot)}</a>
-      `).join("");
+      mapJumpList.innerHTML = renderLinkRow(day.spots.map((spot) => ({ label: spot, url: mapsUrl(spot) })));
+      serviceGuideList.innerHTML = renderServiceGuides(day.serviceGuides);
 
       featuredCard.classList.remove("fade-in");
       void featuredCard.offsetWidth;

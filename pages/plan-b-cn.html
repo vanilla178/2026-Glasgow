@@ -336,14 +336,6 @@
       max-width: 62ch;
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .summary-card,
     .gallery-card,
     .day-card,
     .timeline-item,
@@ -352,25 +344,6 @@
       border: 1px solid rgba(31, 42, 51, 0.08);
       border-radius: var(--radius-lg);
       box-shadow: 0 12px 30px rgba(31, 42, 51, 0.07);
-    }
-
-    .summary-card {
-      padding: 18px;
-      min-height: 150px;
-    }
-
-    .summary-card strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      line-height: 1.25;
-    }
-
-    .summary-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.68;
-      font-size: 0.95rem;
     }
 
     .gallery-card {
@@ -421,6 +394,22 @@
       background: rgba(37, 79, 111, 0.08);
       color: var(--brand-3);
       font-size: 0.9rem;
+    }
+
+    .featured-guide-panel {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(31, 42, 51, 0.06);
+    }
+
+    .featured-guide-panel h5 {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .content-grid {
@@ -500,21 +489,138 @@
       font-size: 0.95rem;
     }
 
-    .link-row {
+    .timeline-tip {
+      margin-top: 8px;
+      padding-left: 10px;
+      border-left: 2px solid rgba(15, 108, 123, 0.18);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .micro-guide {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(37, 79, 111, 0.045);
+      border: 1px solid rgba(37, 79, 111, 0.08);
+      display: grid;
+      gap: 6px;
+    }
+
+    .micro-guide-row {
+      display: grid;
+      grid-template-columns: 60px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+      font-size: 0.83rem;
+      line-height: 1.58;
+      color: var(--muted);
+    }
+
+    .micro-guide-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-3);
+      font-weight: 700;
+    }
+
+    .timeline-link-group + .timeline-link-group {
+      margin-top: 10px;
+    }
+
+    .timeline-link-label {
+      display: block;
       margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .link-row {
+      margin-top: 8px;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .link-chip {
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      background: rgba(37, 79, 111, 0.08);
-      border-color: rgba(37, 79, 111, 0.1);
+      position: relative;
+      min-height: 0;
+      padding: 6px 10px 6px 12px;
+      border-radius: 14px;
+      background: rgba(255, 250, 244, 0.58);
+      border-color: rgba(37, 79, 111, 0.08);
       color: var(--brand-3);
       box-shadow: none;
+      overflow: hidden;
+    }
+
+    .link-chip::before {
+      content: "";
+      position: absolute;
+      inset: 5px auto 5px 4px;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--brand), var(--brand-2));
+      opacity: 0.72;
+    }
+
+    .link-chip::after {
+      content: "";
+      margin-left: 0;
+    }
+
+    .link-chip:hover {
+      border-color: rgba(15, 108, 123, 0.18);
+      background: rgba(255, 250, 244, 0.96);
+      transform: translateY(-1px);
+    }
+
+    .link-chip.xhs::before {
+      background: linear-gradient(180deg, #df5a49, #f08b61);
+    }
+
+    .link-chip.map::before {
+      background: linear-gradient(180deg, #2f7d5b, #6caf6d);
+    }
+
+    .link-chip.route::before {
+      background: linear-gradient(180deg, #9b5f1d, #d48a38);
+    }
+
+    .link-chip.official::before {
+      background: linear-gradient(180deg, #315f87, #4f88b3);
+    }
+
+    .link-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: rgba(31, 42, 51, 0.06);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .link-copy {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .link-title {
+      font-size: 0.84rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    .link-meta {
+      display: none;
     }
 
     .aside-stack {
@@ -536,6 +642,98 @@
 
     .booking-card li + li {
       margin-top: 4px;
+    }
+
+    .booking-checklist {
+      display: grid;
+      gap: 10px;
+    }
+
+    .booking-item {
+      padding: 10px 0 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .booking-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .booking-item h4 {
+      margin: 0 0 7px;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+
+    .booking-meta-grid {
+      display: grid;
+      gap: 7px;
+    }
+
+    .booking-meta {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 8px;
+      align-items: start;
+    }
+
+    .booking-meta-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .booking-meta-value {
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--brand-3);
+    }
+
+    .booking-official {
+      margin-top: 8px;
+    }
+
+    .service-guide-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .service-guide-group + .service-guide-group {
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .service-guide-group h4 {
+      margin: 0 0 8px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .guide-item + .guide-item {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .guide-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      color: var(--brand-3);
+    }
+
+    .empty-copy {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
     }
 
     .intensity {
@@ -574,10 +772,6 @@
       .hero,
       .layout,
       .content-grid,
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-
       .side-panel {
         position: static;
       }
@@ -680,12 +874,9 @@
         <div class="panel-head">
           <div>
             <h2 id="dayTitle">05/23｜周六｜抵达 London</h2>
-            <p id="dayIntro">这一天不往北赶路，重点是从 Heathrow 顺利到酒店，晚上在 South Bank 附近稍微活动一下就好。</p>
           </div>
           <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
         </div>
-
-        <section class="summary-grid" id="summaryGrid"></section>
 
         <section class="gallery-card fade-in" id="featuredCard">
           <div class="gallery-copy">
@@ -699,6 +890,7 @@
               <a class="map-btn" id="featuredMap" href="#" target="_blank" rel="noreferrer">在地图中查看重点地点</a>
               <a class="ghost-btn" id="featuredInfo" href="#" target="_blank" rel="noreferrer">官网 / 参考</a>
             </div>
+            <div class="featured-guide-panel" id="featuredGuidePanel"></div>
           </div>
         </section>
 
@@ -710,8 +902,8 @@
 
           <aside class="aside-stack">
             <section class="booking-card">
-              <h3>优先预订</h3>
-              <ol id="bookingList"></ol>
+              <h3>预约清单</h3>
+              <div id="bookingList"></div>
             </section>
             <section class="booking-card">
               <h3>行程提示</h3>
@@ -721,6 +913,10 @@
               <h3>地图快速跳转</h3>
               <div class="link-row" id="mapJumpList"></div>
             </section>
+            <section class="booking-card">
+              <h3>附近可选</h3>
+              <div id="serviceGuideList"></div>
+            </section>
           </aside>
         </section>
       </main>
@@ -728,22 +924,26 @@
   </div>
 
   <script>
-    const bookingPriorities = [
-      "确认并预订 London 酒店",
-      "预订 05/25 London Euston -> Glasgow Central 直达火车",
-      "预订 05/26 Highlands 一日游",
-      "如果采用定时入场，提前预订 05/27 爱丁堡城堡和 Mary King's Close",
-      "提前决定 05/24 晚上走 West End 演出线还是轻松夜游线"
-    ];
-
     const dayNotes = [
       "这一版默认 London 住在 Premier Inn London Southwark (Bankside)。",
-      "05/23 的合理收尾是在 London 酒店休息，不建议当天继续北上。",
-      "05/25 是标准转场日，顺序建议按酒店 -> Euston -> Glasgow Central -> Aparthotel Adagio Glasgow Central -> 会场。",
+      "05/23 收尾安排为 London 酒店休息，当天不继续北上。",
+      "05/25 转场顺序为酒店 -> Euston -> Glasgow Central -> Aparthotel Adagio Glasgow Central -> 会场。",
       "05/24 晚上保留两条分支：看演出或轻松夜游都可以。",
       "如果 London 到 Glasgow 的发车时间还没完全定，弹性票值得考虑。",
       "（关于火车票）Advance 票通常更便宜，一般不可退，但通常可以在出发前付手续费并补差价改签。",
       "（关于火车票）Off-Peak / Anytime 票更灵活，通常可在生效前扣除手续费后退款；按 2026 年的新规则，这类灵活票也最好在票开始生效前处理。"
+    ];
+
+    const globalRouteLinks = [
+      {
+        title: "London 段经典路线参考",
+        links: [
+          {
+            label: "小红书｜伦敦周末这样玩！3天高效打卡路线+避坑指南",
+            url: "https://www.xiaohongshu.com/explore/69e3832900000000220292b6?xsec_token=AB0W80oOgc9uTJgYxKasDCTiZhjA6prEVBg3gNo1LWq1I=&xsec_source=pc_feed"
+          }
+        ]
+      }
     ];
 
     const itinerary = [
@@ -752,18 +952,22 @@
         short: "05/23",
         dayLabel: "周六",
         title: "抵达 London",
-        intro: "这一天以平稳落地为主：到 Heathrow 后进城、入住 Southwark、吃晚饭、休息，不建议当晚再继续折腾转场。",
+        intro: "",
         vibe: "抵达与调整",
         intensity: "low",
         window: "18:45 onward",
         travel: "Heathrow -> London 酒店",
         anchor: "Premier Inn London Southwark (Bankside)",
         mapQuery: "Premier Inn London Southwark Bankside",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "South Bank",
-          text: "很适合作为抵达当晚的活动区域：步行方便、景色好，而且离酒店不远，不会让第一晚太累。",
+          text: "South Bank 是泰晤士河南岸最集中的步行观景区域之一。",
           mapQuery: "South Bank London",
-          infoUrl: "http://southbanklondon.com"
+          infoUrl: "http://southbanklondon.com",
+          guideLinks: []
         },
         spots: [
           "Heathrow 机场",
@@ -782,7 +986,7 @@
             time: "18:45-19:45",
             title: "入境与取行李",
             location: "Heathrow 机场",
-            notes: "落地手续建议按较宽松的时间来估计。",
+            notes: "入境与取行李需预留余量。",
             links: [{ label: "机场地图", url: "http://heathrow.com" }]
           },
           {
@@ -791,7 +995,7 @@
             location: "Heathrow 机场 -> Premier Inn London Southwark (Bankside)",
             routeOrigin: "Heathrow 机场",
             routeDest: "Premier Inn London Southwark (Bankside)",
-            notes: "带着行李建议先直奔酒店",
+            notes: "带行李时优先前往酒店。",
             links: [
               { label: "Heathrow Express", url: "http://heathrowexpress.com" },
               { label: "TfL", url: "http://tfl.gov.uk" }
@@ -817,7 +1021,7 @@
             time: "22:30 onward",
             title: "休息",
             location: "Premier Inn London Southwark (Bankside)",
-            notes: "建议早点休息。",
+            notes: "可直接休息。",
             links: []
           }
         ]
@@ -827,18 +1031,56 @@
         short: "05/24",
         dayLabel: "周日",
         title: "London 完整观光日",
-        intro: "这一天按伦敦市中心最顺的线路来走：从 Tower Hill 一带开始，顺着河边到 Westminster，晚上再根据状态选看演出或轻松夜游。",
+        intro: "",
         vibe: "经典 London 串联日",
         intensity: "high",
         window: "08:00-22:45",
         travel: "以 Southwark 为据点的市内动线",
         anchor: "Tower of London 与 South Bank 动线",
         mapQuery: "Tower of London",
+        bookingChecklist: [
+          {
+            title: "伦敦塔",
+            officialUrl: "https://www.hrp.org.uk/tower-of-london/visit/tickets-and-prices/",
+            fee: "£35.80（官网在线成人票）",
+            hours: "9:00-17:30",
+            lead: "提前 3 天（建议最晚 05/21）",
+            refund: "不可退；可付费改期",
+            prepay: "需要预付款"
+          },
+          {
+            title: "塔桥展览",
+            officialUrl: "https://www.towerbridge.org.uk/tickets",
+            fee: "£16（官网成人票）",
+            hours: "9:30-18:00（最后入场 17:00）",
+            lead: "提前 3 天（建议最晚 05/21）",
+            refund: "不可退；可在参观前改签到其他日期",
+            prepay: "需要预付款"
+          }
+        ],
+        routeLinks: [],
+        spotGuides: [],
+        serviceGuides: {
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
         featured: {
           title: "伦敦塔",
-          text: "很适合作为 London 这一天的第一站，因为它能自然把后面的 Tower Bridge 和 South Bank 串起来。",
+          text: "伦敦塔是伦敦最重要的王室历史建筑之一，位于 Tower Hill 一带。",
           mapQuery: "Tower of London",
-          infoUrl: "http://hrp.org.uk"
+          infoUrl: "http://hrp.org.uk",
+          guideLinks: [
+            {
+              title: "小红书攻略",
+              links: [
+                {
+                  label: "伦敦周末这样玩！3天高效打卡路线+避坑指南",
+                  url: "https://www.xiaohongshu.com/explore/69e3832900000000220292b6?xsec_token=AB0W80oOgc9uTJgYxKasDCTiZhjA6prEVBg3gNo1LWq1I=&xsec_source=pc_feed"
+                }
+              ]
+            }
+          ]
         },
         spots: [
           "Tower of London",
@@ -861,7 +1103,22 @@
             location: "Tower Hill",
             routeOrigin: "Premier Inn London Southwark (Bankside)",
             routeDest: "Tower of London",
-            notes: "很适合作为当天第一站重点景点。",
+            notes: "可作为当天第一站。",
+            microGuide: [
+              { label: "备注", text: "核心展线与外部城墙视角可优先查看。" },
+              { label: "时间", text: "可预留约 60-90 分钟。" }
+            ],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  {
+                    label: "伦敦周末这样玩！3天高效打卡路线+避坑指南",
+                    url: "https://www.xiaohongshu.com/explore/69e3832900000000220292b6?xsec_token=AB0W80oOgc9uTJgYxKasDCTiZhjA6prEVBg3gNo1LWq1I=&xsec_source=pc_feed"
+                  }
+                ]
+              }
+            ],
             links: [
               { label: "门票", url: "http://hrp.org.uk" },
               { label: "Visit London", url: "http://visitlondon.com" }
@@ -872,6 +1129,9 @@
             title: "Tower Bridge 拍照停留",
             location: "Tower Bridge",
             notes: "如果有兴趣，也可以顺便看桥内展览。",
+            microGuide: [
+              { label: "备注", text: "桥面、河景与回望伦敦塔的视角可一并查看。" }
+            ],
             links: [{ label: "官网", url: "http://towerbridge.org.uk" }]
           },
           {
@@ -880,7 +1140,11 @@
             location: "Tower Bridge -> Borough 市场官网 -> riverside",
             routeOrigin: "Tower Bridge",
             routeDest: "Borough 市场官网 London",
-            notes: "这段更适合沿河慢走，而不是赶路。",
+            notes: "该段以沿河步行为主。",
+            microGuide: [
+              { label: "备注", text: "河景与桥梁视角集中在这一段。" },
+              { label: "餐饮", text: "午餐可直接接 Borough Market。" }
+            ],
             links: [
               { label: "South Bank", url: "http://southbanklondon.com" },
               { label: "Borough 市场官网", url: "http://boroughmarket.org.uk" }
@@ -891,7 +1155,12 @@
             title: "Lunch",
             location: "Borough 市场官网 / nearby",
             notes: "Flexible lunch block.",
-            links: [{ label: "市场官网", url: "http://boroughmarket.org.uk" }]
+            microGuide: [
+              { label: "餐饮", text: "可先查看摊位分布，再决定午餐选择。" },
+              { label: "咖啡", text: "咖啡可在这一段一并处理。" }
+            ],
+            links: [{ label: "市场官网", url: "http://boroughmarket.org.uk" }],
+            tips: ["午餐可优先参考 Borough Market 附近餐厅攻略。"]
           },
           {
             time: "13:30-15:00",
@@ -927,11 +1196,16 @@
             location: "Covent Garden / Soho / theatre district",
             routeOrigin: "Premier Inn London Southwark (Bankside)",
             routeDest: "Covent Garden London",
-            notes: "可以先吃晚饭，再去剧院区看周日有场次的演出，结束后回酒店。Phantom 不适合这一天的日期安排。",
+            notes: "可先晚餐，再去剧院区看周日场次演出，结束后回酒店。Phantom 不在这一天的日期范围内。",
+            microGuide: [
+              { label: "餐饮", text: "晚餐可直接安排在 Covent Garden 或 Soho。" },
+              { label: "咖啡", text: "如果不想太赶，演出前后的补给和咖啡也优先在这一带解决。" }
+            ],
             links: [
               { label: "官网 London Theatre", url: "http://officiallondontheatre.com" },
               { label: "TodayTix", url: "http://todaytix.com" }
-            ]
+            ],
+            tips: ["晚餐、咖啡和演出前后补给可优先看 Covent Garden / Soho 攻略。"]
           },
           {
             time: "17:30-21:30",
@@ -952,18 +1226,22 @@
         short: "05/25",
         dayLabel: "周一",
         title: "London 转场 Glasgow + 海报展示日",
-        intro: "这一天本质上是转场日：从 London 退房后直接去 Euston，坐直达车到 Glasgow，放下行李后去会场参加海报展示。",
+        intro: "",
         vibe: "转场 + 会议",
         intensity: "high",
         window: "06:30-evening",
         travel: "酒店 -> Euston -> Glasgow Central -> 酒店 -> 会场",
         anchor: "Aparthotel Adagio Glasgow Central",
         mapQuery: "Aparthotel Adagio Glasgow Central",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "Glasgow Central",
-          text: "中心只是一个大概说法，主要是去酒店办理入住",
+          text: "Glasgow Central 是市中心最主要的铁路枢纽之一。",
           mapQuery: "Glasgow Central Station",
-          infoUrl: "http://networkrail.co.uk"
+          infoUrl: "http://networkrail.co.uk",
+          guideLinks: []
         },
         spots: [
           "Premier Inn London Southwark (Bankside)",
@@ -996,7 +1274,7 @@
             time: "07:30-07:50",
             title: "提前到站并候车",
             location: "London Euston",
-            notes: "直达车建议稍早一点到站。",
+            notes: "直达车出发前可提前到站。",
             links: [
               { label: "Avanti", url: "http://avantiwestcoast.co.uk" },
               { label: "National Rail", url: "http://nationalrail.co.uk" }
@@ -1008,7 +1286,7 @@
             location: "London Euston -> Glasgow Central",
             routeOrigin: "London Euston Station",
             routeDest: "Glasgow Central Station",
-            notes: "建议优先选 Avanti West Coast 直达车。",
+            notes: "可优先选择 Avanti West Coast 直达车。",
             links: [
               { label: "Avanti", url: "http://avantiwestcoast.co.uk" },
               { label: "Trainline", url: "http://thetrainline.com" }
@@ -1069,18 +1347,22 @@
         short: "05/26",
         dayLabel: "周二",
         title: "Scottish Highlands 一日游",
-        intro: "这是一整天的风景线行程：从 Glasgow 酒店出发，走 Highlands 环线，晚上回城。",
+        intro: "",
         vibe: "风景主导的一天",
         intensity: "high",
         window: "06:45-19:30+",
         travel: "酒店 -> Buchanan -> Highlands -> Glasgow",
         anchor: "Glencoe 与 Loch Ness 路线",
         mapQuery: "Glencoe Scotland",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "Glencoe",
-          text: "这是 Highlands 这一天最出片、也最有电影感的一段。",
+          text: "Glencoe 以峡谷地形、山坡线条和高地景观闻名。",
           mapQuery: "Glencoe Scotland",
-          infoUrl: "http://rabbies.com"
+          infoUrl: "http://rabbies.com",
+          guideLinks: []
         },
         spots: [
           "Aparthotel Adagio Glasgow Central",
@@ -1160,24 +1442,91 @@
         short: "05/27",
         dayLabel: "周三",
         title: "爱丁堡一日往返",
-        intro: "这一天集中在爱丁堡老城：先看城堡，再顺着 Royal Mile 往下，最后看情况加一个补充景点后返回 Glasgow。",
-        vibe: "节奏快但顺的日程",
+        intro: "",
+        vibe: "老城串联日",
         intensity: "high",
         window: "07:30-evening",
         travel: "Glasgow Queen Street -> Edinburgh Waverley",
-        anchor: "爱丁堡城堡",
+        anchor: "Waverley Bridge + 爱丁堡城堡 + Royal Mile",
         mapQuery: "Edinburgh Castle",
+        bookingChecklist: [
+          {
+            title: "爱丁堡城堡",
+            officialUrl: "https://www.edinburghcastle.scot/plan-your-visit/opening-times",
+            fee: "£23.50（官网在线成人票）",
+            hours: "9:30-18:00（最晚入场 17:00）",
+            lead: "提前 1 周（建议最晚 05/20）",
+            refund: "不可退；仅闭馆/取消时退款",
+            prepay: "需要预付款"
+          },
+          {
+            title: "The Real Mary King's Close",
+            officialUrl: "https://www.realmarykingsclose.com/tickets",
+            fee: "£28.50（Standard 成人票）",
+            hours: "按官网日历场次",
+            lead: "建议提前数天至 1 周",
+            refund: "不可退；可在 tour 前 4 小时内改期",
+            prepay: "需要预付款"
+          }
+        ],
+        routeLinks: [],
+        spotGuides: [],
+        serviceGuides: {
+          restaurants: [
+            {
+              title: "老城午餐 / 正餐",
+              links: [
+                { label: "Oink（Victoria Street，快吃快走首选）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" },
+                { label: "Makars Mash Bar（苏格兰菜正餐备选）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                { label: "The Dome（如果想走氛围晚餐路线）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ],
+          cafes: [
+            {
+              title: "顺路咖啡 / 休息点",
+              links: [
+                { label: "The Milkman（老城经典咖啡打卡点）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "Waterstones Cafe（观景休息点）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ],
+          souvenirs: [
+            {
+              title: "伴手礼 / 纪念品",
+              links: [
+                { label: "Hotel Chocolat（巧克力伴手礼）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "Royal Mile 羊绒围巾 / 威士忌店", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                { label: "Victoria Street 纪念品店", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" },
+                { label: "PERRE 饰品店", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡伴手礼清单 / 送礼参考", url: "https://www.xiaohongshu.com/explore/677ccc32000000001800e9b3?xsec_token=ABUugmbW1Le_zvS2twKCR2zrJ7xd_13d7qvvQANzxPaoY=&xsec_source=pc_search&source=web_explore_feed" }
+              ]
+            }
+          ]
+        },
         featured: {
           title: "Edinburgh Castle",
-          text: "这是爱丁堡这一天的核心，先从这里开始，后面的 Royal Mile 动线会顺很多。",
+          text: "Edinburgh Castle 位于 Castle Rock 之上，是老城天际线中最醒目的地标之一。",
           mapQuery: "Edinburgh Castle",
-          infoUrl: "http://edinburghcastle.scot"
+          infoUrl: "http://edinburghcastle.scot",
+          guideLinks: [
+            {
+              title: "小红书攻略",
+              links: [
+                { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡 Citywalk / 老城经典路线", url: "https://www.xiaohongshu.com/explore/69d053b0000000002301edde?xsec_token=ABnEw3bgKa3xkrUi5PHhMGO6-FTpnAr57XkIgZ-YqQ6r8=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡攻略 / 一天暴走版", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" }
+              ]
+            }
+          ]
         },
         spots: [
+          "Waverley Bridge",
           "Edinburgh Castle",
           "St Giles' Cathedral",
-          "Mary King's Close",
-          "Holyroodhouse",
+          "Victoria Street",
           "Calton Hill"
         ],
         items: [
@@ -1187,82 +1536,174 @@
             location: "Glasgow Queen Street -> Edinburgh Waverley",
             routeOrigin: "Glasgow Queen Street Station",
             routeDest: "Edinburgh Waverley Station",
-            notes: "建议搭较早的 ScotRail 直达车。",
+            notes: "可搭较早的 ScotRail 直达车。",
             links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
           },
           {
-            time: "09:00-11:00",
-            title: "Edinburgh Castle",
-            location: "Old Town",
+            time: "08:40-09:00",
+            title: "Waverley Bridge / 近车站机位",
+            location: "Waverley Bridge Edinburgh",
             routeOrigin: "Edinburgh Waverley Station",
-            routeDest: "Edinburgh Castle",
-            notes: "早点去最合适，作为第一站效率最高。",
-            links: [
-              { label: "官方门票", url: "http://edinburghcastle.scot" },
-              { label: "参考信息", url: "http://abroadwithash.com" }
+            routeDest: "Waverley Bridge Edinburgh",
+            notes: "很多攻略会先在这里补一个城市视角，再正式开始老城步行。",
+            microGuide: [
+              { label: "备注", text: "老城天际线和城堡方向的大视角可先查看。" },
+              { label: "时间", text: "约 10-15 分钟。" }
+            ],
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
             ]
           },
           {
-            time: "11:05-11:35",
+            time: "09:00-10:50",
+            title: "Edinburgh Castle",
+            location: "Old Town",
+            routeOrigin: "Waverley Bridge Edinburgh",
+            routeDest: "Edinburgh Castle",
+            notes: "早点去最合适，作为第一站效率最高。",
+            microGuide: [
+              { label: "备注", text: "主城堡线和高位视角可优先查看。" },
+              { label: "时间", text: "停留时间容易超过 90 分钟。" }
+            ],
+            links: [
+              { label: "官方门票", url: "http://edinburghcastle.scot" },
+              { label: "参考信息", url: "http://abroadwithash.com" }
+            ],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "10:55-11:20",
+            title: "The Vennel / Grassmarket 经典机位",
+            location: "The Vennel Edinburgh",
+            routeOrigin: "Edinburgh Castle",
+            routeDest: "The Vennel Edinburgh",
+            notes: "这里是拍城堡经典构图的高频点，时间够的话很值得顺路补一下。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "11:20-11:55",
+            title: "Victoria Street + Grassmarket",
+            location: "Victoria Street Edinburgh",
+            routeOrigin: "The Vennel Edinburgh",
+            routeDest: "Victoria Street Edinburgh",
+            notes: "彩色街景和老城氛围都集中在这段，属于很多攻略都会强调的高频打卡区。",
+            microGuide: [
+              { label: "备注", text: "彩色坡道、转角街景和 Grassmarket 方向视角可一并查看。" },
+              { label: "餐饮", text: "Oink 可作为这一带的简餐选项。" },
+              { label: "咖啡", text: "The Milkman 位于顺路范围内。" },
+              { label: "伴手礼", text: "纪念品店和设计小店主要分布在 Victoria Street 一带。" }
+            ],
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡 Citywalk / 老城经典路线", url: "https://www.xiaohongshu.com/explore/69d053b0000000002301edde?xsec_token=ABnEw3bgKa3xkrUi5PHhMGO6-FTpnAr57XkIgZ-YqQ6r8=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "12:00-12:25",
             title: "Royal Mile 与圣吉尔斯大教堂",
             location: "Royal Mile",
-            notes: "这一段适合顺路走完。",
+            notes: "主街、教堂外观与 Close 小巷入口集中在这一段。",
+            microGuide: [
+              { label: "备注", text: "Royal Mile 主街、教堂外观、Close 小巷入口可一并查看。" },
+              { label: "伴手礼", text: "羊绒、威士忌、巧克力和纪念品店主要分布在 Royal Mile 与 Victoria Street 一带。" }
+            ],
             links: [
               { label: "Royal Mile guide", url: "http://edinburgh.org" },
               { label: "St Giles", url: "http://scotlandschurchestrust.org.uk" }
             ]
           },
           {
-            time: "11:40-12:30",
+            time: "12:25-12:45",
+            title: "Advocate's Close / Warriston's Close",
+            location: "Advocate's Close Edinburgh",
+            notes: "Close 小巷是爱丁堡攻略里很常出现的拍照点，顺着 Royal Mile 很容易串进去。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "12:45-13:25",
             title: "The Real Mary King's Close",
             location: "Royal Mile",
             notes: "如果想补一个室内历史景点，这里很合适。",
             links: [{ label: "官方门票", url: "http://realmarykingsclose.com" }]
           },
           {
-            time: "12:30-13:15",
+            time: "13:25-14:00",
             title: "Lunch",
-            location: "Old Town / Royal Mile",
-            notes: " ",
-            links: [{ label: "指南", url: "http://edinburgh.org" }]
+            location: "Old Town / Victoria Street",
+            notes: "午餐放在老城主线里最顺，后面再继续补一个免费馆或观景点就好。",
+            microGuide: [
+              { label: "餐饮", text: "Victoria Street 可作简餐区，Makars Mash Bar 可作正餐备选。" },
+              { label: "咖啡", text: "咖啡店可与午餐一起处理。" }
+            ],
+            links: [{ label: "指南", url: "http://edinburgh.org" }],
+            tips: ["可优先参考 Victoria Street / Grassmarket 一带的餐厅攻略。"]
           },
           {
-            time: "13:20-14:30",
-            title: "荷里路德宫",
-            location: "Holyrood",
-            notes: "如果想省时间，只看外观也完全可以。",
-            links: [
-              { label: "门票", url: "http://rct.uk" },
-              { label: "VisitBritain reference", url: "http://visitbritainshop.com" }
-            ]
-          },
-          {
-            time: "14:40-15:10",
-            title: "Scottish Parliament 外观",
-            location: "Holyrood",
-            notes: "离得近，适合顺便看一下。",
-            links: [{ label: "Parliament", url: "http://parliament.scot" }]
-          },
-          {
-            time: "15:20-16:10",
-            title: "Calton Hill",
-            location: "Edinburgh",
-            notes: "很轻松的制高点，但视野不错。",
-            links: [{ label: "Info", url: "http://scotrail.co.uk" }]
-          },
-          {
-            time: "16:20-17:20",
-            title: "National Museum of Scotland 或 Victoria Street",
+            time: "14:05-15:00",
+        title: "National Museum of Scotland 或继续老城步行",
             location: "Old Town",
-            notes: "可以从这两个里挑一个加进去。",
+            notes: "从这些攻略看，国博是最常见的免费补充项；如果不想进馆，这段继续留给 Royal Mile 和商店也很合理。",
             links: [{ label: "Museum", url: "http://nms.ac.uk" }]
           },
           {
-            time: "17:30-18:30",
-            title: "早点吃晚饭",
+            time: "15:10-15:55",
+            title: "Calton Hill",
+            location: "Edinburgh",
+            routeOrigin: "Old Town Edinburgh",
+            routeDest: "Calton Hill Edinburgh",
+            notes: "这是几乎所有一日游攻略都会提到的收尾点，光线合适时城市全景非常稳。",
+            microGuide: [
+              { label: "备注", text: "观景点位集中在山顶平台一带。" }
+            ],
+            links: [{ label: "Info", url: "http://scotrail.co.uk" }],
+            guideLinks: [
+              {
+                title: "小红书攻略",
+                links: [
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡攻略 / 一天暴走版", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
+          },
+          {
+            time: "16:05-18:20",
+            title: "回到车站前自由机动 / 晚餐",
             location: "Edinburgh city centre",
-            notes: "返程前留一个弹性的晚餐时间。",
-            links: [{ label: "美食指南", url: "http://edinburgh.org" }]
+            notes: "返程前预留机动时间，可在车站附近晚餐或补看商店。",
+            microGuide: [
+              { label: "伴手礼", text: "返程前可集中补买巧克力、饼干和已选定的伴手礼。" }
+            ],
+            links: [{ label: "美食指南", url: "http://edinburgh.org" }],
+            tips: ["如果想买伴手礼，可优先看 Royal Mile / Waverley 附近纪念品攻略。"]
           },
           {
             time: "19:00-20:15",
@@ -1289,18 +1730,27 @@
         short: "05/28",
         dayLabel: "周四",
         title: "Glasgow 市区 + 口头报告日",
-        intro: "上午先看一组历史点位，再看一个博物馆，之后参会",
+        intro: "",
         vibe: "报告日 + 观光",
         intensity: "medium",
         window: "08:30-21:00",
         travel: "East End -> West End -> 会场 -> 市中心",
         anchor: "Kelvingrove 与口头报告",
         mapQuery: "Kelvingrove Art Gallery and Museum",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
+        serviceGuides: {
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
         featured: {
           title: "Kelvingrove Art Gallery and Museum",
-          text: "如果 Glasgow 上午只能选一个馆，这里最值得 ",
+          text: "Kelvingrove Art Gallery and Museum 是 Glasgow 最重要的综合博物馆之一。",
           mapQuery: "Kelvingrove Art Gallery and Museum",
-          infoUrl: "http://glasgowlife.org.uk"
+          infoUrl: "http://glasgowlife.org.uk",
+          guideLinks: []
         },
         spots: [
           "Glasgow Cathedral",
@@ -1323,14 +1773,14 @@
             location: "East End",
             routeOrigin: "Aparthotel Adagio Glasgow Central",
             routeDest: "Glasgow Cathedral",
-            notes: "很适合作为上午最先看的点。",
+            notes: "可作为上午第一站。",
             links: [{ label: "官网 info", url: "http://historicenvironment.scot" }]
           },
           {
             time: "09:45-10:15",
             title: "Necropolis 观景点",
             location: "Near Cathedral",
-            notes: "适合短暂停留看个全景。",
+            notes: "可短暂停留查看全景。",
             links: [{ label: "参考信息", url: "http://peoplemakeglasgow.com" }]
           },
           {
@@ -1346,7 +1796,7 @@
             location: "East End -> Kelvingrove area",
             routeOrigin: "St Mungo Museum of Religious Life and Art",
             routeDest: "Kelvingrove Art Gallery and Museum",
-            notes: "可以按当时节奏选打车、地铁或公交。",
+            notes: "可选打车、地铁或公交。",
             links: [{ label: "交通信息", url: "http://spt.co.uk" }]
           },
           {
@@ -1364,7 +1814,8 @@
             title: "简短午餐",
             location: "West End / venue cafe / nearby",
             notes: " ",
-            links: []
+            links: [],
+            tips: ["午餐可优先看 West End 或会场周边轻食攻略。"]
           },
           {
             time: "13:15-14:00",
@@ -1388,7 +1839,7 @@
             location: "West End",
             routeOrigin: "SEC Centre Glasgow",
             routeDest: "University of Glasgow",
-            notes: "这里是最适合补看的建筑点。",
+            notes: "可作为建筑点位补看。",
             links: [
               { label: "访问信息", url: "http://gla.ac.uk" },
               { label: "参考信息", url: "http://fullsuitcase.com" }
@@ -1411,7 +1862,8 @@
             links: [
               { label: "Merchant City", url: "http://fullsuitcase.com" },
               { label: "城市指南", url: "http://peoplemakeglasgow.com" }
-            ]
+            ],
+            tips: ["如果想顺手买伴手礼，可以优先看市中心纪念品点攻略。"]
           },
           {
             time: "20:00-21:00",
@@ -1429,18 +1881,22 @@
         short: "05/29",
         dayLabel: "周五",
         title: "从 Glasgow 返程",
-        intro: "这一天很简单：早退房，直接去 Glasgow Airport，然后经 Frankfurt 转机。",
+        intro: "",
         vibe: "返程日",
         intensity: "low",
         window: "06:30-15:40",
         travel: "酒店 -> GLA -> FRA",
         anchor: "Glasgow Airport 出发",
         mapQuery: "Glasgow Airport",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "Glasgow Airport",
-          text: "这一天几乎没有观光内容，关键就是按机场时间线出发。",
+          text: "Glasgow Airport 是返程日的主要出发点。",
           mapQuery: "Glasgow Airport",
-          infoUrl: "http://glasgowairport.com"
+          infoUrl: "http://glasgowairport.com",
+          guideLinks: []
         },
         spots: [
           "Aparthotel Adagio Glasgow Central",
@@ -1485,18 +1941,22 @@
         short: "05/30",
         dayLabel: "周六",
         title: "回到上海",
-        intro: "整趟行程到这里结束：经过 Frankfurt 的夜航后，抵达上海。",
+        intro: "",
         vibe: "回程到家",
         intensity: "low",
         window: "09:15",
         travel: "Frankfurt -> 上海",
         anchor: "浦东机场 T2",
         mapQuery: "Shanghai Pudong International 机场 Terminal 2",
+        bookingChecklist: [],
+        routeLinks: [],
+        spotGuides: [],
         featured: {
           title: "浦东机场",
-          text: "行程在这里干净利落地结束：落地浦东机场 T2。",
+          text: "浦东机场 T2 是本次行程的最终抵达点。",
           mapQuery: "Shanghai Pudong International 机场 Terminal 2",
-          infoUrl: "http://shanghaiairport.com"
+          infoUrl: "http://shanghaiairport.com",
+          guideLinks: []
         },
         spots: [
           "Shanghai Pudong International 机场 Terminal 2"
@@ -1563,20 +2023,140 @@
 
     const dayTabs = document.getElementById("dayTabs");
     const dayTitle = document.getElementById("dayTitle");
-    const dayIntro = document.getElementById("dayIntro");
     const dayMapButton = document.getElementById("dayMapButton");
-    const summaryGrid = document.getElementById("summaryGrid");
     const featuredTitle = document.getElementById("featuredTitle");
     const featuredText = document.getElementById("featuredText");
     const featuredTags = document.getElementById("featuredTags");
     const featuredMap = document.getElementById("featuredMap");
     const featuredInfo = document.getElementById("featuredInfo");
+    const featuredGuidePanel = document.getElementById("featuredGuidePanel");
     const timeline = document.getElementById("timeline");
     const bookingList = document.getElementById("bookingList");
     const noteList = document.getElementById("noteList");
     const mapJumpList = document.getElementById("mapJumpList");
+    const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
     const jumpFeatured = document.getElementById("jumpFeatured");
+
+    function getLinkMeta(link) {
+      const label = (link.label || "").toLowerCase();
+      const url = (link.url || "").toLowerCase();
+
+      if (url.includes("xiaohongshu.com") || label.includes("小红书")) {
+        return { className: "xhs", badge: "XHS", meta: "小红书攻略" };
+      }
+      if (label.includes("google 地图") || label === "路线" || url.includes("/maps/dir/") || url.includes("/maps/search/")) {
+        return label === "路线"
+          ? { className: "route", badge: "Route", meta: "导航入口" }
+          : { className: "map", badge: "Map", meta: "地图定位" };
+      }
+      if (label.includes("门票") || label.includes("ticket")) {
+        return { className: "official", badge: "Book", meta: "订票信息" };
+      }
+      return { className: "official", badge: "Info", meta: "参考链接" };
+    }
+
+    function normalizeGuideTitle(title) {
+      return title && title.includes("小红书") ? "小红书攻略" : title;
+    }
+
+    function renderMicroGuide(rows) {
+      if (!rows || !rows.length) return "";
+
+      return `
+        <div class="micro-guide">
+          ${rows.map((row) => `
+            <div class="micro-guide-row">
+              <span class="micro-guide-label">${escapeHtml(row.label)}</span>
+              <span>${escapeHtml(row.text)}</span>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderLinkRow(links) {
+      return `
+        <div class="link-row">
+          ${links.map((link) => {
+            const meta = getLinkMeta(link);
+            return `
+              <a class="link-chip ${meta.className}" href="${link.url}" target="_blank" rel="noreferrer">
+                <span class="link-copy">
+                  <span class="link-badge">${escapeHtml(meta.badge)}</span>
+                  <span class="link-title">${escapeHtml(link.label)}</span>
+                  <span class="link-meta">${escapeHtml(meta.meta)}</span>
+                </span>
+              </a>
+            `;
+          }).join("")}
+        </div>
+      `;
+    }
+
+    function renderGuideSection(groups, emptyText) {
+      if (!groups.length) {
+        return `<p class="empty-copy">${escapeHtml(emptyText)}</p>`;
+      }
+
+      return `
+        <div class="guide-list">
+          ${groups.map((group) => `
+            <div class="guide-item">
+              <strong>${escapeHtml(group.title)}</strong>
+              ${renderLinkRow(group.links)}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderInlineGuideGroups(groups) {
+      if (!groups || !groups.length) return "";
+
+      return groups.map((group) => `
+        <div class="timeline-link-group">
+          <span class="timeline-link-label">${escapeHtml(normalizeGuideTitle(group.title))}</span>
+          ${renderLinkRow(group.links)}
+        </div>
+      `).join("");
+    }
+
+    function renderFeaturedGuides(groups) {
+      if (!groups || !groups.length) {
+        return `<p class="empty-copy">这里可以补充当天重点的小红书攻略、路线参考或避坑帖。</p>`;
+      }
+
+      const links = groups.flatMap((group) => group.links || []);
+
+      return `
+        <h5>小红书攻略</h5>
+        ${renderLinkRow(links)}
+      `;
+    }
+
+    function renderServiceGuides(serviceGuides) {
+      const groups = [
+        { title: "备选餐厅", items: serviceGuides?.restaurants || [] },
+        { title: "咖啡店", items: serviceGuides?.cafes || [] },
+        { title: "纪念品点", items: serviceGuides?.souvenirs || [] }
+      ].filter((group) => group.items.length);
+
+      if (!groups.length) {
+        return `<p class="empty-copy">这一天如果提前存了餐厅、咖啡店或纪念品攻略，会显示在这里。</p>`;
+      }
+
+      return `
+        <div class="service-guide-stack">
+          ${groups.map((group) => `
+            <div class="service-guide-group">
+              <h4>${escapeHtml(group.title)}</h4>
+              ${renderGuideSection(group.items, "")}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
 
     function renderTabs(activeId) {
       dayTabs.innerHTML = itinerary.map((day) => `
@@ -1588,8 +2168,46 @@
       `).join("");
     }
 
+    function renderBookingChecklist(items) {
+      if (!items || !items.length) {
+        return `<p class="empty-copy">当天没有需要提前处理的景点预约项。</p>`;
+      }
+
+      return `
+        <div class="booking-checklist">
+          ${items.map((item) => `
+            <article class="booking-item">
+              <h4>${escapeHtml(item.title)}</h4>
+              <div class="booking-meta-grid">
+                <div class="booking-meta">
+                  <span class="booking-meta-label">费用</span>
+                  <span class="booking-meta-value">${escapeHtml(item.fee)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">开放时间</span>
+                  <span class="booking-meta-value">${escapeHtml(item.hours)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">提前预约</span>
+                  <span class="booking-meta-value">${escapeHtml(item.lead)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">是否可退</span>
+                  <span class="booking-meta-value">${escapeHtml(item.refund)}</span>
+                </div>
+                <div class="booking-meta">
+                  <span class="booking-meta-label">预付款</span>
+                  <span class="booking-meta-value">${escapeHtml(item.prepay)}</span>
+                </div>
+              </div>
+              ${item.officialUrl ? `<div class="booking-official">${renderLinkRow([{ label: "官网", url: item.officialUrl }])}</div>` : ""}
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
     function renderLists() {
-      bookingList.innerHTML = bookingPriorities.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
       noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
     }
 
@@ -1598,39 +2216,15 @@
 
       renderTabs(day.id);
       dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
-      dayIntro.textContent = day.intro;
       dayMapButton.href = mapsUrl(day.mapQuery);
-
-      const styleCopy =
-        day.intensity === "high"
-          ? "这一天安排较紧，交通和换乘时间最好都按保守一点来估计。"
-          : day.intensity === "medium"
-            ? "这一天整体平衡，但关键节点如果能按时推进，体验会更顺。"
-            : "这一天主要为出行";
-
-      summaryGrid.innerHTML = `
-        <article class="summary-card fade-in">
-          <h3>当天节奏</h3>
-          <div class="intensity ${day.intensity === "low" ? "low" : ""}">${escapeHtml(day.vibe)}</div>
-          <p>${escapeHtml(styleCopy)}</p>
-        </article>
-        <article class="summary-card fade-in">
-          <h3>时间范围</h3>
-          <strong>${escapeHtml(day.window)}</strong>
-          <p>${escapeHtml(day.travel)}</p>
-        </article>
-        <article class="summary-card fade-in">
-          <h3>核心安排</h3>
-          <strong>${escapeHtml(day.anchor)}</strong>
-          <p>如果只想抓住这一天最重要的主线，看这里就够了。</p>
-        </article>
-      `;
 
       featuredTitle.textContent = day.featured.title;
       featuredText.textContent = day.featured.text;
       featuredMap.href = mapsUrl(day.featured.mapQuery);
       featuredInfo.href = day.featured.infoUrl;
       featuredTags.innerHTML = day.spots.map((spot) => `<span class="meta-tag">${escapeHtml(spot)}</span>`).join("");
+      featuredGuidePanel.innerHTML = renderFeaturedGuides(day.featured.guideLinks);
+      bookingList.innerHTML = renderBookingChecklist(day.bookingChecklist);
 
       timeline.innerHTML = day.items.map((item, index) => {
         // --- Calculate Dynamic Google 地图 Directions ---
@@ -1678,6 +2272,12 @@
         }
         // -------------------------------------------------
 
+        const baseLinks = [
+          { label: "Google 地图", url: mapsUrl(addLocationContext(item.location.split("/")[0].trim(), day)) },
+          ...(startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase() ? [{ label: "路线", url: dirUrl(startLoc, endLoc) }] : []),
+          ...(item.links || [])
+        ];
+
         return `
         <article class="timeline-item fade-in">
           <div class="time">${escapeHtml(item.time)}</div>
@@ -1685,19 +2285,17 @@
             <h4>${escapeHtml(item.title)}</h4>
             <div class="place">${escapeHtml(item.location)}</div>
             <p>${escapeHtml(item.notes)}</p>
-            <div class="link-row">
-              <a class="link-chip" href="${mapsUrl(addLocationContext(item.location.split("/")[0].trim(), day))}" target="_blank" rel="noreferrer">Google 地图</a>
-              ${dirLinkHtml}
-              ${item.links.map((link) => `<a class="link-chip" href="${link.url}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`).join("")}
-            </div>
+            ${renderMicroGuide(item.microGuide)}
+            ${item.tips?.length ? `<div class="timeline-tip">${item.tips.map((tip) => escapeHtml(tip)).join(" / ")}</div>` : ""}
+            ${renderLinkRow(baseLinks)}
+            ${renderInlineGuideGroups(item.guideLinks)}
           </div>
         </article>
         `;
       }).join("");
 
-      mapJumpList.innerHTML = day.spots.map((spot) => `
-        <a class="link-chip" href="${mapsUrl(spot)}" target="_blank" rel="noreferrer">${escapeHtml(spot)}</a>
-      `).join("");
+      mapJumpList.innerHTML = renderLinkRow(day.spots.map((spot) => ({ label: spot, url: mapsUrl(spot) })));
+      serviceGuideList.innerHTML = renderServiceGuides(day.serviceGuides);
 
       featuredCard.classList.remove("fade-in");
       void featuredCard.offsetWidth;
