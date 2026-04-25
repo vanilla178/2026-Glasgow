@@ -361,6 +361,30 @@
       color: var(--ink);
     }
 
+    .side-note-card {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 252, 246, 0.64);
+      border: 1px solid var(--line);
+    }
+
+    .side-note-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .side-note-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 0.9rem;
+    }
+
+    .side-note-card li + li {
+      margin-top: 6px;
+    }
+
     .main-panel {
       padding: 24px;
     }
@@ -460,6 +484,61 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
+    }
+
+    .featured-image-grid {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .featured-image-card {
+      display: block;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      background: rgba(255, 252, 246, 0.72);
+      box-shadow: 0 12px 28px rgba(26, 35, 48, 0.1);
+    }
+
+    .featured-image-card img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      background: #f8f3ea;
+    }
+
+    .featured-image-card span {
+      display: block;
+      padding: 9px 11px;
+      color: var(--brand-3);
+      font-size: 0.88rem;
+      border-top: 1px solid rgba(31, 42, 51, 0.08);
+    }
+
+    .side-route-map {
+      display: block;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(31, 42, 51, 0.08);
+      background: rgba(255, 252, 246, 0.72);
+      box-shadow: 0 10px 24px rgba(26, 35, 48, 0.1);
+    }
+
+    .side-route-map img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      background: #f8f3ea;
+    }
+
+    .side-route-map span {
+      display: block;
+      padding: 8px 10px;
+      color: var(--brand-3);
+      font-size: 0.84rem;
+      border-top: 1px solid rgba(31, 42, 51, 0.08);
     }
 
     .content-grid {
@@ -645,6 +724,21 @@
       background: linear-gradient(180deg, #315f87, #4f88b3);
     }
 
+    .link-chip.image::before {
+      background: linear-gradient(180deg, #6b4aa5, #c4622e);
+    }
+
+    .link-thumb {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(26, 35, 48, 0.12);
+      box-shadow: 0 10px 22px rgba(26, 35, 48, 0.12);
+      flex-shrink: 0;
+    }
+
     .link-badge {
       display: inline-flex;
       align-items: center;
@@ -777,6 +871,77 @@
       margin-bottom: 6px;
       font-size: 0.85rem;
       color: var(--brand-3);
+    }
+
+    .food-table-details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .food-table-details summary {
+      cursor: pointer;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--brand-3);
+      list-style-position: inside;
+    }
+
+    .food-table-scroll {
+      overflow-x: auto;
+      border-top: 1px solid var(--line);
+    }
+
+    .food-table-section + .food-table-section {
+      border-top: 1px solid var(--line);
+    }
+
+    .food-table-section h5 {
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: var(--brand-3);
+      background: #f8fafc;
+    }
+
+    .food-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .food-table th,
+    .food-table td {
+      padding: 8px 10px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .food-table th {
+      color: var(--muted);
+      background: #f8fafc;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .food-table th:first-child,
+    .food-table td:first-child {
+      width: 150px;
+      min-width: 130px;
+      max-width: 170px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .food-table td:nth-child(2),
+    .food-table td:nth-child(3) {
+      white-space: nowrap;
     }
 
     .empty-copy {
@@ -928,6 +1093,10 @@
         <div class="mini-note">
           <strong>阅读提示：</strong>可切换日期预览每日安排
         </div>
+        <div class="side-note-card">
+          <h3>行程提示</h3>
+          <ul id="noteList"></ul>
+        </div>
       </aside>
 
       <main class="main-panel">
@@ -966,12 +1135,9 @@
               <div id="bookingList"></div>
             </section>
             <section class="booking-card">
-              <h3>行程提示</h3>
-              <ul id="noteList"></ul>
-            </section>
-            <section class="booking-card">
               <h3>地图快速跳转</h3>
               <div class="link-row" id="mapJumpList"></div>
+              <div id="sideRouteMap"></div>
             </section>
             <section class="booking-card">
               <h3>附近可选</h3>
@@ -1001,6 +1167,156 @@
       // }
     ];
 
+    const glasgowXhsGuides = [
+      { label: "小红书｜格拉这三家必打卡的店我不允许你还没去过", url: "https://www.xiaohongshu.com/explore/68e49eda000000000700d661?xsec_token=AB30G3tyo8OsX-IAV6lh5Lkx7uxjBDjKH97UNZALJtYek=&xsec_source=pc_search&source=web_note_detail_r10" },
+      { label: "小红书｜格拉斯哥冲~~！", url: "https://www.xiaohongshu.com/explore/68146468000000002300cfb7?xsec_token=ABhgxPs-AoA_bEWQjdKWEbD5Lyl8qqFlazCLt6nnDi7Oc=&xsec_source=pc_search&source=web_note_detail_r10" },
+      { label: "小红书｜格拉斯哥｜格大附近宝藏苏格兰菜Bothy", url: "https://www.xiaohongshu.com/explore/697007ec0000000022038fc1?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6TL-rHg9UnlAWJWrALil114=&xsec_source=pc_search&source=web_note_detail_r10" },
+      { label: "小红书｜格拉美食｜10家宝藏店铺+避雷（上）", url: "https://www.xiaohongshu.com/explore/6846f87900000000120041ae?xsec_token=ABeqHzeowHS3wvOcpYuvT0nu7H4E_ktv0Y8o7Yvs68FoU=&xsec_source=pc_search&source=web_note_detail_r10" },
+      { label: "小红书｜格拉美食｜10家宝藏店铺+避雷（下）", url: "https://www.xiaohongshu.com/explore/684849b4000000000303deef?xsec_token=ABfvzVG9ukdHx0rLRsVOa_dvsB52l0pfmh0A_HeqaSQpY=&xsec_source=pc_user" }
+    ];
+
+    const glasgowXhsLinks = glasgowXhsGuides.map((guide) => guide.url);
+
+    function glasgowXhs(index) {
+      return glasgowXhsLinks[index % glasgowXhsLinks.length];
+    }
+
+    function glasgowXhsGuideLinks() {
+      return glasgowXhsGuides;
+    }
+
+    const glasgowFoodGuides = {
+      cityCentre: {
+        restaurants: [
+          {
+            title: "市中心 / Central Station / Buchanan Street / George Square｜正餐",
+            links: [
+              { label: "Sugo Pasta｜意面｜小红书｜市中心平价意面，适合酒店附近随便吃一顿。", url: mapsUrl("Sugo Pasta Glasgow") },
+              { label: "Paesano Pizza - Miller Street｜拿坡里披萨｜Gemini 推荐｜小红书几乎人手一篇的格拉斯哥“平价之光”拿坡里披萨；队伍很长但排得快，盲点不出错。94 Miller Street, G1 1DT。", url: "https://www.paesanopizza.co.uk/glasgow-citycentre?utm_source=chatgpt.com" },
+              { label: "Topolabamba｜墨西哥菜｜Gemini 推荐｜超火的墨西哥餐厅，氛围很好；Tacos 和玛格丽特非常受欢迎。87 St Vincent Street, G2 5TF。", url: "https://www.topolabamba.com/?utm_source=chatgpt.com" },
+              { label: "La Vita｜意大利菜 / 甜品｜小红书｜Queen Street 附近，适合市中心逛街后吃。", url: mapsUrl("La Vita Glasgow Queen Street") },
+              { label: "Ichiban｜日料｜小红书｜市中心日料，拉面 / 寿司备选。", url: mapsUrl("Ichiban Glasgow") },
+              { label: "Nanakusa 七草｜日料｜Gemini 推荐｜市中心非常高频出现的日料店，味道正宗，适合亚洲胃。441 Sauchiehall Street。", url: "https://www.facebook.com/nanakusa.glasgow/?utm_source=chatgpt.com" },
+              { label: "Nippon Kitchen｜日料｜Gemini 推荐｜市中心非常高频出现的日料店，味道正宗，适合亚洲胃。91 West George Street, G2 1PB；Queen Street / Buchanan Street 方便。", url: "https://nipponkitchen.co.uk/?utm_source=chatgpt.com" },
+              { label: "Sichuan House 蜀香阁｜川菜 / 中餐｜Gemini 推荐｜正宗中餐 / 川菜，市中心留学生首选，适合想吃辣。", url: mapsUrl("Sichuan House Glasgow") },
+              { label: "Home Wok 家味｜中餐｜Gemini 推荐｜正宗中餐 / 川菜，市中心留学生首选；留学生口味 / 家常菜。", url: mapsUrl("Home Wok Glasgow") },
+              { label: "La Lanterna｜意大利 / 海鲜意面｜小红书｜正式一点的晚餐，人均偏高，建议预约。", url: mapsUrl("La Lanterna Glasgow") },
+              { label: "Eda｜土耳其烤肉｜小红书｜市中心边上，适合想吃烤肉但不想太折腾。", url: mapsUrl("Eda Glasgow") }
+            ]
+          }
+        ],
+        cafes: [
+          {
+            title: "市中心 / Merchant City｜咖啡甜品",
+            links: [
+              { label: "Laboratorio Espresso｜咖啡｜Gemini 推荐｜常年被评为格拉斯哥最好喝的独立咖啡馆，离得不远，咖啡脑袋必去。", url: mapsUrl("Laboratorio Espresso Glasgow") },
+              { label: "Kloud Cafe｜咖啡 / 抹茶 / pastry｜小红书｜Merchant City 一带，抹茶、可颂、拍照。", url: mapsUrl("Kloud Cafe Glasgow") },
+              { label: "Tantrum Doughnuts - Gordon Street｜甜甜圈 / 咖啡｜小红书 + Gemini 推荐｜本地超火的手工甜甜圈，开心果口味是绝杀。28 Gordon Street；住 Adagio 时比 West End 店顺路。", url: "https://tantrumdoughnuts.com/?utm_source=chatgpt.com" }
+            ]
+          }
+        ],
+        souvenirs: []
+      },
+      sec: {
+        restaurants: [
+          {
+            title: "SEC / Finnieston / Argyle Street｜正餐",
+            links: [
+              { label: "Crabshakk｜海鲜｜Gemini 推荐｜苏格兰顶级海鲜餐厅；小红书上最火的吃海鲜胜地，扇贝 Scallops 和青口贝 Mussels 必点，一定要提前预订。", url: mapsUrl("Crabshakk Glasgow") },
+              { label: "Six by Nico｜创意 tasting menu｜Gemini 推荐｜非常有创意的“六道菜”品尝菜单 Tasting Menu，每六周换一次主题，性价比极高的 Fine Dining 体验。", url: mapsUrl("Six by Nico Glasgow") },
+              { label: "Ox and Finch｜小盘菜 / 地中海融合｜Gemini 推荐｜米其林必比登推荐的 Tapas 小盘菜餐厅，地中海融合风味，极其难定。", url: mapsUrl("Ox and Finch Glasgow") },
+              { label: "Mother India's Cafe｜印度 tapas｜Gemini 推荐｜苏格兰屡获殊荣的印度 Tapas；适合尝试英国风味印度菜。1355 Argyle Street, G3 8AD。", url: "https://www.grubbee.co.uk/region/glasgow-city?utm_source=chatgpt.com" },
+              { label: "Elena's Spanish｜西班牙菜｜小红书｜海鲜饭，多人同行；原帖避雷三文鱼。", url: mapsUrl("Elena's Spanish Glasgow") },
+              { label: "Satu Satu｜马来西亚菜｜小红书｜Charing Cross 附近，从 SEC 回市中心方向顺路。", url: mapsUrl("Satu Satu Glasgow") },
+              { label: "Ka Ka Lok 家家乐｜粤菜 / 烧腊｜小红书 + Gemini 推荐｜全格拉斯哥最好吃的广式烧腊；偏 Charing Cross，SEC 往市中心 / West End 过渡可吃。", url: mapsUrl("Ka Ka Lok Glasgow") }
+            ]
+          }
+        ],
+        cafes: [
+          {
+            title: "SEC / Finnieston / Argyle Street｜甜品下午茶",
+            links: [
+              { label: "Tantrum Doughnuts - West End / Old Dumbarton Road｜甜甜圈 / 咖啡｜小红书｜27 Old Dumbarton Road；SEC / Kelvingrove 一带更顺。", url: "https://tantrumdoughnuts.com/?utm_source=chatgpt.com" },
+              { label: "The Hidden Lane Tearoom｜英式下午茶 / scone｜Gemini 推荐｜藏在彩色小巷子里的复古英式下午茶店，极度出片，Vintage 风格，司康饼 Scone 很棒。Unit 8, 1103 Argyle Street, G3 8ND。", url: "https://www.grubbee.co.uk/region/glasgow-city?utm_source=chatgpt.com" }
+            ]
+          }
+        ],
+        souvenirs: []
+      },
+      westEnd: {
+        restaurants: [
+          {
+            title: "University of Glasgow / Byres Road / Great Western Road / West End｜正餐",
+            links: [
+              { label: "The Bothy｜苏格兰菜｜小红书｜Ruthven Lane，格大附近正式午餐 / 晚餐。", url: mapsUrl("The Bothy Glasgow Ruthven Lane") },
+              { label: "Stravaigin｜苏格兰菜 / fusion｜小红书 + Gemini 推荐｜正宗苏格兰菜首选之一，可吃 Haggis 或苏格兰牛排，环境极佳；West End 氛围感餐厅，适合晚餐。", url: mapsUrl("Stravaigin Glasgow") },
+              { label: "Ubiquitous Chip｜苏格兰菜｜Gemini 推荐｜正宗苏格兰菜首选之一，可吃 Haggis 或苏格兰牛排，环境极佳；Ashton Lane 经典餐厅。", url: mapsUrl("Ubiquitous Chip Glasgow") },
+              { label: "Dumpling Monkey 好面膳｜中餐 / 饺子 / 面｜Gemini 推荐｜格大中国留学生的“食堂”，锅贴、生煎、牛肉面便宜大碗。", url: mapsUrl("Dumpling Monkey Glasgow") },
+              { label: "Silla 新罗｜韩餐｜Gemini 推荐｜格大附近最好吃的韩国料理之一，烤肉和豆腐汤很绝。", url: mapsUrl("Silla Korean Restaurant Glasgow") },
+              { label: "Banh Mi & Tea｜越南粉 / 越南餐｜小红书｜Partick 附近，天冷时热汤粉。", url: mapsUrl("Banh Mi & Tea Glasgow") },
+              { label: "Taste East 老街味道｜中餐｜小红书｜West End / Partick 一带，平价量大。", url: mapsUrl("Taste East Glasgow") },
+              { label: "Celino's｜意大利菜｜小红书｜Kelvinhall 附近，West End 氛围感晚餐。", url: mapsUrl("Celino's Glasgow") },
+              { label: "Santa Lucia Pasta｜意面｜小红书｜Byres Road / Kelvinhall 附近，格大游览日意面。", url: mapsUrl("Santa Lucia Pasta Glasgow") },
+              { label: "Paesano Pizza - West End｜披萨｜Gemini 推荐补充｜Great Western Road 区域；格大当天不用回 Miller Street。", url: "https://www.paesanopizza.co.uk/glasgow-west-end?utm_source=chatgpt.com" }
+            ]
+          }
+        ],
+        cafes: [
+          {
+            title: "University of Glasgow / West End｜甜品咖啡",
+            links: [
+              { label: "Nowita Ice Cream｜Gelato｜小红书｜Partick / Hyndland Street，格大 - Kelvingrove - Partick 路线后甜品。", url: mapsUrl("Nowita Ice Cream Glasgow") },
+              { label: "Koko House｜日式舒芙蕾 / 咖啡｜Gemini 推荐｜主打日式舒芙蕾松饼，小红书出图率极高，松软好吃。175 Great George Street，靠近 West End / 格大。", url: "https://koko-house.menu-world.com/?utm_source=chatgpt.com" },
+              { label: "Cottonrake Bakery｜烘焙 / 挞 / 咖啡｜Gemini 推荐｜格大西区永远在排队的烘焙店；无花果挞、柠檬白巧克力挞是小红书上的超级爆款。", url: mapsUrl("Cottonrake Bakery Glasgow") },
+              { label: "Loop & Scoop｜Churros / 冰淇淋｜Gemini 推荐｜苏格兰第一家吉拿棒 Churros 与冰淇淋专卖店，甜食爱好者的天堂。", url: mapsUrl("Loop & Scoop Glasgow") },
+              { label: "Kember & Jones｜Brunch / 咖啡 / 烘焙｜Gemini 推荐｜格大附近吃 Brunch 和喝咖啡的绝佳去处，氛围极其慵懒。Great Western Road 一带。", url: mapsUrl("Kember & Jones Glasgow") }
+            ]
+          }
+        ],
+        souvenirs: []
+      }
+    };
+
+    function mergeGlasgowFoodGuides(...areas) {
+      const regionalPicks = areas.map((area) => {
+        const areaTitle = area.restaurants[0]?.title.split("｜")[0] || area.cafes[0]?.title.split("｜")[0] || "Glasgow";
+        const links = [
+          ...(area.restaurants[0]?.links || []).slice(0, 4),
+          ...(area.cafes[0]?.links || []).slice(0, 1)
+        ].map((link) => {
+          const [name, type] = link.label.split("｜");
+          return { label: `${name}｜${type}`, url: link.url };
+        });
+        return { title: areaTitle, links };
+      });
+      const foodTableSections = areas.map((area) => {
+        const groups = [...area.restaurants, ...area.cafes];
+        const title = area.restaurants[0]?.title.split("｜")[0] || area.cafes[0]?.title.split("｜")[0] || "Glasgow";
+        const rows = groups.flatMap((group) => {
+          const region = group.title.split("｜")[0];
+          return group.links.map((link) => {
+            const [name, type, source, note] = link.label.split("｜");
+            return {
+              region,
+              name: name || "",
+              type: type || "",
+              source: source || "",
+              note: note || "",
+              url: link.url
+            };
+          });
+        });
+        return { title, rows };
+      });
+      return {
+        regionalPicks,
+        foodTableSections,
+        restaurants: [],
+        cafes: [],
+        souvenirs: []
+      };
+    }
+
     const itinerary = [
       {
         id: "0523",
@@ -1017,8 +1333,9 @@
         bookingChecklist: [],
         routeLinks: [],
         spotGuides: [],
+        serviceGuides: mergeGlasgowFoodGuides(glasgowFoodGuides.cityCentre, glasgowFoodGuides.sec, glasgowFoodGuides.westEnd),
         featured: {
-          title: "Merchant City",
+          title: "商人城（Merchant City）",
           text: "位置居中，步行连接方便。",
           mapQuery: "Merchant City Glasgow",
           infoUrl: "https://peoplemakeglasgow.com",
@@ -1028,7 +1345,7 @@
         items: [
           {
             time: "18:45-19:30",
-            title: "落地并完成入境",
+            title: "落地并办理入境",
             location: "Glasgow Airport",
             notes: "给入境和取行李预留一些时间。",
             links: [{ label: "机场", url: "http://glasgowairport.com" }]
@@ -1039,19 +1356,27 @@
             location: "GLA -> city centre",
             routeOrigin: "Glasgow Airport",
             routeDest: "Aparthotel Adagio Glasgow Central",
-            notes: "可以打车或坐机场巴士，通常约 20 到 30 分钟，视路况而定。",
-            links: [{ label: "酒店", url: "https://all.accor.com/hotel/B8A2/index.en.shtml" }]
+            notes: "可以打车或坐机场巴士（500 或 77），通常约 20 到 30 分钟，500 单程票价 10，往返17.5，上车向司机确认后购票即可，77可能稍微便宜但时间更长。",
+            links: [
+              { label: "机场巴士（Glasgow Airport Express Service 500）", url: "https://www.glasgowairport.com/media/jxbhzyep/1002_gae-booklet-a5-8pp-ol.pdf" },
+              { label: "小红书｜Glasgow 机场进城参考（线上购票方法）", url: "https://www.xiaohongshu.com/explore/67892b5b0000000018014c09?xsec_token=ABEdYFv2eJmUyGnQR2tRKOoSgij8ohWzQuHdUKEUDgWAQ=&xsec_source=pc_search&source=web_search_result_notes" }
+            ]
           },
           {
             time: "20:00-21:30",
             title: "晚餐加短距离散步",
-            location: "Merchant City / Aparthotel Adagio Glasgow Central area",
+            location: "商人城（Merchant City）/ Aparthotel Adagio Glasgow Central 周边",
             routeOrigin: "Aparthotel Adagio Glasgow Central",
             routeDest: "Merchant City, Glasgow",
-            notes: " ",
+            notes: "市中心正餐优先 Sugo Pasta / Paesano / Nippon Kitchen / Topolabamba；咖啡甜品优先 Laboratorio Espresso / Kloud Cafe / Tantrum Doughnuts。",
             links: [
-              { label: "VisitScotland", url: "http://visitscotland.com" },
+              ...glasgowXhsGuideLinks(),
               { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
+            ],
+            microGuide: [
+              { label: "市中心", text: "Sugo Pasta；Paesano Miller Street；Nippon Kitchen；Topolabamba。" },
+              { label: "咖啡甜品", text: "Laboratorio Espresso；Kloud Cafe；Tantrum Doughnuts Gordon Street。" },
+              { label: "超市", text: "Tesco Express — Glasgow St Enoch" }
             ]
           },
           {
@@ -1071,9 +1396,9 @@
         intro: "",
         vibe: "高密度观光日",
         intensity: "high",
-        window: "07:30-19:15",
+        window: "07:30-23:20",
         travel: "从 Glasgow 往返火车",
-        anchor: "Waverley Bridge + 爱丁堡城堡 + Royal Mile",
+        anchor: "Waverley Bridge + 爱丁堡城堡 + Victoria Street + Royal Mile",
         mapQuery: "Edinburgh Castle",
         bookingChecklist: [
           {
@@ -1081,7 +1406,7 @@
             officialUrl: "https://www.edinburghcastle.scot/plan-your-visit/opening-times",
             fee: "£23.50（官网在线成人票）",
             hours: "9:30-18:00（最晚入场 17:00）",
-            lead: "提前 1 周（建议最晚 05/17）",
+            lead: "提前 1 周（最晚 05/17）",
             refund: "不可退；仅闭馆/取消时退款",
             prepay: "需要预付款"
           },
@@ -1090,8 +1415,26 @@
             officialUrl: "https://www.realmarykingsclose.com/tickets",
             fee: "£28.50（Standard 成人票）",
             hours: "按官网日历场次",
-            lead: "建议提前数天至 1 周",
+            lead: "提前数天至 1 周",
             refund: "不可退；可在 tour 前 4 小时内改期",
+            prepay: "需要预付款"
+          },
+          {
+            title: "Makars Mash Bar（午/晚餐）",
+            officialUrl: "https://makarsmash.com",
+            fee: "人均按点单为准",
+            hours: "按门店营业时间",
+            lead: "现场排队；热门时段提前 1 周预约",
+            refund: "以预订渠道政策为准",
+            prepay: "视预订渠道而定"
+          },
+          {
+            title: "荷里路德宫（Palace of Holyroodhouse）",
+            officialUrl: "https://www.rct.uk/visit/palace-of-holyroodhouse",
+            fee: "£22.00（Standard Admission 成人提前购票）",
+            hours: "05/24：09:30-18:00（最晚入场 16:30）",
+            lead: "提前在线购票；工作王室宫殿，开放安排可能临时调整",
+            refund: "以 Royal Collection Trust 官网条款为准",
             prepay: "需要预付款"
           }
         ],
@@ -1102,18 +1445,23 @@
             {
               title: "老城午餐 / 正餐",
               links: [
-                { label: "Oink（Victoria Street，快吃快走首选）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" },
-                { label: "Makars Mash Bar（苏格兰菜正餐备选）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
-                { label: "The Dome（如果想走氛围晚餐路线）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+                { label: "Oink（Victoria Street，烤猪肉卷约 £6.5）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
+                { label: "Makars Mash Bar（苏格兰菜正餐；现场排队 / 提前一周预约）", url: "https://www.xiaohongshu.com/explore/687d6202000000001c03074c?xsec_token=ABdXigh_mzR0yG-eyQMfgh7nw9-TPINz10BP3dQ145Rrc=&xsec_source=pc_search&source=web_search_result_notes" },
+                { label: "The Dome（灯光宫殿晚餐；预约制更稳）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
+                { label: "Angels with Bagpipes（苏格兰传统美食；曾经米其林一星；价格比伦敦划算很多）", url: "https://www.google.com/maps/search/Angels+with+Bagpipes+Edinburgh" },
+                { label: "Mary's Milk Bar（爱丁堡最会做冰淇淋；海盐焦糖）", url: "https://www.google.com/maps/search/Mary's+Milk+Bar+Edinburgh" },
+                { label: "Kilimanjaro Coffee（苏格兰早餐；haggis、蘑菇、橘子果酱）", url: "https://www.google.com/maps/search/Kilimanjaro+Coffee+Edinburgh" }
               ]
             }
           ],
           cafes: [
             {
-              title: "顺路咖啡 / 休息点",
+              title: "咖啡 / 观景点",
               links: [
                 { label: "The Milkman（老城经典咖啡打卡点）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
-                { label: "Waterstones Cafe（观景休息点）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+                { label: "Blank Street Coffee（抹茶）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
+                { label: "Waterstones Cafe（观景休息点）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
+                { label: "Black Medicine Co（本地人公认好喝的咖啡馆）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" }
               ]
             }
           ],
@@ -1124,6 +1472,9 @@
                 { label: "Hotel Chocolat（巧克力伴手礼）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
                 { label: "Royal Mile 羊绒围巾 / 威士忌店", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
                 { label: "Victoria Street 纪念品店", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" },
+                { label: "Princes Street 威士忌店（纯酿威士忌；蜂蜜威士忌）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" },
+                { label: "Perre Handmade（设计很特别，本地原创首饰店，值得逛逛）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" },
+                { label: "Fabhatrix（爱丁堡最大的帽子集合店）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" },
                 { label: "PERRE 饰品店", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
                 { label: "爱丁堡黄油饼干测评 / 送礼参考", url: "https://www.xiaohongshu.com/explore/677ccc32000000001800e9b3?xsec_token=ABUugmbW1Le_zvS2twKCR2zrJ7xd_13d7qvvQANzxPaoY=&xsec_source=pc_search&source=web_explore_feed" }
               ]
@@ -1131,27 +1482,32 @@
           ]
         },
         featured: {
-          title: "爱丁堡城堡",
-          text: "爱丁堡城堡位于 Castle Rock 之上，是老城天际线中最醒目的地标之一。",
+          title: "爱丁堡城堡（Edinburgh Castle）",
+          text: "爱丁堡城堡位于 Castle Rock 之上，是老城天际线中最醒目的地标之一；后接 The Vennel、Victoria Street、Grassmarket、Royal Mile。",
           mapQuery: "Edinburgh Castle",
           infoUrl: "http://edinburghcastle.scot",
           guideLinks: [
             {
-              title: "小红书攻略",
+              title: "参考链接",
               links: [
+                { label: "哈利波特点位：Lawnmarket / Victoria Street / George IV Bridge / Greyfriars / 国博", url: "https://www.xiaohongshu.com/explore/679d64b20000000018006008?xsec_token=ABUAud6buCfuJMCCIMTv3YQhZyIAn47U-4bdp2RJOtxlU=&xsec_source=pc_search&source=unknown" },
                 { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
                 { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" },
+                { label: "爱丁堡一日游路线（皇家一英里分段版）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
                 { label: "爱丁堡 Citywalk / 老城经典路线", url: "https://www.xiaohongshu.com/explore/69d053b0000000002301edde?xsec_token=ABnEw3bgKa3xkrUi5PHhMGO6-FTpnAr57XkIgZ-YqQ6r8=&xsec_source=pc_search&source=unknown" },
                 { label: "爱丁堡攻略 / 一天暴走版", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" }
               ]
             }
           ]
         },
-        spots: ["Waverley Bridge", "Edinburgh Castle", "St Giles' Cathedral", "Victoria Street", "Calton Hill"],
+        sideRouteMap: [
+          { label: "哈利波特路线图", url: "../assets/edinburgh-harry-potter-route.png" },
+          { label: "爱丁堡路线参考图", url: "../assets/Edinburgh-route-ref.jpg" }
+        ],
+        spots: ["Waverley Bridge", "Edinburgh Castle", "The Vennel", "Grassmarket", "Victoria Street", "National Museum of Scotland", "St Giles' Cathedral", "Palace of Holyroodhouse", "Calton Hill"],
         items: [
           {
-            time: "07:30-08:30",
+            time: "08:00-09:00",
             title: "乘火车前往 Edinburgh",
             location: "Glasgow Queen Street -> Edinburgh Waverley",
             routeOrigin: "Glasgow Queen Street Station",
@@ -1163,20 +1519,20 @@
             ]
           },
           {
-            time: "08:30-09:00",
-            title: "Waverley Bridge / 近车站经典机位",
+            time: "09:00-09:30",
+            title: "Waverley Bridge 车站",
             location: "Waverley Bridge Edinburgh",
             routeOrigin: "Edinburgh Waverley Station",
             routeDest: "Waverley Bridge Edinburgh",
-            notes: "不少攻略都会先在这里或附近桥位停一下，先把城堡和老城天际线的经典视角收掉。",
+            notes: "仰拍爱丁堡城堡全景、哥特式司各特纪念塔；老城与新城交界视角；Waverley 主厅维多利亚钢铁穹顶、Market St 出口旋梯列车俯视角。",
             microGuide: [
-              { label: "备注", text: "老城天际线和城堡方向的大视角可先查看。" },
+              { label: "备注", text: "Waverley 车站出来右转斜坡。" },
               { label: "时间", text: "约 10-15 分钟。" }
             ],
             links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
             guideLinks: [
               {
-                title: "小红书攻略",
+                title: "参考链接",
                 links: [
                   { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
                 ]
@@ -1184,38 +1540,43 @@
             ]
           },
           {
-            time: "09:00-11:00",
-            title: "爱丁堡城堡",
+            time: "09:30-11:00",
+            title: "爱丁堡城堡（Edinburgh Castle）",
             location: "Old Town",
             routeOrigin: "Waverley Bridge Edinburgh",
             routeDest: "Edinburgh Castle",
-            notes: "可排在第一站。",
+            notes: "13:00 大炮（One O'Clock Gun）、苏格兰王冠/权杖/命运之石、圣玛格丽特礼拜堂、王冠珠宝厅、军事博物馆、半月炮台王子街全景、全城俯瞰视野。",
             microGuide: [
-              { label: "备注", text: "主城堡线和高位视角可优先查看。" },
-              { label: "时间", text: "停留时间容易超过 90 分钟。" }
+              { label: "路线", text: "Waverley Bridge -> Princes Street Gardens -> Castlehill -> Edinburgh Castle；花园上坡至城堡约 10-15 分钟。" },
+              { label: "票务", text: "官网电子票，按预约时间入场；4-9月 9:30-18:00，最晚入场 17:00；中文导览器。" },
+              { label: "出口", text: "城堡广场 -> The Vennel / Grassmarket。" }
             ],
             links: [{ label: "官网", url: "http://edinburghcastle.scot" }],
             guideLinks: [
               {
-                title: "小红书攻略",
+                title: "参考链接",
                 links: [
-                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
-                  { label: "爱丁堡一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi9k9KQvGSkmMnVXzCySkpgg=&xsec_source=pc_search&source=unknown" }
+                  { label: "爱丁堡经典一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
+                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" }
                 ]
               }
             ]
           },
           {
-            time: "11:00-11:25",
-            title: "The Vennel / Grassmarket 经典机位",
+            time: "11:00-11:15",
+            title: "The Vennel 城堡楼梯机位",
             location: "The Vennel Edinburgh",
             routeOrigin: "Edinburgh Castle",
             routeDest: "The Vennel Edinburgh",
-            notes: "如果想拍到城堡压在楼梯尽头的经典画面，这里是最常见的打卡点；时间紧也可以只快停几分钟。",
+            notes: "石阶小巷、楼梯尽头城堡构图、Castle Rock 高位背景。",
+            microGuide: [
+              { label: "坐标", text: "Vennel, EH1 2HU" },
+              { label: "关系", text: "The Vennel 是连接城堡一侧与 Grassmarket 的楼梯机位，不等于 Grassmarket。" }
+            ],
             links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
             guideLinks: [
               {
-                title: "小红书攻略",
+                title: "参考链接",
                 links: [
                   { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
                 ]
@@ -1223,135 +1584,232 @@
             ]
           },
           {
-            time: "11:25-12:05",
-            title: "Victoria Street + Grassmarket",
-            location: "Victoria Street Edinburgh",
+            time: "11:15-11:30",
+            title: "Grassmarket 广场",
+            location: "Grassmarket Edinburgh",
             routeOrigin: "The Vennel Edinburgh",
+            routeDest: "Grassmarket Edinburgh",
+            notes: "城堡脚下老广场、Castle Rock 仰视角、酒吧餐厅立面、通往 Victoria Street 的坡道入口。",
+            microGuide: [
+              { label: "关系", text: "Grassmarket 是广场；Victoria Street 是从广场北侧接上去的彩色弧形街。" },
+              { label: "餐饮", text: "Oink、酒吧餐厅、Victoria Street 简餐店。" }
+            ],
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "11:30-11:45",
+            title: "维多利亚街（Victoria Street）",
+            location: "Victoria Street Edinburgh",
+            routeOrigin: "Grassmarket Edinburgh",
             routeDest: "Victoria Street Edinburgh",
-            notes: "这一段在很多攻略里都属于高频点，彩色街景和哈利波特氛围都集中在这里。",
+            notes: "彩色弧形坡道、转角店面、通往 George IV Bridge / Lawnmarket 的老城街景。",
             microGuide: [
-              { label: "备注", text: "彩色坡道、转角街景和 Grassmarket 方向视角可一并查看。" },
-              { label: "餐饮", text: "Oink 可作为这一带的简餐选项。" },
-              { label: "咖啡", text: "The Milkman 位于顺路范围内。" },
-              { label: "伴手礼", text: "纪念品店和设计小店主要分布在 Victoria Street 一带。" }
+              { label: "街景", text: "彩色立面、弧形上坡、上层步道视角。" },
+              { label: "餐饮", text: "Oink 烤猪肉卷约 £6.5；The Milkman 咖啡；Blank Street Coffee 抹茶。" }
             ],
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
-            guideLinks: [
-              {
-                title: "小红书攻略",
-                links: [
-                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
-                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
           },
           {
-            time: "12:05-12:30",
-            title: "圣吉尔斯大教堂 + Royal Mile",
-            location: "Royal Mile",
+            time: "11:45-11:55",
+            title: "Elephant House 新址",
+            location: "30 Victoria Street Edinburgh",
             routeOrigin: "Victoria Street Edinburgh",
-            routeDest: "St Giles' Cathedral",
-            notes: "主街、教堂外观与 Close 小巷入口集中在这一段。",
-            microGuide: [
-              { label: "备注", text: "Royal Mile 主街、教堂外观、Close 小巷入口可一并查看。" },
-              { label: "伴手礼", text: "羊绒、威士忌、巧克力和纪念品店主要分布在 Royal Mile 与 Victoria Street 一带。" }
-            ],
-            links: [{ label: "指南", url: "http://scotlandschurchestrust.org.uk" }]
-          },
-          {
-            time: "12:30-12:50",
-            title: "Warriston's Close / Advocate's Close 小巷机位",
-            location: "Advocate's Close Edinburgh",
-            notes: "这类 Close 小巷是爱丁堡老城很出片的一部分，如果天气好很值得补一个。",
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
+            routeDest: "30 Victoria Street Edinburgh",
+            notes: "Elephant House 新址，Victoria Street 街面点位。",
             guideLinks: [
               {
-                title: "小红书攻略",
+                title: "参考链接",
                 links: [
-                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
+                  { label: "哈利波特点位清单", url: "https://www.xiaohongshu.com/explore/679d64b20000000018006008?xsec_token=ABUAud6buCfuJMCCIMTv3YQhZyIAn47U-4bdp2RJOtxlU=&xsec_source=pc_search&source=unknown" }
                 ]
               }
             ]
           },
           {
-            time: "12:50-13:35",
-            title: "The Real Mary King's Close",
-            location: "Royal Mile",
-            notes: "需提前预约。",
-            links: [{ label: "官网", url: "http://realmarykingsclose.com" }]
+            time: "11:55-12:10",
+            title: "Museum Context",
+            location: "40 Victoria Street Edinburgh",
+            routeOrigin: "30 Victoria Street Edinburgh",
+            routeDest: "40 Victoria Street Edinburgh",
+            notes: "哈利波特主题商店，Victoria Street 街面点位；店面橱窗、魔法主题纪念品。"
+          },
+          {
+            time: "12:10-12:25",
+            title: "Elephant House 原址 / George IV Bridge",
+            location: "George IV Bridge Edinburgh",
+            routeOrigin: "40 Victoria Street Edinburgh",
+            routeDest: "George IV Bridge Edinburgh",
+            notes: "Elephant House 原址外观、George IV Bridge 街景；Victoria Street 上行后接 George IV Bridge。"
+          },
+          {
+            time: "12:25-12:45",
+            title: "Greyfriars Kirkyard",
+            location: "Greyfriars Kirkyard Edinburgh",
+            routeOrigin: "George IV Bridge Edinburgh",
+            routeDest: "Greyfriars Kirkyard Edinburgh",
+            notes: "老墓园、Greyfriars Bobby 周边、哈利波特姓名灵感相关墓碑点位。"
+          },
+          {
+            time: "12:45-13:20",
+            title: "National Museum of Scotland",
+            location: "National Museum of Scotland",
+            routeOrigin: "Greyfriars Kirkyard Edinburgh",
+            routeDest: "National Museum of Scotland",
+            notes: "免费博物馆；Lewis Chessmen 路易斯西洋棋子位于 Chambers St 馆内，是哈利波特巫师棋原型相关点位。",
+            links: [{ label: "Museum", url: "http://nms.ac.uk" }]
+          },
+          {
+            time: "13:20-13:35",
+            title: "Lawnmarket 猫头鹰点位",
+            location: "451 Lawnmarket Edinburgh",
+            routeOrigin: "National Museum of Scotland",
+            routeDest: "451 Lawnmarket Edinburgh",
+            notes: "451 Lawnmarket / Heritage of Scotland 门口猫头鹰点位；Lawnmarket 入口。"
           },
           {
             time: "13:35-14:15",
             title: "午餐",
             location: "Royal Mile / Victoria Street",
-            notes: "午餐可放在老城段处理，Victoria Street 一带店铺更集中。",
+            notes: "Royal Mile / Victoria Street / Grassmarket 餐饮集中；Oink 烤猪肉卷约 £6.5；Makars Mash Bar 苏格兰菜正餐；The Dome 灯光宫殿晚餐。",
             microGuide: [
-              { label: "餐饮", text: "Victoria Street 可作简餐区，Makars Mash Bar 可作正餐备选。" },
-              { label: "咖啡", text: "咖啡店可与午餐一起处理。" }
+              { label: "餐饮", text: "Victoria Street 简餐区；Makars Mash Bar 正餐备选。" },
+              { label: "咖啡", text: "The Milkman；Blank Street Coffee 抹茶；Waterstones Cafe 城堡观景位；Black Medicine Co，本地人公认好喝的咖啡馆。" }
             ],
             links: [{ label: "区域指南", url: "http://edinburgh.org" }],
-            tips: ["可优先参考 Victoria Street / Grassmarket 一带的餐厅攻略。"]
+            tips: ["Victoria Street / Grassmarket 一带餐厅参考。"]
           },
           {
-            time: "14:20-15:20",
-        title: "National Museum of Scotland 或继续老城步行",
-            location: "Old Town Edinburgh",
-            notes: "按这些攻略来看，国博是最常见的免费补充项；如果不想进馆，也可以把这段继续留给老城和商店。",
-            links: [{ label: "Museum", url: "http://nms.ac.uk" }]
-          },
-          {
-            time: "15:20-16:00",
-            title: "Scott Monument / Princes Street 一带",
-            location: "Princes Street Edinburgh",
-            notes: "往 Calton Hill 走之前经过这里最顺，也能把新城区这一侧的城市感补上。",
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
-          },
-          {
-            time: "16:00-16:50",
-            title: "卡尔顿山",
-            location: "Edinburgh",
-            routeOrigin: "Princes Street Edinburgh",
-            routeDest: "Calton Hill Edinburgh",
-            notes: "常见于一日游收尾段，可查看城市全景。",
+            time: "14:15-14:35",
+            title: "圣吉尔斯大教堂（St Giles’ Cathedral）",
+            location: "St Giles' Cathedral",
+            routeOrigin: "451 Lawnmarket Edinburgh",
+            routeDest: "St Giles' Cathedral",
+            notes: "Royal Mile 地标；王冠形塔顶、Thistle Chapel（蓟花礼拜堂）。",
             microGuide: [
-              { label: "备注", text: "观景点位集中在山顶平台一带。" }
+              { label: "停留", text: "约 15-25 分钟（入内快速参观版）。" }
             ],
-            links: [{ label: "指南", url: "http://scotrail.co.uk" }],
+            links: [{ label: "指南", url: "http://scotlandschurchestrust.org.uk" }],
             guideLinks: [
               {
-                title: "小红书攻略",
+                title: "参考链接",
                 links: [
-                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
                   { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
                 ]
               }
             ]
           },
           {
-            time: "16:50-18:00",
-            title: "回到车站",
-            location: "Edinburgh Waverley",
-            notes: "回程前预留一点机动时间，可以顺手补买伴手礼或在车站附近休息。",
+            time: "14:35-14:50",
+            title: "Royal Mile Close 小巷机位：Advocate's Close",
+            location: "Advocate's Close Edinburgh",
+            routeOrigin: "St Giles' Cathedral",
+            routeDest: "Advocate's Close Edinburgh",
+            notes: "Royal Mile 边的小巷，老城窄巷、石阶、城堡方向构图。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "14:50-15:35",
+            title: "玛丽金小巷（The Real Mary King's Close）",
+            location: "Royal Mile",
+            routeOrigin: "Advocate's Close Edinburgh",
+            routeDest: "The Real Mary King's Close",
+            notes: "地下历史导览，官网按场次预约，tour 前 4 小时内可改期。",
+            links: [{ label: "官网", url: "http://realmarykingsclose.com" }]
+          },
+          {
+            time: "15:35-16:00",
+            title: "Canongate + 苏格兰议会现代建筑",
+            location: "Canongate / Scottish Parliament Edinburgh",
+            routeOrigin: "The Real Mary King's Close",
+            routeDest: "Scottish Parliament Edinburgh",
+            notes: "Canongate 街段、街道石板文学铭文、Scottish Parliament 现代建筑外观、Holyroodhouse 方向视线。",
             microGuide: [
-              { label: "伴手礼", text: "返程前可集中补买巧克力、饼干和已选定的伴手礼。" }
+              { label: "石板", text: "Canongate / Royal Mile 东段地面文学铭文。" },
+              { label: "建筑", text: "苏格兰议会现代建筑立面、Holyroodhouse 周边街景。" }
             ],
-            links: [],
-            tips: ["如果想买伴手礼，可以优先看 Royal Mile 或 Waverley 附近纪念品攻略。"]
+            links: [{ label: "Scottish Parliament", url: "https://www.parliament.scot/visit" }],
+            guideLinks: [
+              {
+                title: "参考链接",
+                links: [
+                  { label: "爱丁堡经典一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" }
+                ]
+              }
+            ]
           },
           {
-            time: "18:00-19:15",
+            time: "16:00-17:00",
+            title: "荷里路德宫（Palace of Holyroodhouse）",
+            location: "Palace of Holyroodhouse",
+            routeOrigin: "Scottish Parliament Edinburgh",
+            routeDest: "Palace of Holyroodhouse",
+            notes: "位于 Royal Mile 尽头，英国君主在苏格兰的官方居所；State Apartments、Mary, Queen of Scots 相关房间、Holyrood Abbey、Palace Gardens。05/24 官方开放 09:30-18:00，最晚入场 16:30。",
+            microGuide: [
+              { label: "开放", text: "21 May - 7 September 2026 每日 09:30-18:00，最晚入场 16:30。" },
+              { label: "票务", text: "Standard Admission 成人提前购票 £22.00；工作王室宫殿，开放安排可能临时调整。" }
+            ],
+            links: [{ label: "官网", url: "https://www.rct.uk/visit/palace-of-holyroodhouse" }]
+          },
+          {
+            time: "17:00-17:20",
+            title: "Scott Monument / Princes Street 一带",
+            location: "Princes Street Edinburgh",
+            routeOrigin: "Palace of Holyroodhouse",
+            routeDest: "Princes Street Edinburgh",
+            notes: "Jenners 百货、Waterstones 城堡观景咖啡厅、Princes Street Gardens 城堡倒影视角、Scott Monument 哥特式纪念塔。",
+            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "17:20-18:00",
+            title: "Princes Street / Waverley 周边商店",
+            location: "Princes Street / Edinburgh Waverley",
+            routeOrigin: "Princes Street Edinburgh",
+            routeDest: "Edinburgh Waverley",
+            notes: "Waverley / Princes Street 周边；商店通常 18:00 左右关门；巧克力、饼干、羊绒、威士忌、纪念品。Princes Street 威士忌商店可带瓶纯酿威士忌回家；不爱喝酒也可以试蜂蜜威士忌，基本每家都有卖。",
+            microGuide: [
+              { label: "威士忌", text: "EH1 2NE；纯酿威士忌、蜂蜜威士忌。" },
+              { label: "首饰", text: "Perre Handmade，EH1 1BP；设计很特别，本地原创首饰店，值得逛逛。" },
+              { label: "帽子", text: "Fabhatrix；爱丁堡最大的帽子集合店。" },
+              { label: "伴手礼", text: "Royal Mile / Waverley 附近纪念品店；Hotel Chocolat；羊绒围巾；威士忌店。（可导航至玛莎超市买鹿牌黄油饼干）" }
+            ],
+            links: [
+              { label: "Edinburgh guide", url: "http://edinburgh.org" },
+              { label: "小红书｜威士忌 / Perre / Fabhatrix / Black Medicine Co", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" }
+            ]
+          },
+          {
+            time: "18:00-19:30",
+            title: "晚餐（爱丁堡）",
+            location: "Edinburgh city centre",
+            routeOrigin: "Edinburgh Waverley",
+            routeDest: "Makars Mash Bar Edinburgh",
+            notes: "Makars Mash Bar 苏格兰菜正餐；The Dome 灯光宫殿晚餐；Princes Street / George Street / Royal Mile 周边餐厅。",
+            microGuide: [
+              { label: "餐饮", text: "Makars Mash Bar；The Dome；Waverley 周边晚餐。" }
+            ],
+            links: [{ label: "美食指南", url: "http://edinburgh.org" }]
+          },
+          {
+            time: "20:40-21:45",
+            title: "卡尔顿山（Calton Hill）日落",
+            location: "Edinburgh",
+            routeOrigin: "Edinburgh city centre",
+            routeDest: "Calton Hill Edinburgh",
+            notes: "05/24 爱丁堡日落 21:34；日落前约 50 分钟上山。Waterloo Place 斜坡、国家纪念碑、Nelson Monument、Dugald Stewart Monument、老城新城交界全景。",
+            microGuide: [
+              { label: "时间", text: "20:40-21:45；民用暮光约 22:29 结束。" },
+              { label: "点位", text: "Dugald Stewart Monument 一侧、National Monument 平台、Nelson Monument 周边。" }
+            ],
+            links: [{ label: "日落时间", url: "https://www.timeanddate.com/sun/uk/edinburgh?month=5" }]
+          },
+          {
+            time: "22:05-23:20",
             title: "乘火车返回 Glasgow",
-            location: "Edinburgh -> Glasgow",
-            notes: "晚上直接返回即可。",
+            location: "Edinburgh Waverley -> Glasgow Queen Street",
+            routeOrigin: "Calton Hill Edinburgh",
+            routeDest: "Edinburgh Waverley Station",
+            notes: "Edinburgh Waverley -> Glasgow Queen Street。",
             links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
-          },
-          {
-            time: "After 19:15",
-            title: "晚餐",
-            location: "Glasgow",
-            notes: " ",
-            links: [{ label: "美食指南", url: "http://wanderlustchloe.com" }]
           }
         ]
       },
@@ -1370,8 +1828,9 @@
         bookingChecklist: [],
         routeLinks: [],
         spotGuides: [],
+        serviceGuides: mergeGlasgowFoodGuides(glasgowFoodGuides.cityCentre, glasgowFoodGuides.sec, glasgowFoodGuides.westEnd),
         featured: {
-          title: "Glasgow Cathedral",
+          title: "格拉斯哥大教堂（Glasgow Cathedral）",
           text: "Glasgow Cathedral 是苏格兰中世纪宗教建筑的重要代表之一。",
           mapQuery: "Glasgow Cathedral",
           infoUrl: "http://historicenvironment.scot",
@@ -1381,21 +1840,21 @@
         items: [
           {
             time: "09:30-10:10",
-            title: "Glasgow Cathedral",
+            title: "格拉斯哥大教堂（Glasgow Cathedral）",
             location: "East End",
             notes: "可作为第一站。",
             links: [{ label: "官网", url: "http://historicenvironment.scot" }]
           },
           {
             time: "10:10-10:40",
-            title: "Necropolis",
+            title: "格拉斯哥墓园（Necropolis）",
             location: "Near Cathedral",
             notes: "可以顺路上去看视野，再简单走一圈。",
             links: [{ label: "指南", url: "http://peoplemakeglasgow.com" }]
           },
           {
             time: "10:40-11:20",
-            title: "St Mungo Museum",
+            title: "圣芒戈博物馆（St Mungo Museum）",
             location: "Cathedral precinct",
             notes: "馆不大，和教堂一起看很合适。",
             links: [{ label: "参考信息", url: "http://glasgowlife.org.uk" }]
@@ -1419,7 +1878,7 @@
           },
           {
             time: "12:10-12:40",
-            title: "Gallery of Modern Art (GoMA)",
+            title: "现代艺术馆（Gallery of Modern Art, GoMA）",
             location: "Royal Exchange Square",
             notes: "市中心一个很经典的免费点位。",
             links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
@@ -1428,8 +1887,11 @@
             time: "12:40-13:30",
             title: "午餐",
             location: "City Centre",
-            notes: "可以在 Buchanan Street 或 St Vincent Place 一带解决。",
-            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
+            notes: "Buchanan Street / St Vincent Place 一带；Sugo Pasta、Paesano、Nippon Kitchen、Topolabamba。",
+            links: [
+              ...glasgowXhsGuideLinks(),
+              { label: "Paesano City Centre", url: "https://www.paesanopizza.co.uk/glasgow-citycentre?utm_source=chatgpt.com" }
+            ]
           },
           {
             time: "13:30-15:00",
@@ -1453,8 +1915,11 @@
             time: "15:15-16:30",
             title: "沿 Clyde 河边走走 / 在 Finnieston 喝杯咖啡",
             location: "SEC / Finnieston",
-            notes: " ",
-            links: [{ label: "区域指南", url: "http://peoplemakeglasgow.com" }]
+            notes: "Finnieston / Argyle Street：Mother India's Cafe、Ka Ka Lok、Satu Satu；咖啡甜品 Tantrum Doughnuts、Hidden Lane Tearoom。",
+            links: [
+              ...glasgowXhsGuideLinks(),
+              { label: "Tantrum Doughnuts", url: "https://tantrumdoughnuts.com/?utm_source=chatgpt.com" }
+            ]
           },
           {
             time: "16:45-17:30",
@@ -1467,8 +1932,15 @@
             time: "17:30-19:00",
             title: "晚餐 / 放松",
             location: "Glasgow",
-            notes: " ",
-            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
+            notes: "方便型：Mother India's Cafe / Ka Ka Lok / Satu Satu；体验型：Crabshakk / Ox and Finch / Six by Nico。",
+            links: [
+              ...glasgowXhsGuideLinks(),
+              { label: "城市指南", url: "http://peoplemakeglasgow.com" }
+            ],
+            microGuide: [
+              { label: "SEC", text: "Mother India's Cafe；Ka Ka Lok；Satu Satu。" },
+              { label: "Finnieston", text: "Crabshakk；Ox and Finch；Six by Nico。" }
+            ]
           },
           {
             time: "Evening",
@@ -1495,7 +1967,7 @@
         routeLinks: [],
         spotGuides: [],
         featured: {
-          title: "Glencoe",
+          title: "格伦科峡谷（Glencoe）",
           text: "Glencoe 以峡谷地形、山坡线条和高地景观闻名。",
           mapQuery: "Glencoe Scotland",
           infoUrl: "http://rabbies.com",
@@ -1636,7 +2108,7 @@
           },
           {
             time: "11:30-12:00",
-            title: "约克城墙经典机位",
+            title: "约克城墙（York City Walls）机位",
             location: "York Station / York City Walls",
             routeOrigin: "York Railway Station",
             routeDest: "York City Walls",
@@ -1661,7 +2133,7 @@
           },
           {
             time: "12:00-12:35",
-            title: "Museum Gardens + 圣玛丽修道院遗址",
+            title: "博物馆花园（Museum Gardens）+ 圣玛丽修道院遗址",
             location: "Museum Gardens York",
             notes: "从城墙进入老城时可顺路经过，修道院遗址和草坪位于这一段。",
             microGuide: [
@@ -1680,7 +2152,7 @@
           },
           {
             time: "12:40-13:35",
-            title: "约克大教堂",
+            title: "约克大教堂（York Minster）",
             location: "York city centre",
             notes: "这里仍然是当天核心景点，但放在城墙和花园之后更顺，而且视角会更完整。",
             microGuide: [
@@ -1713,15 +2185,15 @@
           },
           {
             time: "14:10-15:10",
-            title: "The Shambles 老街 + 小店",
+            title: "肉铺街（The Shambles）+ 小店",
             location: "York old town",
-            notes: "肉铺街、小店、小吃多集中在这一段。",
+            notes: "这一段小店和小吃很多。",
             microGuide: [
-              { label: "备注", text: "窄巷转角、主题小店和街景集中在这一段。" },
+              { label: "备注", text: "窄巷转角、主题小店和街景都在这一带。" },
               { label: "伴手礼", text: "糖果、茶点与小纪念品可在这一段查看。" }
             ],
             links: [{ label: "Visit York", url: "http://visityork.org" }],
-            tips: ["可顺手查看茶点、糖果和小纪念品攻略。"],
+            tips: ["可参考茶点、糖果和小纪念品攻略。"],
             guideLinks: [
               {
                 title: "小红书攻略",
@@ -1735,11 +2207,11 @@
           },
           {
             time: "15:10-15:50",
-            title: "克利福德塔 / 城堡区",
+            title: "克利福德塔（Clifford's Tower）/ 城堡区",
             location: "Clifford's Tower",
-            notes: "不少约克一日游会把这里作为老城段的收尾。即使不进塔，只在外面看和拍照也很值。",
+            notes: "不少约克一日游会把这里放在老城的末段。即使不进塔，只在外面看和拍照也很值。",
             microGuide: [
-              { label: "备注", text: "外观与周边高点视角可作为老城段收尾。" }
+              { label: "备注", text: "外观与周边高点视角很适合当作老城的最后一站。" }
             ],
             links: [{ label: "English Heritage", url: "http://english-heritage.org.uk" }],
             guideLinks: [
@@ -1754,14 +2226,14 @@
           },
           {
             time: "15:50-16:35",
-            title: "乌斯河边 / 城墙补拍 / 自由机动",
+            title: "乌斯河边 / 城墙拍照 / 自由活动",
             location: "York riverside",
-            notes: "可用于补拍、逛店或沿河步行。",
+            notes: "可以沿河走走、逛店或拍照。",
             links: [{ label: "Visit York", url: "http://visityork.org" }]
           },
           {
             time: "16:35-17:05",
-            title: "National Railway Museum 或回车站前补给",
+            title: "National Railway Museum 或回车站前买点饮水零食",
             location: "Near York station",
             notes: "铁路博物馆保留为返程前可选项。几个攻略都更推荐把主线时间优先给城墙、教堂和老城。",
             links: [{ label: "官网", url: "http://railwaymuseum.org.uk" }]
@@ -1786,7 +2258,7 @@
         id: "0528",
         short: "05/28",
         dayLabel: "周四",
-        title: "Glasgow 市区 + 口头报告 + 晚间安排",
+            title: "Glasgow 市区 + 口头报告 + 晚上活动",
         intro: "",
         vibe: "报告日",
         intensity: "medium",
@@ -1797,13 +2269,9 @@
         bookingChecklist: [],
         routeLinks: [],
         spotGuides: [],
-        serviceGuides: {
-          restaurants: [],
-          cafes: [],
-          souvenirs: []
-        },
+        serviceGuides: mergeGlasgowFoodGuides(glasgowFoodGuides.westEnd, glasgowFoodGuides.sec, glasgowFoodGuides.cityCentre),
         featured: {
-          title: "Kelvingrove Art Gallery and Museum",
+          title: "开尔文格罗夫艺术馆和博物馆（Kelvingrove Art Gallery and Museum）",
           text: "Kelvingrove Art Gallery and Museum 是 Glasgow 最重要的综合博物馆之一。",
           mapQuery: "Kelvingrove Art Gallery and Museum",
           infoUrl: "http://glasgowlife.org.uk",
@@ -1815,19 +2283,22 @@
             time: "08:30-09:30",
             title: "吃早餐后前往 West End",
             location: "Aparthotel Adagio Glasgow Central -> West End",
-            notes: "报告日当天，上午安排以简洁为主。",
-            links: [{ label: "Glasgow guide", url: "http://wanderlustchloe.com" }]
+            notes: "West End 早餐 / 咖啡：Kember & Jones、Cottonrake Bakery、Koko House。",
+            links: [
+              ...glasgowXhsGuideLinks(),
+              { label: "Koko House", url: "https://koko-house.menu-world.com/?utm_source=chatgpt.com" }
+            ]
           },
           {
             time: "09:30-11:00",
-            title: "Kelvingrove Art Gallery and Museum",
+            title: "开尔文格罗夫艺术馆和博物馆（Kelvingrove Art Gallery and Museum）",
             location: "West End",
             notes: "如果上午只能看一个馆，这里最合适。",
             links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
           },
           {
             time: "11:00-12:00",
-            title: "University of Glasgow / Cloisters",
+            title: "格拉斯哥大学（University of Glasgow）/ Cloisters",
             location: "West End",
             notes: "建筑立面与回廊可顺路查看。",
             links: [{ label: "访问信息", url: "http://gla.ac.uk" }]
@@ -1836,9 +2307,9 @@
             time: "12:00-12:30",
             title: "简短午餐",
             location: "West End",
-            notes: "午餐不要拖太久，给去会场留余量。",
+            notes: "West End 午餐：The Bothy、Stravaigin、Dumpling Monkey、Santa Lucia Pasta、Paesano West End。",
             links: [],
-            tips: ["West End 午餐可优先看学校和博物馆周边的轻食攻略。"]
+            tips: ["苏格兰菜：The Bothy / Stravaigin / Ubiquitous Chip。亚洲胃：Dumpling Monkey / Silla / Banh Mi & Tea / Taste East。"]
           },
           {
             time: "12:30-13:00",
@@ -1851,7 +2322,7 @@
             time: "13:00-14:15",
             title: "最后确认 / 简短预演",
             location: "Venue",
-            notes: "这是给报告预留的缓冲。",
+            notes: "这里给报告留一点余量时间。",
             links: []
           },
           {
@@ -1865,19 +2336,20 @@
             time: "16:00-17:00",
             title: "Riverside Museum 或河边放松",
             location: "Near Clyde / West End",
-            notes: "可以二选一安排。",
+            notes: "两条路线任选其一即可。",
             links: [{ label: "官网", url: "http://glasgowlife.org.uk" }]
           },
           {
             time: "17:15-19:00",
             title: "庆祝晚餐",
             location: "Merchant City",
-            notes: "可作为最后一晚晚餐区域。",
+            notes: "市中心正餐：La Lanterna、Paesano、Topolabamba、Nippon Kitchen；West End 返程前也可选 The Bothy / Stravaigin。",
             links: [
+              ...glasgowXhsGuideLinks(),
               { label: "夜生活指南", url: "http://hotels.com/go/scotland/best-nightlife-glasgow" },
               { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
             ],
-            tips: ["如果想顺手买伴手礼，可以优先看 Merchant City / 市中心纪念品点攻略。"]
+            tips: ["甜品咖啡：Laboratorio Espresso / Kloud Cafe / Tantrum Doughnuts；West End：Nowita / Loop & Scoop / Kember & Jones。"]
           },
           {
             time: "19:30-22:00",
@@ -1947,14 +2419,22 @@
     const bookingList = document.getElementById("bookingList");
     const noteList = document.getElementById("noteList");
     const mapJumpList = document.getElementById("mapJumpList");
+    const sideRouteMap = document.getElementById("sideRouteMap");
     const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
     const jumpFeatured = document.getElementById("jumpFeatured");
+
+    function isImageUrl(url) {
+      return /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(String(url || ""));
+    }
 
     function getLinkMeta(link) {
       const label = (link.label || "").toLowerCase();
       const url = (link.url || "").toLowerCase();
 
+      if (isImageUrl(url)) {
+        return { className: "image", badge: "IMG", meta: "路线图" };
+      }
       if (url.includes("xiaohongshu.com") || label.includes("小红书")) {
         return { className: "xhs", badge: "XHS", meta: "小红书攻略" };
       }
@@ -1993,9 +2473,13 @@
         <div class="link-row">
           ${links.map((link) => {
             const meta = getLinkMeta(link);
+            const thumbHtml = isImageUrl(link.url)
+              ? `<span class="link-thumb" style="background-image:url('${link.url}')"></span>`
+              : "";
             return `
               <a class="link-chip ${meta.className}" href="${link.url}" target="_blank" rel="noreferrer">
                 <span class="link-copy">
+                  ${thumbHtml}
                   <span class="link-badge">${escapeHtml(meta.badge)}</span>
                   <span class="link-title">${escapeHtml(link.label)}</span>
                   <span class="link-meta">${escapeHtml(meta.meta)}</span>
@@ -2037,37 +2521,118 @@
 
     function renderFeaturedGuides(groups) {
       if (!groups || !groups.length) {
-        return `<p class="empty-copy">这里可以补充当天重点的小红书攻略、路线参考或避坑帖。</p>`;
+        return `<p class="empty-copy">这里可以放当天重点的小红书攻略、路线参考或避坑帖。</p>`;
       }
 
       const links = groups.flatMap((group) => group.links || []);
+      const imageLinks = links.filter((link) => isImageUrl(link.url));
+      const otherLinks = links.filter((link) => !isImageUrl(link.url));
+      const imageHtml = imageLinks.length
+        ? `<div class="featured-image-grid">
+            ${imageLinks.map((link) => `
+              <a class="featured-image-card" href="${link.url}" target="_blank" rel="noreferrer">
+                <img src="${link.url}" alt="${escapeHtml(link.label)}" loading="lazy">
+                <span>${escapeHtml(link.label)}</span>
+              </a>
+            `).join("")}
+          </div>`
+        : "";
 
       return `
         <h5>小红书攻略</h5>
-        ${renderLinkRow(links)}
+        ${imageHtml}
+        ${renderLinkRow(otherLinks)}
+      `;
+    }
+
+    function renderFoodTable(sections) {
+      if (!sections || !sections.length) return "";
+      const total = sections.reduce((sum, section) => sum + section.rows.length, 0);
+
+      return `
+        <details class="food-table-details">
+          <summary>格拉斯哥餐饮完整表格（${total} 家）</summary>
+          ${sections.map((section) => `
+            <div class="food-table-section">
+              <h5>${escapeHtml(section.title)}</h5>
+              <div class="food-table-scroll">
+                <table class="food-table">
+                  <thead>
+                    <tr>
+                      <th>店名</th>
+                      <th>类型</th>
+                      <th>来源</th>
+                      <th>备注</th>
+                      <th>链接</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${section.rows.map((row) => `
+                      <tr>
+                        <td>${escapeHtml(row.name)}</td>
+                        <td>${escapeHtml(row.type)}</td>
+                        <td>${escapeHtml(row.source)}</td>
+                        <td>${escapeHtml(row.note)}</td>
+                        <td><a href="${row.url}" target="_blank" rel="noreferrer">打开</a></td>
+                      </tr>
+                    `).join("")}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          `).join("")}
+        </details>
       `;
     }
 
     function renderServiceGuides(serviceGuides) {
+      const regionalPicks = serviceGuides?.regionalPicks || [];
+      const foodTableSections = serviceGuides?.foodTableSections || [];
       const groups = [
         { title: "备选餐厅", items: serviceGuides?.restaurants || [] },
         { title: "咖啡店", items: serviceGuides?.cafes || [] },
         { title: "纪念品点", items: serviceGuides?.souvenirs || [] }
       ].filter((group) => group.items.length);
 
-      if (!groups.length) {
+      if (!regionalPicks.length && !foodTableSections.length && !groups.length) {
         return `<p class="empty-copy">这一天如果提前存了餐厅、咖啡店或纪念品攻略，会显示在这里。</p>`;
       }
 
       return `
         <div class="service-guide-stack">
+          ${regionalPicks.length ? `
+            <div class="service-guide-group">
+              <h4>区域速查</h4>
+              ${renderGuideSection(regionalPicks, "")}
+            </div>
+          ` : ""}
           ${groups.map((group) => `
             <div class="service-guide-group">
               <h4>${escapeHtml(group.title)}</h4>
               ${renderGuideSection(group.items, "")}
             </div>
           `).join("")}
+          ${foodTableSections.length ? `
+            <div class="service-guide-group">
+              <h4>完整清单</h4>
+              ${renderFoodTable(foodTableSections)}
+            </div>
+          ` : ""}
         </div>
+      `;
+    }
+
+    function renderSideRouteMap(map) {
+      const maps = Array.isArray(map) ? map : (map ? [map] : []);
+      if (!maps.length) return "";
+
+      return `
+        ${maps.map((item) => `
+          <a class="side-route-map" href="${item.url}" target="_blank" rel="noreferrer">
+            <img src="${item.url}" alt="${escapeHtml(item.label || "路线图")}" loading="lazy">
+            <span>${escapeHtml(item.label || "路线图")}</span>
+          </a>
+        `).join("")}
       `;
     }
 
@@ -2083,7 +2648,7 @@
 
     function renderBookingChecklist(items) {
       if (!items || !items.length) {
-        return `<p class="empty-copy">当天没有需要提前处理的景点预约项。</p>`;
+        return `<p class="empty-copy">当天没有需要提前预约或确认的项目。</p>`;
       }
 
       return `
@@ -2209,6 +2774,7 @@
       }).join("");
 
       mapJumpList.innerHTML = renderLinkRow(day.spots.map((spot) => ({ label: spot, url: mapsUrl(spot) })));
+      sideRouteMap.innerHTML = renderSideRouteMap(day.sideRouteMap);
       serviceGuideList.innerHTML = renderServiceGuides(day.serviceGuides);
 
       featuredCard.classList.remove("fade-in");
@@ -2231,4 +2797,3 @@
   </script>
 </body>
 </html>
-
