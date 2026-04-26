@@ -427,6 +427,37 @@
       max-width: 62ch;
     }
 
+    .day-overview {
+      margin: -6px 0 20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .overview-pill {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 252, 246, 0.72);
+      border: 1px solid rgba(31, 42, 51, 0.08);
+    }
+
+    .overview-label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .overview-value {
+      display: block;
+      color: var(--ink);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
     .gallery-card,
     .day-card,
     .timeline-item,
@@ -577,11 +608,26 @@
     .timeline::before {
       content: "";
       position: absolute;
-      top: 12px;
+      top: 48px;
       bottom: 12px;
       left: 88px;
       width: 2px;
       background: linear-gradient(180deg, rgba(15, 108, 123, 0.24), rgba(201, 111, 65, 0.24));
+    }
+
+    .timeline-phase {
+      position: relative;
+      z-index: 1;
+      width: max-content;
+      margin: 6px 0 0 104px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 108, 123, 0.1);
+      color: var(--brand-3);
+      border: 1px solid rgba(15, 108, 123, 0.12);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
     .timeline-item {
@@ -683,6 +729,23 @@
       font-size: 0.82rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+    }
+
+    .reference-links {
+      margin-top: 10px;
+      padding-top: 9px;
+      border-top: 1px solid rgba(31, 42, 51, 0.08);
+    }
+
+    .reference-links summary {
+      cursor: pointer;
+      color: var(--brand-3);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .reference-links .timeline-link-group {
+      margin-top: 10px;
     }
 
     .link-row {
@@ -824,6 +887,30 @@
       margin: 0 0 7px;
       font-size: 0.92rem;
       color: var(--ink);
+    }
+
+    .booking-heading {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .booking-heading h4 {
+      margin: 0;
+    }
+
+    .booking-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(201, 111, 65, 0.12);
+      color: var(--warn);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
 
     .booking-meta-grid {
@@ -1045,8 +1132,13 @@
         flex-direction: column;
       }
 
+      .day-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .timeline::before {
         left: 60px;
+        top: 48px;
       }
 
       .timeline-item {
@@ -1060,6 +1152,10 @@
 
       .timeline-body {
         padding-left: 14px;
+      }
+
+      .timeline-phase {
+        margin-left: 76px;
       }
     }
   </style>
@@ -1117,7 +1213,7 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-26｜stonfur｜新增版本说明卡片。</li>
+            <li>最近更新：2026-04-26｜stonfur｜优化阅读体验：新增每日摘要条，按上午 / 下午 / 晚上分组时间线，为预约事项增加状态标签，并将时间线中的参考链接与攻略折叠显示，减少页面信息密度。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
@@ -1135,6 +1231,7 @@
           </div>
           <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
         </div>
+        <section class="day-overview" id="dayOverview"></section>
 
         <section class="gallery-card fade-in" id="featuredCard">
           <div class="gallery-copy">
@@ -2437,6 +2534,7 @@
 
     const dayTabs = document.getElementById("dayTabs");
     const dayTitle = document.getElementById("dayTitle");
+    const dayOverview = document.getElementById("dayOverview");
     const dayMapButton = document.getElementById("dayMapButton");
     const featuredTitle = document.getElementById("featuredTitle");
     const featuredText = document.getElementById("featuredText");
@@ -2546,6 +2644,68 @@
           ${renderLinkRow(group.links)}
         </div>
       `).join("");
+    }
+
+    function renderReferenceLinks(item) {
+      const itemLinks = item.links || [];
+      const guideGroups = item.guideLinks || [];
+      if (!itemLinks.length && !guideGroups.length) return "";
+
+      return `
+        <details class="reference-links">
+          <summary>参考链接与攻略</summary>
+          ${itemLinks.length ? renderLinkRow(itemLinks) : ""}
+          ${renderInlineGuideGroups(guideGroups)}
+        </details>
+      `;
+    }
+
+    function intensityLabel(intensity) {
+      const labels = {
+        low: "低强度",
+        medium: "中等强度",
+        high: "高强度"
+      };
+      return labels[intensity] || intensity || "待确认";
+    }
+
+    function renderDayOverview(day) {
+      const items = [
+        { label: "强度", value: intensityLabel(day.intensity) },
+        { label: "时间", value: day.window },
+        { label: "交通", value: day.travel },
+        { label: "核心", value: day.anchor }
+      ];
+
+      return items.map((item) => `
+        <div class="overview-pill">
+          <span class="overview-label">${escapeHtml(item.label)}</span>
+          <span class="overview-value">${escapeHtml(item.value)}</span>
+        </div>
+      `).join("");
+    }
+
+    function getDayPart(time) {
+      const lower = String(time || "").toLowerCase();
+      const match = lower.match(/(\d{1,2}):(\d{2})/);
+      if (!match) return lower.includes("evening") || lower.includes("after") ? "晚上" : "其他";
+
+      const hour = Number(match[1]);
+      if (hour < 5) return "晚上";
+      if (hour < 12) return "上午";
+      if (hour < 18) return "下午";
+      return "晚上";
+    }
+
+    function bookingStatus(item) {
+      const title = `${item.title || ""} ${item.lead || ""}`;
+      if (title.includes("提前") || title.includes("Castle") || title.includes("Close") || title.includes("宫")) {
+        return "建议预订";
+      }
+      if (title.includes("餐") || title.includes("Bar")) {
+        return "可选预约";
+      }
+      return "确认信息";
     }
 
     function renderFeaturedGuides(groups) {
@@ -2684,7 +2844,10 @@
         <div class="booking-checklist">
           ${items.map((item) => `
             <article class="booking-item">
-              <h4>${escapeHtml(item.title)}</h4>
+              <div class="booking-heading">
+                <span class="booking-status">${escapeHtml(bookingStatus(item))}</span>
+                <h4>${escapeHtml(item.title)}</h4>
+              </div>
               <div class="booking-meta-grid">
                 <div class="booking-meta">
                   <span class="booking-meta-label">费用</span>
@@ -2724,6 +2887,7 @@
       renderTabs(day.id);
 
       dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
+      dayOverview.innerHTML = renderDayOverview(day);
       dayMapButton.href = mapsUrl(day.mapQuery);
 
       featuredTitle.textContent = day.featured.title;
@@ -2734,9 +2898,9 @@
       featuredGuidePanel.innerHTML = renderFeaturedGuides(day.featured.guideLinks);
       bookingList.innerHTML = renderBookingChecklist(day.bookingChecklist);
 
+      let previousPart = "";
       timeline.innerHTML = day.items.map((item, index) => {
         // --- Calculate Dynamic Google 地图 Directions ---
-        let dirLinkHtml = '';
         const currLocRaw = item.location;
 
         let startLoc = '';
@@ -2773,20 +2937,17 @@
           endLoc = currDest;
         }
 
-        // 只有起点终点不同，才显示导航按钮
-        if (startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase()) {
-          const directionsUrl = dirUrl(startLoc, endLoc);
-          dirLinkHtml = `<a class="link-chip" href="${directionsUrl}" target="_blank" rel="noreferrer">路线</a>`;
-        }
-        // -------------------------------------------------
-
-        const baseLinks = [
+        const operationalLinks = [
           { label: "Google 地图", url: mapsUrl(item.location) },
-          ...(startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase() ? [{ label: "路线", url: dirUrl(startLoc, endLoc) }] : []),
-          ...(item.links || [])
+          ...(startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase() ? [{ label: "路线", url: dirUrl(startLoc, endLoc) }] : [])
         ];
 
+        const part = getDayPart(item.time);
+        const partHeading = part !== previousPart ? `<div class="timeline-phase">${escapeHtml(part)}</div>` : "";
+        previousPart = part;
+
         return `
+        ${partHeading}
         <article class="timeline-item fade-in">
           <div class="time">${escapeHtml(item.time)}</div>
           <div class="timeline-body">
@@ -2795,8 +2956,8 @@
             <p>${escapeHtml(item.notes)}</p>
             ${renderMicroGuide(item.microGuide)}
             ${item.tips?.length ? `<div class="timeline-tip">${item.tips.map((tip) => escapeHtml(tip)).join(" / ")}</div>` : ""}
-            ${renderLinkRow(baseLinks)}
-            ${renderInlineGuideGroups(item.guideLinks)}
+            ${renderLinkRow(operationalLinks)}
+            ${renderReferenceLinks(item)}
           </div>
         </article>
         `;
