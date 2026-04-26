@@ -1324,9 +1324,9 @@
         dayLabel: "周六",
         title: "抵达 Glasgow",
         intro: " ",
-        vibe: "轻松落地",
+        vibe: "深夜抵达",
         intensity: "low",
-        window: "18:45 onward",
+        window: "22:15 onward",
         travel: "机场进城",
         anchor: "Merchant City / Aparthotel Adagio Glasgow Central",
         mapQuery: "Glasgow city centre",
@@ -1344,46 +1344,46 @@
         spots: ["Glasgow Airport", "Merchant City", "Aparthotel Adagio Glasgow Central"],
         items: [
           {
-            time: "18:45-19:30",
-            title: "落地并办理入境",
+            time: "22:15-23:00",
+            title: "抵达 Glasgow 并办理入境",
             location: "Glasgow Airport",
-            notes: "给入境和取行李预留一些时间。",
+            notes: "22:15 到达后预留入境、取行李、出航站楼时间。",
             links: [{ label: "机场", url: "http://glasgowairport.com" }]
           },
           {
-            time: "19:30-20:00",
+            time: "23:00-23:40",
             title: "前往酒店",
             location: "GLA -> city centre",
             routeOrigin: "Glasgow Airport",
             routeDest: "Aparthotel Adagio Glasgow Central",
-            notes: "可以打车或坐机场巴士（500 或 77），通常约 20 到 30 分钟，500 单程票价 10，往返17.5，上车向司机确认后购票即可，77可能稍微便宜但时间更长。",
+            notes: "深夜到达以打车为主；机场巴士 500 可作为备选，按当日时刻表执行。77 不作为深夜主方案。",
             links: [
               { label: "机场巴士（Glasgow Airport Express Service 500）", url: "https://www.glasgowairport.com/media/jxbhzyep/1002_gae-booklet-a5-8pp-ol.pdf" },
               { label: "小红书｜Glasgow 机场进城参考（线上购票方法）", url: "https://www.xiaohongshu.com/explore/67892b5b0000000018014c09?xsec_token=ABEdYFv2eJmUyGnQR2tRKOoSgij8ohWzQuHdUKEUDgWAQ=&xsec_source=pc_search&source=web_search_result_notes" }
             ]
           },
           {
-            time: "20:00-21:30",
-            title: "晚餐加短距离散步",
-            location: "商人城（Merchant City）/ Aparthotel Adagio Glasgow Central 周边",
+            time: "23:40-00:15",
+            title: "入住酒店 / 简单补给",
+            location: "Aparthotel Adagio Glasgow Central 周边",
             routeOrigin: "Aparthotel Adagio Glasgow Central",
-            routeDest: "Merchant City, Glasgow",
-            notes: "市中心正餐优先 Sugo Pasta / Paesano / Nippon Kitchen / Topolabamba；咖啡甜品优先 Laboratorio Espresso / Kloud Cafe / Tantrum Doughnuts。",
+            routeDest: "Tesco Express Glasgow St Enoch",
+            notes: "正餐不放在抵达后安排；晚餐提前在转机段 / 机场解决。到酒店后只保留便利店、外卖、热饮和第二天早餐补给。",
             links: [
-              ...glasgowXhsGuideLinks(),
+              { label: "Tesco Express — Glasgow St Enoch", url: mapsUrl("Tesco Express Glasgow St Enoch") },
               { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
             ],
             microGuide: [
-              { label: "市中心", text: "Sugo Pasta；Paesano Miller Street；Nippon Kitchen；Topolabamba。" },
-              { label: "咖啡甜品", text: "Laboratorio Espresso；Kloud Cafe；Tantrum Doughnuts Gordon Street。" },
-              { label: "超市", text: "Tesco Express — Glasgow St Enoch" }
+              { label: "晚餐", text: "提前在转机段 / 机场解决。" },
+              { label: "补给", text: "水、早餐、转换插头、简单零食。" },
+              { label: "次日", text: "爱丁堡一日往返，早出发。" }
             ]
           },
           {
-            time: "21:30 onward",
+            time: "00:15 onward",
             title: "休息",
             location: "Aparthotel Adagio Glasgow Central",
-            notes: " ",
+            notes: "第二天为爱丁堡一日往返，保留早晨出发余量。",
             links: []
           }
         ]
