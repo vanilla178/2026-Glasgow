@@ -37,6 +37,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -49,6 +50,7 @@
         radial-gradient(ellipse at 80% 5%, rgba(11, 100, 112, 0.14), transparent 35%),
         linear-gradient(170deg, #e8ddd0 0%, #f0ebe0 40%, #ede8dd 100%);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     a {
@@ -1110,22 +1112,84 @@
 
     @media (max-width: 720px) {
       .shell {
-        width: min(var(--max), calc(100% - 18px));
+        width: min(var(--max), calc(100% - 14px));
         margin-top: 10px;
+      }
+
+      body {
+        background:
+          linear-gradient(180deg, #efe5d8 0%, #f7f1e8 46%, #f4efe6 100%);
       }
 
       .hero,
       .main-panel,
       .side-panel {
-        padding: 20px;
+        padding: 16px;
+        border-radius: 22px;
       }
 
       .hero {
         min-height: auto;
+        display: block;
+        padding: 18px;
       }
 
       h1 {
         max-width: none;
+        font-size: 2.2rem;
+      }
+
+      .hero-panel {
+        width: auto;
+        margin-top: 18px;
+        padding: 16px;
+      }
+
+      .hero-copy p,
+      .hero-panel {
+        font-size: 0.92rem;
+      }
+
+      .toolbar {
+        display: grid;
+        gap: 10px;
+      }
+
+      .pill-row,
+      .quick-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .layout,
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .side-panel {
+        order: -1;
+      }
+
+      .day-tab-list {
+        display: flex;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        gap: 8px;
+        margin: 0 -4px 14px;
+        padding: 0 4px 6px;
+      }
+
+      .day-tab {
+        flex: 0 0 158px;
+        scroll-snap-align: start;
+        padding: 12px;
+        border-radius: 14px;
+      }
+
+      .day-tab span {
+        font-size: 0.82rem;
       }
 
       .panel-head {
@@ -1133,29 +1197,116 @@
       }
 
       .day-overview {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .overview-pill {
+        padding: 10px 12px;
+      }
+
+      .gallery-card,
+      .day-card,
+      .booking-card {
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .gallery-meta {
+        padding: 14px 0 0;
+        display: grid;
+      }
+
+      .meta-tags {
+        gap: 6px;
+      }
+
+      .meta-tag {
+        padding: 7px 9px;
+        font-size: 0.8rem;
       }
 
       .timeline::before {
-        left: 60px;
-        top: 48px;
+        display: none;
       }
 
       .timeline-item {
-        grid-template-columns: 60px minmax(0, 1fr);
-        gap: 12px;
+        display: block;
+        padding: 14px;
       }
 
       .timeline-item::before {
-        left: 54px;
+        display: none;
+      }
+
+      .time {
+        margin-bottom: 8px;
+        font-size: 0.82rem;
       }
 
       .timeline-body {
-        padding-left: 14px;
+        padding-left: 0;
       }
 
       .timeline-phase {
-        margin-left: 76px;
+        margin: 10px 0 0;
+      }
+
+      .micro-guide-row,
+      .booking-meta {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .link-row {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .link-chip {
+        width: 100%;
+      }
+
+      .link-title,
+      .link-meta,
+      .timeline-body h4,
+      .timeline-body .place,
+      .timeline-body p,
+      .overview-value {
+        overflow-wrap: anywhere;
+      }
+
+      .featured-image-card img,
+      .side-route-map img {
+        max-height: 320px;
+      }
+
+      .food-table {
+        min-width: 620px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .shell {
+        width: min(var(--max), calc(100% - 10px));
+      }
+
+      .hero,
+      .main-panel,
+      .side-panel {
+        padding: 14px;
+      }
+
+      h1 {
+        font-size: 1.95rem;
+      }
+
+      .panel-head h2 {
+        font-size: 1.72rem;
+      }
+
+      .day-tab {
+        flex-basis: 146px;
       }
     }
   </style>
@@ -1213,11 +1364,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-26｜stonfur｜优化阅读体验：新增每日摘要条，按上午 / 下午 / 晚上分组时间线，为预约事项增加状态标签，并将时间线中的参考链接与攻略折叠显示，减少页面信息密度。</li>
+            <li>最近更新：2026-04-27｜stonfur｜优化手机端显示：补充响应式布局兜底，修正第三方预览在手机上容易横向溢出和排版拥挤的问题。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-26｜stonfur｜优化阅读体验：新增每日摘要条，按上午 / 下午 / 晚上分组时间线，为预约事项增加状态标签，并将时间线中的参考链接与攻略折叠显示，减少页面信息密度。</li>
               <li>2026-04-26｜stonfur｜调换 05/24 York 与 05/27 爱丁堡行程。</li>
             </ul>
           </details>
