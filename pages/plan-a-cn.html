@@ -1066,10 +1066,10 @@
         <h2>每日概览</h2>
         <ul>
           <li>05/23｜抵达 Glasgow</li>
-          <li>05/24｜爱丁堡城堡、Royal Mile、Calton Hill</li>
+          <li>05/24｜约克大教堂与老城漫步</li>
           <li>05/25｜Glasgow Cathedral 一带 + 参会海报展示</li>
           <li>05/26｜苏格兰高地 一日游</li>
-          <li>05/27｜约克大教堂与老城漫步</li>
+          <li>05/27｜爱丁堡城堡、Royal Mile、Calton Hill</li>
           <li>05/28｜Kelvingrove + 参会报告</li>
         </ul>
       </aside>
@@ -1376,22 +1376,22 @@
             microGuide: [
               { label: "晚餐", text: "提前在转机段 / 机场解决。" },
               { label: "补给", text: "水、早餐、转换插头、简单零食。" },
-              { label: "次日", text: "爱丁堡一日往返，早出发。" }
+              { label: "次日", text: "York 一日往返，早出发。" }
             ]
           },
           {
             time: "00:15 onward",
             title: "休息",
             location: "Aparthotel Adagio Glasgow Central",
-            notes: "第二天为爱丁堡一日往返，保留早晨出发余量。",
+            notes: "第二天为 York 一日往返，保留早晨出发余量。",
             links: []
           }
         ]
       },
       {
-        id: "0524",
-        short: "05/24",
-        dayLabel: "周日",
+        id: "0527",
+        short: "05/27",
+        dayLabel: "周三",
         title: "爱丁堡一日往返",
         intro: "",
         vibe: "高密度观光日",
@@ -1432,7 +1432,7 @@
             title: "荷里路德宫（Palace of Holyroodhouse）",
             officialUrl: "https://www.rct.uk/visit/palace-of-holyroodhouse",
             fee: "£22.00（Standard Admission 成人提前购票）",
-            hours: "05/24：09:30-18:00（最晚入场 16:30）",
+            hours: "05/27：09:30-18:00（最晚入场 16:30）",
             lead: "提前在线购票；工作王室宫殿，开放安排可能临时调整",
             refund: "以 Royal Collection Trust 官网条款为准",
             prepay: "需要预付款"
@@ -1795,7 +1795,7 @@
             location: "Edinburgh",
             routeOrigin: "Edinburgh city centre",
             routeDest: "Calton Hill Edinburgh",
-            notes: "05/24 爱丁堡日落 21:34；日落前约 50 分钟上山。Waterloo Place 斜坡、国家纪念碑、Nelson Monument、Dugald Stewart Monument、老城新城交界全景。",
+            notes: "05/27 爱丁堡日落 21:38；日落前约 50 分钟上山。Waterloo Place 斜坡、国家纪念碑、Nelson Monument、Dugald Stewart Monument、老城新城交界全景。",
             microGuide: [
               { label: "时间", text: "20:40-21:45；民用暮光约 22:29 结束。" },
               { label: "点位", text: "Dugald Stewart Monument 一侧、National Monument 平台、Nelson Monument 周边。" }
@@ -1946,7 +1946,7 @@
             time: "Evening",
             title: "早点休息",
             location: "Aparthotel Adagio Glasgow Central",
-            notes: "第二天要早起去 Highlands",
+            notes: "第二天是 Kelvingrove + 参会报告，晚间可按体力调整。",
             links: []
           }
         ]
@@ -2020,9 +2020,9 @@
         ]
       },
       {
-        id: "0527",
-        short: "05/27",
-        dayLabel: "周三",
+        id: "0524",
+        short: "05/24",
+        dayLabel: "周日",
         title: "York 一日往返",
         intro: "",
         vibe: "长距离火车日",
@@ -2390,9 +2390,9 @@
       
       // Determine base city for the day to give context
       let city = 'Glasgow';
-      if (day.id === '0524') city = 'Edinburgh';
+      if (day.id === '0524') city = 'York';
       else if (day.id === '0526') city = 'Scotland';
-      else if (day.id === '0527') city = 'York';
+      else if (day.id === '0527') city = 'Edinburgh';
       
       return `${loc}, ${city}, UK`;
     }
@@ -2637,7 +2637,7 @@
     }
 
     function renderTabs(activeId) {
-      dayTabs.innerHTML = itinerary.map((day) => `
+      dayTabs.innerHTML = [...itinerary].sort((a, b) => a.short.localeCompare(b.short)).map((day) => `
         <button class="day-tab ${day.id === activeId ? "active" : ""}" type="button" data-day="${day.id}">
           <strong>${day.short} | ${escapeHtml(day.dayLabel)}</strong>
           <span>${escapeHtml(day.title)}</span>
