@@ -1065,8 +1065,8 @@
       <aside class="hero-panel">
         <h2>日期与每日概览</h2>
         <ul>
-          <li>05/23｜抵达 Heathrow，入住 Southwark</li>
-          <li>05/24｜伦敦塔、South Bank、Westminster</li>
+          <li>05/23｜抵达 Heathrow，入住 Tower Bridge / Tower Hill</li>
+          <li>05/24｜伦敦塔、塔桥、Borough Market、Westminster</li>
           <li>05/25｜从 London Euston 到 Glasgow，参会</li>
           <li>05/26｜Highlands 一日游</li>
           <li>05/27｜爱丁堡老城一日往返</li>
@@ -1080,7 +1080,7 @@
     <div class="toolbar">
       <div class="pill-row">
         <div class="pill"><strong>日期：</strong>05/23-05/30</div>
-        <div class="pill"><strong>London 住宿：</strong>Premier Inn London Southwark (Bankside)</div>
+        <div class="pill"><strong>London 住宿：</strong>hub by Premier Inn London Tower Bridge</div>
         <div class="pill"><strong>Glasgow 住宿：</strong>Aparthotel Adagio Glasgow Central</div>
       </div>
       <div class="quick-actions">
@@ -1153,7 +1153,7 @@
 
   <script>
     const dayNotes = [
-      "这一版默认 London 住在 Premier Inn London Southwark (Bankside)。",
+      "这一版默认 London 住在 hub by Premier Inn London Tower Bridge，位置在 Tower Hill / Tower Bridge 一带。",
       "05/23 晚上以 London 酒店休息为主，当天不继续北上。",
       "05/25 转场顺序为酒店 -> Euston -> Glasgow Central -> Aparthotel Adagio Glasgow Central -> 会场。",
       "05/24 晚上保留两条分支：看演出或轻松夜游都可以。",
@@ -1335,22 +1335,23 @@
         intensity: "low",
         window: "18:45 onward",
         travel: "Heathrow -> London 酒店",
-        anchor: "Premier Inn London Southwark (Bankside)",
-        mapQuery: "Premier Inn London Southwark Bankside",
+        anchor: "hub by Premier Inn London Tower Bridge",
+        mapQuery: "hub by Premier Inn London Tower Bridge",
         bookingChecklist: [],
         routeLinks: [],
         spotGuides: [],
         featured: {
-          title: "伦敦南岸（South Bank）",
-          text: "South Bank 是泰晤士河南岸非常适合步行看景的一片区域。",
-          mapQuery: "South Bank London",
-          infoUrl: "http://southbanklondon.com",
+          title: "Tower Hill / Tower Bridge",
+          text: "酒店位于 28 Great Tower Street, EC3R 5AT 一带，靠近 Tower Hill、Tower of London 和 Tower Bridge。",
+          mapQuery: "hub by Premier Inn London Tower Bridge",
+          infoUrl: "https://www.premierinn.com/gb/en/hotels/england/greater-london/london/hub-london-tower-bridge.html",
           guideLinks: []
         },
         spots: [
           "Heathrow 机场",
-          "Premier Inn London Southwark (Bankside)",
-          "South Bank London"
+          "hub by Premier Inn London Tower Bridge",
+          "Tower Hill",
+          "Tower Bridge"
         ],
         items: [
           {
@@ -1370,10 +1371,10 @@
           {
             time: "19:45-20:30",
             title: "进城前往酒店",
-            location: "Heathrow 机场 -> Premier Inn London Southwark (Bankside)",
+            location: "Heathrow 机场 -> hub by Premier Inn London Tower Bridge",
             routeOrigin: "Heathrow 机场",
-            routeDest: "Premier Inn London Southwark (Bankside)",
-            notes: "带行李时优先前往酒店。",
+            routeDest: "hub by Premier Inn London Tower Bridge",
+            notes: "带行李时优先前往酒店；酒店位于 28 Great Tower Street, EC3R 5AT，Tower Hill / Tower Bridge 一带。",
             links: [
               { label: "Heathrow Express", url: "http://heathrowexpress.com" },
               { label: "TfL", url: "http://tfl.gov.uk" }
@@ -1382,23 +1383,26 @@
           {
             time: "20:30-21:00",
             title: "入住并放下行李",
-            location: "Premier Inn London Southwark (Bankside)",
-            notes: "这是这版行程默认采用的 London 酒店。",
-            links: [{ label: "Premier Inn", url: "http://premierinn.com" }]
+            location: "hub by Premier Inn London Tower Bridge",
+            notes: "这版 London 酒店改为 Tower Bridge / Tower Hill 一带。",
+            links: [{ label: "Premier Inn", url: "https://www.premierinn.com/gb/en/hotels/england/greater-london/london/hub-london-tower-bridge.html" }]
           },
           {
             time: "21:00-22:30",
-            title: "轻松吃饭并简单散步",
-            location: "伦敦南岸（South Bank）/ Bankside",
-            routeOrigin: "Premier Inn London Southwark (Bankside)",
-            routeDest: "South Bank London",
-            notes: " ",
-            links: [{ label: "South Bank", url: "http://southbanklondon.com" }]
+            title: "Tower Hill / Tower Bridge 周边晚餐",
+            location: "Tower Hill / Tower Bridge / St Katharine Docks",
+            routeOrigin: "hub by Premier Inn London Tower Bridge",
+            routeDest: "Tower Bridge London",
+            notes: "酒店到伦敦塔、塔桥、St Katharine Docks 都在短距离范围内，抵达夜以附近吃饭和看夜景为主。",
+            links: [
+              { label: "Tower Bridge", url: "http://towerbridge.org.uk" },
+              { label: "St Katharine Docks", url: "https://www.skdocks.co.uk" }
+            ]
           },
           {
             time: "22:30 onward",
             title: "休息",
-            location: "Premier Inn London Southwark (Bankside)",
+            location: "hub by Premier Inn London Tower Bridge",
             notes: "可直接休息。",
             links: []
           }
@@ -1413,8 +1417,8 @@
         vibe: "经典 London 串联日",
         intensity: "high",
         window: "08:00-22:45",
-        travel: "以 Southwark 为据点的市内动线",
-        anchor: "Tower of London 与 South Bank 动线",
+        travel: "以 Tower Bridge / Tower Hill 为据点的市内动线",
+        anchor: "Tower of London -> Tower Bridge -> Borough Market",
         mapQuery: "Tower of London",
         bookingChecklist: [
           {
@@ -1471,17 +1475,17 @@
           {
             time: "08:00-09:00",
             title: "早餐",
-            location: "Premier Inn London Southwark (Bankside) / nearby cafe",
-            notes: " ",
+            location: "hub by Premier Inn London Tower Bridge / Tower Hill nearby cafe",
+            notes: "酒店周边先解决早餐，之后直接接伦敦塔。",
             links: []
           },
           {
             time: "09:00-10:30",
             title: "伦敦塔（Tower of London）",
             location: "Tower Hill",
-            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeOrigin: "hub by Premier Inn London Tower Bridge",
             routeDest: "Tower of London",
-            notes: "可作为当天第一站。",
+            notes: "酒店在 Tower Hill / Great Tower Street 一带，伦敦塔作为第一站最顺。",
             microGuide: [
               { label: "备注", text: "核心展线与外部城墙视角可优先查看。" },
               { label: "时间", text: "可预留约 60-90 分钟。" }
@@ -1562,9 +1566,9 @@
           {
             time: "16:00-17:30",
             title: "回酒店整理一下",
-            location: "Premier Inn London Southwark (Bankside)",
+            location: "hub by Premier Inn London Tower Bridge",
             routeOrigin: "Westminster Abbey",
-            routeDest: "Premier Inn London Southwark (Bankside)",
+            routeDest: "hub by Premier Inn London Tower Bridge",
             notes: "可按当天状态调整成晚饭或别的活动。",
             links: []
           },
@@ -1572,7 +1576,7 @@
             time: "17:30-22:45",
             title: "晚上方案 A：西区（West End）",
             location: "Covent Garden / Soho / theatre district",
-            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            routeOrigin: "hub by Premier Inn London Tower Bridge",
             routeDest: "Covent Garden London",
             notes: "可先晚餐，再去剧院区看周日场次演出，结束后回酒店。Phantom 不在这一天的日期范围内。",
             microGuide: [
@@ -1588,10 +1592,10 @@
           {
             time: "17:30-21:30",
             title: "晚上方案 B：轻松 London 夜游",
-            location: "South Bank / Soho / Sky Garden",
-            routeOrigin: "Premier Inn London Southwark (Bankside)",
-            routeDest: "South Bank London",
-            notes: "如果不看戏，就把晚上留给吃饭、夜景或河边散步，整体更轻松。",
+            location: "Tower Bridge / Sky Garden / South Bank",
+            routeOrigin: "hub by Premier Inn London Tower Bridge",
+            routeDest: "Tower Bridge London",
+            notes: "如果不看戏，就把晚上留给吃饭、塔桥夜景、Sky Garden 或河边动线。",
             links: [
               { label: "South Bank", url: "http://southbanklondon.com" },
               { label: "Sky Garden", url: "http://skygarden.london" }
@@ -1623,7 +1627,7 @@
           guideLinks: []
         },
         spots: [
-          "Premier Inn London Southwark (Bankside)",
+          "hub by Premier Inn London Tower Bridge",
           "London Euston",
           "Glasgow Central",
           "Aparthotel Adagio Glasgow Central",
@@ -1633,17 +1637,17 @@
           {
             time: "06:30-07:00",
             title: "早餐与退房准备",
-            location: "Premier Inn London Southwark (Bankside)",
+            location: "hub by Premier Inn London Tower Bridge",
             notes: " ",
             links: []
           },
           {
             time: "07:00-07:30",
             title: "前往 London Euston",
-            location: "Premier Inn London Southwark (Bankside) -> London Euston",
-            routeOrigin: "Premier Inn London Southwark (Bankside)",
+            location: "hub by Premier Inn London Tower Bridge -> London Euston",
+            routeOrigin: "hub by Premier Inn London Tower Bridge",
             routeDest: "London Euston Station",
-            notes: "这一段应该从酒店直接出发，并带着行李去车站。",
+            notes: "从 Tower Hill / Tower Bridge 一带带行李前往 Euston；早班火车日可优先打车，地铁可查 Tower Hill / Monument 转线。",
             links: [
               { label: "TfL", url: "http://tfl.gov.uk" },
               { label: "Station info", url: "http://networkrail.co.uk" }
