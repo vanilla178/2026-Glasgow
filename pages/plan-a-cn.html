@@ -37,7 +37,6 @@
 
     html {
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
     body {
@@ -50,7 +49,6 @@
         radial-gradient(ellipse at 80% 5%, rgba(11, 100, 112, 0.14), transparent 35%),
         linear-gradient(170deg, #e8ddd0 0%, #f0ebe0 40%, #ede8dd 100%);
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     a {
@@ -1094,11 +1092,55 @@
     }
 
     @media (max-width: 1120px) {
+      .shell {
+        width: min(var(--max), calc(100% - 18px));
+      }
+
       .hero,
       .layout,
       .content-grid,
       .side-panel {
         position: static;
+      }
+
+      .hero {
+        display: block;
+      }
+
+      .hero-panel {
+        width: auto;
+      }
+
+      .layout,
+      .content-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .main-panel,
+      .side-panel,
+      .day-card,
+      .booking-card,
+      .timeline-body,
+      .gallery-card,
+      .gallery-meta,
+      .featured-guide-panel,
+      .service-guide-stack {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .day-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .link-title,
+      .link-meta,
+      .timeline-body h4,
+      .timeline-body .place,
+      .timeline-body p,
+      .overview-value,
+      .booking-meta-value {
+        overflow-wrap: anywhere;
       }
 
       .timeline::before {
@@ -1163,7 +1205,6 @@
 
       .layout,
       .content-grid {
-        display: grid;
         grid-template-columns: 1fr;
       }
 
@@ -1364,11 +1405,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-27｜stonfur｜优化手机端显示：补充响应式布局兜底，修正第三方预览在手机上容易横向溢出和排版拥挤的问题。</li>
+            <li>最近更新：2026-04-27｜stonfur｜修复手机端预览：将单栏布局和长文本换行规则扩展到更宽的窄屏区间，避免第三方预览中右侧内容被裁切。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-27｜stonfur｜优化手机端显示：补充响应式布局兜底，修正第三方预览在手机上容易横向溢出和排版拥挤的问题。</li>
               <li>2026-04-26｜stonfur｜优化阅读体验：新增每日摘要条，按上午 / 下午 / 晚上分组时间线，为预约事项增加状态标签，并将时间线中的参考链接与攻略折叠显示，减少页面信息密度。</li>
               <li>2026-04-26｜stonfur｜调换 05/24 York 与 05/27 爱丁堡行程。</li>
             </ul>
