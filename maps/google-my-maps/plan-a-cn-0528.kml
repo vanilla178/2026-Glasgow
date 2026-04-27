@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>05/28｜Glasgow 市区 + 口头报告 + 晚上活动</name>
+    <description>05/28 周四 Glasgow 市区 + 口头报告 + 晚上活动，由 pages/plan-a-cn.html 自动生成。</description>
+    <Style id="number-01-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/01.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-02-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/02.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-03-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/03.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-04-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/04.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-05-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/05.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-06-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/06.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-07-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/07.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-08-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/08.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="上午-line">
+      <LineStyle>
+        <color>cc70640b</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="下午-line">
+      <LineStyle>
+        <color>cc2e62c4</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="晚上-line">
+      <LineStyle>
+        <color>cc60401e</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="其他-line">
+      <LineStyle>
+        <color>cc66725a</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>01｜上午｜Aparthotel Adagio Glasgow Central</name>
+      <description>08:30-09:30｜吃早餐后前往 West End｜Aparthotel Adagio Glasgow Central -&gt; West End</description>
+      <styleUrl>#number-01-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>02｜上午｜University of Glasgow</name>
+      <description>08:30-09:30｜吃早餐后前往 West End｜Aparthotel Adagio Glasgow Central -&gt; West End</description>
+      <styleUrl>#number-02-point</styleUrl>
+      <Point>
+        <coordinates>103.7780353,1.3076892,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>03｜下午｜University of Glasgow</name>
+      <description>12:00-12:30｜简短午餐｜West End</description>
+      <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>103.7780353,1.3076892,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜下午｜Scottish Event Campus</name>
+      <description>12:30-13:00｜前往会场｜SEC</description>
+      <styleUrl>#number-04-point</styleUrl>
+      <Point>
+        <coordinates>-4.2880154,55.8607184,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05｜下午｜Clyde Arc</name>
+      <description>16:00-17:00｜Riverside Museum 或河边放松｜Near Clyde / West End</description>
+      <styleUrl>#number-05-point</styleUrl>
+      <Point>
+        <coordinates>-4.2825201,55.8572647,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>06｜下午｜Merchant City</name>
+      <description>17:15-19:00｜庆祝晚餐｜Merchant City</description>
+      <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-4.2463157,55.8591260,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜晚上｜Theatre Royal</name>
+      <description>19:30-22:00｜晚间活动｜Theatre Royal / The 13th Note / King Tut&#x27;s / cocktails</description>
+      <styleUrl>#number-07-point</styleUrl>
+      <Point>
+        <coordinates>-4.2562328,55.8662713,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>08｜晚上｜Aparthotel Adagio Glasgow Central</name>
+      <description>After 22:00｜回去收拾行李｜Aparthotel Adagio Glasgow Central</description>
+      <styleUrl>#number-08-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05/28｜上午动线</name>
+      <styleUrl>#上午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2560927,55.8563258,0 103.7780353,1.3076892,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/28｜下午动线</name>
+      <styleUrl>#下午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>103.7780353,1.3076892,0 -4.2880154,55.8607184,0 -4.2825201,55.8572647,0 -4.2463157,55.8591260,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/28｜晚上动线</name>
+      <styleUrl>#晚上-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2562328,55.8662713,0 -4.2560927,55.8563258,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

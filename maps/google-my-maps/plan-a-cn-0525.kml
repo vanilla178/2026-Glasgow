@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>05/25｜Glasgow 市区 + 海报展示日</name>
+    <description>05/25 周一 Glasgow 市区 + 海报展示日，由 pages/plan-a-cn.html 自动生成。</description>
+    <Style id="number-01-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/01.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-02-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/02.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-03-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/03.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-04-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/04.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-05-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/05.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-06-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/06.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-07-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/07.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-08-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/08.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-09-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/09.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-10-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/10.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-11-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/11.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="上午-line">
+      <LineStyle>
+        <color>cc70640b</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="下午-line">
+      <LineStyle>
+        <color>cc2e62c4</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="晚上-line">
+      <LineStyle>
+        <color>cc60401e</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="其他-line">
+      <LineStyle>
+        <color>cc66725a</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>01｜上午｜Glasgow Cathedral</name>
+      <description>09:30-10:10｜格拉斯哥大教堂（Glasgow Cathedral）｜East End</description>
+      <styleUrl>#number-01-point</styleUrl>
+      <Point>
+        <coordinates>-4.2346182,55.8630130,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>02｜上午｜Glasgow Necropolis</name>
+      <description>10:10-10:40｜格拉斯哥墓园（Necropolis）｜Near Cathedral</description>
+      <styleUrl>#number-02-point</styleUrl>
+      <Point>
+        <coordinates>-4.2307640,55.8627117,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>03｜上午｜St Mungo Museum of Religious Life and Art</name>
+      <description>10:40-11:20｜圣芒戈博物馆（St Mungo Museum）｜Cathedral precinct</description>
+      <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>-4.2364530,55.8625330,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜上午｜Glasgow Cathedral</name>
+      <description>11:20-11:40｜转去市中心｜East End -&gt; City Centre</description>
+      <styleUrl>#number-04-point</styleUrl>
+      <Point>
+        <coordinates>-4.2346182,55.8630130,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05｜上午｜Glasgow City Centre</name>
+      <description>11:20-11:40｜转去市中心｜East End -&gt; City Centre</description>
+      <styleUrl>#number-05-point</styleUrl>
+      <Point>
+        <coordinates>-4.3401667,55.8198532,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>06｜下午｜Royal Exchange Square</name>
+      <description>12:10-12:40｜现代艺术馆（Gallery of Modern Art, GoMA）｜Royal Exchange Square</description>
+      <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-4.2527226,55.8601515,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜下午｜Glasgow City Centre</name>
+      <description>12:40-13:30｜午餐｜City Centre</description>
+      <styleUrl>#number-07-point</styleUrl>
+      <Point>
+        <coordinates>-4.3401667,55.8198532,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>08｜下午｜Riverside Museum</name>
+      <description>13:30-15:00｜Riverside Museum / Glasgow Science Centre / Clydeside Distillery 三选一｜Clyde Riverside</description>
+      <styleUrl>#number-08-point</styleUrl>
+      <Point>
+        <coordinates>-4.3061682,55.8652309,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>09｜下午｜Scottish Event Campus</name>
+      <description>15:00-15:15｜转去会场附近｜Riverside -&gt; SEC</description>
+      <styleUrl>#number-09-point</styleUrl>
+      <Point>
+        <coordinates>-4.2880154,55.8607184,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>10｜下午｜Glasgow City Centre</name>
+      <description>17:30-19:00｜晚餐 / 放松｜Glasgow</description>
+      <styleUrl>#number-10-point</styleUrl>
+      <Point>
+        <coordinates>-4.3401667,55.8198532,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>11｜晚上｜Aparthotel Adagio Glasgow Central</name>
+      <description>Evening｜早点休息｜Aparthotel Adagio Glasgow Central</description>
+      <styleUrl>#number-11-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05/25｜上午动线</name>
+      <styleUrl>#上午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2346182,55.8630130,0 -4.2307640,55.8627117,0 -4.2364530,55.8625330,0 -4.2346182,55.8630130,0 -4.3401667,55.8198532,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/25｜下午动线</name>
+      <styleUrl>#下午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2527226,55.8601515,0 -4.3401667,55.8198532,0 -4.3061682,55.8652309,0 -4.2880154,55.8607184,0 -4.3401667,55.8198532,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

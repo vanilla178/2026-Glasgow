@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>05/27｜爱丁堡一日往返</name>
+    <description>05/27 周三 爱丁堡一日往返，由 pages/plan-a-cn.html 自动生成。</description>
+    <Style id="number-01-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/01.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-02-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/02.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-03-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/03.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-04-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/04.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-05-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/05.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-06-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/06.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-07-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/07.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-08-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/08.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-09-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/09.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-10-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/10.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-11-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/11.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-12-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/12.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-13-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/13.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-14-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/14.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-15-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/15.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-16-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/16.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-17-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/17.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-18-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/18.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-19-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/19.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-20-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/20.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-21-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/21.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-22-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/22.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-23-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/23.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-24-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/24.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-25-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/25.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-26-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/26.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-27-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/27.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-28-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/28.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="上午-line">
+      <LineStyle>
+        <color>cc70640b</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="下午-line">
+      <LineStyle>
+        <color>cc2e62c4</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="晚上-line">
+      <LineStyle>
+        <color>cc60401e</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="其他-line">
+      <LineStyle>
+        <color>cc66725a</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>01｜上午｜Glasgow Queen Street Station</name>
+      <description>08:00-09:00｜乘火车前往 Edinburgh｜Glasgow Queen Street -&gt; Edinburgh Waverley</description>
+      <styleUrl>#number-01-point</styleUrl>
+      <Point>
+        <coordinates>-4.2511172,55.8625587,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>02｜上午｜Edinburgh Waverley Station</name>
+      <description>08:00-09:00｜乘火车前往 Edinburgh｜Glasgow Queen Street -&gt; Edinburgh Waverley</description>
+      <styleUrl>#number-02-point</styleUrl>
+      <Point>
+        <coordinates>-3.1904199,55.9519018,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>03｜上午｜Waverley Bridge Edinburgh</name>
+      <description>09:00-09:30｜Waverley Bridge 车站｜Waverley Bridge Edinburgh</description>
+      <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>-3.1916356,55.9515540,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜上午｜Edinburgh Castle</name>
+      <description>09:30-11:00｜爱丁堡城堡（Edinburgh Castle）｜Old Town</description>
+      <styleUrl>#number-04-point</styleUrl>
+      <Point>
+        <coordinates>-3.2004175,55.9486867,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05｜上午｜The Vennel Edinburgh</name>
+      <description>11:00-11:15｜The Vennel 城堡楼梯机位｜The Vennel Edinburgh</description>
+      <styleUrl>#number-05-point</styleUrl>
+      <Point>
+        <coordinates>-3.3951596,55.9896170,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>06｜上午｜Grassmarket Edinburgh</name>
+      <description>11:15-11:30｜Grassmarket 广场｜Grassmarket Edinburgh</description>
+      <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-3.1962464,55.9474810,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜上午｜Victoria Street Edinburgh</name>
+      <description>11:30-11:45｜维多利亚街（Victoria Street）｜Victoria Street Edinburgh</description>
+      <styleUrl>#number-07-point</styleUrl>
+      <Point>
+        <coordinates>-3.1937686,55.9486505,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>08｜上午｜30 Victoria Street Edinburgh</name>
+      <description>11:45-11:55｜Elephant House 新址｜30 Victoria Street Edinburgh</description>
+      <styleUrl>#number-08-point</styleUrl>
+      <Point>
+        <coordinates>-3.1940691,55.9486454,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>09｜上午｜40 Victoria Street Edinburgh</name>
+      <description>11:55-12:10｜Museum Context｜40 Victoria Street Edinburgh</description>
+      <styleUrl>#number-09-point</styleUrl>
+      <Point>
+        <coordinates>-3.1944219,55.9485244,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>10｜下午｜40 Victoria Street Edinburgh</name>
+      <description>12:10-12:25｜Elephant House 原址 / George IV Bridge｜George IV Bridge Edinburgh</description>
+      <styleUrl>#number-10-point</styleUrl>
+      <Point>
+        <coordinates>-3.1944219,55.9485244,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>11｜下午｜George IV Bridge Edinburgh</name>
+      <description>12:10-12:25｜Elephant House 原址 / George IV Bridge｜George IV Bridge Edinburgh</description>
+      <styleUrl>#number-11-point</styleUrl>
+      <Point>
+        <coordinates>-3.1917910,55.9479433,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>12｜下午｜Greyfriars Kirkyard Edinburgh</name>
+      <description>12:25-12:45｜Greyfriars Kirkyard｜Greyfriars Kirkyard Edinburgh</description>
+      <styleUrl>#number-12-point</styleUrl>
+      <Point>
+        <coordinates>-3.1928949,55.9468282,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>13｜下午｜National Museum of Scotland</name>
+      <description>12:45-13:20｜National Museum of Scotland｜National Museum of Scotland</description>
+      <styleUrl>#number-13-point</styleUrl>
+      <Point>
+        <coordinates>-3.1893355,55.9470714,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>14｜下午｜451 Lawnmarket Edinburgh</name>
+      <description>13:20-13:35｜Lawnmarket 猫头鹰点位｜451 Lawnmarket Edinburgh</description>
+      <styleUrl>#number-14-point</styleUrl>
+      <Point>
+        <coordinates>-3.1930557,55.9496787,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>15｜下午｜Royal Mile</name>
+      <description>13:35-14:15｜午餐｜Royal Mile / Victoria Street</description>
+      <styleUrl>#number-15-point</styleUrl>
+      <Point>
+        <coordinates>-3.1923098,55.9494813,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>16｜下午｜451 Lawnmarket Edinburgh</name>
+      <description>14:15-14:35｜圣吉尔斯大教堂（St Giles’ Cathedral）｜St Giles&#x27; Cathedral</description>
+      <styleUrl>#number-16-point</styleUrl>
+      <Point>
+        <coordinates>-3.1930557,55.9496787,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>17｜下午｜St Giles&#x27; Cathedral</name>
+      <description>14:15-14:35｜圣吉尔斯大教堂（St Giles’ Cathedral）｜St Giles&#x27; Cathedral</description>
+      <styleUrl>#number-17-point</styleUrl>
+      <Point>
+        <coordinates>-3.1908519,55.9494789,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>18｜下午｜Advocate&#x27;s Close Edinburgh</name>
+      <description>14:35-14:50｜Royal Mile Close 小巷机位：Advocate&#x27;s Close｜Advocate&#x27;s Close Edinburgh</description>
+      <styleUrl>#number-18-point</styleUrl>
+      <Point>
+        <coordinates>-3.1916080,55.9504867,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>19｜下午｜The Real Mary King&#x27;s Close</name>
+      <description>14:50-15:35｜玛丽金小巷（The Real Mary King&#x27;s Close）｜Royal Mile</description>
+      <styleUrl>#number-19-point</styleUrl>
+      <Point>
+        <coordinates>-3.1904456,55.9499608,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>20｜下午｜Scottish Parliament Edinburgh</name>
+      <description>15:35-16:00｜Canongate + 苏格兰议会现代建筑｜Canongate / Scottish Parliament Edinburgh</description>
+      <styleUrl>#number-20-point</styleUrl>
+      <Point>
+        <coordinates>-3.1764060,55.9521941,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>21｜下午｜Palace of Holyroodhouse</name>
+      <description>16:00-17:00｜荷里路德宫（Palace of Holyroodhouse）｜Palace of Holyroodhouse</description>
+      <styleUrl>#number-21-point</styleUrl>
+      <Point>
+        <coordinates>-3.1716130,55.9526948,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>22｜下午｜Princes Street Edinburgh</name>
+      <description>17:00-17:20｜Scott Monument / Princes Street 一带｜Princes Street Edinburgh</description>
+      <styleUrl>#number-22-point</styleUrl>
+      <Point>
+        <coordinates>-3.2073967,55.9501540,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>23｜下午｜Edinburgh Waverley</name>
+      <description>17:20-18:00｜Princes Street / Waverley 周边商店｜Princes Street / Edinburgh Waverley</description>
+      <styleUrl>#number-23-point</styleUrl>
+      <Point>
+        <coordinates>-3.1904199,55.9519018,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>24｜晚上｜Edinburgh Waverley</name>
+      <description>18:00-19:30｜晚餐（爱丁堡）｜Edinburgh city centre</description>
+      <styleUrl>#number-24-point</styleUrl>
+      <Point>
+        <coordinates>-3.1904199,55.9519018,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>25｜晚上｜Makars Mash Bar Edinburgh</name>
+      <description>18:00-19:30｜晚餐（爱丁堡）｜Edinburgh city centre</description>
+      <styleUrl>#number-25-point</styleUrl>
+      <Point>
+        <coordinates>-3.1931042,55.9499235,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>26｜晚上｜Edinburgh city centre</name>
+      <description>20:40-21:45｜卡尔顿山（Calton Hill）日落｜Edinburgh</description>
+      <styleUrl>#number-26-point</styleUrl>
+      <Point>
+        <coordinates>-2.1032489,57.1451216,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>27｜晚上｜Calton Hill Edinburgh</name>
+      <description>20:40-21:45｜卡尔顿山（Calton Hill）日落｜Edinburgh</description>
+      <styleUrl>#number-27-point</styleUrl>
+      <Point>
+        <coordinates>-3.1823506,55.9555969,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>28｜晚上｜Edinburgh Waverley Station</name>
+      <description>22:05-23:20｜乘火车返回 Glasgow｜Edinburgh Waverley -&gt; Glasgow Queen Street</description>
+      <styleUrl>#number-28-point</styleUrl>
+      <Point>
+        <coordinates>-3.1904199,55.9519018,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05/27｜上午动线</name>
+      <styleUrl>#上午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2511172,55.8625587,0 -3.1904199,55.9519018,0 -3.1916356,55.9515540,0 -3.2004175,55.9486867,0 -3.3951596,55.9896170,0 -3.1962464,55.9474810,0 -3.1937686,55.9486505,0 -3.1940691,55.9486454,0 -3.1944219,55.9485244,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/27｜下午动线</name>
+      <styleUrl>#下午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-3.1944219,55.9485244,0 -3.1917910,55.9479433,0 -3.1928949,55.9468282,0 -3.1893355,55.9470714,0 -3.1930557,55.9496787,0 -3.1923098,55.9494813,0 -3.1930557,55.9496787,0 -3.1908519,55.9494789,0 -3.1916080,55.9504867,0 -3.1904456,55.9499608,0 -3.1764060,55.9521941,0 -3.1716130,55.9526948,0 -3.2073967,55.9501540,0 -3.1904199,55.9519018,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/27｜晚上动线</name>
+      <styleUrl>#晚上-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-3.1904199,55.9519018,0 -3.1931042,55.9499235,0 -2.1032489,57.1451216,0 -3.1823506,55.9555969,0 -3.1904199,55.9519018,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

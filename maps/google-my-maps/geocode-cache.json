@@ -1,0 +1,290 @@
+{
+  "Glasgow Airport": {
+    "lat": 55.870556,
+    "lon": -4.4357037,
+    "display_name": "Glasgow Airport, Barnwell Street, Gockston, Paisley, Renfrewshire, Alba / Scotland, PA3 2SW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Aparthotel Adagio Glasgow Central": {
+    "lat": 55.8563258,
+    "lon": -4.2560927,
+    "display_name": "Aparthotel Adagio Glasgow Central, 5, Dixon Street, Laurieston, Tradeston, Glasgow, Glasgow City, Alba / Scotland, G1 4AL, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Tesco Express Glasgow St Enoch": {
+    "lat": 55.8569989,
+    "lon": -4.2548804,
+    "display_name": "Tesco Express, 63, St Enoch Square, Laurieston, Blythswood Holm, Glasgow, Glasgow City, Alba / Scotland, G1 4DH, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Glasgow Central": {
+    "lat": 55.8584773,
+    "lon": -4.2582928,
+    "display_name": "Glasgow Central, Jamaica Street, Laurieston, Tradeston, Glasgow, Glasgow City, Alba / Scotland, G1 4NR, United Kingdom",
+    "source": "Nominatim"
+  },
+  "York Railway Station": {
+    "lat": 53.9580837,
+    "lon": -1.0930708,
+    "display_name": "York, Station Road, Scarcroft, Bishophill, York, York and North Yorkshire, England, YO24 1AB, United Kingdom",
+    "source": "Nominatim"
+  },
+  "York City Walls": {
+    "lat": 53.955649,
+    "lon": -1.0902765,
+    "display_name": "City Walls, Scarcroft, Bishophill, York, York and North Yorkshire, England, YO23 1PJ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Museum Gardens York": {
+    "lat": 53.9617856,
+    "lon": -1.0889565,
+    "display_name": "Museum Gardens, Bootham, Bishophill, York, York and North Yorkshire, England, United Kingdom",
+    "source": "Nominatim"
+  },
+  "York Minster": {
+    "lat": 53.9623561,
+    "lon": -1.0820834,
+    "display_name": "York Minster, Minster Yard, The Groves, Bishophill, York, York and North Yorkshire, England, YO1 7HH, United Kingdom",
+    "source": "Nominatim"
+  },
+  "The Shambles, York": {
+    "lat": 53.9592985,
+    "lon": -1.0800328,
+    "display_name": "Shambles, Bootham, Bishophill, York, York and North Yorkshire, England, YO1 7LX, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Clifford's Tower, York, UK": {
+    "lat": 53.9558294,
+    "lon": -1.0801796,
+    "display_name": "Clifford's Tower, Tower Street, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9SA, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Ouse Bridge, York": {
+    "lat": 53.9574466,
+    "lon": -1.0838442,
+    "display_name": "Ouse Bridge, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9QT, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Glasgow City Centre": {
+    "lat": 55.8198532,
+    "lon": -4.3401667,
+    "display_name": "Barrhead Road, Glasgow, Cowglen Road, Silverburn, Cowglen, Priesthill, Glasgow, Glasgow City, Alba / Scotland, G53 6PJ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Glasgow Cathedral": {
+    "lat": 55.863013,
+    "lon": -4.2346182,
+    "display_name": "Glasgow Cathedral, Castle Street, Townhead, Glasgow, Glasgow City, Alba / Scotland, G4 0QZ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Glasgow Necropolis": {
+    "lat": 55.8627117,
+    "lon": -4.230764,
+    "display_name": "Glasgow Necropolis, 70, Garngad, Glasgow, Glasgow City, Alba / Scotland, G4 0UZ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Royal Exchange Square, Glasgow, UK": {
+    "lat": 55.8601515,
+    "lon": -4.2527226,
+    "display_name": "Royal Exchange Square, Merchant City, Glasgow, Glasgow City, Alba / Scotland, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Riverside Museum, Glasgow": {
+    "lat": 55.8652309,
+    "lon": -4.3061682,
+    "display_name": "Riverside Museum, 100, Pointhouse Place, Yorkhill, Glasgow, Glasgow City, Alba / Scotland, G3 8RS, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Scottish Event Campus, Glasgow": {
+    "lat": 55.8607184,
+    "lon": -4.2880154,
+    "display_name": "Scottish Event Campus, Stobcross, Finnieston, Glasgow, Glasgow City, Alba / Scotland, G3 8YW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Buchanan Bus Station, Scotland, UK": {
+    "lat": 55.8655566,
+    "lon": -4.2510172,
+    "display_name": "Buchanan Bus Station (Stance 3), Killermont Street, Cowcaddens, Glasgow, Glasgow City, Alba / Scotland, G2 3NW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Glencoe, Scotland": {
+    "lat": 56.6827647,
+    "lon": -5.1014552,
+    "display_name": "Glencoe, Highland, Alba / Scotland, PH49 4HS, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Glasgow Queen Street Station": {
+    "lat": 55.8625587,
+    "lon": -4.2511172,
+    "display_name": "Glasgow Queen Street, 38, George Square, Merchant City, Glasgow, Glasgow City, Alba / Scotland, G2 1DR, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Edinburgh Waverley Station": {
+    "lat": 55.9519018,
+    "lon": -3.1904199,
+    "display_name": "Edinburgh Waverley, South Ramp, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1QB, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Waverley Bridge Edinburgh": {
+    "lat": 55.951554,
+    "lon": -3.1916356,
+    "display_name": "Waverley Bridge, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1QB, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Edinburgh Castle": {
+    "lat": 55.9486867,
+    "lon": -3.2004175,
+    "display_name": "Edinburgh Castle, Castlehill, Old Town, City of Edinburgh, Alba / Scotland, EH1 2NG, United Kingdom",
+    "source": "Nominatim"
+  },
+  "The Vennel Edinburgh": {
+    "lat": 55.989617,
+    "lon": -3.3951596,
+    "display_name": "The Vennel, Scotstoun, City of Edinburgh, Alba / Scotland, EH30 9HW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Grassmarket Edinburgh": {
+    "lat": 55.947481,
+    "lon": -3.1962464,
+    "display_name": "Grassmarket, Old Town, City of Edinburgh, Alba / Scotland, EH1 2LJ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Victoria Street Edinburgh": {
+    "lat": 55.9486505,
+    "lon": -3.1937686,
+    "display_name": "Victoria Street, Old Town, City of Edinburgh, Alba / Scotland, EH1 2HE, United Kingdom",
+    "source": "Nominatim"
+  },
+  "30 Victoria Street Edinburgh": {
+    "lat": 55.9486454,
+    "lon": -3.1940691,
+    "display_name": "Elephant House, 28,30, Victoria Street, Old Town, City of Edinburgh, Alba / Scotland, EH1 2JW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "40 Victoria Street Edinburgh": {
+    "lat": 55.9485244,
+    "lon": -3.1944219,
+    "display_name": "40, Victoria Street, Old Town, City of Edinburgh, Alba / Scotland, EH1 2JW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "George IV Bridge Edinburgh": {
+    "lat": 55.9479433,
+    "lon": -3.191791,
+    "display_name": "George IV Bridge, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1EJ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Greyfriars Kirkyard Edinburgh": {
+    "lat": 55.9468282,
+    "lon": -3.1928949,
+    "display_name": "Greyfriars Kirkyard, Chambers Street, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1LA, United Kingdom",
+    "source": "Nominatim"
+  },
+  "National Museum of Scotland": {
+    "lat": 55.9470714,
+    "lon": -3.1893355,
+    "display_name": "National Museum of Scotland, Chambers Street, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1JF, United Kingdom",
+    "source": "Nominatim"
+  },
+  "451 Lawnmarket Edinburgh": {
+    "lat": 55.9496787,
+    "lon": -3.1930557,
+    "display_name": "451, Lawnmarket, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 2PQ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Royal Mile, Edinburgh": {
+    "lat": 55.9494813,
+    "lon": -3.1923098,
+    "display_name": "Lawnmarket, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1RN, United Kingdom",
+    "source": "Nominatim"
+  },
+  "St Giles' Cathedral, Edinburgh, UK": {
+    "lat": 55.9494789,
+    "lon": -3.1908519,
+    "display_name": "St Giles' Cathedral, High Street, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1RE, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Advocate's Close Edinburgh": {
+    "lat": 55.9504867,
+    "lon": -3.191608,
+    "display_name": "Advocate's Close, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1ND, United Kingdom",
+    "source": "Nominatim"
+  },
+  "The Real Mary King's Close, Edinburgh, UK": {
+    "lat": 55.9499608,
+    "lon": -3.1904456,
+    "display_name": "The Real Mary King's Close, 2, Warriston's Close, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1PG, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Scottish Parliament Edinburgh": {
+    "lat": 55.9521941,
+    "lon": -3.176406,
+    "display_name": "Scottish Parliament, Canongate, Holyrood, Canongate, Old Town, City of Edinburgh, Alba / Scotland, EH8 8DD, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Palace of Holyroodhouse, Edinburgh, UK": {
+    "lat": 55.9526948,
+    "lon": -3.171613,
+    "display_name": "Palace of Holyroodhouse, Canongate, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH8 8DX, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Princes Street Edinburgh": {
+    "lat": 55.950154,
+    "lon": -3.2073967,
+    "display_name": "Princes Street, Haymarket, West End, City of Edinburgh, Alba / Scotland, EH2 4EQ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Edinburgh Waverley": {
+    "lat": 55.9519018,
+    "lon": -3.1904199,
+    "display_name": "Edinburgh Waverley, South Ramp, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 1QB, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Makars Mash Bar Edinburgh": {
+    "lat": 55.9499235,
+    "lon": -3.1931042,
+    "display_name": "Makars Gourmet Mash Bar Company, 12, Bank Street, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 2LN, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Edinburgh city centre": {
+    "lat": 57.1451216,
+    "lon": -2.1032489,
+    "display_name": "The Edinburgh Woollen Mill, 187, Union Street, City Centre, Aberdeen City, Alba / Scotland, AB11 6BB, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Calton Hill Edinburgh": {
+    "lat": 55.9555969,
+    "lon": -3.1823506,
+    "display_name": "Calton Hill, City of Edinburgh, Alba / Scotland, EH1 3AL, United Kingdom",
+    "source": "Nominatim"
+  },
+  "University of Glasgow": {
+    "lat": 1.3076892,
+    "lon": 103.7780353,
+    "display_name": "University of Glasgow, Moberly Close, Singapore Polytechnic, one-north, Queenstown, Central Region, Singapore, 139660, Singapore",
+    "source": "Nominatim"
+  },
+  "Clyde Arc, Glasgow": {
+    "lat": 55.8572647,
+    "lon": -4.2825201,
+    "display_name": "Clyde Arc, Mavisbank Quay, Mavisbank, Plantation, Glasgow, Glasgow City, Alba / Scotland, G51 1HR, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Merchant City, Glasgow, UK": {
+    "lat": 55.859126,
+    "lon": -4.2463157,
+    "display_name": "Merchant City, Glasgow, Glasgow City, Alba / Scotland, G1 1DJ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Theatre Royal, Glasgow, UK": {
+    "lat": 55.8662713,
+    "lon": -4.2562328,
+    "display_name": "Theatre Royal, Hope Street, Cowcaddens, Glasgow, Glasgow City, Alba / Scotland, G2 3QA, United Kingdom",
+    "source": "Nominatim"
+  },
+  "55.862533,-4.236453|St Mungo Museum of Religious Life and Art": {
+    "lat": 55.862533,
+    "lon": -4.236453,
+    "display_name": "St Mungo Museum of Religious Life and Art",
+    "source": "manual override"
+  }
+}

@@ -1,0 +1,531 @@
+#!/usr/bin/env python3
+"""Generate Google My Maps KML files from pages/plan-a-cn.html.
+
+The HTML itinerary remains the source of truth. This script extracts the
+itinerary data without executing the page JavaScript, geocodes route points,
+and writes one KML file per day for Google My Maps import.
+"""
+
+from __future__ import annotations
+
+import argparse
+import html
+import json
+import re
+import time
+import urllib.parse
+import urllib.request
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable
+
+
+ROOT = Path(__file__).resolve().parents[2]
+HTML_PATH = ROOT / "pages" / "plan-a-cn.html"
+OUT_DIR = ROOT / "maps" / "google-my-maps"
+CACHE_PATH = OUT_DIR / "geocode-cache.json"
+UNRESOLVED_PATH = OUT_DIR / "unresolved-locations.md"
+ICON_DIR = OUT_DIR / "icons"
+ICON_URL_BASE = "https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons"
+
+PHASE_ORDER = ["上午", "下午", "晚上", "其他"]
+PHASE_STYLES = {
+    "上午": {"line": "cc70640b", "icon": "ff70640b"},
+    "下午": {"line": "cc2e62c4", "icon": "ff2e62c4"},
+    "晚上": {"line": "cc60401e", "icon": "ff60401e"},
+    "其他": {"line": "cc66725a", "icon": "ff66725a"},
+}
+
+LOCATION_OVERRIDES: dict[str, str] = {
+    "GLA": "Glasgow Airport",
+    "city centre": "Glasgow City Centre",
+    "City Centre": "Glasgow City Centre",
+    "East End": "Glasgow Cathedral",
+    "Near Cathedral": "Glasgow Necropolis",
+    "Cathedral precinct": "St Mungo Museum of Religious Life and Art, Glasgow",
+    "St Mungo Museum of Religious Life and Art, Glasgow": "55.862533,-4.236453|St Mungo Museum of Religious Life and Art",
+    "Clyde Riverside": "Riverside Museum, Glasgow",
+    "Riverside": "Riverside Museum, Glasgow",
+    "SEC": "Scottish Event Campus, Glasgow",
+    "Venue": "Scottish Event Campus, Glasgow",
+    "Exhibit Hall": "Scottish Event Campus, Glasgow",
+    "Alsh 2": "Scottish Event Campus, Glasgow",
+    "Near Clyde": "Clyde Arc, Glasgow",
+    "West End": "University of Glasgow",
+    "Old Town": "Edinburgh Old Town",
+    "Royal Mile": "Royal Mile, Edinburgh",
+    "Royal Mile / Victoria Street": "Victoria Street, Edinburgh",
+    "Canongate": "Canongate, Edinburgh",
+    "Edinburgh city centre": "Edinburgh city centre",
+    "York city centre": "York Minster",
+    "York Minster area": "York Minster",
+    "York old town": "The Shambles, York",
+    "York riverside": "Ouse Bridge, York",
+    "Near York station": "York Railway Station",
+    "York": "York Railway Station",
+    "Glasgow": "Glasgow City Centre",
+    "Scottish Highlands": "Glencoe, Scotland",
+}
+
+
+@dataclass
+class Day:
+    id: str
+    short: str
+    label: str
+    title: str
+    items: list["Item"]
+
+
+@dataclass
+class Item:
+    time: str
+    title: str
+    location: str
+    route_origin: str = ""
+    route_dest: str = ""
+
+
+@dataclass
+class RoutePoint:
+    phase: str
+    name: str
+    query: str
+    time: str
+    title: str
+    original_location: str
+    lat: float
+    lon: float
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--skip-geocode", action="store_true", help="Use cache only; do not query Nominatim.")
+    args = parser.parse_args()
+
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    cache = load_cache()
+    days = sorted(parse_days(HTML_PATH.read_text(encoding="utf-8")), key=lambda day: day.short)
+    unresolved: list[dict[str, str]] = []
+
+    for day in days:
+        phase_points: dict[str, list[RoutePoint]] = {phase: [] for phase in PHASE_ORDER}
+        for item in day.items:
+            phase = get_day_part(item.time)
+            for name, query in item_route_points(item, day):
+                geocoded = geocode(query, cache, skip=args.skip_geocode)
+                if not geocoded:
+                    unresolved.append(
+                        {
+                            "day": day.short,
+                            "phase": phase,
+                            "item": item.title,
+                            "point": name,
+                            "query": query,
+                        }
+                    )
+                    continue
+                phase_points[phase].append(
+                    RoutePoint(
+                        phase=phase,
+                        name=name,
+                        query=query,
+                        time=item.time,
+                        title=item.title,
+                        original_location=item.location,
+                        lat=geocoded["lat"],
+                        lon=geocoded["lon"],
+                    )
+                )
+
+        write_kml(day, phase_points)
+
+    CACHE_PATH.write_text(json.dumps(cache, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_unresolved(unresolved)
+
+
+def load_cache() -> dict[str, dict[str, float | str]]:
+    if CACHE_PATH.exists():
+        return json.loads(CACHE_PATH.read_text(encoding="utf-8"))
+    return {}
+
+
+def parse_days(source: str) -> list[Day]:
+    itinerary = extract_array(source, "const itinerary =")
+    day_blocks = split_top_level_objects(itinerary)
+    return [parse_day(block) for block in day_blocks]
+
+
+def extract_array(source: str, marker: str) -> str:
+    start = source.index(marker)
+    start = source.index("[", start)
+    end = find_matching(source, start, "[", "]")
+    return source[start + 1 : end]
+
+
+def extract_object_array(source: str, marker: str) -> str:
+    start = source.index(marker)
+    start = source.index("[", start)
+    end = find_matching(source, start, "[", "]")
+    return source[start + 1 : end]
+
+
+def find_matching(source: str, start: int, open_char: str, close_char: str) -> int:
+    depth = 0
+    quote = ""
+    escape = False
+    for index in range(start, len(source)):
+        char = source[index]
+        if quote:
+            if escape:
+                escape = False
+            elif char == "\\":
+                escape = True
+            elif char == quote:
+                quote = ""
+            continue
+        if char in {"'", '"', "`"}:
+            quote = char
+            continue
+        if char == open_char:
+            depth += 1
+        elif char == close_char:
+            depth -= 1
+            if depth == 0:
+                return index
+    raise ValueError(f"No matching {close_char} for {open_char} at {start}")
+
+
+def split_top_level_objects(source: str) -> list[str]:
+    blocks: list[str] = []
+    depth = 0
+    start = -1
+    quote = ""
+    escape = False
+    for index, char in enumerate(source):
+        if quote:
+            if escape:
+                escape = False
+            elif char == "\\":
+                escape = True
+            elif char == quote:
+                quote = ""
+            continue
+        if char in {"'", '"', "`"}:
+            quote = char
+            continue
+        if char == "{":
+            if depth == 0:
+                start = index
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0 and start >= 0:
+                blocks.append(source[start : index + 1])
+                start = -1
+    return blocks
+
+
+def parse_day(block: str) -> Day:
+    items_source = extract_object_array(block, "items:")
+    item_blocks = split_top_level_objects(items_source)
+    return Day(
+        id=read_prop(block, "id"),
+        short=read_prop(block, "short"),
+        label=read_prop(block, "dayLabel"),
+        title=read_prop(block, "title"),
+        items=[parse_item(item) for item in item_blocks],
+    )
+
+
+def parse_item(block: str) -> Item:
+    return Item(
+        time=read_prop(block, "time"),
+        title=read_prop(block, "title"),
+        location=read_prop(block, "location"),
+        route_origin=read_prop(block, "routeOrigin"),
+        route_dest=read_prop(block, "routeDest"),
+    )
+
+
+def read_prop(block: str, prop: str) -> str:
+    match = re.search(rf"\b{re.escape(prop)}\s*:\s*(['\"])(.*?)\1", block, re.S)
+    if not match:
+        return ""
+    return match.group(2).replace('\\"', '"').replace("\\'", "'").strip()
+
+
+def item_route_points(item: Item, day: Day) -> list[tuple[str, str]]:
+    if item.route_origin and item.route_dest:
+        return [
+            route_point(item.route_origin, day),
+            route_point(item.route_dest, day),
+        ]
+    if "->" in item.location:
+        parts = [part.split("/")[0].strip() for part in item.location.split("->")]
+        return [
+            route_point(parts[0], day),
+            route_point(parts[-1], day),
+        ]
+    return [route_point(item.location.split("/")[0].strip(), day)]
+
+
+def route_point(raw: str, day: Day) -> tuple[str, str]:
+    name = clean_point_name(raw)
+    query_base = LOCATION_OVERRIDES.get(name, name)
+    query_base = LOCATION_OVERRIDES.get(query_base, query_base)
+    display_name = point_display_name(name, query_base)
+    lower = query_base.lower()
+    if is_coordinate_override(query_base):
+        query = query_base
+    elif any(anchor in lower for anchor in ["glasgow", "gla", "edinburgh", "york", "scotland", "uk"]):
+        query = query_base
+    elif day.id == "0524":
+        query = f"{query_base}, York, UK"
+    elif day.id == "0527":
+        query = f"{query_base}, Edinburgh, UK"
+    elif day.id == "0526":
+        query = f"{query_base}, Scotland, UK"
+    else:
+        query = f"{query_base}, Glasgow, UK"
+    return display_name, query
+
+
+def point_display_name(original: str, query_base: str) -> str:
+    literal = coordinate_override(query_base)
+    if literal and literal.get("display_name"):
+        return str(literal["display_name"])
+    if original in LOCATION_OVERRIDES:
+        return clean_point_name(LOCATION_OVERRIDES[original].split(",", 1)[0])
+    return original
+
+
+def clean_point_name(value: str) -> str:
+    value = re.sub(r"\s+", " ", value).strip()
+    return value or "Unknown point"
+
+
+def get_day_part(time_value: str) -> str:
+    lower = time_value.lower()
+    match = re.search(r"(\d{1,2}):(\d{2})", lower)
+    if not match:
+        if "evening" in lower or "after" in lower:
+            return "晚上"
+        return "其他"
+    hour = int(match.group(1))
+    if hour < 5:
+        return "晚上"
+    if hour < 12:
+        return "上午"
+    if hour < 18:
+        return "下午"
+    return "晚上"
+
+
+def geocode(query: str, cache: dict[str, dict[str, float | str]], skip: bool) -> dict[str, float] | None:
+    literal = coordinate_override(query)
+    if literal:
+        cache[query] = literal
+        return {"lat": float(literal["lat"]), "lon": float(literal["lon"])}
+    if query in cache:
+        cached = cache[query]
+        if "lat" in cached and "lon" in cached:
+            return {"lat": float(cached["lat"]), "lon": float(cached["lon"])}
+        return None
+    if skip:
+        return None
+
+    params = urllib.parse.urlencode({"q": query, "format": "jsonv2", "limit": 1})
+    request = urllib.request.Request(
+        f"https://nominatim.openstreetmap.org/search?{params}",
+        headers={"User-Agent": "2026-Glasgow-KML-generator/1.0 (local itinerary planning)"},
+    )
+    time.sleep(1.1)
+    with urllib.request.urlopen(request, timeout=30) as response:
+        results = json.loads(response.read().decode("utf-8"))
+    if not results:
+        cache[query] = {"status": "unresolved"}
+        return None
+    result = results[0]
+    cache[query] = {
+        "lat": float(result["lat"]),
+        "lon": float(result["lon"]),
+        "display_name": result.get("display_name", ""),
+        "source": "Nominatim",
+    }
+    return {"lat": float(result["lat"]), "lon": float(result["lon"])}
+
+
+def is_coordinate_override(query: str) -> bool:
+    return bool(re.match(r"^-?\d+(?:\.\d+)?,-?\d+(?:\.\d+)?(?:\|.+)?$", query))
+
+
+def coordinate_override(query: str) -> dict[str, float | str] | None:
+    if not is_coordinate_override(query):
+        return None
+    coords, _, label = query.partition("|")
+    lat, lon = coords.split(",", 1)
+    return {
+        "lat": float(lat),
+        "lon": float(lon),
+        "display_name": label or "Manual coordinate override",
+        "source": "manual override",
+    }
+
+
+def write_kml(day: Day, phase_points: dict[str, list[RoutePoint]]) -> None:
+    numbered_points = numbered_day_points(phase_points)
+    ensure_number_icons(len(numbered_points))
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<kml xmlns="http://www.opengis.net/kml/2.2">',
+        "  <Document>",
+        f"    <name>{xml(day.short)}｜{xml(day.title)}</name>",
+        f"    <description>{xml(day.short)} {xml(day.label)} {xml(day.title)}，由 pages/plan-a-cn.html 自动生成。</description>",
+    ]
+    for number, _, _ in numbered_points:
+        icon_url = f"{ICON_URL_BASE}/{number:02d}.png"
+        lines.extend(
+            [
+                f'    <Style id="number-{number:02d}-point">',
+                "      <IconStyle>",
+                "        <scale>1.15</scale>",
+                f"        <Icon><href>{xml(icon_url)}</href></Icon>",
+                "      </IconStyle>",
+                "      <LabelStyle><scale>0.8</scale></LabelStyle>",
+                "    </Style>",
+            ]
+        )
+    for phase in PHASE_ORDER:
+        style = PHASE_STYLES[phase]
+        lines.extend(
+            [
+                f'    <Style id="{phase}-line">',
+                "      <LineStyle>",
+                f"        <color>{style['line']}</color>",
+                "        <width>4</width>",
+                "      </LineStyle>",
+                "    </Style>",
+            ]
+        )
+    for number, phase, point in numbered_points:
+        label = f"{number:02d}｜{phase}｜{point.name}"
+        lines.extend(
+            [
+                "    <Placemark>",
+                f"      <name>{xml(label)}</name>",
+                f"      <description>{xml(point.time)}｜{xml(point.title)}｜{xml(point.original_location)}</description>",
+                f"      <styleUrl>#number-{number:02d}-point</styleUrl>",
+                "      <Point>",
+                f"        <coordinates>{point.lon:.7f},{point.lat:.7f},0</coordinates>",
+                "      </Point>",
+                "    </Placemark>",
+            ]
+        )
+    for phase in PHASE_ORDER:
+        points = dedupe_route_points(phase_points.get(phase, []))
+        if len(points) >= 2:
+            coordinates = " ".join(f"{point.lon:.7f},{point.lat:.7f},0" for point in points)
+            lines.extend(
+                [
+                    "    <Placemark>",
+                    f"      <name>{xml(day.short)}｜{phase}动线</name>",
+                    f"      <styleUrl>#{phase}-line</styleUrl>",
+                    "      <LineString>",
+                    "        <tessellate>1</tessellate>",
+                    f"        <coordinates>{coordinates}</coordinates>",
+                    "      </LineString>",
+                    "    </Placemark>",
+                ]
+            )
+    lines.extend(["  </Document>", "</kml>", ""])
+    output = OUT_DIR / f"plan-a-cn-{day.id}.kml"
+    output.write_text("\n".join(lines), encoding="utf-8")
+
+
+def numbered_day_points(phase_points: dict[str, list[RoutePoint]]) -> list[tuple[int, str, RoutePoint]]:
+    numbered: list[tuple[int, str, RoutePoint]] = []
+    next_number = 1
+    for phase in PHASE_ORDER:
+        for point in dedupe_route_points(phase_points.get(phase, [])):
+            numbered.append((next_number, phase, point))
+            next_number += 1
+    return numbered
+
+
+def ensure_number_icons(count: int) -> None:
+    if count <= 0:
+        return
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        return
+
+    ICON_DIR.mkdir(parents=True, exist_ok=True)
+    font = load_icon_font(ImageFont)
+    for number in range(1, count + 1):
+        icon_path = ICON_DIR / f"{number:02d}.png"
+        if icon_path.exists():
+            continue
+        image = Image.new("RGBA", (96, 120), (255, 255, 255, 0))
+        draw = ImageDraw.Draw(image)
+        fill = (246, 188, 52, 255)
+        outline = (92, 74, 26, 255)
+        draw.ellipse((14, 8, 82, 76), fill=fill, outline=outline, width=4)
+        draw.polygon([(25, 60), (71, 60), (48, 114)], fill=fill, outline=outline)
+        draw.line([(25, 60), (48, 114), (71, 60)], fill=outline, width=4, joint="curve")
+        text = str(number)
+        bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
+        draw.text(
+            ((96 - text_width) / 2, 40 - text_height / 2 - bbox[1]),
+            text,
+            fill=(25, 25, 25, 255),
+            font=font,
+        )
+        image.save(icon_path)
+
+
+def load_icon_font(image_font_module):
+    font_candidates = [
+        Path("C:/Windows/Fonts/arialbd.ttf"),
+        Path("C:/Windows/Fonts/Arial.ttf"),
+    ]
+    for font_path in font_candidates:
+        if font_path.exists():
+            return image_font_module.truetype(str(font_path), 34)
+    return image_font_module.load_default()
+
+
+def dedupe_route_points(points: Iterable[RoutePoint]) -> list[RoutePoint]:
+    deduped: list[RoutePoint] = []
+    for point in points:
+        key = (round(point.lat, 6), round(point.lon, 6))
+        last = deduped[-1] if deduped else None
+        last_key = (round(last.lat, 6), round(last.lon, 6)) if last else None
+        if key != last_key:
+            deduped.append(point)
+    return deduped
+
+
+def write_unresolved(unresolved: list[dict[str, str]]) -> None:
+    if not unresolved:
+        UNRESOLVED_PATH.write_text(
+            "# 待确认地点\n\n当前没有未解析地点。\n",
+            encoding="utf-8",
+        )
+        return
+    lines = ["# 待确认地点", "", "以下地点未能自动解析到坐标，导入 My Maps 前建议手动确认：", ""]
+    for item in unresolved:
+        lines.append(f"- {item['day']}｜{item['phase']}｜{item['item']}｜{item['point']}｜查询：`{item['query']}`")
+    lines.append("")
+    UNRESOLVED_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+
+def xml(value: str) -> str:
+    return html.escape(str(value), quote=True)
+
+
+if __name__ == "__main__":
+    main()

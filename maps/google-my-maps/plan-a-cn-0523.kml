@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>05/23｜抵达 Glasgow</name>
+    <description>05/23 周六 抵达 Glasgow，由 pages/plan-a-cn.html 自动生成。</description>
+    <Style id="number-01-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/01.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-02-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/02.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-03-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/03.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-04-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/04.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="上午-line">
+      <LineStyle>
+        <color>cc70640b</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="下午-line">
+      <LineStyle>
+        <color>cc2e62c4</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="晚上-line">
+      <LineStyle>
+        <color>cc60401e</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="其他-line">
+      <LineStyle>
+        <color>cc66725a</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>01｜晚上｜Glasgow Airport</name>
+      <description>22:15-23:00｜抵达 Glasgow 并办理入境｜Glasgow Airport</description>
+      <styleUrl>#number-01-point</styleUrl>
+      <Point>
+        <coordinates>-4.4357037,55.8705560,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>02｜晚上｜Aparthotel Adagio Glasgow Central</name>
+      <description>23:00-23:40｜前往酒店｜GLA -&gt; city centre</description>
+      <styleUrl>#number-02-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>03｜晚上｜Tesco Express Glasgow St Enoch</name>
+      <description>23:40-00:15｜入住酒店 / 简单补给｜Aparthotel Adagio Glasgow Central 周边</description>
+      <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>-4.2548804,55.8569989,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜晚上｜Aparthotel Adagio Glasgow Central</name>
+      <description>00:15 onward｜休息｜Aparthotel Adagio Glasgow Central</description>
+      <styleUrl>#number-04-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05/23｜晚上动线</name>
+      <styleUrl>#晚上-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.4357037,55.8705560,0 -4.2560927,55.8563258,0 -4.2548804,55.8569989,0 -4.2560927,55.8563258,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>05/24｜York 一日往返</name>
+    <description>05/24 周日 York 一日往返，由 pages/plan-a-cn.html 自动生成。</description>
+    <Style id="number-01-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/01.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-02-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/02.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-03-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/03.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-04-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/04.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-05-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/05.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-06-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/06.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-07-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/07.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-08-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/08.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-09-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/09.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-10-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/10.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="上午-line">
+      <LineStyle>
+        <color>cc70640b</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="下午-line">
+      <LineStyle>
+        <color>cc2e62c4</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="晚上-line">
+      <LineStyle>
+        <color>cc60401e</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="其他-line">
+      <LineStyle>
+        <color>cc66725a</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>01｜上午｜Glasgow Central</name>
+      <description>07:00-07:30｜前往车站｜Glasgow Central</description>
+      <styleUrl>#number-01-point</styleUrl>
+      <Point>
+        <coordinates>-4.2582928,55.8584773,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>02｜上午｜York Railway Station</name>
+      <description>07:30-11:30｜乘火车前往 York｜Glasgow Central -&gt; York</description>
+      <styleUrl>#number-02-point</styleUrl>
+      <Point>
+        <coordinates>-1.0930708,53.9580837,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>03｜上午｜York City Walls</name>
+      <description>11:30-12:00｜约克城墙（York City Walls）机位｜York Station / York City Walls</description>
+      <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>-1.0902765,53.9556490,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜下午｜Museum Gardens York</name>
+      <description>12:00-12:35｜博物馆花园（Museum Gardens）+ 圣玛丽修道院遗址｜Museum Gardens York</description>
+      <styleUrl>#number-04-point</styleUrl>
+      <Point>
+        <coordinates>-1.0889565,53.9617856,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05｜下午｜York Minster</name>
+      <description>12:40-13:35｜约克大教堂（York Minster）｜York city centre</description>
+      <styleUrl>#number-05-point</styleUrl>
+      <Point>
+        <coordinates>-1.0820834,53.9623561,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>06｜下午｜The Shambles</name>
+      <description>14:10-15:10｜肉铺街（The Shambles）+ 小店｜York old town</description>
+      <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-1.0800328,53.9592985,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜下午｜Clifford&#x27;s Tower</name>
+      <description>15:10-15:50｜克利福德塔（Clifford&#x27;s Tower）/ 城堡区｜Clifford&#x27;s Tower</description>
+      <styleUrl>#number-07-point</styleUrl>
+      <Point>
+        <coordinates>-1.0801796,53.9558294,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>08｜下午｜Ouse Bridge</name>
+      <description>15:50-16:35｜乌斯河边 / 城墙拍照 / 自由活动｜York riverside</description>
+      <styleUrl>#number-08-point</styleUrl>
+      <Point>
+        <coordinates>-1.0838442,53.9574466,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>09｜下午｜York Railway Station</name>
+      <description>16:35-17:05｜National Railway Museum 或回车站前买点饮水零食｜Near York station</description>
+      <styleUrl>#number-09-point</styleUrl>
+      <Point>
+        <coordinates>-1.0930708,53.9580837,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>10｜下午｜Glasgow City Centre</name>
+      <description>17:30-21:30｜乘火车返回 Glasgow｜York -&gt; Glasgow</description>
+      <styleUrl>#number-10-point</styleUrl>
+      <Point>
+        <coordinates>-4.3401667,55.8198532,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05/24｜上午动线</name>
+      <styleUrl>#上午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2582928,55.8584773,0 -1.0930708,53.9580837,0 -1.0902765,53.9556490,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/24｜下午动线</name>
+      <styleUrl>#下午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-1.0889565,53.9617856,0 -1.0820834,53.9623561,0 -1.0800328,53.9592985,0 -1.0801796,53.9558294,0 -1.0838442,53.9574466,0 -1.0930708,53.9580837,0 -4.3401667,55.8198532,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
