@@ -52,6 +52,7 @@ LOCATION_OVERRIDES: dict[str, str] = {
     "Alsh 2": "Scottish Event Campus, Glasgow",
     "Near Clyde": "Clyde Arc, Glasgow",
     "West End": "University of Glasgow",
+    "University of Glasgow": "55.8721211,-4.2882005|University of Glasgow",
     "Old Town": "Edinburgh Old Town",
     "Royal Mile": "Royal Mile, Edinburgh",
     "Royal Mile / Victoria Street": "Victoria Street, Edinburgh",

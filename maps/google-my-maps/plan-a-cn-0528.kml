@@ -96,7 +96,7 @@
       <description>08:30-09:30｜吃早餐后前往 West End｜Aparthotel Adagio Glasgow Central -&gt; West End</description>
       <styleUrl>#number-02-point</styleUrl>
       <Point>
-        <coordinates>103.7780353,1.3076892,0</coordinates>
+        <coordinates>-4.2882005,55.8721211,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -104,7 +104,7 @@
       <description>12:00-12:30｜简短午餐｜West End</description>
       <styleUrl>#number-03-point</styleUrl>
       <Point>
-        <coordinates>103.7780353,1.3076892,0</coordinates>
+        <coordinates>-4.2882005,55.8721211,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -152,7 +152,7 @@
       <styleUrl>#上午-line</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-4.2560927,55.8563258,0 103.7780353,1.3076892,0</coordinates>
+        <coordinates>-4.2560927,55.8563258,0 -4.2882005,55.8721211,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -160,7 +160,7 @@
       <styleUrl>#下午-line</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>103.7780353,1.3076892,0 -4.2880154,55.8607184,0 -4.2825201,55.8572647,0 -4.2463157,55.8591260,0</coordinates>
+        <coordinates>-4.2882005,55.8721211,0 -4.2880154,55.8607184,0 -4.2825201,55.8572647,0 -4.2463157,55.8591260,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>

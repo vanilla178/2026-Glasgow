@@ -257,12 +257,6 @@
     "display_name": "Calton Hill, City of Edinburgh, Alba / Scotland, EH1 3AL, United Kingdom",
     "source": "Nominatim"
   },
-  "University of Glasgow": {
-    "lat": 1.3076892,
-    "lon": 103.7780353,
-    "display_name": "University of Glasgow, Moberly Close, Singapore Polytechnic, one-north, Queenstown, Central Region, Singapore, 139660, Singapore",
-    "source": "Nominatim"
-  },
   "Clyde Arc, Glasgow": {
     "lat": 55.8572647,
     "lon": -4.2825201,
@@ -285,6 +279,12 @@
     "lat": 55.862533,
     "lon": -4.236453,
     "display_name": "St Mungo Museum of Religious Life and Art",
+    "source": "manual override"
+  },
+  "55.8721211,-4.2882005|University of Glasgow": {
+    "lat": 55.8721211,
+    "lon": -4.2882005,
+    "display_name": "University of Glasgow",
     "source": "manual override"
   }
 }
