@@ -942,6 +942,54 @@
       margin-top: 8px;
     }
 
+    .route-segment-list {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .route-segment-title {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .route-segment-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .route-segment-card {
+      display: grid;
+      gap: 4px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(15, 108, 123, 0.12);
+      background: rgba(15, 108, 123, 0.06);
+      color: var(--brand-3);
+    }
+
+    .route-segment-card strong {
+      font-size: 0.9rem;
+    }
+
+    .route-segment-card span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .route-segment-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
     .service-guide-stack {
       display: grid;
       gap: 12px;
@@ -1496,11 +1544,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-27｜stonfur｜继续优化手机端阅读体验：压缩日期切换按钮，改进每日摘要在手机上的 2x2 排布，降低侧栏提示和版本说明的视觉重量，并收紧时间线卡片的间距与文字层级。</li>
+            <li>最近更新：2026-04-27｜stonfur｜新增分段 Google 地图动线：按每一天的上午 / 下午 / 晚上自动串联时间线中的途径点，方便出行时直接打开 Google Maps 查看路线。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-27｜stonfur｜继续优化手机端阅读体验：压缩日期切换按钮，改进每日摘要在手机上的 2x2 排布，降低侧栏提示和版本说明的视觉重量，并收紧时间线卡片的间距与文字层级。</li>
               <li>2026-04-27｜stonfur｜修复手机端预览：将单栏布局和长文本换行规则扩展到更宽的窄屏区间，避免第三方预览中右侧内容被裁切。</li>
               <li>2026-04-27｜stonfur｜优化手机端显示：补充响应式布局兜底，修正第三方预览在手机上容易横向溢出和排版拥挤的问题。</li>
               <li>2026-04-26｜stonfur｜优化阅读体验：新增每日摘要条，按上午 / 下午 / 晚上分组时间线，为预约事项增加状态标签，并将时间线中的参考链接与攻略折叠显示，减少页面信息密度。</li>
@@ -1548,6 +1597,7 @@
             </section>
             <section class="booking-card">
               <h3>地图快速跳转</h3>
+              <div id="routeSegmentList"></div>
               <div class="link-row" id="mapJumpList"></div>
               <div id="sideRouteMap"></div>
             </section>
@@ -2792,6 +2842,20 @@
       return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
     }
 
+    function multiStopDirUrl(points) {
+      const cleanPoints = dedupeRoutePoints(points);
+      if (cleanPoints.length < 2) return "";
+
+      const origin = cleanPoints[0];
+      const destination = cleanPoints[cleanPoints.length - 1];
+      const waypoints = cleanPoints.slice(1, -1);
+      const waypointParam = waypoints.length
+        ? `&waypoints=${encodeURIComponent(waypoints.join("|"))}`
+        : "";
+
+      return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}${waypointParam}&travelmode=walking`;
+    }
+
     // Helper: Add context to generic locations to prevent cross-country mapping errors
     function addLocationContext(loc, day) {
       const l = loc.toLowerCase();
@@ -2807,6 +2871,43 @@
       else if (day.id === '0527') city = 'Edinburgh';
       
       return `${loc}, ${city}, UK`;
+    }
+
+    function routePointLabel(point, day) {
+      const raw = String(point || "").trim();
+      if (!raw) return "";
+      return addLocationContext(raw, day);
+    }
+
+    function dedupeRoutePoints(points) {
+      return points.reduce((list, point) => {
+        const clean = String(point || "").trim();
+        const last = list[list.length - 1] || "";
+        if (clean && clean.toLowerCase() !== last.toLowerCase()) {
+          list.push(clean);
+        }
+        return list;
+      }, []);
+    }
+
+    function itemRoutePoints(item, day) {
+      if (item.routeOrigin && item.routeDest) {
+        return [
+          routePointLabel(item.routeOrigin, day),
+          routePointLabel(item.routeDest, day)
+        ];
+      }
+
+      const rawLocation = String(item.location || "");
+      if (rawLocation.includes("->")) {
+        const parts = rawLocation.split("->").map((part) => part.split("/")[0].trim());
+        return [
+          routePointLabel(parts[0], day),
+          routePointLabel(parts[parts.length - 1], day)
+        ];
+      }
+
+      return [routePointLabel(rawLocation.split("/")[0].trim(), day)];
     }
 
     function escapeHtml(value) {
@@ -2832,6 +2933,7 @@
     const bookingList = document.getElementById("bookingList");
     const noteList = document.getElementById("noteList");
     const mapJumpList = document.getElementById("mapJumpList");
+    const routeSegmentList = document.getElementById("routeSegmentList");
     const sideRouteMap = document.getElementById("sideRouteMap");
     const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
@@ -2981,6 +3083,72 @@
       if (hour < 12) return "上午";
       if (hour < 18) return "下午";
       return "晚上";
+    }
+
+    function shortRoutePoint(point) {
+      return String(point || "")
+        .replace(/,\s*UK$/i, "")
+        .replace(/,\s*(Glasgow|Edinburgh|York|Scotland)$/i, "")
+        .trim();
+    }
+
+    function chunkRoutePoints(points, maxPoints = 10) {
+      if (points.length <= maxPoints) return [points];
+
+      const chunks = [];
+      let start = 0;
+      while (start < points.length - 1) {
+        const chunk = points.slice(start, start + maxPoints);
+        if (chunk.length >= 2) chunks.push(chunk);
+        start += maxPoints - 1;
+      }
+      return chunks;
+    }
+
+    function renderRouteSegments(day) {
+      const groups = new Map([
+        ["上午", []],
+        ["下午", []],
+        ["晚上", []],
+        ["其他", []]
+      ]);
+
+      day.items.forEach((item) => {
+        const part = getDayPart(item.time);
+        const points = itemRoutePoints(item, day);
+        if (!groups.has(part)) groups.set(part, []);
+        groups.get(part).push(...points);
+      });
+
+      const cards = [];
+      groups.forEach((points, part) => {
+        const cleanPoints = dedupeRoutePoints(points);
+        if (cleanPoints.length < 2) return;
+
+        const chunks = chunkRoutePoints(cleanPoints);
+        chunks.forEach((chunk, index) => {
+          const href = multiStopDirUrl(chunk);
+          const first = shortRoutePoint(chunk[0]);
+          const last = shortRoutePoint(chunk[chunk.length - 1]);
+          const label = chunks.length > 1 ? `${part}动线 ${index + 1}` : `${part}动线`;
+          cards.push(`
+            <a class="route-segment-card" href="${href}" target="_blank" rel="noreferrer">
+              <strong>${escapeHtml(label)}</strong>
+              <span>${chunk.length} 个途径点：${escapeHtml(first)} -> ${escapeHtml(last)}</span>
+            </a>
+          `);
+        });
+      });
+
+      if (!cards.length) return "";
+
+      return `
+        <div class="route-segment-list">
+          <h4 class="route-segment-title">分段动线图</h4>
+          <div class="route-segment-grid">${cards.join("")}</div>
+          <p class="route-segment-note">按时间线自动生成；Google Maps 打开后可能会根据实时路况和步行限制微调路线。</p>
+        </div>
+      `;
     }
 
     function bookingStatus(item) {
@@ -3249,6 +3417,7 @@
         `;
       }).join("");
 
+      routeSegmentList.innerHTML = renderRouteSegments(day);
       mapJumpList.innerHTML = renderLinkRow(day.spots.map((spot) => ({ label: spot, url: mapsUrl(spot) })));
       sideRouteMap.innerHTML = renderSideRouteMap(day.sideRouteMap);
       serviceGuideList.innerHTML = renderServiceGuides(day.serviceGuides);
