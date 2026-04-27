@@ -58,6 +58,8 @@ python maps\google-my-maps\generate_kml.py --skip-geocode
 
 坐标主要通过 Nominatim 查询并写入 `geocode-cache.json`。如果某个地点无法稳定解析，可以在 `generate_kml.py` 的 `LOCATION_OVERRIDES` 中补充更明确的查询词或手动坐标。
 
+如果行程卡的 `location` 只是 `City Centre`、`West End` 这类区域提示，不要直接拿它做坐标。优先在 `generate_kml.py` 的 `ITEM_POINT_OVERRIDES` 中根据行程标题和备注指定真正要去的景点、车站或餐饮区域。
+
 ## 注意
 
 - 点位名称格式为 `01｜上午｜地点名`。

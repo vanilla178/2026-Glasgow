@@ -31,6 +31,41 @@
       </IconStyle>
       <LabelStyle><scale>0.8</scale></LabelStyle>
     </Style>
+    <Style id="number-05-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/05.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-06-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/06.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-07-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/07.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-08-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/08.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-09-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/09.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
     <Style id="上午-line">
       <LineStyle>
         <color>cc70640b</color>
@@ -56,35 +91,75 @@
       </LineStyle>
     </Style>
     <Placemark>
-      <name>01｜上午｜Glasgow City Centre</name>
+      <name>01｜上午｜Aparthotel Adagio Glasgow Central</name>
       <description>06:45-07:30｜前往 Buchanan Bus Station｜Glasgow</description>
       <styleUrl>#number-01-point</styleUrl>
       <Point>
-        <coordinates>-4.3401667,55.8198532,0</coordinates>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
       <name>02｜上午｜Buchanan Bus Station</name>
-      <description>07:30-07:45｜签到 / 上车｜Buchanan Bus Station</description>
+      <description>06:45-07:30｜前往 Buchanan Bus Station｜Glasgow</description>
       <styleUrl>#number-02-point</styleUrl>
       <Point>
-        <coordinates>-4.2510172,55.8655566,0</coordinates>
+        <coordinates>-4.2491387,55.8648847,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>03｜上午｜Glencoe</name>
+      <name>03｜上午｜Loch Lomond</name>
       <description>07:45-19:15｜Highlands / Loch Ness / Glencoe 行程｜Scottish Highlands</description>
       <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>-4.6391220,56.1015060,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜上午｜Glencoe</name>
+      <description>07:45-19:15｜Highlands / Loch Ness / Glencoe 行程｜Scottish Highlands</description>
+      <styleUrl>#number-04-point</styleUrl>
       <Point>
         <coordinates>-5.1014552,56.6827647,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>04｜晚上｜Glasgow City Centre</name>
-      <description>19:15-20:00｜返回酒店附近｜Glasgow</description>
-      <styleUrl>#number-04-point</styleUrl>
+      <name>05｜上午｜Fort Augustus / Loch Ness</name>
+      <description>07:45-19:15｜Highlands / Loch Ness / Glencoe 行程｜Scottish Highlands</description>
+      <styleUrl>#number-05-point</styleUrl>
       <Point>
-        <coordinates>-4.3401667,55.8198532,0</coordinates>
+        <coordinates>-4.6800730,57.1448260,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>06｜上午｜Pitlochry</name>
+      <description>07:45-19:15｜Highlands / Loch Ness / Glencoe 行程｜Scottish Highlands</description>
+      <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-3.7299670,56.7034680,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜晚上｜Buchanan Bus Station</name>
+      <description>19:15-20:00｜返回酒店附近｜Glasgow</description>
+      <styleUrl>#number-07-point</styleUrl>
+      <Point>
+        <coordinates>-4.2491387,55.8648847,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>08｜晚上｜Aparthotel Adagio Glasgow Central</name>
+      <description>19:15-20:00｜返回酒店附近｜Glasgow</description>
+      <styleUrl>#number-08-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>09｜晚上｜Merchant City</name>
+      <description>20:00-21:00｜晚餐｜Glasgow</description>
+      <styleUrl>#number-09-point</styleUrl>
+      <Point>
+        <coordinates>-4.2463157,55.8591260,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -92,7 +167,15 @@
       <styleUrl>#上午-line</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-4.3401667,55.8198532,0 -4.2510172,55.8655566,0 -5.1014552,56.6827647,0</coordinates>
+        <coordinates>-4.2560927,55.8563258,0 -4.2491387,55.8648847,0 -4.6391220,56.1015060,0 -5.1014552,56.6827647,0 -4.6800730,57.1448260,0 -3.7299670,56.7034680,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/26｜晚上动线</name>
+      <styleUrl>#晚上-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2491387,55.8648847,0 -4.2560927,55.8563258,0 -4.2463157,55.8591260,0</coordinates>
       </LineString>
     </Placemark>
   </Document>

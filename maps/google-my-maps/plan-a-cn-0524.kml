@@ -73,6 +73,13 @@
       </IconStyle>
       <LabelStyle><scale>0.8</scale></LabelStyle>
     </Style>
+    <Style id="number-11-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/11.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
     <Style id="上午-line">
       <LineStyle>
         <color>cc70640b</color>
@@ -138,43 +145,51 @@
       </Point>
     </Placemark>
     <Placemark>
-      <name>06｜下午｜The Shambles</name>
-      <description>14:10-15:10｜肉铺街（The Shambles）+ 小店｜York old town</description>
+      <name>06｜下午｜Bettys Cafe Tea Rooms York</name>
+      <description>13:35-14:10｜午餐 / Bettys 备选｜York Minster area</description>
       <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-1.0835080,53.9597790,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜下午｜The Shambles</name>
+      <description>14:10-15:10｜肉铺街（The Shambles）+ 小店｜York old town</description>
+      <styleUrl>#number-07-point</styleUrl>
       <Point>
         <coordinates>-1.0800328,53.9592985,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>07｜下午｜Clifford&#x27;s Tower</name>
+      <name>08｜下午｜Clifford&#x27;s Tower</name>
       <description>15:10-15:50｜克利福德塔（Clifford&#x27;s Tower）/ 城堡区｜Clifford&#x27;s Tower</description>
-      <styleUrl>#number-07-point</styleUrl>
+      <styleUrl>#number-08-point</styleUrl>
       <Point>
         <coordinates>-1.0801796,53.9558294,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>08｜下午｜Ouse Bridge</name>
+      <name>09｜下午｜Ouse Bridge</name>
       <description>15:50-16:35｜乌斯河边 / 城墙拍照 / 自由活动｜York riverside</description>
-      <styleUrl>#number-08-point</styleUrl>
+      <styleUrl>#number-09-point</styleUrl>
       <Point>
         <coordinates>-1.0838442,53.9574466,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>09｜下午｜York Railway Station</name>
+      <name>10｜下午｜York Railway Station</name>
       <description>16:35-17:05｜National Railway Museum 或回车站前买点饮水零食｜Near York station</description>
-      <styleUrl>#number-09-point</styleUrl>
+      <styleUrl>#number-10-point</styleUrl>
       <Point>
         <coordinates>-1.0930708,53.9580837,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>10｜下午｜Glasgow City Centre</name>
+      <name>11｜下午｜Glasgow Central</name>
       <description>17:30-21:30｜乘火车返回 Glasgow｜York -&gt; Glasgow</description>
-      <styleUrl>#number-10-point</styleUrl>
+      <styleUrl>#number-11-point</styleUrl>
       <Point>
-        <coordinates>-4.3401667,55.8198532,0</coordinates>
+        <coordinates>-4.2582928,55.8584773,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -190,7 +205,7 @@
       <styleUrl>#下午-line</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-1.0889565,53.9617856,0 -1.0820834,53.9623561,0 -1.0800328,53.9592985,0 -1.0801796,53.9558294,0 -1.0838442,53.9574466,0 -1.0930708,53.9580837,0 -4.3401667,55.8198532,0</coordinates>
+        <coordinates>-1.0889565,53.9617856,0 -1.0820834,53.9623561,0 -1.0835080,53.9597790,0 -1.0800328,53.9592985,0 -1.0801796,53.9558294,0 -1.0838442,53.9574466,0 -1.0930708,53.9580837,0 -4.2582928,55.8584773,0</coordinates>
       </LineString>
     </Placemark>
   </Document>

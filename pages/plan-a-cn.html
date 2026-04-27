@@ -1544,11 +1544,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-27｜stonfur｜修正 Google My Maps 坐标定位：将 University of Glasgow 改为手动坐标覆盖，避免自动地理编码误匹配到新加坡地点，确保 05/28 上午和下午动线都落在 Glasgow。</li>
+            <li>最近更新：2026-04-27｜stonfur｜重做 Google My Maps 地点提取逻辑：不再把 City Centre、West End 这类区域字段直接当坐标点，而是优先按行程标题和备注中的具体景点、车站、餐饮区域确定点位，并补充高地日的 Loch Lomond、Glencoe、Fort Augustus / Loch Ness 与 Pitlochry 动线。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-27｜stonfur｜修正 Google My Maps 坐标定位：将 University of Glasgow 改为手动坐标覆盖，避免自动地理编码误匹配到新加坡地点，确保 05/28 上午和下午动线都落在 Glasgow。</li>
               <li>2026-04-27｜stonfur｜优化 Google My Maps 点位编号：每日路线改为从 01 开始连续编号，并生成对应的数字图钉 marker，让导入 My Maps 后的点位顺序能直接显示在地图上。</li>
               <li>2026-04-27｜stonfur｜调整 Google My Maps KML 结构：每个日期文件导入后只对应一个 My Maps 图层，不再按上午 / 下午 / 晚上拆分图层，同时保留编号点位、分段动线和早中晚颜色区分。</li>
               <li>2026-04-27｜stonfur｜新增 Google My Maps 导入文件：根据当前行程生成 05/23-05/28 每日 KML 动线图，支持在 My Maps 中按日期图层导入编号点位和上午 / 下午 / 晚上分段动线。</li>

@@ -36,10 +36,73 @@ PHASE_STYLES = {
     "其他": {"line": "cc66725a", "icon": "ff66725a"},
 }
 
+PLACE_QUERIES: dict[str, str] = {
+    "Aparthotel Adagio Glasgow Central": "Aparthotel Adagio Glasgow Central",
+    "Ashton Lane": "55.874014,-4.293583|Ashton Lane",
+    "Bettys Cafe Tea Rooms York": "53.959779,-1.083508|Bettys Cafe Tea Rooms York",
+    "Buchanan Bus Station": "Buchanan Bus Station, Glasgow",
+    "Calton Hill Edinburgh": "Calton Hill Edinburgh",
+    "Clyde Arc": "Clyde Arc, Glasgow",
+    "Edinburgh Castle": "Edinburgh Castle",
+    "Edinburgh Waverley Station": "Edinburgh Waverley Station",
+    "Fort Augustus / Loch Ness": "57.144826,-4.680073|Fort Augustus / Loch Ness",
+    "Gallery of Modern Art Glasgow": "55.8601675,-4.2526408|Gallery of Modern Art Glasgow",
+    "George Square": "55.8611567,-4.2502189|George Square",
+    "Glasgow Cathedral": "Glasgow Cathedral",
+    "Glasgow Central": "Glasgow Central",
+    "Glasgow Queen Street Station": "Glasgow Queen Street Station",
+    "Glencoe": "Glencoe, Scotland",
+    "Grassmarket Edinburgh": "Grassmarket Edinburgh",
+    "Kelvingrove Art Gallery and Museum": "55.8685825,-4.2906278|Kelvingrove Art Gallery and Museum",
+    "Loch Lomond": "56.101506,-4.639122|Loch Lomond",
+    "Makars Mash Bar Edinburgh": "Makars Mash Bar Edinburgh",
+    "Merchant City": "Merchant City, Glasgow, UK",
+    "Pitlochry": "56.703468,-3.729967|Pitlochry",
+    "Riverside Museum": "Riverside Museum, Glasgow",
+    "Scott Monument": "Scott Monument Edinburgh",
+    "Scottish Event Campus": "Scottish Event Campus, Glasgow",
+    "Theatre Royal": "Theatre Royal, Glasgow, UK",
+    "The Vennel Edinburgh": "55.947182,-3.196806|The Vennel Edinburgh",
+    "University of Glasgow": "55.8721211,-4.2882005|University of Glasgow",
+    "Victoria Street Edinburgh": "Victoria Street Edinburgh",
+    "Waverley Bridge Edinburgh": "Waverley Bridge Edinburgh",
+    "York Railway Station": "York Railway Station",
+}
+
+ITEM_POINT_OVERRIDES: list[dict[str, object]] = [
+    {"day": "0524", "title": "午餐 / Bettys", "points": ["Bettys Cafe Tea Rooms York"]},
+    {"day": "0524", "title": "乘火车返回 Glasgow", "points": ["York Railway Station", "Glasgow Central"]},
+    {"day": "0525", "title": "转去市中心", "points": ["Glasgow Cathedral", "George Square"]},
+    {"day": "0525", "title": "George Square", "points": ["George Square"]},
+    {"day": "0525", "title": "现代艺术馆", "points": ["Gallery of Modern Art Glasgow"]},
+    {"day": "0525", "title": "午餐", "points": ["George Square"]},
+    {"day": "0525", "title": "晚餐 / 放松", "points": ["Merchant City"]},
+    {"day": "0526", "title": "前往 Buchanan Bus Station", "points": ["Aparthotel Adagio Glasgow Central", "Buchanan Bus Station"]},
+    {"day": "0526", "title": "Highlands / Loch Ness / Glencoe", "points": ["Loch Lomond", "Glencoe", "Fort Augustus / Loch Ness", "Pitlochry"]},
+    {"day": "0526", "title": "返回酒店附近", "points": ["Buchanan Bus Station", "Aparthotel Adagio Glasgow Central"]},
+    {"day": "0526", "title": "晚餐", "points": ["Merchant City"]},
+    {"day": "0527", "title": "The Vennel", "points": ["Edinburgh Castle", "The Vennel Edinburgh"]},
+    {"day": "0527", "title": "Grassmarket", "points": ["The Vennel Edinburgh", "Grassmarket Edinburgh"]},
+    {"day": "0527", "title": "午餐", "points": ["Victoria Street Edinburgh"]},
+    {"day": "0527", "title": "Scott Monument", "points": ["Palace of Holyroodhouse", "Scott Monument"]},
+    {"day": "0527", "title": "Princes Street / Waverley", "points": ["Scott Monument", "Edinburgh Waverley Station"]},
+    {"day": "0527", "title": "晚餐（爱丁堡）", "points": ["Edinburgh Waverley Station", "Makars Mash Bar Edinburgh"]},
+    {"day": "0527", "title": "卡尔顿山", "points": ["Makars Mash Bar Edinburgh", "Calton Hill Edinburgh"]},
+    {"day": "0527", "title": "乘火车返回 Glasgow", "points": ["Calton Hill Edinburgh", "Edinburgh Waverley Station", "Glasgow Queen Street Station"]},
+    {"day": "0528", "title": "吃早餐后前往 West End", "points": ["Aparthotel Adagio Glasgow Central", "Kelvingrove Art Gallery and Museum"]},
+    {"day": "0528", "title": "开尔文格罗夫", "points": ["Kelvingrove Art Gallery and Museum"]},
+    {"day": "0528", "title": "格拉斯哥大学", "points": ["University of Glasgow"]},
+    {"day": "0528", "title": "简短午餐", "points": ["Ashton Lane"]},
+    {"day": "0528", "title": "前往会场", "points": ["Ashton Lane", "Scottish Event Campus"]},
+    {"day": "0528", "title": "Riverside Museum", "points": ["Riverside Museum"]},
+    {"day": "0528", "title": "庆祝晚餐", "points": ["Merchant City"]},
+    {"day": "0528", "title": "晚间活动", "points": ["Theatre Royal"]},
+]
+
 LOCATION_OVERRIDES: dict[str, str] = {
     "GLA": "Glasgow Airport",
-    "city centre": "Glasgow City Centre",
-    "City Centre": "Glasgow City Centre",
+    "city centre": PLACE_QUERIES["George Square"],
+    "City Centre": PLACE_QUERIES["George Square"],
     "East End": "Glasgow Cathedral",
     "Near Cathedral": "Glasgow Necropolis",
     "Cathedral precinct": "St Mungo Museum of Religious Life and Art, Glasgow",
@@ -52,19 +115,22 @@ LOCATION_OVERRIDES: dict[str, str] = {
     "Alsh 2": "Scottish Event Campus, Glasgow",
     "Near Clyde": "Clyde Arc, Glasgow",
     "West End": "University of Glasgow",
-    "University of Glasgow": "55.8721211,-4.2882005|University of Glasgow",
+    "University of Glasgow": PLACE_QUERIES["University of Glasgow"],
     "Old Town": "Edinburgh Old Town",
     "Royal Mile": "Royal Mile, Edinburgh",
     "Royal Mile / Victoria Street": "Victoria Street, Edinburgh",
     "Canongate": "Canongate, Edinburgh",
-    "Edinburgh city centre": "Edinburgh city centre",
+    "Edinburgh city centre": "Makars Mash Bar Edinburgh",
+    "The Vennel Edinburgh": PLACE_QUERIES["The Vennel Edinburgh"],
+    "Princes Street Edinburgh": "Scott Monument Edinburgh",
     "York city centre": "York Minster",
     "York Minster area": "York Minster",
     "York old town": "The Shambles, York",
     "York riverside": "Ouse Bridge, York",
     "Near York station": "York Railway Station",
+    "Buchanan Bus Station": PLACE_QUERIES["Buchanan Bus Station"],
     "York": "York Railway Station",
-    "Glasgow": "Glasgow City Centre",
+    "Glasgow": "Aparthotel Adagio Glasgow Central",
     "Scottish Highlands": "Glencoe, Scotland",
 }
 
@@ -83,6 +149,7 @@ class Item:
     time: str
     title: str
     location: str
+    notes: str = ""
     route_origin: str = ""
     route_dest: str = ""
 
@@ -244,6 +311,7 @@ def parse_item(block: str) -> Item:
         time=read_prop(block, "time"),
         title=read_prop(block, "title"),
         location=read_prop(block, "location"),
+        notes=read_prop(block, "notes"),
         route_origin=read_prop(block, "routeOrigin"),
         route_dest=read_prop(block, "routeDest"),
     )
@@ -257,6 +325,9 @@ def read_prop(block: str, prop: str) -> str:
 
 
 def item_route_points(item: Item, day: Day) -> list[tuple[str, str]]:
+    override = item_point_override(item, day)
+    if override:
+        return override
     if item.route_origin and item.route_dest:
         return [
             route_point(item.route_origin, day),
@@ -269,6 +340,18 @@ def item_route_points(item: Item, day: Day) -> list[tuple[str, str]]:
             route_point(parts[-1], day),
         ]
     return [route_point(item.location.split("/")[0].strip(), day)]
+
+
+def item_point_override(item: Item, day: Day) -> list[tuple[str, str]] | None:
+    for rule in ITEM_POINT_OVERRIDES:
+        if rule["day"] == day.id and str(rule["title"]) in item.title:
+            return [named_point(point_name) for point_name in rule["points"]]
+    return None
+
+
+def named_point(name: object) -> tuple[str, str]:
+    display_name = str(name)
+    return display_name, PLACE_QUERIES.get(display_name, display_name)
 
 
 def route_point(raw: str, day: Day) -> tuple[str, str]:
@@ -447,10 +530,15 @@ def write_kml(day: Day, phase_points: dict[str, list[RoutePoint]]) -> None:
 def numbered_day_points(phase_points: dict[str, list[RoutePoint]]) -> list[tuple[int, str, RoutePoint]]:
     numbered: list[tuple[int, str, RoutePoint]] = []
     next_number = 1
+    last_key: tuple[float, float] | None = None
     for phase in PHASE_ORDER:
         for point in dedupe_route_points(phase_points.get(phase, [])):
+            key = (round(point.lat, 6), round(point.lon, 6))
+            if key == last_key:
+                continue
             numbered.append((next_number, phase, point))
             next_number += 1
+            last_key = key
     return numbered
 
 

@@ -65,12 +65,6 @@
     "display_name": "Ouse Bridge, Clementhorpe, Bishophill, York, York and North Yorkshire, England, YO1 9QT, United Kingdom",
     "source": "Nominatim"
   },
-  "Glasgow City Centre": {
-    "lat": 55.8198532,
-    "lon": -4.3401667,
-    "display_name": "Barrhead Road, Glasgow, Cowglen Road, Silverburn, Cowglen, Priesthill, Glasgow, Glasgow City, Alba / Scotland, G53 6PJ, United Kingdom",
-    "source": "Nominatim"
-  },
   "Glasgow Cathedral": {
     "lat": 55.863013,
     "lon": -4.2346182,
@@ -135,12 +129,6 @@
     "lat": 55.9486867,
     "lon": -3.2004175,
     "display_name": "Edinburgh Castle, Castlehill, Old Town, City of Edinburgh, Alba / Scotland, EH1 2NG, United Kingdom",
-    "source": "Nominatim"
-  },
-  "The Vennel Edinburgh": {
-    "lat": 55.989617,
-    "lon": -3.3951596,
-    "display_name": "The Vennel, Scotstoun, City of Edinburgh, Alba / Scotland, EH30 9HW, United Kingdom",
     "source": "Nominatim"
   },
   "Grassmarket Edinburgh": {
@@ -245,12 +233,6 @@
     "display_name": "Makars Gourmet Mash Bar Company, 12, Bank Street, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH1 2LN, United Kingdom",
     "source": "Nominatim"
   },
-  "Edinburgh city centre": {
-    "lat": 57.1451216,
-    "lon": -2.1032489,
-    "display_name": "The Edinburgh Woollen Mill, 187, Union Street, City Centre, Aberdeen City, Alba / Scotland, AB11 6BB, United Kingdom",
-    "source": "Nominatim"
-  },
   "Calton Hill Edinburgh": {
     "lat": 55.9555969,
     "lon": -3.1823506,
@@ -285,6 +267,78 @@
     "lat": 55.8721211,
     "lon": -4.2882005,
     "display_name": "University of Glasgow",
+    "source": "manual override"
+  },
+  "53.959779,-1.083508|Bettys Cafe Tea Rooms York": {
+    "lat": 53.959779,
+    "lon": -1.083508,
+    "display_name": "Bettys Cafe Tea Rooms York",
+    "source": "manual override"
+  },
+  "55.8611567,-4.2502189|George Square": {
+    "lat": 55.8611567,
+    "lon": -4.2502189,
+    "display_name": "George Square",
+    "source": "manual override"
+  },
+  "55.8601675,-4.2526408|Gallery of Modern Art Glasgow": {
+    "lat": 55.8601675,
+    "lon": -4.2526408,
+    "display_name": "Gallery of Modern Art Glasgow",
+    "source": "manual override"
+  },
+  "Buchanan Bus Station, Glasgow": {
+    "lat": 55.8648847,
+    "lon": -4.2491387,
+    "display_name": "Buchanan Bus Station (Stance 29), Killermont Street, Merchant City, Glasgow, Glasgow City, Alba / Scotland, G2 3NW, United Kingdom",
+    "source": "Nominatim"
+  },
+  "56.101506,-4.639122|Loch Lomond": {
+    "lat": 56.101506,
+    "lon": -4.639122,
+    "display_name": "Loch Lomond",
+    "source": "manual override"
+  },
+  "57.144826,-4.680073|Fort Augustus / Loch Ness": {
+    "lat": 57.144826,
+    "lon": -4.680073,
+    "display_name": "Fort Augustus / Loch Ness",
+    "source": "manual override"
+  },
+  "56.703468,-3.729967|Pitlochry": {
+    "lat": 56.703468,
+    "lon": -3.729967,
+    "display_name": "Pitlochry",
+    "source": "manual override"
+  },
+  "55.947182,-3.196806|The Vennel Edinburgh": {
+    "lat": 55.947182,
+    "lon": -3.196806,
+    "display_name": "The Vennel Edinburgh",
+    "source": "manual override"
+  },
+  "Palace of Holyroodhouse": {
+    "lat": 55.9526948,
+    "lon": -3.171613,
+    "display_name": "Palace of Holyroodhouse, Canongate, Holyrood, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH8 8DX, United Kingdom",
+    "source": "Nominatim"
+  },
+  "Scott Monument Edinburgh": {
+    "lat": 55.9523603,
+    "lon": -3.1932563,
+    "display_name": "Scott Monument, Princes Street, The Mound, Abbeyhill, Old Town, City of Edinburgh, Alba / Scotland, EH2 2DQ, United Kingdom",
+    "source": "Nominatim"
+  },
+  "55.8685825,-4.2906278|Kelvingrove Art Gallery and Museum": {
+    "lat": 55.8685825,
+    "lon": -4.2906278,
+    "display_name": "Kelvingrove Art Gallery and Museum",
+    "source": "manual override"
+  },
+  "55.874014,-4.293583|Ashton Lane": {
+    "lat": 55.874014,
+    "lon": -4.293583,
+    "display_name": "Ashton Lane",
     "source": "manual override"
   }
 }
