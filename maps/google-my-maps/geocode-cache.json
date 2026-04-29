@@ -478,5 +478,65 @@
     "lon": -3.186054,
     "display_name": "Howies Waterloo Place",
     "source": "manual override"
+  },
+  "55.865124,-4.250767|Buchanan Bus Station": {
+    "lat": 55.865124,
+    "lon": -4.250767,
+    "display_name": "Buchanan Bus Station",
+    "source": "manual override"
+  },
+  "56.202998,-4.711642|Tarbet Loch Lomond": {
+    "lat": 56.202998,
+    "lon": -4.711642,
+    "display_name": "Tarbet Loch Lomond",
+    "source": "manual override"
+  },
+  "56.669838,-4.766830|Rannoch Moor": {
+    "lat": 56.669838,
+    "lon": -4.76683,
+    "display_name": "Rannoch Moor",
+    "source": "manual override"
+  },
+  "56.668317,-4.986050|Glencoe Three Sisters Viewpoint": {
+    "lat": 56.668317,
+    "lon": -4.98605,
+    "display_name": "Glencoe Three Sisters Viewpoint",
+    "source": "manual override"
+  },
+  "56.682591,-5.102272|Glencoe": {
+    "lat": 56.682591,
+    "lon": -5.102272,
+    "display_name": "Glencoe",
+    "source": "manual override"
+  },
+  "56.819817,-5.105218|Fort William": {
+    "lat": 56.819817,
+    "lon": -5.105218,
+    "display_name": "Fort William",
+    "source": "manual override"
+  },
+  "57.143726,-4.680650|Fort Augustus": {
+    "lat": 57.143726,
+    "lon": -4.68065,
+    "display_name": "Fort Augustus",
+    "source": "manual override"
+  },
+  "56.123879,-3.947341|Stirling Castle": {
+    "lat": 56.123879,
+    "lon": -3.947341,
+    "display_name": "Stirling Castle",
+    "source": "manual override"
+  },
+  "55.860915,-4.253554|Shilling Brewing Co.": {
+    "lat": 55.860915,
+    "lon": -4.253554,
+    "display_name": "Shilling Brewing Co.",
+    "source": "manual override"
+  },
+  "55.859673,-4.251569|Sugo Pasta Glasgow": {
+    "lat": 55.859673,
+    "lon": -4.251569,
+    "display_name": "Sugo Pasta Glasgow",
+    "source": "manual override"
   }
 }

@@ -1710,7 +1710,7 @@
           <li>05/23｜抵达 Glasgow</li>
           <li>05/24｜Largs + Cumbrae / Millport 海边小岛</li>
           <li>05/25｜Glasgow Cathedral 一带 + 参会海报展示</li>
-          <li>05/26｜苏格兰高地 一日游</li>
+          <li>05/26｜Loch Lomond、Glencoe、Loch Ness 高地团</li>
           <li>05/27｜爱丁堡城堡、Mary King's Close、Calton Hill</li>
           <li>05/28｜Kelvingrove + 参会报告</li>
         </ul>
@@ -1743,11 +1743,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-29｜stonfur｜将 05/27 爱丁堡一日游改为城堡 + Royal Mile / St Giles + Mary King's Close + Victoria Street / Greyfriars + Calton Hill 的稳妥版路线，并沿用 05/24 的时间线卡片结构，补充交通转移、核心景点、餐饮休息、天气可选项、费用预约、开放时间、官方链接和 Google My Maps KML 动线同步。</li>
+            <li>最近更新：2026-04-29｜stonfur｜将 05/26 苏格兰高地日改为 Discover Scotland Tours 高地一日团主线，补充 Buchanan Bus Station 集合、Loch Lomond / Tarbet、Rannoch Moor、Glencoe、Fort William / Ben Nevis、Fort Augustus / Loch Ness、Perthshire 返程和 Glasgow 晚餐的类型化时间线，并同步更新费用预约、备选团、午晚餐建议、官方链接和 05/26 Google My Maps KML 动线。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-29｜stonfur｜将 05/27 爱丁堡一日游改为城堡 + Royal Mile / St Giles + Mary King's Close + Victoria Street / Greyfriars + Calton Hill 的稳妥版路线，并沿用 05/24 的时间线卡片结构，补充交通转移、核心景点、餐饮休息、天气可选项、费用预约、开放时间、官方链接和 Google My Maps KML 动线同步。</li>
               <li>2026-04-29｜stonfur｜将 05/24 从 York 一日往返替换为 Largs + Cumbrae / Millport 海边小岛轻松日，并引入可复用的时间线卡片类型：交通转移、景点游览、餐饮休息和天气可选项。05/24 新增目标班次、预计耗时、票务费用、开放时间、现场确认提醒、午餐/咖啡/晚餐区域建议，并同步更新 Google My Maps 的 05/24 KML 点位，避免旧 York 坐标残留。</li>
               <li>2026-04-27｜stonfur｜嵌入 Google My Maps 总览动线图：在每日摘要后新增可交互地图模块，展示整趟行程的日期图层、编号点位和动线，并保留一键打开 My Maps 的入口。</li>
               <li>2026-04-27｜stonfur｜重做 Google My Maps 地点提取逻辑：不再把 City Centre、West End 这类区域字段直接当坐标点，而是优先按行程标题和备注中的具体景点、车站、餐饮区域确定点位，并补充高地日的 Loch Lomond、Glencoe、Fort Augustus / Loch Ness 与 Pitlochry 动线。</li>
@@ -2626,67 +2627,313 @@
         id: "0526",
         short: "05/26",
         dayLabel: "周二",
-        title: "Scottish Highlands 一日游",
-        intro: "",
-        vibe: "风景主导的一天",
+        title: "Scottish Highlands 苏格兰高地一日团",
+        intro: "这一天采用跟团方式，把行程重心放在高地风景本身：Loch Lomond / Tarbet 茶歇、Rannoch Moor 荒原车览、Glencoe 山谷、Fort William / Ben Nevis / Great Glen 方向，以及 Fort Augustus / Loch Ness 午餐和可选游船。晚上回到 Glasgow 后只安排市中心晚餐和休息，不再加景点。",
+        vibe: "自然风景 + 早出晚归",
         intensity: "high",
-        window: "06:45-21:00",
-        travel: "巴士一日团",
-        anchor: "Glencoe / Loch Ness 路线",
+        window: "06:45-21:30",
+        travel: "Discover Scotland Tours 小团巴士；Rabbie's / Timberbush 备选",
+        anchor: "Loch Lomond + Glencoe + Fort Augustus / Loch Ness",
         mapQuery: "Glencoe Scotland",
-        bookingChecklist: [],
-        routeLinks: [],
-        spotGuides: [],
-        featured: {
-          title: "格伦科峡谷（Glencoe）",
-          text: "Glencoe 以峡谷地形、山坡线条和高地景观闻名。",
-          mapQuery: "Glencoe Scotland",
-          infoUrl: "http://rabbies.com",
-          guideLinks: []
+        bookingChecklist: [
+          {
+            title: "Discover Scotland Tours｜Loch Ness, Glencoe & The Highlands",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/",
+            fee: "from £63；Loch Ness 游船、餐饮和茶歇不包含",
+            hours: "Buchanan Bus Station 23-32 站台；07:30 check-in 关闭，07:45 发车，约 19:30 返回 Glasgow",
+            lead: "首选方案，建议提前预约并保存确认邮件",
+            refund: "以 Discover Scotland Tours 预订条款为准",
+            prepay: "需要预付款"
+          },
+          {
+            title: "Loch Ness Cruise｜可选游船",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/",
+            fee: "Discover 页面未列明具体价格；建议预留 £20-25，以当天 tour leader 确认为准",
+            hours: "通常在 Fort Augustus / Loch Ness 停留期间安排",
+            lead: "不要自己单独订；等导游当天统一确认更稳",
+            refund: "以当天游船 / 团队安排为准",
+            prepay: "通常当天按导游安排处理"
+          },
+          {
+            title: "Rabbie's｜备选高地团",
+            officialUrl: "https://www.rabbies.com/en-gb/tour/loch-ness-glencoe-the-highlands-day-tour-from-glasgow",
+            fee: "from £59；max 16 people；餐饮和游船另计",
+            hours: "07:45 从 Buchanan Bus Station 出发，约 19:15 返回 Glasgow",
+            lead: "Discover 没票时作为第一备选",
+            refund: "UK 一日团通常 72 小时内取消扣 100%，以官网条款为准",
+            prepay: "需要预付款"
+          },
+          {
+            title: "Timberbush / GetYourGuide｜备选高地团",
+            officialUrl: "https://www.timberbush-tours.co.uk/our-tours/from-glasgow/1-day-tours/loch-ness-glencoe-highlands",
+            fee: "团费以官网 / GetYourGuide 为准；Timberbush 页面列出 Loch Ness cruise 成人 £22",
+            hours: "08:00 从 19 Killermont Street 出发，约 11h30m",
+            lead: "如果想用可免费取消 / reserve now pay later 的平台，可看 GetYourGuide",
+            refund: "以预订平台规则为准",
+            prepay: "视预订平台而定"
+          },
+          {
+            title: "Glasgow 晚餐",
+            officialUrl: "https://shillingbrewingcompany.co.uk/",
+            fee: "约 £20-35",
+            hours: "约 19:30 回到 Buchanan 后再吃；优先市中心，不跨城",
+            lead: "Shilling / Sugo / Paesano / The Raven 按体力选择",
+            refund: "餐厅预订规则各自为准",
+            prepay: "通常不需要"
+          }
+        ],
+        routeLinks: [
+          {
+            title: "官方团与交通",
+            links: [
+              { label: "Discover Scotland Tours｜首选高地团", url: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/" },
+              { label: "Rabbie's｜备选高地团", url: "https://www.rabbies.com/en-gb/tour/loch-ness-glencoe-the-highlands-day-tour-from-glasgow" },
+              { label: "Timberbush｜备选高地团", url: "https://www.timberbush-tours.co.uk/our-tours/from-glasgow/1-day-tours/loch-ness-glencoe-highlands" },
+              { label: "ScotRail｜Exhibition Centre to Glasgow Queen Street", url: "https://www.scotrail.co.uk/train-times/exhibition-centre-glasgow-to-glasgow-queen-street" },
+              { label: "SPT Subway timetable", url: "https://www.spt.co.uk/subway/subway-timetables/" }
+            ]
+          }
+        ],
+        spotGuides: [
+          {
+            title: "高地团主线点位",
+            links: [
+              { label: "Loch Lomond & The Trossachs", url: "https://www.lochlomond-trossachs.org/" },
+              { label: "National Trust for Scotland｜Glencoe", url: "https://www.nts.org.uk/visit/places/glencoe" },
+              { label: "Visit Fort Augustus", url: "https://visitfortaugustus.co.uk/" },
+              { label: "Visit Inverness Loch Ness", url: "https://www.visitinvernesslochness.com/" }
+            ]
+          },
+          {
+            title: "晚餐 / 回城后",
+            links: [
+              { label: "Shilling Brewing Co.", url: "https://shillingbrewingcompany.co.uk/" },
+              { label: "Sugo Pasta", url: "https://www.sugopasta.co.uk/" },
+              { label: "Paesano Pizza Miller Street", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+              { label: "The Raven Glasgow", url: "https://theravenglasgow.com/" }
+            ]
+          }
+        ],
+        serviceGuides: {
+          regionalPicks: [
+            {
+              title: "Fort Augustus / Loch Ness 午餐",
+              links: [
+                { label: "The Lock Inn｜运河边 pub food｜不坐游船时更适合坐下午餐；坐游船则改为快速小食。", url: "https://www.visitinvernesslochness.com/listings/lock-inn" },
+                { label: "The Bothy Restaurant and Bar｜pub / Scottish / bar food｜午餐 12:00-14:30；官方写 no need to pre-book。", url: "https://www.thehighlandclub.co.uk/restaurants-1/the-bothy" },
+                { label: "Fort Augustus quick lunch｜Google Maps 搜索｜如果要坐游船，优先三明治、咖啡和热饮。", url: mapsUrl("quick lunch Fort Augustus") }
+              ]
+            },
+            {
+              title: "Glasgow 晚餐回城后",
+              links: [
+                { label: "Shilling Brewing Co.｜pizza + beer｜离 Buchanan / George Square 区域近，回城后最稳。", url: "https://shillingbrewingcompany.co.uk/" },
+                { label: "Sugo Pasta｜意面｜简单稳定，适合坐车一天后快速吃饭。", url: "https://www.sugopasta.co.uk/" },
+                { label: "Paesano Pizza｜Miller Street｜walk-in 友好，想快一点可以选。", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+                { label: "The Raven｜pub food / burger / craft beer｜厨房时间需当天确认。", url: "https://theravenglasgow.com/" }
+              ]
+            },
+            {
+              title: "备选团快速判断",
+              links: [
+                { label: "Discover｜首选｜07:30 check-in 关闭，07:45 发车，约 19:30 回 Glasgow。", url: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/" },
+                { label: "Rabbie's｜备选｜max 16 people，07:45 出发，约 19:15 返回。", url: "https://www.rabbies.com/en-gb/tour/loch-ness-glencoe-the-highlands-day-tour-from-glasgow" },
+                { label: "Timberbush｜备选｜08:00 从 19 Killermont Street 出发，时长约 11h30m。", url: "https://www.timberbush-tours.co.uk/our-tours/from-glasgow/1-day-tours/loch-ness-glencoe-highlands" }
+              ]
+            }
+          ],
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
         },
-        spots: ["Buchanan Bus Station", "Loch Lomond", "Glencoe", "Loch Ness", "Pitlochry"],
+        featured: {
+          title: "Glencoe + Fort Augustus / Loch Ness",
+          text: "05/26 的核心不是自由行打卡，而是跟团高地风景线：上午看 Loch Lomond、Rannoch Moor 和 Glencoe，下午在 Fort Augustus / Loch Ness 做午餐与可选游船，再经 Perthshire 返回 Glasgow。当天早出晚归，晚上只保留市中心晚餐。",
+          mapQuery: "Glencoe Scotland",
+          infoUrl: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/",
+          guideLinks: [
+            {
+              title: "参考链接",
+              links: [
+                { label: "Discover Scotland Tours｜Loch Ness Tour from Glasgow", url: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/" },
+                { label: "Rabbie's｜Loch Ness, Glencoe & Highlands", url: "https://www.rabbies.com/en-gb/tour/loch-ness-glencoe-the-highlands-day-tour-from-glasgow" },
+                { label: "Timberbush｜Loch Ness, Glencoe & Highlands", url: "https://www.timberbush-tours.co.uk/our-tours/from-glasgow/1-day-tours/loch-ness-glencoe-highlands" }
+              ]
+            }
+          ]
+        },
+        spots: ["Buchanan Bus Station", "Tarbet Loch Lomond", "Rannoch Moor", "Glencoe", "Fort William", "Fort Augustus / Loch Ness", "Pitlochry", "Stirling Castle", "Glasgow City Centre"],
         items: [
           {
-            time: "06:45-07:30",
-            title: "前往 Buchanan Bus Station",
-            location: "Glasgow",
-            notes: "需预留参观时间。",
-            links: [{ label: "汽车站", url: "http://spt.co.uk" }]
+            type: "transfer",
+            mode: "taxi",
+            time: "06:45-07:05",
+            title: "酒店 / SEC 一带 → Buchanan Bus Station",
+            location: "Aparthotel Adagio Glasgow Central -> Buchanan Bus Station",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Buchanan Bus Station",
+            duration: "约 10-20 分钟，按酒店位置和叫车情况浮动",
+            ticket: "打车约 £10-20；公共交通以当天为准",
+            notes: "这天不要为了省一点交通费压线。Discover 07:30 关闭 check-in，建议直接打车或至少按 07:15 前到站倒推。",
+            details: ["前一晚确认集合邮件", "早餐从酒店或路上简单解决", "防水外套和舒服鞋放好"],
+            links: [{ label: "Buchanan Bus Station", url: mapsUrl("Buchanan Bus Station Glasgow") }]
           },
           {
-            time: "07:30-07:45",
-            title: "签到 / 上车",
+            type: "transfer",
+            mode: "walk",
+            time: "07:10-07:30",
+            title: "到达 Buchanan Bus Station，找 23-32 站台并 check-in",
             location: "Buchanan Bus Station",
-            notes: "Rabbie's、Timberbush 和 Discover Scotland 都可以一起比较。",
+            duration: "约 20 分钟缓冲",
+            ticket: "团票提前购买",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/",
+            notes: "Discover 官网写明集合点为 Buchanan Bus Station 的 23-32 站台，check-in 07:30 关闭。迟到可能无法参团且不退款。",
+            details: ["找 Discover Scotland Tours", "看站内信息屏", "07:30 前完成 check-in"],
+            links: [{ label: "Discover tour", url: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/" }]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "07:45-09:00",
+            title: "Discover Scotland Tours 发车，前往 Loch Lomond / Tarbet",
+            location: "Buchanan Bus Station -> Tarbet Loch Lomond",
+            routeOrigin: "Buchanan Bus Station",
+            routeDest: "Tarbet Loch Lomond",
+            duration: "约 1h15m",
+            ticket: "包含在高地团基础团费内",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/",
+            notes: "车上开始进入高地团节奏。不要把这一段安排成自由交通，跟着团即可。",
+            details: ["07:45 发车", "16-seat mini coach", "英文司机导游"],
+            links: [{ label: "路线", url: dirUrl("Buchanan Bus Station Glasgow", "Tarbet Loch Lomond") }]
+          },
+          {
+            type: "visit",
+            time: "09:00-09:30",
+            title: "Loch Lomond / Tarbet 茶歇",
+            location: "Tarbet Loch Lomond",
+            duration: "约 20-30 分钟，以导游当天安排为准",
+            fee: "湖边免费；咖啡小食约 £3-8",
+            hours: "户外停靠点；茶歇店铺以当天营业为准",
+            reserve: "不需要预约",
+            notes: "这是高地开场点，主要用于厕所、咖啡和湖边拍照。不要离车太远，严格听集合时间。",
+            details: ["看 Ben Lomond 方向", "拍照点到为止", "进入高地前补水"],
+            links: [{ label: "Loch Lomond", url: "https://www.lochlomond-trossachs.org/" }]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "09:30-11:00",
+            title: "Rannoch Moor / Black Mount 车览",
+            location: "Tarbet Loch Lomond -> Rannoch Moor -> Glencoe",
+            routeOrigin: "Tarbet Loch Lomond",
+            routeDest: "Rannoch Moor",
+            duration: "约 1h30m 车览 + 视情况短暂停靠",
+            ticket: "包含在高地团内",
+            notes: "这一段是荒原、湖沼、远山和云雾感。通常不是长时间下车景点，有停车就拍大景，没有就车上看。",
+            details: ["风大地湿很常见", "防水外套比伞好用", "不要离车太远"],
+            links: [{ label: "Rannoch Moor", url: mapsUrl("Rannoch Moor Scotland") }]
+          },
+          {
+            type: "visit",
+            time: "11:00-12:00",
+            title: "Glencoe 山谷停靠",
+            location: "Glencoe",
+            duration: "约 30-60 分钟，以导游安排为准",
+            fee: "免费",
+            hours: "户外全天；天气和停车点以当天情况为准",
+            reserve: "不需要预约",
+            officialUrl: "https://www.nts.org.uk/visit/places/glencoe",
+            notes: "当天最重要的自然风景点。重点看山谷、Three Sisters 方向、瀑布、云雾和开阔谷地。",
+            details: ["广角拍大景", "风雨变化快", "这是高地视觉冲击最强的一段"],
+            links: [{ label: "NTS Glencoe", url: "https://www.nts.org.uk/visit/places/glencoe" }]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "12:00-13:30",
+            title: "Fort William / Ben Nevis / Great Glen 方向",
+            location: "Glencoe -> Fort William -> Fort Augustus",
+            routeOrigin: "Glencoe",
+            routeDest: "Fort William",
+            duration: "约 1h30m，主要车览",
+            ticket: "包含在高地团内",
+            notes: "大概率以车览为主，不要期待 Fort William 深度停留。Ben Nevis 和 Great Glen 是这一段的地理线索。",
+            details: ["英国最高山方向", "坐车左右侧视野随机", "午餐留到 Fort Augustus 更稳"],
+            links: [{ label: "Fort William", url: mapsUrl("Fort William Scotland") }]
+          },
+          {
+            type: "meal",
+            time: "13:30-15:00",
+            title: "Fort Augustus / Loch Ness 午餐 + 可选游船",
+            location: "Fort Augustus / Loch Ness",
+            area: "Fort Augustus",
+            duration: "约 1h30m，以当天团安排为准",
+            ticket: "游船另付；建议预留 £20-25，以 tour leader 当天确认价格为准",
+            notes: "如果坐 Loch Ness 游船，就吃快速午餐；如果不坐游船，就在 Caledonian Canal locks 和湖边慢慢走，再选 The Lock Inn / The Bothy 坐下午餐。",
+            details: ["不要自己单独订游船", "先听导游集合时间", "离车前确认返车点"],
             links: [
-              { label: "Rabbie's", url: "http://rabbies.com" },
-              { label: "Timberbush", url: "http://timberbush-tours.co.uk" },
-              { label: "Discover Scotland", url: "http://discoverscotlandtours.com" }
-            ]
+              { label: "The Lock Inn", url: "https://www.visitinvernesslochness.com/listings/lock-inn" },
+              { label: "The Bothy", url: "https://www.thehighlandclub.co.uk/restaurants-1/the-bothy" },
+              { label: "Fort Augustus", url: "https://visitfortaugustus.co.uk/" }
+            ],
+            tips: ["坐游船时不要安排正式坐下午餐；不坐游船时，把水闸 + 湖边 + 午餐作为慢节奏组合。"]
           },
           {
-            time: "07:45-19:15",
-            title: "Highlands / Loch Ness / Glencoe 行程",
-            location: "Scottish Highlands",
-            notes: "常见路线一般会经过 Loch Lomond、Glencoe、Fort Augustus / Loch Ness 和 Pitlochry。",
+            type: "transfer",
+            mode: "coach",
+            time: "15:00-17:30",
+            title: "返程：Cairngorms / Perthshire Big Tree Country",
+            location: "Fort Augustus -> Pitlochry / Perthshire",
+            routeOrigin: "Fort Augustus",
+            routeDest: "Pitlochry",
+            duration: "约 2h30m 返程风景线",
+            ticket: "包含在高地团内",
+            notes: "返程不是单纯原路返回，会穿过 Cairngorms、Perthshire 和 Big Tree Country 一带。中途茶歇按导游当天安排。",
+            details: ["这段适合休息", "茶歇主要解决厕所和热饮", "不要把 Pitlochry 当正式深度景点"],
+            links: [{ label: "Pitlochry", url: mapsUrl("Pitlochry Scotland") }]
+          },
+          {
+            type: "optional",
+            time: "17:30-18:00",
+            title: "Perthshire 茶歇 / 休息点",
+            location: "Pitlochry / Perthshire",
+            duration: "约 20-30 分钟，以导游当天安排为准",
+            fee: "咖啡小食自理",
+            reserve: "不需要预约",
+            notes: "这个点不是硬景点，只是返程休息。买热饮、上厕所、活动一下腿即可。",
+            details: ["看集合时间", "别走远", "如果当天导游换停靠点，以现场为准"],
+            links: [{ label: "Pitlochry", url: mapsUrl("Pitlochry Scotland") }]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "18:00-19:30",
+            title: "Stirling Castle 远眺 / 返回 Glasgow",
+            location: "Pitlochry -> Stirling Castle -> Buchanan Bus Station",
+            routeOrigin: "Pitlochry",
+            routeDest: "Buchanan Bus Station",
+            duration: "约 1h30m",
+            ticket: "包含在高地团内",
+            notes: "Stirling Castle 和 Wallace Monument 只是返程方向的远眺 / 经过，不写成入内参观。约 19:30 回到 Buchanan Bus Station。",
+            details: ["不要再安排夜间景点", "回城后直接晚餐", "第二天还有爱丁堡"],
+            links: [{ label: "Stirling Castle", url: mapsUrl("Stirling Castle Scotland") }]
+          },
+          {
+            type: "meal",
+            time: "20:00-21:30",
+            title: "Glasgow 市中心晚餐",
+            location: "Buchanan Bus Station -> Glasgow City Centre",
+            area: "Buchanan / George Square / Merchant City",
+            duration: "约 1h30m",
+            ticket: "约 £20-35",
+            notes: "坐车一天后不要横跨城市找餐厅。优先 Shilling Brewing Co. 或 Sugo Pasta，想快一点可 Paesano，想 pub food 可 The Raven。",
+            details: ["以当天体力为准", "离酒店近优先", "吃完直接回酒店休息"],
             links: [
-              { label: "Rabbie's", url: "http://rabbies.com" },
-              { label: "Timberbush", url: "http://timberbush-tours.co.uk" }
+              { label: "Shilling Brewing Co.", url: "https://shillingbrewingcompany.co.uk/" },
+              { label: "Sugo Pasta", url: "https://www.sugopasta.co.uk/" },
+              { label: "Paesano Pizza", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+              { label: "The Raven", url: "https://theravenglasgow.com/" }
             ]
-          },
-          {
-            time: "19:15-20:00",
-            title: "返回酒店附近",
-            location: "Glasgow",
-            notes: "一日团结束后回城。",
-            links: []
-          },
-          {
-            time: "20:00-21:00",
-            title: "晚餐",
-            location: "Glasgow",
-            notes: " ",
-            links: [{ label: "城市指南", url: "http://peoplemakeglasgow.com" }]
           }
         ]
       },
@@ -3373,6 +3620,8 @@
       ferry: "渡轮",
       bus: "公交",
       bike: "自行车",
+      taxi: "打车",
+      coach: "跟团巴士",
       "bus + ferry": "公交 + 渡轮"
     };
 
