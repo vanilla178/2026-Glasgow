@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
-    <name>05/24｜York 一日往返</name>
-    <description>05/24 周日 York 一日往返，由 pages/plan-a-cn.html 自动生成。</description>
+    <name>05/24｜Largs + Cumbrae / Millport 海边小岛一日游</name>
+    <description>05/24 周日 Largs + Cumbrae / Millport 海边小岛一日游，由 pages/plan-a-cn.html 自动生成。</description>
     <Style id="number-01-point">
       <IconStyle>
         <scale>1.15</scale>
@@ -80,6 +80,62 @@
       </IconStyle>
       <LabelStyle><scale>0.8</scale></LabelStyle>
     </Style>
+    <Style id="number-12-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/12.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-13-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/13.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-14-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/14.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-15-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/15.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-16-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/16.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-17-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/17.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-18-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/18.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-19-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/19.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
     <Style id="上午-line">
       <LineStyle>
         <color>cc70640b</color>
@@ -105,91 +161,155 @@
       </LineStyle>
     </Style>
     <Placemark>
-      <name>01｜上午｜Glasgow Central</name>
-      <description>07:00-07:30｜前往车站｜Glasgow Central</description>
+      <name>01｜上午｜Aparthotel Adagio Glasgow Central</name>
+      <description>08:30-09:00｜酒店 → Glasgow Central｜Aparthotel Adagio Glasgow Central -&gt; Glasgow Central</description>
       <styleUrl>#number-01-point</styleUrl>
       <Point>
-        <coordinates>-4.2582928,55.8584773,0</coordinates>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>02｜上午｜York Railway Station</name>
-      <description>07:30-11:30｜乘火车前往 York｜Glasgow Central -&gt; York</description>
+      <name>02｜上午｜Glasgow Central</name>
+      <description>08:30-09:00｜酒店 → Glasgow Central｜Aparthotel Adagio Glasgow Central -&gt; Glasgow Central</description>
       <styleUrl>#number-02-point</styleUrl>
       <Point>
-        <coordinates>-1.0930708,53.9580837,0</coordinates>
+        <coordinates>-4.2582928,55.8584773,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>03｜上午｜York City Walls</name>
-      <description>11:30-12:00｜约克城墙（York City Walls）机位｜York Station / York City Walls</description>
+      <name>03｜上午｜Largs Railway Station</name>
+      <description>09:00-10:10｜Glasgow Central → Largs｜Glasgow Central -&gt; Largs</description>
       <styleUrl>#number-03-point</styleUrl>
       <Point>
-        <coordinates>-1.0902765,53.9556490,0</coordinates>
+        <coordinates>-4.8670330,55.7924970,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>04｜下午｜Museum Gardens York</name>
-      <description>12:00-12:35｜博物馆花园（Museum Gardens）+ 圣玛丽修道院遗址｜Museum Gardens York</description>
+      <name>04｜上午｜Largs Ferry Terminal</name>
+      <description>10:10-10:35｜Largs 火车站 → 海边 → Ferry Terminal｜Largs Railway Station -&gt; Largs Ferry Terminal</description>
       <styleUrl>#number-04-point</styleUrl>
       <Point>
-        <coordinates>-1.0889565,53.9617856,0</coordinates>
+        <coordinates>-4.8710330,55.7948530,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>05｜下午｜York Minster</name>
-      <description>12:40-13:35｜约克大教堂（York Minster）｜York city centre</description>
+      <name>05｜上午｜Cumbrae Slip Ferry Terminal</name>
+      <description>10:40 / 11:00｜Largs → Cumbrae Slip 渡轮｜Largs Ferry Terminal -&gt; Cumbrae Slip</description>
       <styleUrl>#number-05-point</styleUrl>
       <Point>
-        <coordinates>-1.0820834,53.9623561,0</coordinates>
+        <coordinates>-4.9065530,55.7863720,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>06｜下午｜Bettys Cafe Tea Rooms York</name>
-      <description>13:35-14:10｜午餐 / Bettys 备选｜York Minster area</description>
+      <name>06｜上午｜Millport</name>
+      <description>11:00-11:20｜Cumbrae Slip → Millport｜Cumbrae Slip -&gt; Millport</description>
       <styleUrl>#number-06-point</styleUrl>
       <Point>
-        <coordinates>-1.0835080,53.9597790,0</coordinates>
+        <coordinates>-4.9285650,55.7535580,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>07｜下午｜The Shambles</name>
-      <description>14:10-15:10｜肉铺街（The Shambles）+ 小店｜York old town</description>
+      <name>07｜上午｜Millport Promenade</name>
+      <description>11:20-12:30｜Millport promenade / Crocodile Rock 附近散步｜Millport Promenade / Crocodile Rock</description>
       <styleUrl>#number-07-point</styleUrl>
       <Point>
-        <coordinates>-1.0800328,53.9592985,0</coordinates>
+        <coordinates>-4.9275110,55.7529500,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>08｜下午｜Clifford&#x27;s Tower</name>
-      <description>15:10-15:50｜克利福德塔（Clifford&#x27;s Tower）/ 城堡区｜Clifford&#x27;s Tower</description>
+      <name>08｜上午｜Crocodile Rock</name>
+      <description>11:20-12:30｜Millport promenade / Crocodile Rock 附近散步｜Millport Promenade / Crocodile Rock</description>
       <styleUrl>#number-08-point</styleUrl>
       <Point>
-        <coordinates>-1.0801796,53.9558294,0</coordinates>
+        <coordinates>-4.9231010,55.7529960,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>09｜下午｜Ouse Bridge</name>
-      <description>15:50-16:35｜乌斯河边 / 城墙拍照 / 自由活动｜York riverside</description>
+      <name>09｜下午｜Millport</name>
+      <description>12:30-13:30｜Millport 午餐 / 咖啡｜Millport</description>
       <styleUrl>#number-09-point</styleUrl>
       <Point>
-        <coordinates>-1.0838442,53.9574466,0</coordinates>
+        <coordinates>-4.9285650,55.7535580,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>10｜下午｜York Railway Station</name>
-      <description>16:35-17:05｜National Railway Museum 或回车站前买点饮水零食｜Near York station</description>
+      <name>10｜下午｜Mapes of Millport</name>
+      <description>13:30-15:30｜天气好：租自行车；天气一般：小镇继续散步｜Mapes of Millport / Millport</description>
       <styleUrl>#number-10-point</styleUrl>
       <Point>
-        <coordinates>-1.0930708,53.9580837,0</coordinates>
+        <coordinates>-4.9260520,55.7536430,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
-      <name>11｜下午｜Glasgow Central</name>
-      <description>17:30-21:30｜乘火车返回 Glasgow｜York -&gt; Glasgow</description>
+      <name>11｜下午｜Millport Promenade</name>
+      <description>13:30-15:30｜天气好：租自行车；天气一般：小镇继续散步｜Mapes of Millport / Millport</description>
       <styleUrl>#number-11-point</styleUrl>
       <Point>
+        <coordinates>-4.9275110,55.7529500,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>12｜下午｜Cathedral of the Isles</name>
+      <description>15:30-16:20｜Cathedral of the Isles / 小镇继续逛｜Cathedral of the Isles</description>
+      <styleUrl>#number-12-point</styleUrl>
+      <Point>
+        <coordinates>-4.9259590,55.7562890,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>13｜下午｜Millport</name>
+      <description>16:30-17:20｜返回 Largs：公交 + 渡轮｜Millport -&gt; Cumbrae Slip -&gt; Largs</description>
+      <styleUrl>#number-13-point</styleUrl>
+      <Point>
+        <coordinates>-4.9285650,55.7535580,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>14｜下午｜Cumbrae Slip Ferry Terminal</name>
+      <description>16:30-17:20｜返回 Largs：公交 + 渡轮｜Millport -&gt; Cumbrae Slip -&gt; Largs</description>
+      <styleUrl>#number-14-point</styleUrl>
+      <Point>
+        <coordinates>-4.9065530,55.7863720,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>15｜下午｜Largs Ferry Terminal</name>
+      <description>16:30-17:20｜返回 Largs：公交 + 渡轮｜Millport -&gt; Cumbrae Slip -&gt; Largs</description>
+      <styleUrl>#number-15-point</styleUrl>
+      <Point>
+        <coordinates>-4.8710330,55.7948530,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>16｜下午｜Largs waterfront</name>
+      <description>17:30-18:45｜Largs 海边散步 / 咖啡 / 冰淇淋｜Largs waterfront</description>
+      <styleUrl>#number-16-point</styleUrl>
+      <Point>
+        <coordinates>-4.8687620,55.7970000,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>17｜晚上｜Largs Railway Station</name>
+      <description>19:00-20:10｜Largs → Glasgow Central｜Largs -&gt; Glasgow Central</description>
+      <styleUrl>#number-17-point</styleUrl>
+      <Point>
+        <coordinates>-4.8670330,55.7924970,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>18｜晚上｜Glasgow Central</name>
+      <description>19:00-20:10｜Largs → Glasgow Central｜Largs -&gt; Glasgow Central</description>
+      <styleUrl>#number-18-point</styleUrl>
+      <Point>
         <coordinates>-4.2582928,55.8584773,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>19｜晚上｜Merchant City</name>
+      <description>20:15-21:30｜Glasgow 市区晚餐｜Merchant City / Glasgow city centre</description>
+      <styleUrl>#number-19-point</styleUrl>
+      <Point>
+        <coordinates>-4.2463157,55.8591260,0</coordinates>
       </Point>
     </Placemark>
     <Placemark>
@@ -197,7 +317,7 @@
       <styleUrl>#上午-line</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-4.2582928,55.8584773,0 -1.0930708,53.9580837,0 -1.0902765,53.9556490,0</coordinates>
+        <coordinates>-4.2560927,55.8563258,0 -4.2582928,55.8584773,0 -4.8670330,55.7924970,0 -4.8710330,55.7948530,0 -4.9065530,55.7863720,0 -4.9285650,55.7535580,0 -4.9275110,55.7529500,0 -4.9231010,55.7529960,0</coordinates>
       </LineString>
     </Placemark>
     <Placemark>
@@ -205,7 +325,15 @@
       <styleUrl>#下午-line</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
-        <coordinates>-1.0889565,53.9617856,0 -1.0820834,53.9623561,0 -1.0835080,53.9597790,0 -1.0800328,53.9592985,0 -1.0801796,53.9558294,0 -1.0838442,53.9574466,0 -1.0930708,53.9580837,0 -4.2582928,55.8584773,0</coordinates>
+        <coordinates>-4.9285650,55.7535580,0 -4.9260520,55.7536430,0 -4.9275110,55.7529500,0 -4.9259590,55.7562890,0 -4.9285650,55.7535580,0 -4.9065530,55.7863720,0 -4.8710330,55.7948530,0 -4.8687620,55.7970000,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/24｜晚上动线</name>
+      <styleUrl>#晚上-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.8670330,55.7924970,0 -4.2582928,55.8584773,0 -4.2463157,55.8591260,0</coordinates>
       </LineString>
     </Placemark>
   </Document>

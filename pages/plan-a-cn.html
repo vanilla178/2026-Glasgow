@@ -696,6 +696,22 @@
       box-shadow: 0 0 0 7px rgba(15, 108, 123, 0.08);
     }
 
+    .timeline-item.transfer::before {
+      background: linear-gradient(135deg, #0f6c7b, #254f6f);
+    }
+
+    .timeline-item.visit::before {
+      background: linear-gradient(135deg, #3f7853, #0f6c7b);
+    }
+
+    .timeline-item.meal::before {
+      background: linear-gradient(135deg, #c96f41, #b45c2e);
+    }
+
+    .timeline-item.optional::before {
+      background: linear-gradient(135deg, #8a6f3a, #c96f41);
+    }
+
     .time {
       font-size: 0.9rem;
       color: var(--brand-3);
@@ -713,6 +729,56 @@
       font-size: 1.12rem;
     }
 
+    .timeline-card-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-card-head h4 {
+      margin: 0;
+    }
+
+    .timeline-kind-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--brand-3);
+      background: rgba(15, 108, 123, 0.08);
+      border: 1px solid rgba(15, 108, 123, 0.12);
+    }
+
+    .timeline-kind-badge.transfer {
+      color: #0f5f6e;
+      background: rgba(15, 108, 123, 0.09);
+      border-color: rgba(15, 108, 123, 0.14);
+    }
+
+    .timeline-kind-badge.visit {
+      color: #3f7853;
+      background: rgba(63, 120, 83, 0.1);
+      border-color: rgba(63, 120, 83, 0.14);
+    }
+
+    .timeline-kind-badge.meal {
+      color: #a45127;
+      background: rgba(201, 111, 65, 0.11);
+      border-color: rgba(201, 111, 65, 0.15);
+    }
+
+    .timeline-kind-badge.optional {
+      color: #6b5b2d;
+      background: rgba(138, 111, 58, 0.1);
+      border-color: rgba(138, 111, 58, 0.15);
+    }
+
     .timeline-body .place {
       margin: 0 0 8px;
       font-size: 0.96rem;
@@ -725,6 +791,46 @@
       color: var(--muted);
       line-height: 1.68;
       font-size: 0.95rem;
+    }
+
+    .timeline-facts,
+    .timeline-detail-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .timeline-fact,
+    .timeline-detail {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      max-width: 100%;
+      padding: 6px 9px;
+      border-radius: 12px;
+      background: rgba(37, 79, 111, 0.045);
+      border: 1px solid rgba(37, 79, 111, 0.08);
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .timeline-fact strong {
+      flex: 0 0 auto;
+      color: var(--brand-3);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .timeline-fact span,
+    .timeline-detail {
+      overflow-wrap: anywhere;
+    }
+
+    .timeline-detail {
+      background: rgba(255, 252, 246, 0.58);
     }
 
     .timeline-tip {
@@ -1458,6 +1564,17 @@
         line-height: 1.36;
       }
 
+      .timeline-card-head {
+        gap: 6px;
+        margin-bottom: 5px;
+      }
+
+      .timeline-kind-badge {
+        min-height: 22px;
+        padding: 4px 7px;
+        font-size: 0.68rem;
+      }
+
       .timeline-body .place {
         margin-bottom: 6px;
         font-size: 0.86rem;
@@ -1467,6 +1584,21 @@
       .timeline-body p {
         font-size: 0.88rem;
         line-height: 1.58;
+      }
+
+      .timeline-facts,
+      .timeline-detail-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+        margin-top: 8px;
+      }
+
+      .timeline-fact,
+      .timeline-detail {
+        padding: 6px 8px;
+        border-radius: 11px;
+        font-size: 0.78rem;
       }
 
       .timeline-phase {
@@ -1564,7 +1696,7 @@
         <div class="eyebrow">英国行程</div>
         <h1>Plan A｜ Glasgow</h1>
         <p>
-          苏格兰地区为主，包含格拉斯哥、爱丁堡、苏格兰高地、约克（也可替换成温特米尔湖区）
+          苏格兰地区为主，包含格拉斯哥、爱丁堡、苏格兰高地与海边小岛轻松日
         </p>
         <div class="hero-strap">
           <div class="hero-chip">05/23-05/28</div>
@@ -1576,7 +1708,7 @@
         <h2>每日概览</h2>
         <ul>
           <li>05/23｜抵达 Glasgow</li>
-          <li>05/24｜约克大教堂与老城漫步</li>
+          <li>05/24｜Largs + Cumbrae / Millport 海边小岛</li>
           <li>05/25｜Glasgow Cathedral 一带 + 参会海报展示</li>
           <li>05/26｜苏格兰高地 一日游</li>
           <li>05/27｜爱丁堡城堡、Royal Mile、Calton Hill</li>
@@ -1611,11 +1743,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-27｜stonfur｜嵌入 Google My Maps 总览动线图：在每日摘要后新增可交互地图模块，展示整趟行程的日期图层、编号点位和动线，并保留一键打开 My Maps 的入口。</li>
+            <li>最近更新：2026-04-29｜stonfur｜将 05/24 从 York 一日往返替换为 Largs + Cumbrae / Millport 海边小岛轻松日，并引入可复用的时间线卡片类型：交通转移、景点游览、餐饮休息和天气可选项。05/24 新增目标班次、预计耗时、票务费用、开放时间、现场确认提醒、午餐/咖啡/晚餐区域建议，并同步更新 Google My Maps 的 05/24 KML 点位，避免旧 York 坐标残留。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-27｜stonfur｜嵌入 Google My Maps 总览动线图：在每日摘要后新增可交互地图模块，展示整趟行程的日期图层、编号点位和动线，并保留一键打开 My Maps 的入口。</li>
               <li>2026-04-27｜stonfur｜重做 Google My Maps 地点提取逻辑：不再把 City Centre、West End 这类区域字段直接当坐标点，而是优先按行程标题和备注中的具体景点、车站、餐饮区域确定点位，并补充高地日的 Loch Lomond、Glencoe、Fort Augustus / Loch Ness 与 Pitlochry 动线。</li>
               <li>2026-04-27｜stonfur｜修正 Google My Maps 坐标定位：将 University of Glasgow 改为手动坐标覆盖，避免自动地理编码误匹配到新加坡地点，确保 05/28 上午和下午动线都落在 Glasgow。</li>
               <li>2026-04-27｜stonfur｜优化 Google My Maps 点位编号：每日路线改为从 01 开始连续编号，并生成对应的数字图钉 marker，让导入 My Maps 后的点位顺序能直接显示在地图上。</li>
@@ -1678,7 +1811,7 @@
 
           <aside class="aside-stack">
             <section class="booking-card">
-              <h3>预约清单</h3>
+              <h3>费用 / 预约 / 开放</h3>
               <div id="bookingList"></div>
             </section>
             <section class="booking-card">
@@ -1699,8 +1832,8 @@
 
   <script>
     const dayNotes = [
-      "York 往返火车时间较长，建议只带轻便小包。",
-      "买火车票前可以先对比 Avanti、ScotRail 和 Trainline。",
+      "05/24 是海边小岛轻松日，火车、渡轮和岛上公交都建议出发前再查一次官方状态。",
+      "5 月 25 日是英国 Spring Bank Holiday，05/24 周日海边小镇和渡轮可能比平时更忙。",
       "Highlands 一日游可以同时比较 Rabbie's、Timberbush 和 Discover Scotland Tours。"
     ];
 
@@ -1924,14 +2057,14 @@
             microGuide: [
               { label: "晚餐", text: "提前在转机段 / 机场解决。" },
               { label: "补给", text: "水、早餐、转换插头、简单零食。" },
-              { label: "次日", text: "York 一日往返，早出发。" }
+              { label: "次日", text: "Largs / Cumbrae 海边小岛日，早上从容出发。" }
             ]
           },
           {
             time: "00:15 onward",
             title: "休息",
             location: "Aparthotel Adagio Glasgow Central",
-            notes: "第二天为 York 一日往返，保留早晨出发余量。",
+            notes: "第二天为 Largs / Cumbrae 海边小岛日，保留早晨从容出发余量。",
             links: []
           }
         ]
@@ -2571,234 +2704,337 @@
         id: "0524",
         short: "05/24",
         dayLabel: "周日",
-        title: "York 一日往返",
-        intro: "",
-        vibe: "长距离火车日",
-        intensity: "high",
-        window: "07:00-21:30",
-        travel: "长距离火车往返",
-        anchor: "城墙机位 + 约克大教堂 + 肉铺街",
-        mapQuery: "York Minster",
-        bookingChecklist: [],
+        title: "Largs + Cumbrae / Millport 海边小岛一日游",
+        intro: "前一天刚到 Glasgow，这一天把节奏放慢：火车到海边小镇 Largs，坐短渡轮上 Cumbrae，到 Millport 看海、散步、吃午餐；天气好再租自行车，傍晚回 Largs 看海，晚上回 Glasgow 吃饭。",
+        vibe: "海边小岛轻松日",
+        intensity: "medium-low",
+        window: "08:30-21:30",
+        travel: "火车 + 渡轮 + 岛上公交",
+        anchor: "Glasgow Central -> Largs -> Cumbrae Slip -> Millport -> Largs -> Glasgow",
+        mapQuery: "Millport Isle of Cumbrae",
+        bookingChecklist: [
+          {
+            title: "ScotRail Glasgow Central ↔ Largs",
+            fee: "from £12.50 return / 实际以 ScotRail App 为准",
+            hours: "目标 09:00 去程、19:00 返程；出发前查实时班次",
+            lead: "建议提前查票并购票",
+            refund: "按票种规则",
+            prepay: "购票时支付",
+            officialUrl: "https://www.scotrail.co.uk/train-times/glasgow-central-to-largs"
+          },
+          {
+            title: "CalMac Largs ↔ Cumbrae Slip 渡轮",
+            fee: "成人往返 £4.60",
+            hours: "2026 夏季时刻表覆盖 03/27-10/18；目标 10:40 或 11:00 上岛",
+            lead: "建议提前在线买票；Turn Up and Go，不锁具体班次",
+            refund: "不可改签 / 不可退款",
+            prepay: "在线或现场购票",
+            officialUrl: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/"
+          },
+          {
+            title: "320 公交 Cumbrae Slip ↔ Millport",
+            fee: "约 £4 往返 / 以 Millport Motors 现场或官网为准",
+            hours: "约 10-15 分钟；通常衔接渡轮",
+            lead: "不需要预约，现场确认即可",
+            refund: "现场票务",
+            prepay: "可刷卡 / 现场支付",
+            officialUrl: "https://millport.org/frequent-questions/bus-information/"
+          },
+          {
+            title: "Cathedral of the Isles",
+            fee: "免费",
+            hours: "08:30-18:00",
+            lead: "不需要预约",
+            refund: "不适用",
+            prepay: "无",
+            officialUrl: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae"
+          },
+          {
+            title: "Mapes of Millport 自行车",
+            fee: "标准车 3 小时 £14 / 全天 £16",
+            hours: "天气好时可选，建议到 Millport 后再决定",
+            lead: "周末游客多时可提前看官网",
+            refund: "以店铺规则为准",
+            prepay: "现场或按官网规则",
+            officialUrl: "https://mapesmillport.co.uk/bike-hire/"
+          }
+        ],
         routeLinks: [
           {
-            title: "约克一日游小红书路线",
+            title: "官方交通与票务",
             links: [
-              { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
-              { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
-              { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
-              { label: "约克一日CITYWALK保姆级攻略，附各景点详解", url: "https://www.xiaohongshu.com/explore/68af0835000000001b03c252?xsec_token=ABMxv_FRdQN3VU86YeGYfRHCJpyE1Sm4qy4pZJxQ09A2w=&xsec_source=pc_search&source=unknown" },
-              { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" },
-              { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+              { label: "ScotRail｜Glasgow Central to Largs", url: "https://www.scotrail.co.uk/train-times/glasgow-central-to-largs" },
+              { label: "CalMac｜Largs - Cumbrae Slip - Millport", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" },
+              { label: "Millport｜320 bus information", url: "https://millport.org/frequent-questions/bus-information/" },
+              { label: "Mapes of Millport｜bike hire", url: "https://mapesmillport.co.uk/bike-hire/" }
             ]
           }
         ],
         spotGuides: [
           {
-            title: "York City Walls / 火车站机位",
+            title: "Millport / Cumbrae",
             links: [
-              { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
-              { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
-              { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" }
+              { label: "Millport visitor information", url: "https://millport.org/" },
+              { label: "Cathedral of the Isles", url: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae" },
+              { label: "Mapes of Millport", url: "https://mapesmillport.co.uk/bike-hire/" }
             ]
           },
           {
-            title: "York Minster / The Shambles",
+            title: "Largs / Cumbrae 交通",
             links: [
-              { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
-              { label: "约克一日CITYWALK保姆级攻略，附各景点详解", url: "https://www.xiaohongshu.com/explore/68af0835000000001b03c252?xsec_token=ABMxv_FRdQN3VU86YeGYfRHCJpyE1Sm4qy4pZJxQ09A2w=&xsec_source=pc_search&source=unknown" },
-              { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+              { label: "ScotRail Largs route", url: "https://www.scotrail.co.uk/train-times/glasgow-central-to-largs" },
+              { label: "CalMac ferry route", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" }
             ]
           }
         ],
         serviceGuides: {
+          regionalPicks: [
+            {
+              title: "Millport 午餐 / 咖啡",
+              links: [
+                { label: "Millport restaurants｜Google Maps 搜索｜到镇上后按营业状态和排队情况选，优先找 promenade 附近。", url: mapsUrl("restaurants in Millport Isle of Cumbrae") },
+                { label: "Millport cafes｜Google Maps 搜索｜适合午餐后热饮或甜点。", url: mapsUrl("cafes in Millport Isle of Cumbrae") },
+                { label: "Crocodile Rock nearby｜Google Maps 搜索｜散步拍照时顺手找附近小店。", url: mapsUrl("Crocodile Rock Millport cafes") }
+              ]
+            },
+            {
+              title: "Largs 傍晚停留",
+              links: [
+                { label: "Nardini's Largs｜冰淇淋 / 咖啡｜Largs 经典海边甜品选择，适合回 Glasgow 前停一停。", url: mapsUrl("Nardini's Largs") },
+                { label: "Geraldo's Largs｜冰淇淋 / 甜点｜从海边和车站之间绕一下也顺路。", url: mapsUrl("Geraldo's Largs") },
+                { label: "Largs waterfront｜海边散步｜天气好时比赶车更值得。", url: mapsUrl("Largs waterfront") }
+              ]
+            },
+            {
+              title: "Glasgow 晚餐回城后",
+              links: [
+                { label: "Merchant City dinner｜Google Maps 搜索｜回到 Glasgow 后离酒店近，适合轻松收尾。", url: mapsUrl("Merchant City Glasgow dinner") },
+                { label: "Paesano Pizza - Miller Street｜披萨｜排队通常流动快，适合作为不想复杂预约的晚餐。", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+                { label: "Sugo Pasta Glasgow｜意面｜市中心平价正餐备选。", url: mapsUrl("Sugo Pasta Glasgow") }
+              ]
+            }
+          ],
           restaurants: [],
           cafes: [],
           souvenirs: []
         },
         featured: {
-          title: "约克大教堂",
-          text: "York Minster 是英国最大的哥特式教堂建筑之一，也是约克老城的核心地标。",
-          mapQuery: "York Minster",
-          infoUrl: "http://yorkminster.org",
+          title: "Millport / Isle of Cumbrae",
+          text: "这一天的核心不是赶景点，而是看海、坐船、逛小岛。Millport 节奏很适合放在 ICC 会场日前一天：promenade 散步、Crocodile Rock 附近拍照、午餐咖啡，再按天气决定是否租自行车。",
+          mapQuery: "Millport Isle of Cumbrae",
+          infoUrl: "https://millport.org/",
           guideLinks: [
             {
-              title: "小红书攻略",
+              title: "官方与实用链接",
               links: [
-                { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
-                { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
-                { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
-                { label: "约克一日CITYWALK保姆级攻略，附各景点详解", url: "https://www.xiaohongshu.com/explore/68af0835000000001b03c252?xsec_token=ABMxv_FRdQN3VU86YeGYfRHCJpyE1Sm4qy4pZJxQ09A2w=&xsec_source=pc_search&source=unknown" },
-                { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
+                { label: "Millport visitor information", url: "https://millport.org/" },
+                { label: "CalMac Largs - Cumbrae", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" },
+                { label: "Mapes of Millport bike hire", url: "https://mapesmillport.co.uk/bike-hire/" }
               ]
             }
           ]
         },
-        spots: ["York City Walls", "Museum Gardens", "York Minster", "The Shambles", "Clifford's Tower"],
+        spots: ["Glasgow Central", "Largs Ferry Terminal", "Cumbrae Slip", "Millport", "Crocodile Rock", "Cathedral of the Isles", "Largs waterfront", "Merchant City"],
         items: [
           {
-            time: "07:00-07:30",
-            title: "前往车站",
-            location: "Glasgow Central",
-            notes: "只带当天用的小包。",
-            links: []
+            type: "transfer",
+            mode: "walk",
+            time: "08:30-09:00",
+            title: "酒店 → Glasgow Central",
+            location: "Aparthotel Adagio Glasgow Central -> Glasgow Central",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Glasgow Central",
+            duration: "约 10-20 分钟",
+            ticket: "步行 / 公交 / 打车按酒店位置决定",
+            notes: "不要卡点出发，给买咖啡、找站台和临时改站台预留余量。",
+            details: ["只带当天小包", "火车票和渡轮票提前放到手机里"],
+            links: [{ label: "Glasgow Central", url: mapsUrl("Glasgow Central") }]
           },
           {
-            time: "07:30-11:30",
-            title: "乘火车前往 York",
-            location: "Glasgow Central -> York",
-            notes: "尽量选直达，越早出发越从容，因为这一天整体比较长。",
+            type: "transfer",
+            mode: "train",
+            time: "09:00-10:10",
+            title: "Glasgow Central → Largs",
+            location: "Glasgow Central -> Largs",
+            routeOrigin: "Glasgow Central",
+            routeDest: "Largs Railway Station",
+            duration: "平均约 1h04m",
+            ticket: "from £12.50 return / 实际以 ScotRail App 为准",
+            officialUrl: "https://www.scotrail.co.uk/train-times/glasgow-central-to-largs",
+            statusUrl: "https://www.scotrail.co.uk/plan-your-journey/service-disruption",
+            notes: "目标是上午 10 点多到 Largs，不用特别早起；具体班次出发前以 ScotRail 为准。",
+            details: ["目标窗口：09:00 左右出发", "周日班次出发前再确认"],
+            links: [{ label: "ScotRail", url: "https://www.scotrail.co.uk/train-times/glasgow-central-to-largs" }]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "10:10-10:35",
+            title: "Largs 火车站 → 海边 → Ferry Terminal",
+            location: "Largs Railway Station -> Largs Ferry Terminal",
+            routeOrigin: "Largs Railway Station",
+            routeDest: "Largs Ferry Terminal",
+            duration: "约 10-15 分钟步行",
+            ticket: "免费",
+            notes: "顺路看看海边，但主要目标是从容赶渡轮。",
+            details: ["不建议在 Largs 上午逛太久", "渡轮前约 10 分钟准备好票"],
+            links: [{ label: "Google 地图", url: mapsUrl("Largs Ferry Terminal") }]
+          },
+          {
+            type: "transfer",
+            mode: "ferry",
+            time: "10:40 / 11:00",
+            title: "Largs → Cumbrae Slip 渡轮",
+            location: "Largs Ferry Terminal -> Cumbrae Slip",
+            routeOrigin: "Largs Ferry Terminal",
+            routeDest: "Cumbrae Slip Ferry Terminal",
+            duration: "约 10 分钟",
+            ticket: "成人往返 £4.60；Turn Up and Go",
+            officialUrl: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/",
+            statusUrl: "https://www.calmac.co.uk/service-status",
+            notes: "这条线是短渡轮，买日期票后不锁具体班次；当天早上再看一次 CalMac service status。",
+            details: ["2026 夏季时刻表：03/27-10/18", "05/24 为周日，海边路线可能更忙"],
+            links: [{ label: "CalMac", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" }]
+          },
+          {
+            type: "transfer",
+            mode: "bus",
+            time: "11:00-11:20",
+            title: "Cumbrae Slip → Millport",
+            location: "Cumbrae Slip -> Millport",
+            routeOrigin: "Cumbrae Slip Ferry Terminal",
+            routeDest: "Millport Isle of Cumbrae",
+            duration: "约 10-15 分钟",
+            ticket: "约 £4 往返 / 以现场或官网为准",
+            officialUrl: "https://millport.org/frequent-questions/bus-information/",
+            notes: "320 公交连接码头和 Millport 小镇，通常按渡轮节奏衔接。",
+            details: ["现场确认下一班时间", "可刷卡信息以车上为准"],
+            links: [{ label: "Bus information", url: "https://millport.org/frequent-questions/bus-information/" }]
+          },
+          {
+            type: "visit",
+            time: "11:20-12:30",
+            title: "Millport promenade / Crocodile Rock 附近散步",
+            location: "Millport Promenade / Crocodile Rock",
+            duration: "约 1h10m",
+            fee: "免费",
+            hours: "户外全天",
+            reserve: "不需要预约",
+            notes: "先不要急着租车，沿海边 promenade 慢慢走，看看海景和 Crocodile Rock 附近的拍照点。",
+            details: ["轻松散步", "按天气和风力调整节奏"],
+            links: [{ label: "Google 地图", url: mapsUrl("Crocodile Rock Millport") }]
+          },
+          {
+            type: "meal",
+            time: "12:30-13:30",
+            title: "Millport 午餐 / 咖啡",
+            location: "Millport",
+            area: "Millport 海边小镇",
+            duration: "约 1 小时",
+            ticket: "估计 £15-20",
+            notes: "找海边餐厅或咖啡店即可，不需要为了某一家店反向赶路。",
+            details: ["优先看 promenade 附近", "到店后按营业状态和排队情况决定"],
             links: [
-              { label: "Trainline", url: "http://thetrainline.com" },
-              { label: "Avanti", url: "http://avantiwestcoast.co.uk" }
-            ]
+              { label: "Millport restaurants", url: mapsUrl("restaurants in Millport Isle of Cumbrae") },
+              { label: "Millport cafes", url: mapsUrl("cafes in Millport Isle of Cumbrae") }
+            ],
+            tips: ["如果风大或下雨，把午餐和咖啡时间拉长一点也没问题。"]
           },
           {
-            time: "11:30-12:00",
-            title: "约克城墙（York City Walls）机位",
-            location: "York Station / York City Walls",
-            routeOrigin: "York Railway Station",
-            routeDest: "York City Walls",
-            notes: "离车站近，可作为入城后的第一个点位。",
-            microGuide: [
-              { label: "备注", text: "城墙与车站方向视角可先查看。" }
-            ],
+            type: "optional",
+            mode: "bike",
+            time: "13:30-15:30",
+            title: "天气好：租自行车；天气一般：小镇继续散步",
+            location: "Mapes of Millport / Millport",
+            duration: "约 2 小时",
+            ticket: "标准车 3 小时 £14 / 全天 £16",
+            officialUrl: "https://mapesmillport.co.uk/bike-hire/",
+            notes: "自行车是加分项，不是硬任务。天气好、风不大再租；天气一般就保留 Millport 散步和 Cathedral of the Isles。",
+            details: ["Cumbrae 经典环岛约 10 英里", "3 小时档通常够用", "风大时不要勉强"],
+            links: [{ label: "Mapes bike hire", url: "https://mapesmillport.co.uk/bike-hire/" }]
+          },
+          {
+            type: "visit",
+            time: "15:30-16:20",
+            title: "Cathedral of the Isles / 小镇继续逛",
+            location: "Cathedral of the Isles",
+            routeOrigin: "Millport Isle of Cumbrae",
+            routeDest: "Cathedral of the Isles",
+            duration: "约 50 分钟",
+            fee: "免费",
+            hours: "08:30-18:00",
+            reserve: "不需要预约",
+            officialUrl: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae",
+            notes: "英国最小主教座堂之一，适合轻量顺路看；如果还想继续海边散步，也可以把这里缩短。",
+            details: ["教堂花园可顺路看", "离 Millport 镇上不远"],
+            links: [{ label: "Cathedral of the Isles", url: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae" }]
+          },
+          {
+            type: "transfer",
+            mode: "bus + ferry",
+            time: "16:30-17:20",
+            title: "返回 Largs：公交 + 渡轮",
+            location: "Millport -> Cumbrae Slip -> Largs",
+            routeOrigin: "Millport Isle of Cumbrae",
+            routeDest: "Largs Ferry Terminal",
+            duration: "约 45-60 分钟",
+            ticket: "使用公交返程票 + CalMac 往返票",
+            officialUrl: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/",
+            statusUrl: "https://www.calmac.co.uk/service-status",
+            notes: "下午回程不要压到最后一班，先坐 320 回 Cumbrae Slip，再坐渡轮回 Largs。",
+            details: ["17 点左右回到 Largs 会更从容", "周日和假日前一天留余量"],
             links: [
-              { label: "Walls guide", url: "http://yorkwalls.org.uk" },
-              { label: "Visit York", url: "http://visityork.org" }
-            ],
-            guideLinks: [
-              {
-                title: "小红书攻略",
-                links: [
-                  { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
-                  { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
-                  { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
+              { label: "CalMac", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" },
+              { label: "Bus information", url: "https://millport.org/frequent-questions/bus-information/" }
             ]
           },
           {
-            time: "12:00-12:35",
-            title: "博物馆花园（Museum Gardens）+ 圣玛丽修道院遗址",
-            location: "Museum Gardens York",
-            notes: "从城墙进入老城时可顺路经过，修道院遗址和草坪位于这一段。",
-            microGuide: [
-              { label: "备注", text: "修道院遗址与草坪区域可顺路查看。" }
-            ],
-            links: [{ label: "Visit York", url: "http://visityork.org" }],
-            guideLinks: [
-              {
-                title: "小红书攻略",
-                links: [
-                  { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" },
-                  { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "12:40-13:35",
-            title: "约克大教堂（York Minster）",
-            location: "York city centre",
-            notes: "这里仍然是当天核心景点，但放在城墙和花园之后更顺，而且视角会更完整。",
-            microGuide: [
-              { label: "备注", text: "外立面与周边广场视角可一并查看。" }
-            ],
+            type: "visit",
+            time: "17:30-18:45",
+            title: "Largs 海边散步 / 咖啡 / 冰淇淋",
+            location: "Largs waterfront",
+            duration: "约 1h15m",
+            fee: "散步免费；甜品按现场消费",
+            hours: "户外全天；店铺以当天营业为准",
+            reserve: "不需要预约",
+            notes: "不用马上回 Glasgow，傍晚在 Largs 海边缓一缓，天气好可以看海和吃冰淇淋。",
+            details: ["Nardini's / Geraldo's 可作为甜品备选", "The Pencil Monument 距离略远，只作为体力好时加项"],
             links: [
-              { label: "York Minster", url: "http://yorkminster.org" },
-              { label: "Visit York", url: "http://visityork.org" }
-            ],
-            guideLinks: [
-              {
-                title: "小红书攻略",
-                links: [
-                  { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
-                  { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
+              { label: "Largs waterfront", url: mapsUrl("Largs waterfront") },
+              { label: "Nardini's Largs", url: mapsUrl("Nardini's Largs") }
             ]
           },
           {
-            time: "13:35-14:10",
-            title: "午餐 / Bettys 备选",
-            location: "York Minster area",
-            notes: "如果想走攻略里很常见的经典组合，可以在这段时间吃饭，或者去 Bettys 附近看看排队情况。",
-            microGuide: [
-              { label: "餐饮", text: "Bettys 可先查看排队情况；如等待较长，可在大教堂周边就餐。" }
-            ],
-            links: [{ label: "Visit York", url: "http://visityork.org" }],
-            tips: ["餐厅可优先看 York Minster 周边或 Bettys 相关攻略。"]
+            type: "transfer",
+            mode: "train",
+            time: "19:00-20:10",
+            title: "Largs → Glasgow Central",
+            location: "Largs -> Glasgow Central",
+            routeOrigin: "Largs Railway Station",
+            routeDest: "Glasgow Central",
+            duration: "平均约 1h05m",
+            ticket: "使用 ScotRail 往返票 / 实际以 App 为准",
+            officialUrl: "https://www.scotrail.co.uk/train-times/largs-to-glasgow-central",
+            statusUrl: "https://www.scotrail.co.uk/plan-your-journey/service-disruption",
+            notes: "目标 19 点左右返程，回到 Glasgow 后还有时间吃晚餐。",
+            details: ["返程前确认站台和班次", "如果天气差可提前回城"],
+            links: [{ label: "ScotRail", url: "https://www.scotrail.co.uk/train-times/largs-to-glasgow-central" }]
           },
           {
-            time: "14:10-15:10",
-            title: "肉铺街（The Shambles）+ 小店",
-            location: "York old town",
-            notes: "这一段小店和小吃很多。",
-            microGuide: [
-              { label: "备注", text: "窄巷转角、主题小店和街景都在这一带。" },
-              { label: "伴手礼", text: "糖果、茶点与小纪念品可在这一段查看。" }
-            ],
-            links: [{ label: "Visit York", url: "http://visityork.org" }],
-            tips: ["可参考茶点、糖果和小纪念品攻略。"],
-            guideLinks: [
-              {
-                title: "小红书攻略",
-                links: [
-                  { label: "York一日游（附拍照机位&jellycat）", url: "https://www.xiaohongshu.com/explore/6829fbdf0000000022007635?xsec_token=ABOXMfq1W44hnVB455X_vP_bZehgpytc3li7b_90pbzMg=&xsec_source=pc_search&source=unknown" },
-                  { label: "利兹周末周边游——第二站：约克", url: "https://www.xiaohongshu.com/explore/689917340000000004004692?xsec_token=ABaQBann1I20xl-1vpEsIYqpu2eKcmivyxm5g7cajG8d8=&xsec_source=pc_search&source=unknown" },
-                  { label: "爱丁堡出发约克一日游路线及交通攻略", url: "https://www.xiaohongshu.com/explore/68a2a72a000000001d008b5a?xsec_token=AB60dW8SjrpTdaGmoF-61ggjP_1cxAAX-Cmi5XAsl-HW0=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
+            type: "meal",
+            time: "20:15-21:30",
+            title: "Glasgow 市区晚餐",
+            location: "Merchant City / Glasgow city centre",
+            area: "Merchant City / 市中心",
+            duration: "约 1h15m",
+            ticket: "估计 £20-35",
+            notes: "回城后不用跑远，Merchant City 或 Central Station 周边都方便；热门餐厅建议当天白天顺手订位。",
+            details: ["轻松收尾", "第二天有 ICC，会前不要太晚"],
+            links: [
+              { label: "Merchant City dinner", url: mapsUrl("Merchant City Glasgow dinner") },
+              { label: "Paesano Pizza", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+              { label: "Sugo Pasta", url: mapsUrl("Sugo Pasta Glasgow") }
             ]
-          },
-          {
-            time: "15:10-15:50",
-            title: "克利福德塔（Clifford's Tower）/ 城堡区",
-            location: "Clifford's Tower",
-            notes: "不少约克一日游会把这里放在老城的末段。即使不进塔，只在外面看和拍照也很值。",
-            microGuide: [
-              { label: "备注", text: "外观与周边高点视角很适合当作老城的最后一站。" }
-            ],
-            links: [{ label: "English Heritage", url: "http://english-heritage.org.uk" }],
-            guideLinks: [
-              {
-                title: "小红书攻略",
-                links: [
-                  { label: "周末｜约克2000年古城不绕路一日游", url: "https://www.xiaohongshu.com/explore/69694a5d000000002102be0c?xsec_token=ABxdRPREF4UkspQW7djYPbFZz3v3OYAytrHnScLgZyonA=&xsec_source=pc_search&source=unknown" },
-                  { label: "约克｜小麻瓜不绕道的一日完美路线", url: "https://www.xiaohongshu.com/explore/690b031a0000000005012f5a?xsec_token=AB70rLXgMAXJtS5Iy8jkQRvGaFJU9n8jwP8GAuPdeDiw4=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "15:50-16:35",
-            title: "乌斯河边 / 城墙拍照 / 自由活动",
-            location: "York riverside",
-            notes: "可以沿河走走、逛店或拍照。",
-            links: [{ label: "Visit York", url: "http://visityork.org" }]
-          },
-          {
-            time: "16:35-17:05",
-            title: "National Railway Museum 或回车站前买点饮水零食",
-            location: "Near York station",
-            notes: "铁路博物馆保留为返程前可选项。几个攻略都更推荐把主线时间优先给城墙、教堂和老城。",
-            links: [{ label: "官网", url: "http://railwaymuseum.org.uk" }]
-          },
-          {
-            time: "17:05-17:30",
-            title: "回到车站并准备返程",
-            location: "York",
-            notes: "注意给站内找站台和上车预留一点时间。",
-            links: []
-          },
-          {
-            time: "17:30-21:30",
-            title: "乘火车返回 Glasgow",
-            location: "York -> Glasgow",
-            notes: "回程时间较长，到 Glasgow 后可直接回酒店。",
-            links: [{ label: "Trainline", url: "http://thetrainline.com" }]
           }
         ]
       },
@@ -2952,7 +3188,7 @@
       
       // Determine base city for the day to give context
       let city = 'Glasgow';
-      if (day.id === '0524') city = 'York';
+      if (day.id === '0524') city = 'North Ayrshire, Scotland';
       else if (day.id === '0526') city = 'Scotland';
       else if (day.id === '0527') city = 'Edinburgh';
       
@@ -3134,9 +3370,73 @@
       `;
     }
 
+    const timelineTypeMeta = {
+      transfer: { label: "交通转移", className: "transfer" },
+      visit: { label: "景点游览", className: "visit" },
+      meal: { label: "餐饮 / 休息", className: "meal" },
+      optional: { label: "天气可选", className: "optional" }
+    };
+
+    const transportModeLabels = {
+      walk: "步行",
+      train: "火车",
+      ferry: "渡轮",
+      bus: "公交",
+      bike: "自行车",
+      "bus + ferry": "公交 + 渡轮"
+    };
+
+    function renderTimelineHead(item) {
+      const meta = timelineTypeMeta[item.type];
+      if (!meta) return `<h4>${escapeHtml(item.title)}</h4>`;
+
+      return `
+        <div class="timeline-card-head">
+          <span class="timeline-kind-badge ${meta.className}">${escapeHtml(meta.label)}</span>
+          <h4>${escapeHtml(item.title)}</h4>
+        </div>
+      `;
+    }
+
+    function renderTimelineFacts(item) {
+      const facts = [
+        item.mode ? { label: "方式", value: transportModeLabels[item.mode] || item.mode } : null,
+        item.duration ? { label: "耗时", value: item.duration } : null,
+        item.ticket ? { label: "票务", value: item.ticket } : null,
+        item.fee ? { label: "费用", value: item.fee } : null,
+        item.hours ? { label: "开放", value: item.hours } : null,
+        item.reserve ? { label: "预约", value: item.reserve } : null,
+        item.area ? { label: "区域", value: item.area } : null
+      ].filter(Boolean);
+
+      if (!facts.length) return "";
+
+      return `
+        <div class="timeline-facts">
+          ${facts.map((fact) => `
+            <span class="timeline-fact">
+              <strong>${escapeHtml(fact.label)}</strong>
+              <span>${escapeHtml(fact.value)}</span>
+            </span>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderTimelineDetails(item) {
+      if (!item.details || !item.details.length) return "";
+
+      return `
+        <div class="timeline-detail-list">
+          ${item.details.map((detail) => `<span class="timeline-detail">${escapeHtml(detail)}</span>`).join("")}
+        </div>
+      `;
+    }
+
     function intensityLabel(intensity) {
       const labels = {
         low: "低强度",
+        "medium-low": "中低强度",
         medium: "中等强度",
         high: "高强度"
       };
@@ -3477,9 +3777,12 @@
           endLoc = currDest;
         }
 
+        const mapTarget = item.mapQuery || item.routeDest || item.location;
         const operationalLinks = [
-          { label: "Google 地图", url: mapsUrl(item.location) },
-          ...(startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase() ? [{ label: "路线", url: dirUrl(startLoc, endLoc) }] : [])
+          { label: "Google 地图", url: mapsUrl(mapTarget) },
+          ...(startLoc && endLoc && startLoc.toLowerCase() !== endLoc.toLowerCase() ? [{ label: "路线", url: dirUrl(startLoc, endLoc) }] : []),
+          ...(item.officialUrl ? [{ label: "官网 / 时刻", url: item.officialUrl }] : []),
+          ...(item.statusUrl ? [{ label: "服务状态", url: item.statusUrl }] : [])
         ];
 
         const part = getDayPart(item.time);
@@ -3488,12 +3791,14 @@
 
         return `
         ${partHeading}
-        <article class="timeline-item fade-in">
+        <article class="timeline-item ${item.type ? escapeHtml(item.type) : ""} fade-in">
           <div class="time">${escapeHtml(item.time)}</div>
           <div class="timeline-body">
-            <h4>${escapeHtml(item.title)}</h4>
+            ${renderTimelineHead(item)}
             <div class="place">${escapeHtml(item.location)}</div>
             <p>${escapeHtml(item.notes)}</p>
+            ${renderTimelineFacts(item)}
+            ${renderTimelineDetails(item)}
             ${renderMicroGuide(item.microGuide)}
             ${item.tips?.length ? `<div class="timeline-tip">${item.tips.map((tip) => escapeHtml(tip)).join(" / ")}</div>` : ""}
             ${renderLinkRow(operationalLinks)}

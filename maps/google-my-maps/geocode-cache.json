@@ -340,5 +340,59 @@
     "lon": -4.293583,
     "display_name": "Ashton Lane",
     "source": "manual override"
+  },
+  "55.786372,-4.906553|Cumbrae Slip Ferry Terminal": {
+    "lat": 55.786372,
+    "lon": -4.906553,
+    "display_name": "Cumbrae Slip Ferry Terminal",
+    "source": "manual override"
+  },
+  "55.752950,-4.927511|Millport Promenade": {
+    "lat": 55.75295,
+    "lon": -4.927511,
+    "display_name": "Millport Promenade",
+    "source": "manual override"
+  },
+  "55.753643,-4.926052|Mapes of Millport": {
+    "lat": 55.753643,
+    "lon": -4.926052,
+    "display_name": "Mapes of Millport",
+    "source": "manual override"
+  },
+  "55.792497,-4.867033|Largs Railway Station": {
+    "lat": 55.792497,
+    "lon": -4.867033,
+    "display_name": "Largs Railway Station",
+    "source": "manual override"
+  },
+  "55.794853,-4.871033|Largs Ferry Terminal": {
+    "lat": 55.794853,
+    "lon": -4.871033,
+    "display_name": "Largs Ferry Terminal",
+    "source": "manual override"
+  },
+  "55.753558,-4.928565|Millport": {
+    "lat": 55.753558,
+    "lon": -4.928565,
+    "display_name": "Millport",
+    "source": "manual override"
+  },
+  "55.752996,-4.923101|Crocodile Rock": {
+    "lat": 55.752996,
+    "lon": -4.923101,
+    "display_name": "Crocodile Rock",
+    "source": "manual override"
+  },
+  "55.797000,-4.868762|Largs waterfront": {
+    "lat": 55.797,
+    "lon": -4.868762,
+    "display_name": "Largs waterfront",
+    "source": "manual override"
+  },
+  "55.756289,-4.925959|Cathedral of the Isles": {
+    "lat": 55.756289,
+    "lon": -4.925959,
+    "display_name": "Cathedral of the Isles",
+    "source": "manual override"
   }
 }

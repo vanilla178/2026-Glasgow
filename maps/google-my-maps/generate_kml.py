@@ -54,9 +54,18 @@ PLACE_QUERIES: dict[str, str] = {
     "Glencoe": "Glencoe, Scotland",
     "Grassmarket Edinburgh": "Grassmarket Edinburgh",
     "Kelvingrove Art Gallery and Museum": "55.8685825,-4.2906278|Kelvingrove Art Gallery and Museum",
+    "Cathedral of the Isles": "55.756289,-4.925959|Cathedral of the Isles",
+    "Crocodile Rock": "55.752996,-4.923101|Crocodile Rock",
+    "Cumbrae Slip Ferry Terminal": "55.786372,-4.906553|Cumbrae Slip Ferry Terminal",
+    "Largs Ferry Terminal": "55.794853,-4.871033|Largs Ferry Terminal",
+    "Largs Railway Station": "55.792497,-4.867033|Largs Railway Station",
+    "Largs waterfront": "55.797000,-4.868762|Largs waterfront",
     "Loch Lomond": "56.101506,-4.639122|Loch Lomond",
     "Makars Mash Bar Edinburgh": "Makars Mash Bar Edinburgh",
+    "Mapes of Millport": "55.753643,-4.926052|Mapes of Millport",
     "Merchant City": "Merchant City, Glasgow, UK",
+    "Millport": "55.753558,-4.928565|Millport",
+    "Millport Promenade": "55.752950,-4.927511|Millport Promenade",
     "Pitlochry": "56.703468,-3.729967|Pitlochry",
     "Riverside Museum": "Riverside Museum, Glasgow",
     "Scott Monument": "Scott Monument Edinburgh",
@@ -70,8 +79,19 @@ PLACE_QUERIES: dict[str, str] = {
 }
 
 ITEM_POINT_OVERRIDES: list[dict[str, object]] = [
-    {"day": "0524", "title": "午餐 / Bettys", "points": ["Bettys Cafe Tea Rooms York"]},
-    {"day": "0524", "title": "乘火车返回 Glasgow", "points": ["York Railway Station", "Glasgow Central"]},
+    {"day": "0524", "title": "酒店 → Glasgow Central", "points": ["Aparthotel Adagio Glasgow Central", "Glasgow Central"]},
+    {"day": "0524", "title": "Glasgow Central → Largs", "points": ["Glasgow Central", "Largs Railway Station"]},
+    {"day": "0524", "title": "Largs 火车站", "points": ["Largs Railway Station", "Largs Ferry Terminal"]},
+    {"day": "0524", "title": "Largs → Cumbrae Slip", "points": ["Largs Ferry Terminal", "Cumbrae Slip Ferry Terminal"]},
+    {"day": "0524", "title": "Cumbrae Slip → Millport", "points": ["Cumbrae Slip Ferry Terminal", "Millport"]},
+    {"day": "0524", "title": "Millport promenade", "points": ["Millport Promenade", "Crocodile Rock"]},
+    {"day": "0524", "title": "Millport 午餐", "points": ["Millport"]},
+    {"day": "0524", "title": "天气好", "points": ["Mapes of Millport", "Millport Promenade"]},
+    {"day": "0524", "title": "Cathedral of the Isles", "points": ["Cathedral of the Isles"]},
+    {"day": "0524", "title": "返回 Largs", "points": ["Millport", "Cumbrae Slip Ferry Terminal", "Largs Ferry Terminal"]},
+    {"day": "0524", "title": "Largs 海边", "points": ["Largs waterfront"]},
+    {"day": "0524", "title": "Largs → Glasgow Central", "points": ["Largs Railway Station", "Glasgow Central"]},
+    {"day": "0524", "title": "Glasgow 市区晚餐", "points": ["Merchant City"]},
     {"day": "0525", "title": "转去市中心", "points": ["Glasgow Cathedral", "George Square"]},
     {"day": "0525", "title": "George Square", "points": ["George Square"]},
     {"day": "0525", "title": "现代艺术馆", "points": ["Gallery of Modern Art Glasgow"]},
@@ -129,6 +149,13 @@ LOCATION_OVERRIDES: dict[str, str] = {
     "York riverside": "Ouse Bridge, York",
     "Near York station": "York Railway Station",
     "Buchanan Bus Station": PLACE_QUERIES["Buchanan Bus Station"],
+    "Cumbrae Slip": PLACE_QUERIES["Cumbrae Slip Ferry Terminal"],
+    "Largs": PLACE_QUERIES["Largs waterfront"],
+    "Largs Railway Station": PLACE_QUERIES["Largs Railway Station"],
+    "Largs Ferry Terminal": PLACE_QUERIES["Largs Ferry Terminal"],
+    "Millport Isle of Cumbrae": PLACE_QUERIES["Millport"],
+    "Millport Promenade": PLACE_QUERIES["Millport Promenade"],
+    "Mapes of Millport": PLACE_QUERIES["Mapes of Millport"],
     "York": "York Railway Station",
     "Glasgow": "Aparthotel Adagio Glasgow Central",
     "Scottish Highlands": "Glencoe, Scotland",
@@ -365,7 +392,7 @@ def route_point(raw: str, day: Day) -> tuple[str, str]:
     elif any(anchor in lower for anchor in ["glasgow", "gla", "edinburgh", "york", "scotland", "uk"]):
         query = query_base
     elif day.id == "0524":
-        query = f"{query_base}, York, UK"
+        query = f"{query_base}, North Ayrshire, Scotland, UK"
     elif day.id == "0527":
         query = f"{query_base}, Edinburgh, UK"
     elif day.id == "0526":
