@@ -1711,7 +1711,7 @@
           <li>05/24｜Largs + Cumbrae / Millport 海边小岛</li>
           <li>05/25｜Glasgow Cathedral 一带 + 参会海报展示</li>
           <li>05/26｜苏格兰高地 一日游</li>
-          <li>05/27｜爱丁堡城堡、Royal Mile、Calton Hill</li>
+          <li>05/27｜爱丁堡城堡、Mary King's Close、Calton Hill</li>
           <li>05/28｜Kelvingrove + 参会报告</li>
         </ul>
       </aside>
@@ -1743,11 +1743,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-29｜stonfur｜将 05/24 从 York 一日往返替换为 Largs + Cumbrae / Millport 海边小岛轻松日，并引入可复用的时间线卡片类型：交通转移、景点游览、餐饮休息和天气可选项。05/24 新增目标班次、预计耗时、票务费用、开放时间、现场确认提醒、午餐/咖啡/晚餐区域建议，并同步更新 Google My Maps 的 05/24 KML 点位，避免旧 York 坐标残留。</li>
+            <li>最近更新：2026-04-29｜stonfur｜将 05/27 爱丁堡一日游改为城堡 + Royal Mile / St Giles + Mary King's Close + Victoria Street / Greyfriars + Calton Hill 的稳妥版路线，并沿用 05/24 的时间线卡片结构，补充交通转移、核心景点、餐饮休息、天气可选项、费用预约、开放时间、官方链接和 Google My Maps KML 动线同步。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-29｜stonfur｜将 05/24 从 York 一日往返替换为 Largs + Cumbrae / Millport 海边小岛轻松日，并引入可复用的时间线卡片类型：交通转移、景点游览、餐饮休息和天气可选项。05/24 新增目标班次、预计耗时、票务费用、开放时间、现场确认提醒、午餐/咖啡/晚餐区域建议，并同步更新 Google My Maps 的 05/24 KML 点位，避免旧 York 坐标残留。</li>
               <li>2026-04-27｜stonfur｜嵌入 Google My Maps 总览动线图：在每日摘要后新增可交互地图模块，展示整趟行程的日期图层、编号点位和动线，并保留一键打开 My Maps 的入口。</li>
               <li>2026-04-27｜stonfur｜重做 Google My Maps 地点提取逻辑：不再把 City Centre、West End 这类区域字段直接当坐标点，而是优先按行程标题和备注中的具体景点、车站、餐饮区域确定点位，并补充高地日的 Loch Lomond、Glencoe、Fort Augustus / Loch Ness 与 Pitlochry 动线。</li>
               <li>2026-04-27｜stonfur｜修正 Google My Maps 坐标定位：将 University of Glasgow 改为手动坐标覆盖，避免自动地理编码误匹配到新加坡地点，确保 05/28 上午和下午动线都落在 Glasgow。</li>
@@ -2073,110 +2074,136 @@
         id: "0527",
         short: "05/27",
         dayLabel: "周三",
-        title: "爱丁堡一日往返",
-        intro: "",
-        vibe: "高密度观光日",
-        intensity: "high",
-        window: "07:30-23:20",
-        travel: "从 Glasgow 往返火车",
-        anchor: "Waverley Bridge + 爱丁堡城堡 + Victoria Street + Royal Mile",
+        title: "Edinburgh 爱丁堡一日游",
+        intro: "这一天把重点收束在爱丁堡城堡、Royal Mile、St Giles、The Real Mary King’s Close、Victoria Street / Greyfriars 哈利波特氛围点和 Calton Hill 傍晚城市景观。保留经典景点，但不再硬塞荷里路德宫或 Arthur’s Seat。",
+        vibe: "经典景点 + 适度哈利波特",
+        intensity: "medium-high",
+        window: "07:50-21:45",
+        travel: "Glasgow Queen Street ↔ Edinburgh Waverley 火车",
+        anchor: "Edinburgh Castle + Mary King’s Close + Victoria Street / Greyfriars + Calton Hill",
         mapQuery: "Edinburgh Castle",
         bookingChecklist: [
           {
-            title: "爱丁堡城堡",
-            officialUrl: "https://www.edinburghcastle.scot/plan-your-visit/opening-times",
-            fee: "£23.50（官网在线成人票）",
-            hours: "9:30-18:00（最晚入场 17:00）",
-            lead: "提前 1 周（最晚 05/17）",
-            refund: "不可退；仅闭馆/取消时退款",
+            title: "ScotRail Glasgow Queen Street ↔ Edinburgh Waverley",
+            officialUrl: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-edinburgh-waverley",
+            fee: "from £16.80 return / 实际以 ScotRail App 为准",
+            hours: "去程目标 08:15-08:30；返程目标 20:30-21:00；出发前查实时班次",
+            lead: "建议提前查票并购票",
+            refund: "按票种规则",
+            prepay: "购票时支付"
+          },
+          {
+            title: "Edinburgh Castle",
+            officialUrl: "https://www.edinburghcastle.scot/plan-your-visit/tickets/",
+            fee: "成人线上 £23.50 / 现场 £26.00；音频导览 £4.00",
+            hours: "04/01-09/30：09:30-18:00，最晚入场 17:00",
+            lead: "建议预约 10:00 入场，至少预留 2 小时",
+            refund: "以官网票务规则为准",
             prepay: "需要预付款"
           },
           {
-            title: "The Real Mary King's Close",
-            officialUrl: "https://www.realmarykingsclose.com/tickets",
-            fee: "£28.50（Standard 成人票）",
-            hours: "按官网日历场次",
-            lead: "提前数天至 1 周",
-            refund: "不可退；可在 tour 前 4 小时内改期",
+            title: "The Real Mary King’s Close",
+            officialUrl: "https://www.realmarykingsclose.com/plan-your-visit/opening-times/",
+            fee: "2026 成人 Essential £25.00 / Standard £28.50",
+            hours: "05/25-05/31 周一至周五 09:00-21:00；以 booking calendar 为准",
+            lead: "建议预约 14:00 场次；热门日期提前数天至 1 周",
+            refund: "Standard 可在 tour 前 4 小时免费改期；Essential 改期需 £15 管理费",
             prepay: "需要预付款"
           },
           {
-            title: "Makars Mash Bar（午/晚餐）",
-            officialUrl: "https://makarsmash.com",
-            fee: "人均按点单为准",
-            hours: "按门店营业时间",
-            lead: "现场排队；热门时段提前 1 周预约",
-            refund: "以预订渠道政策为准",
+            title: "St Giles’ Cathedral",
+            officialUrl: "https://www.stgilescathedral.org.uk/visitor-information",
+            fee: "建议捐赠 £10；手机音频导览 £5.50",
+            hours: "周三 10:00-18:00",
+            lead: "快速入内不需要预约；免费 guided tour 需预约",
+            refund: "不适用",
+            prepay: "捐赠 / 音频导览现场或线上"
+          },
+          {
+            title: "Howies Waterloo Place / 晚餐",
+            officialUrl: "https://www.howies.uk.com/venues/howies-waterloo-place/",
+            fee: "正餐约 £25-40；早鸟 2 courses £24.95 需看时段",
+            hours: "Dinner from 17:15，last booking 21:15",
+            lead: "推荐订 18:45 或 19:00",
+            refund: "以预订渠道规则为准",
             prepay: "视预订渠道而定"
-          },
-          {
-            title: "荷里路德宫（Palace of Holyroodhouse）",
-            officialUrl: "https://www.rct.uk/visit/palace-of-holyroodhouse",
-            fee: "£22.00（Standard Admission 成人提前购票）",
-            hours: "05/27：09:30-18:00（最晚入场 16:30）",
-            lead: "提前在线购票；工作王室宫殿，开放安排可能临时调整",
-            refund: "以 Royal Collection Trust 官网条款为准",
-            prepay: "需要预付款"
           }
         ],
-        routeLinks: [],
-        spotGuides: [],
+        routeLinks: [
+          {
+            title: "官方交通 / 预约",
+            links: [
+              { label: "ScotRail｜Glasgow Queen Street to Edinburgh Waverley", url: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-edinburgh-waverley" },
+              { label: "ScotRail｜Edinburgh Waverley to Glasgow Queen Street", url: "https://www.scotrail.co.uk/train-times/edinburgh-waverley-to-glasgow-queen-street" },
+              { label: "Edinburgh Castle｜tickets", url: "https://www.edinburghcastle.scot/plan-your-visit/tickets/" },
+              { label: "The Real Mary King’s Close｜tickets / opening times", url: "https://www.realmarykingsclose.com/plan-your-visit/opening-times/" }
+            ]
+          }
+        ],
+        spotGuides: [
+          {
+            title: "爱丁堡主线景点",
+            links: [
+              { label: "Edinburgh Castle opening times", url: "https://www.edinburghcastle.scot/plan-your-visit/opening-times/" },
+              { label: "St Giles’ Cathedral visitor information", url: "https://www.stgilescathedral.org.uk/visitor-information" },
+              { label: "The Real Mary King’s Close accessibility", url: "https://www.realmarykingsclose.com/plan-your-visit/accessibility/" },
+              { label: "National Museum of Scotland plan your visit", url: "https://www.nms.ac.uk/national-museum-of-scotland/plan-your-visit/" }
+            ]
+          },
+          {
+            title: "餐饮 / 休息",
+            links: [
+              { label: "Howies Victoria Street", url: "https://www.howies.uk.com/venues/howies-victoria-street/" },
+              { label: "Howies Waterloo Place", url: "https://www.howies.uk.com/venues/howies-waterloo-place/" },
+              { label: "Makars Mash Bar", url: "https://makarsmash.com/edinburgh/" },
+              { label: "The Devil’s Advocate", url: "https://www.devilsadvocateedinburgh.co.uk/" }
+            ]
+          }
+        ],
         serviceGuides: {
-          restaurants: [
+          regionalPicks: [
             {
-              title: "老城午餐 / 正餐",
+              title: "Royal Mile / Victoria Street 午餐",
               links: [
-                { label: "Oink（Victoria Street，烤猪肉卷约 £6.5）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
-                { label: "Makars Mash Bar（苏格兰菜正餐；现场排队 / 提前一周预约）", url: "https://www.xiaohongshu.com/explore/687d6202000000001c03074c?xsec_token=ABdXigh_mzR0yG-eyQMfgh7nw9-TPINz10BP3dQ145Rrc=&xsec_source=pc_search&source=web_search_result_notes" },
-                { label: "The Dome（灯光宫殿晚餐；预约制更稳）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
-                { label: "Angels with Bagpipes（苏格兰传统美食；曾经米其林一星；价格比伦敦划算很多）", url: "https://www.google.com/maps/search/Angels+with+Bagpipes+Edinburgh" },
-                { label: "Mary's Milk Bar（爱丁堡最会做冰淇淋；海盐焦糖）", url: "https://www.google.com/maps/search/Mary's+Milk+Bar+Edinburgh" },
-                { label: "Kilimanjaro Coffee（苏格兰早餐；haggis、蘑菇、橘子果酱）", url: "https://www.google.com/maps/search/Kilimanjaro+Coffee+Edinburgh" }
+                { label: "Howies Victoria Street｜苏格兰菜｜12:00-14:30 lunch，离城堡和 Royal Mile 很近，想稳可以订 12:30 左右。", url: "https://www.howies.uk.com/venues/howies-victoria-street/" },
+                { label: "Oink Victoria Street｜烤猪肉卷｜11:00-17:00 或售罄为止，适合快速午餐。", url: "https://www.oinkhogroast.co.uk/shops/victoria-street/" },
+                { label: "Makars Mash Bar｜haggis / mash｜热门，可预约也可 walk-in，等位可能超过 1 小时。", url: "https://makarsmash.com/edinburgh/" }
+              ]
+            },
+            {
+              title: "哈利波特氛围 / 纪念品",
+              links: [
+                { label: "Museum Context｜Victoria Street 魔法主题店｜入店免费，购物自愿。", url: mapsUrl("Museum Context Victoria Street Edinburgh") },
+                { label: "Greyfriars Kirkyard｜Tom Riddell / McGonagall 等墓碑氛围点｜免费，别花太久逐个找。", url: "https://greyfriarskirk.com/visit/kirkyard/" },
+                { label: "Victoria Street｜彩色弯曲街道｜适合轻量拍照，不把哈利波特路线排太满。", url: mapsUrl("Victoria Street Edinburgh") }
+              ]
+            },
+            {
+              title: "Calton Hill / Waverley 晚餐",
+              links: [
+                { label: "Howies Waterloo Place｜苏格兰菜｜Calton Hill 脚下，离 Waverley 约 5 分钟，最稳晚餐。", url: "https://www.howies.uk.com/venues/howies-waterloo-place/" },
+                { label: "The Devil’s Advocate｜威士忌酒吧 / 苏格兰菜｜Old Town 氛围好，食物供应到 21:30，历史建筑有楼梯。", url: "https://www.devilsadvocateedinburgh.co.uk/" },
+                { label: "Waverley dinner｜Google Maps 搜索｜如果当天累了，就直接靠车站吃。", url: mapsUrl("restaurants near Edinburgh Waverley") }
               ]
             }
           ],
-          cafes: [
-            {
-              title: "咖啡 / 观景点",
-              links: [
-                { label: "The Milkman（老城经典咖啡打卡点）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
-                { label: "Blank Street Coffee（抹茶）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
-                { label: "Waterstones Cafe（观景休息点）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
-                { label: "Black Medicine Co（本地人公认好喝的咖啡馆）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" }
-              ]
-            }
-          ],
-          souvenirs: [
-            {
-              title: "伴手礼 / 纪念品",
-              links: [
-                { label: "Hotel Chocolat（巧克力伴手礼）", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
-                { label: "Royal Mile 羊绒围巾 / 威士忌店", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
-                { label: "Victoria Street 纪念品店", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" },
-                { label: "Princes Street 威士忌店（纯酿威士忌；蜂蜜威士忌）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" },
-                { label: "Perre Handmade（设计很特别，本地原创首饰店，值得逛逛）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" },
-                { label: "Fabhatrix（爱丁堡最大的帽子集合店）", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" },
-                { label: "PERRE 饰品店", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡黄油饼干测评 / 送礼参考", url: "https://www.xiaohongshu.com/explore/677ccc32000000001800e9b3?xsec_token=ABUugmbW1Le_zvS2twKCR2zrJ7xd_13d7qvvQANzxPaoY=&xsec_source=pc_search&source=web_explore_feed" }
-              ]
-            }
-          ]
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
         },
         featured: {
-          title: "爱丁堡城堡（Edinburgh Castle）",
-          text: "爱丁堡城堡位于 Castle Rock 之上，是老城天际线中最醒目的地标之一；后接 The Vennel、Victoria Street、Grassmarket、Royal Mile。",
+          title: "Edinburgh Castle + The Real Mary King’s Close",
+          text: "05/27 的两个硬核预约点是爱丁堡城堡和玛丽金小巷。上午把体力留给城堡，下午用 14:00 的 Mary King’s Close 固定节奏，之后用 Victoria Street / Greyfriars 轻量照顾哈利波特氛围，傍晚用 Calton Hill 收尾。",
           mapQuery: "Edinburgh Castle",
-          infoUrl: "http://edinburghcastle.scot",
+          infoUrl: "https://www.edinburghcastle.scot/",
           guideLinks: [
             {
               title: "参考链接",
               links: [
-                { label: "哈利波特点位：Lawnmarket / Victoria Street / George IV Bridge / Greyfriars / 国博", url: "https://www.xiaohongshu.com/explore/679d64b20000000018006008?xsec_token=ABUAud6buCfuJMCCIMTv3YQhZyIAn47U-4bdp2RJOtxlU=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
-                { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡一日游路线（皇家一英里分段版）", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡 Citywalk / 老城经典路线", url: "https://www.xiaohongshu.com/explore/69d053b0000000002301edde?xsec_token=ABnEw3bgKa3xkrUi5PHhMGO6-FTpnAr57XkIgZ-YqQ6r8=&xsec_source=pc_search&source=unknown" },
-                { label: "爱丁堡攻略 / 一天暴走版", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" }
+                { label: "哈利波特路线图", url: "../assets/edinburgh-harry-potter-route.png" },
+                { label: "爱丁堡路线参考图", url: "../assets/Edinburgh-route-ref.jpg" },
+                { label: "Edinburgh Castle", url: "https://www.edinburghcastle.scot/" },
+                { label: "The Real Mary King’s Close", url: "https://www.realmarykingsclose.com/" }
               ]
             }
           ]
@@ -2185,312 +2212,275 @@
           { label: "哈利波特路线图", url: "../assets/edinburgh-harry-potter-route.png" },
           { label: "爱丁堡路线参考图", url: "../assets/Edinburgh-route-ref.jpg" }
         ],
-        spots: ["Waverley Bridge", "Edinburgh Castle", "The Vennel", "Grassmarket", "Victoria Street", "National Museum of Scotland", "St Giles' Cathedral", "Palace of Holyroodhouse", "Calton Hill"],
+        spots: ["Glasgow Queen Street", "Edinburgh Waverley", "Edinburgh Castle", "St Giles' Cathedral", "The Real Mary King's Close", "Victoria Street", "Greyfriars Kirkyard", "National Museum of Scotland", "Calton Hill", "Howies Waterloo Place"],
         items: [
           {
-            time: "08:00-09:00",
-            title: "乘火车前往 Edinburgh",
+            type: "transfer",
+            mode: "walk",
+            time: "07:50-08:15",
+            title: "酒店 → Glasgow Queen Street",
+            location: "Aparthotel Adagio Glasgow Central -> Glasgow Queen Street",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Glasgow Queen Street Station",
+            duration: "约 15-25 分钟",
+            ticket: "步行 / 公交 / 打车按当天状态决定",
+            notes: "早上不用特别极限，但要给找站台和买咖啡留余量。",
+            details: ["当天只带轻便小包", "城堡和 Mary King’s Close 预约二维码提前放好"],
+            links: [{ label: "Glasgow Queen Street", url: mapsUrl("Glasgow Queen Street Station") }]
+          },
+          {
+            type: "transfer",
+            mode: "train",
+            time: "08:15-09:25",
+            title: "Glasgow Queen Street → Edinburgh Waverley",
             location: "Glasgow Queen Street -> Edinburgh Waverley",
             routeOrigin: "Glasgow Queen Street Station",
             routeDest: "Edinburgh Waverley Station",
-            notes: "直达车班次较多，通常约每 30 分钟一班，车程大约 50 到 75 分钟。",
-            links: [
-              { label: "ScotRail", url: "http://scotrail.co.uk" },
-              { label: "Trainline", url: "http://thetrainline.com" }
-            ]
+            duration: "平均约 1h10m",
+            ticket: "from £16.80 return / 实际以 ScotRail App 为准",
+            officialUrl: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-edinburgh-waverley",
+            statusUrl: "https://www.scotrail.co.uk/plan-your-journey/service-disruption",
+            notes: "目标 9:30 前后到爱丁堡；Queen Street 到 Waverley 更快、更直接。",
+            details: ["最多约 92 班/天", "直达为主", "出发前查站台和延误"],
+            links: [{ label: "ScotRail", url: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-edinburgh-waverley" }]
           },
           {
-            time: "09:00-09:30",
-            title: "Waverley Bridge 车站",
-            location: "Waverley Bridge Edinburgh",
+            type: "transfer",
+            mode: "walk",
+            time: "09:25-09:55",
+            title: "Waverley → Edinburgh Castle",
+            location: "Edinburgh Waverley -> Edinburgh Castle",
             routeOrigin: "Edinburgh Waverley Station",
-            routeDest: "Waverley Bridge Edinburgh",
-            notes: "仰拍爱丁堡城堡全景、哥特式司各特纪念塔；老城与新城交界视角；Waverley 主厅维多利亚钢铁穹顶、Market St 出口旋梯列车俯视角。",
-            microGuide: [
-              { label: "备注", text: "Waverley 车站出来右转斜坡。" },
-              { label: "时间", text: "约 10-15 分钟。" }
-            ],
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
-            guideLinks: [
-              {
-                title: "参考链接",
-                links: [
-                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "09:30-11:00",
-            title: "爱丁堡城堡（Edinburgh Castle）",
-            location: "Old Town",
-            routeOrigin: "Waverley Bridge Edinburgh",
             routeDest: "Edinburgh Castle",
-            notes: "13:00 大炮（One O'Clock Gun）、苏格兰王冠/权杖/命运之石、圣玛格丽特礼拜堂、王冠珠宝厅、军事博物馆、半月炮台王子街全景、全城俯瞰视野。",
-            microGuide: [
-              { label: "路线", text: "Waverley Bridge -> Princes Street Gardens -> Castlehill -> Edinburgh Castle；花园上坡至城堡约 10-15 分钟。" },
-              { label: "票务", text: "官网电子票，按预约时间入场；4-9月 9:30-18:00，最晚入场 17:00；中文导览器。" },
-              { label: "出口", text: "城堡广场 -> The Vennel / Grassmarket。" }
-            ],
-            links: [{ label: "官网", url: "http://edinburghcastle.scot" }],
-            guideLinks: [
-              {
-                title: "参考链接",
-                links: [
-                  { label: "爱丁堡经典一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
-                  { label: "爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
+            duration: "约 20-25 分钟上坡步行",
+            ticket: "免费",
+            notes: "从车站到城堡是上坡和石板路，给拍照、找入口、安检留一点缓冲。",
+            details: ["建议穿舒服鞋", "10:00 入场前到 Castle Esplanade"],
+            links: [{ label: "路线", url: dirUrl("Edinburgh Waverley Station", "Edinburgh Castle") }]
           },
           {
-            time: "11:00-11:15",
-            title: "The Vennel 城堡楼梯机位",
-            location: "The Vennel Edinburgh",
-            routeOrigin: "Edinburgh Castle",
-            routeDest: "The Vennel Edinburgh",
-            notes: "石阶小巷、楼梯尽头城堡构图、Castle Rock 高位背景。",
-            microGuide: [
-              { label: "坐标", text: "Vennel, EH1 2HU" },
-              { label: "关系", text: "The Vennel 是连接城堡一侧与 Grassmarket 的楼梯机位，不等于 Grassmarket。" }
-            ],
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }],
-            guideLinks: [
-              {
-                title: "参考链接",
-                links: [
-                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "11:15-11:30",
-            title: "Grassmarket 广场",
-            location: "Grassmarket Edinburgh",
-            routeOrigin: "The Vennel Edinburgh",
-            routeDest: "Grassmarket Edinburgh",
-            notes: "城堡脚下老广场、Castle Rock 仰视角、酒吧餐厅立面、通往 Victoria Street 的坡道入口。",
-            microGuide: [
-              { label: "关系", text: "Grassmarket 是广场；Victoria Street 是从广场北侧接上去的彩色弧形街。" },
-              { label: "餐饮", text: "Oink、酒吧餐厅、Victoria Street 简餐店。" }
-            ],
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
-          },
-          {
-            time: "11:30-11:45",
-            title: "维多利亚街（Victoria Street）",
-            location: "Victoria Street Edinburgh",
-            routeOrigin: "Grassmarket Edinburgh",
-            routeDest: "Victoria Street Edinburgh",
-            notes: "彩色弧形坡道、转角店面、通往 George IV Bridge / Lawnmarket 的老城街景。",
-            microGuide: [
-              { label: "街景", text: "彩色立面、弧形上坡、上层步道视角。" },
-              { label: "餐饮", text: "Oink 烤猪肉卷约 £6.5；The Milkman 咖啡；Blank Street Coffee 抹茶。" }
-            ],
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
-          },
-          {
-            time: "11:45-11:55",
-            title: "Elephant House 新址",
-            location: "30 Victoria Street Edinburgh",
-            routeOrigin: "Victoria Street Edinburgh",
-            routeDest: "30 Victoria Street Edinburgh",
-            notes: "Elephant House 新址，Victoria Street 街面点位。",
-            guideLinks: [
-              {
-                title: "参考链接",
-                links: [
-                  { label: "哈利波特点位清单", url: "https://www.xiaohongshu.com/explore/679d64b20000000018006008?xsec_token=ABUAud6buCfuJMCCIMTv3YQhZyIAn47U-4bdp2RJOtxlU=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "11:55-12:10",
-            title: "Museum Context",
-            location: "40 Victoria Street Edinburgh",
-            routeOrigin: "30 Victoria Street Edinburgh",
-            routeDest: "40 Victoria Street Edinburgh",
-            notes: "哈利波特主题商店，Victoria Street 街面点位；店面橱窗、魔法主题纪念品。"
-          },
-          {
-            time: "12:10-12:25",
-            title: "Elephant House 原址 / George IV Bridge",
-            location: "George IV Bridge Edinburgh",
-            routeOrigin: "40 Victoria Street Edinburgh",
-            routeDest: "George IV Bridge Edinburgh",
-            notes: "Elephant House 原址外观、George IV Bridge 街景；Victoria Street 上行后接 George IV Bridge。"
-          },
-          {
-            time: "12:25-12:45",
-            title: "Greyfriars Kirkyard",
-            location: "Greyfriars Kirkyard Edinburgh",
-            routeOrigin: "George IV Bridge Edinburgh",
-            routeDest: "Greyfriars Kirkyard Edinburgh",
-            notes: "老墓园、Greyfriars Bobby 周边、哈利波特姓名灵感相关墓碑点位。"
-          },
-          {
-            time: "12:45-13:20",
-            title: "National Museum of Scotland",
-            location: "National Museum of Scotland",
-            routeOrigin: "Greyfriars Kirkyard Edinburgh",
-            routeDest: "National Museum of Scotland",
-            notes: "免费博物馆；Lewis Chessmen 路易斯西洋棋子位于 Chambers St 馆内，是哈利波特巫师棋原型相关点位。",
-            links: [{ label: "Museum", url: "http://nms.ac.uk" }]
-          },
-          {
-            time: "13:20-13:35",
-            title: "Lawnmarket 猫头鹰点位",
-            location: "451 Lawnmarket Edinburgh",
-            routeOrigin: "National Museum of Scotland",
-            routeDest: "451 Lawnmarket Edinburgh",
-            notes: "451 Lawnmarket / Heritage of Scotland 门口猫头鹰点位；Lawnmarket 入口。"
-          },
-          {
-            time: "13:35-14:15",
-            title: "午餐",
-            location: "Royal Mile / Victoria Street",
-            notes: "Royal Mile / Victoria Street / Grassmarket 餐饮集中；Oink 烤猪肉卷约 £6.5；Makars Mash Bar 苏格兰菜正餐；The Dome 灯光宫殿晚餐。",
-            microGuide: [
-              { label: "餐饮", text: "Victoria Street 简餐区；Makars Mash Bar 正餐备选。" },
-              { label: "咖啡", text: "The Milkman；Blank Street Coffee 抹茶；Waterstones Cafe 城堡观景位；Black Medicine Co，本地人公认好喝的咖啡馆。" }
-            ],
-            links: [{ label: "区域指南", url: "http://edinburgh.org" }],
-            tips: ["Victoria Street / Grassmarket 一带餐厅参考。"]
-          },
-          {
-            time: "14:15-14:35",
-            title: "圣吉尔斯大教堂（St Giles’ Cathedral）",
-            location: "St Giles' Cathedral",
-            routeOrigin: "451 Lawnmarket Edinburgh",
-            routeDest: "St Giles' Cathedral",
-            notes: "Royal Mile 地标；王冠形塔顶、Thistle Chapel（蓟花礼拜堂）。",
-            microGuide: [
-              { label: "停留", text: "约 15-25 分钟（入内快速参观版）。" }
-            ],
-            links: [{ label: "指南", url: "http://scotlandschurchestrust.org.uk" }],
-            guideLinks: [
-              {
-                title: "参考链接",
-                links: [
-                  { label: "Day7｜一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "14:35-14:50",
-            title: "Royal Mile Close 小巷机位：Advocate's Close",
-            location: "Advocate's Close Edinburgh",
-            routeOrigin: "St Giles' Cathedral",
-            routeDest: "Advocate's Close Edinburgh",
-            notes: "Royal Mile 边的小巷，老城窄巷、石阶、城堡方向构图。",
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
-          },
-          {
-            time: "14:50-15:35",
-            title: "玛丽金小巷（The Real Mary King's Close）",
-            location: "Royal Mile",
-            routeOrigin: "Advocate's Close Edinburgh",
-            routeDest: "The Real Mary King's Close",
-            notes: "地下历史导览，官网按场次预约，tour 前 4 小时内可改期。",
-            links: [{ label: "官网", url: "http://realmarykingsclose.com" }]
-          },
-          {
-            time: "15:35-16:00",
-            title: "Canongate + 苏格兰议会现代建筑",
-            location: "Canongate / Scottish Parliament Edinburgh",
-            routeOrigin: "The Real Mary King's Close",
-            routeDest: "Scottish Parliament Edinburgh",
-            notes: "Canongate 街段、街道石板文学铭文、Scottish Parliament 现代建筑外观、Holyroodhouse 方向视线。",
-            microGuide: [
-              { label: "石板", text: "Canongate / Royal Mile 东段地面文学铭文。" },
-              { label: "建筑", text: "苏格兰议会现代建筑立面、Holyroodhouse 周边街景。" }
-            ],
-            links: [{ label: "Scottish Parliament", url: "https://www.parliament.scot/visit" }],
-            guideLinks: [
-              {
-                title: "参考链接",
-                links: [
-                  { label: "爱丁堡经典一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" }
-                ]
-              }
-            ]
-          },
-          {
-            time: "16:00-17:00",
-            title: "荷里路德宫（Palace of Holyroodhouse）",
-            location: "Palace of Holyroodhouse",
-            routeOrigin: "Scottish Parliament Edinburgh",
-            routeDest: "Palace of Holyroodhouse",
-            notes: "位于 Royal Mile 尽头，英国君主在苏格兰的官方居所；State Apartments、Mary, Queen of Scots 相关房间、Holyrood Abbey、Palace Gardens。05/24 官方开放 09:30-18:00，最晚入场 16:30。",
-            microGuide: [
-              { label: "开放", text: "21 May - 7 September 2026 每日 09:30-18:00，最晚入场 16:30。" },
-              { label: "票务", text: "Standard Admission 成人提前购票 £22.00；工作王室宫殿，开放安排可能临时调整。" }
-            ],
-            links: [{ label: "官网", url: "https://www.rct.uk/visit/palace-of-holyroodhouse" }]
-          },
-          {
-            time: "17:00-17:20",
-            title: "Scott Monument / Princes Street 一带",
-            location: "Princes Street Edinburgh",
-            routeOrigin: "Palace of Holyroodhouse",
-            routeDest: "Princes Street Edinburgh",
-            notes: "Jenners 百货、Waterstones 城堡观景咖啡厅、Princes Street Gardens 城堡倒影视角、Scott Monument 哥特式纪念塔。",
-            links: [{ label: "Edinburgh guide", url: "http://edinburgh.org" }]
-          },
-          {
-            time: "17:20-18:00",
-            title: "Princes Street / Waverley 周边商店",
-            location: "Princes Street / Edinburgh Waverley",
-            routeOrigin: "Princes Street Edinburgh",
-            routeDest: "Edinburgh Waverley",
-            notes: "Waverley / Princes Street 周边；商店通常 18:00 左右关门；巧克力、饼干、羊绒、威士忌、纪念品。Princes Street 威士忌商店可带瓶纯酿威士忌回家；不爱喝酒也可以试蜂蜜威士忌，基本每家都有卖。",
-            microGuide: [
-              { label: "威士忌", text: "EH1 2NE；纯酿威士忌、蜂蜜威士忌。" },
-              { label: "首饰", text: "Perre Handmade，EH1 1BP；设计很特别，本地原创首饰店，值得逛逛。" },
-              { label: "帽子", text: "Fabhatrix；爱丁堡最大的帽子集合店。" },
-              { label: "伴手礼", text: "Royal Mile / Waverley 附近纪念品店；Hotel Chocolat；羊绒围巾；威士忌店。（可导航至玛莎超市买鹿牌黄油饼干）" }
-            ],
+            type: "visit",
+            time: "10:00-12:00",
+            title: "Edinburgh Castle",
+            location: "Edinburgh Castle",
+            duration: "约 2 小时",
+            fee: "成人线上 £23.50 / 现场 £26.00；音频导览 £4.00",
+            hours: "09:30-18:00，最晚入场 17:00",
+            reserve: "建议预约 10:00 入场",
+            officialUrl: "https://www.edinburghcastle.scot/plan-your-visit/tickets/",
+            notes: "当天第一核心景点。重点看 Crown Square、Honours of Scotland / Crown Jewels、Great Hall、St Margaret’s Chapel 和城墙视角。",
+            details: ["官网建议至少预留 2 小时", "One o’Clock Gun 不必硬等", "天气差时提前看临时关闭信息"],
             links: [
-              { label: "Edinburgh guide", url: "http://edinburgh.org" },
-              { label: "小红书｜威士忌 / Perre / Fabhatrix / Black Medicine Co", url: "https://www.xiaohongshu.com/explore/69cb98ac000000001a022c1c?xsec_token=AB2gYf2Wo1XtwA0cvyiWvZkU5FwzepMoydPAJXWWuHkJM=&xsec_source=pc_search&source=web_search_result_notes" }
+              { label: "Tickets", url: "https://www.edinburghcastle.scot/plan-your-visit/tickets/" },
+              { label: "Opening times", url: "https://www.edinburghcastle.scot/plan-your-visit/opening-times/" }
             ]
           },
           {
-            time: "18:00-19:30",
-            title: "晚餐（爱丁堡）",
-            location: "Edinburgh city centre",
-            routeOrigin: "Edinburgh Waverley",
-            routeDest: "Makars Mash Bar Edinburgh",
-            notes: "Makars Mash Bar 苏格兰菜正餐；The Dome 灯光宫殿晚餐；Princes Street / George Street / Royal Mile 周边餐厅。",
-            microGuide: [
-              { label: "餐饮", text: "Makars Mash Bar；The Dome；Waverley 周边晚餐。" }
-            ],
-            links: [{ label: "美食指南", url: "http://edinburgh.org" }]
+            type: "transfer",
+            mode: "walk",
+            time: "12:00-12:15",
+            title: "Castle → St Giles’ Cathedral",
+            location: "Edinburgh Castle -> St Giles' Cathedral",
+            routeOrigin: "Edinburgh Castle",
+            routeDest: "St Giles' Cathedral",
+            duration: "约 10-15 分钟",
+            ticket: "免费",
+            notes: "沿 Royal Mile 下坡走，不绕路，把午餐和 Mary King’s Close 的时间留出来。",
+            details: ["Royal Mile 街景顺路拍", "不要在纪念品店停太久"],
+            links: [{ label: "路线", url: dirUrl("Edinburgh Castle", "St Giles' Cathedral Edinburgh") }]
           },
           {
-            time: "20:40-21:45",
-            title: "卡尔顿山（Calton Hill）日落",
-            location: "Edinburgh",
-            routeOrigin: "Edinburgh city centre",
+            type: "visit",
+            time: "12:15-12:45",
+            title: "St Giles’ Cathedral",
+            location: "St Giles' Cathedral",
+            duration: "约 30 分钟",
+            fee: "建议捐赠 £10；音频导览 £5.50",
+            hours: "周三 10:00-18:00",
+            reserve: "快速入内不需要预约",
+            officialUrl: "https://www.stgilescathedral.org.uk/visitor-information",
+            notes: "只做快速入内版本，不参加 45 分钟 guided tour，避免卡住 14:00 的 Mary King’s Close。",
+            details: ["看整体空间和 Thistle Chapel", "Heart of Midlothian 在教堂外侧地面附近"],
+            links: [{ label: "St Giles visitor info", url: "https://www.stgilescathedral.org.uk/visitor-information" }]
+          },
+          {
+            type: "meal",
+            time: "12:45-13:40",
+            title: "Royal Mile / Victoria Street 午餐",
+            location: "Royal Mile / Victoria Street",
+            area: "Old Town / Victoria Street",
+            duration: "约 55 分钟",
+            ticket: "约 £8-25",
+            notes: "午餐不要跑远，优先选 Mary King’s Close 周边；想稳就订 Howies Victoria，想灵活就 Oink 或附近简餐。",
+            details: ["Howies Victoria：12:00-14:30 lunch", "Oink：11:00-17:00 或售罄", "Makars 热门，可能等位"],
+            links: [
+              { label: "Howies Victoria", url: "https://www.howies.uk.com/venues/howies-victoria-street/" },
+              { label: "Oink Victoria Street", url: "https://www.oinkhogroast.co.uk/shops/victoria-street/" },
+              { label: "Makars Mash Bar", url: "https://makarsmash.com/edinburgh/" }
+            ],
+            tips: ["如果城堡出来晚，就把午餐改成 Oink / 咖啡简餐，不要影响 14:00 预约。"]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "13:40-13:55",
+            title: "走到 The Real Mary King’s Close",
+            location: "St Giles' Cathedral -> The Real Mary King's Close",
+            routeOrigin: "St Giles' Cathedral",
+            routeDest: "The Real Mary King's Close",
+            duration: "约 5-10 分钟",
+            ticket: "免费",
+            notes: "从 St Giles / Royal Mile 步行几分钟即可，提前到场更稳。",
+            details: ["14:00 场次不要卡点", "先确认入口和电子票"],
+            links: [{ label: "路线", url: dirUrl("St Giles' Cathedral Edinburgh", "The Real Mary King's Close") }]
+          },
+          {
+            type: "visit",
+            time: "14:00-15:00",
+            title: "The Real Mary King’s Close",
+            location: "The Real Mary King's Close",
+            duration: "约 1 小时",
+            fee: "2026 成人 Essential £25.00 / Standard £28.50",
+            hours: "05/25-05/31 周一至周五 09:00-21:00；以实时日历为准",
+            reserve: "建议预约 14:00 场次",
+            officialUrl: "https://www.realmarykingsclose.com/plan-your-visit/opening-times/",
+            notes: "当天第二核心景点，必须跟导览，不是自由参观。里面有昏暗空间、不平路面和台阶，舒服鞋很重要。",
+            details: ["58 级下行台阶 + 38 级上行台阶", "没有轮椅通道", "Standard 可提前 4 小时免费改期"],
+            links: [
+              { label: "Opening times / prices", url: "https://www.realmarykingsclose.com/plan-your-visit/opening-times/" },
+              { label: "Accessibility", url: "https://www.realmarykingsclose.com/plan-your-visit/accessibility/" }
+            ]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "15:00-15:15",
+            title: "Mary King’s Close → Victoria Street / West Bow",
+            location: "The Real Mary King's Close -> Victoria Street",
+            routeOrigin: "The Real Mary King's Close",
+            routeDest: "Victoria Street Edinburgh",
+            duration: "约 10-15 分钟",
+            ticket: "免费",
+            notes: "从 Royal Mile 往 Victoria Street 走，进入哈利波特氛围段。",
+            details: ["这段以街景和小店为主", "不需要绕很远"],
+            links: [{ label: "路线", url: dirUrl("The Real Mary King's Close", "Victoria Street Edinburgh") }]
+          },
+          {
+            type: "visit",
+            time: "15:15-16:00",
+            title: "Victoria Street / West Bow / Museum Context",
+            location: "Victoria Street / West Bow / Museum Context",
+            duration: "约 45 分钟",
+            fee: "街景免费；购物自愿",
+            hours: "户外全天；店铺以当天营业为准",
+            reserve: "不需要预约",
+            notes: "彩色弯曲街道和魔法主题店点到为止，照顾哈利波特粉丝体验，但不把路线变成打卡拉练。",
+            details: ["Victoria Street 拍彩色街景", "Museum Context 入店免费", "Oink 可作为加餐"],
+            links: [
+              { label: "Victoria Street", url: mapsUrl("Victoria Street Edinburgh") },
+              { label: "Museum Context", url: mapsUrl("Museum Context Victoria Street Edinburgh") }
+            ]
+          },
+          {
+            type: "visit",
+            time: "16:00-16:40",
+            title: "Greyfriars Bobby + Greyfriars Kirkyard",
+            location: "Greyfriars Bobby / Greyfriars Kirkyard",
+            duration: "约 40 分钟",
+            fee: "免费",
+            hours: "Kirkyard 24 小时开放",
+            reserve: "不需要预约",
+            officialUrl: "https://greyfriarskirk.com/visit/kirkyard/",
+            notes: "哈利波特粉丝友好点，但不要花太久找每一块墓碑。走一圈、看 Bobby、感受氛围即可。",
+            details: ["Tom Riddell / McGonagall 等名字灵感", "墓园是公共空间，保持安静"],
+            links: [{ label: "Greyfriars Kirkyard", url: "https://greyfriarskirk.com/visit/kirkyard/" }]
+          },
+          {
+            type: "optional",
+            time: "16:40-17:10",
+            title: "二选一：National Museum 轻逛 / 直接去 Princes Street",
+            location: "National Museum of Scotland / Princes Street",
+            duration: "约 30 分钟",
+            fee: "National Museum 免费",
+            hours: "National Museum 每日 10:00-17:00",
+            reserve: "不需要预约",
+            officialUrl: "https://www.nms.ac.uk/national-museum-of-scotland/plan-your-visit/",
+            notes: "国博很好，但这天不是主菜。天气差、走累或想看 Lewis Chessmen，再进去轻逛；天气好就直接保留 Calton Hill。",
+            details: ["17:00 关门，只能轻逛", "真想认真逛需牺牲 Greyfriars 或 Calton Hill"],
+            links: [{ label: "National Museum", url: "https://www.nms.ac.uk/national-museum-of-scotland/plan-your-visit/" }]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "17:10-17:40",
+            title: "Old Town → Calton Hill",
+            location: "Old Town -> Calton Hill",
+            routeOrigin: "National Museum of Scotland",
             routeDest: "Calton Hill Edinburgh",
-            notes: "05/27 爱丁堡日落 21:38；日落前约 50 分钟上山。Waterloo Place 斜坡、国家纪念碑、Nelson Monument、Dugald Stewart Monument、老城新城交界全景。",
-            microGuide: [
-              { label: "时间", text: "20:40-21:45；民用暮光约 22:29 结束。" },
-              { label: "点位", text: "Dugald Stewart Monument 一侧、National Monument 平台、Nelson Monument 周边。" }
-            ],
-            links: [{ label: "日落时间", url: "https://www.timeanddate.com/sun/uk/edinburgh?month=5" }]
+            duration: "约 25-30 分钟步行 / 可打车",
+            ticket: "步行免费；打车按实时价格",
+            notes: "天气好就慢慢走过去；如果风大下雨，直接取消 Calton Hill，改成早点晚餐。",
+            details: ["爱丁堡上坡多，按体力调整", "这段不必硬走"],
+            links: [{ label: "路线", url: dirUrl("National Museum of Scotland", "Calton Hill Edinburgh") }]
           },
           {
-            time: "22:05-23:20",
-            title: "乘火车返回 Glasgow",
-            location: "Edinburgh Waverley -> Glasgow Queen Street",
-            routeOrigin: "Calton Hill Edinburgh",
+            type: "visit",
+            time: "17:40-18:40",
+            title: "Calton Hill",
+            location: "Calton Hill Edinburgh",
+            duration: "约 1 小时",
+            fee: "免费",
+            hours: "户外全天",
+            reserve: "不需要预约",
+            notes: "傍晚收尾点。5 月底天黑很晚，主要看 Old Town、新城、Arthur’s Seat 和 Firth of Forth 方向。",
+            details: ["风大时注意保暖", "天气差则删除本段"],
+            links: [{ label: "Google 地图", url: mapsUrl("Calton Hill Edinburgh") }]
+          },
+          {
+            type: "meal",
+            time: "18:45-20:00",
+            title: "爱丁堡晚餐",
+            location: "Howies Waterloo Place / Waverley area",
+            area: "Calton Hill / Waverley",
+            duration: "约 1h15m",
+            ticket: "约 £25-40",
+            notes: "最稳是 Howies Waterloo Place：Calton Hill 脚下，离 Waverley 约 5 分钟。想要 Old Town 氛围可选 The Devil’s Advocate，但注意有楼梯。",
+            details: ["推荐订 18:45 或 19:00", "吃完方便回 Waverley", "Makars 可作为午餐没吃到时的备选"],
+            links: [
+              { label: "Howies Waterloo", url: "https://www.howies.uk.com/venues/howies-waterloo-place/" },
+              { label: "The Devil’s Advocate", url: "https://www.devilsadvocateedinburgh.co.uk/" },
+              { label: "Makars Mash Bar", url: "https://makarsmash.com/edinburgh/" }
+            ]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "20:15-20:45",
+            title: "回到 Edinburgh Waverley，准备返程",
+            location: "Howies Waterloo Place -> Edinburgh Waverley",
+            routeOrigin: "Howies Waterloo Place",
             routeDest: "Edinburgh Waverley Station",
-            notes: "Edinburgh Waverley -> Glasgow Queen Street。",
-            links: [{ label: "ScotRail", url: "http://scotrail.co.uk" }]
+            duration: "约 5-15 分钟",
+            ticket: "免费",
+            notes: "看实际车次，不需要卡到最后一班。",
+            details: ["提前查站台", "Waverley 出入口较多，给自己留 10 分钟"],
+            links: [{ label: "路线", url: dirUrl("Howies Waterloo Place", "Edinburgh Waverley Station") }]
+          },
+          {
+            type: "transfer",
+            mode: "train",
+            time: "20:30-21:45",
+            title: "Edinburgh Waverley → Glasgow Queen Street",
+            location: "Edinburgh Waverley -> Glasgow Queen Street",
+            routeOrigin: "Edinburgh Waverley Station",
+            routeDest: "Glasgow Queen Street Station",
+            duration: "平均约 1h04m",
+            ticket: "使用 ScotRail 往返票 / 实际以 App 为准",
+            officialUrl: "https://www.scotrail.co.uk/train-times/edinburgh-waverley-to-glasgow-queen-street",
+            statusUrl: "https://www.scotrail.co.uk/plan-your-journey/service-disruption",
+            notes: "返程平均约 1 小时 4 分钟；官网显示末班约 23:45，但建议 20:30-21:00 左右返程，第二天还有安排。",
+            details: ["最多约 90 班/天", "直达为主", "不要依赖末班车"],
+            links: [{ label: "ScotRail", url: "https://www.scotrail.co.uk/train-times/edinburgh-waverley-to-glasgow-queen-street" }]
           }
         ]
       },
@@ -3438,6 +3428,7 @@
         low: "低强度",
         "medium-low": "中低强度",
         medium: "中等强度",
+        "medium-high": "中高强度",
         high: "高强度"
       };
       return labels[intensity] || intensity || "待确认";

@@ -394,5 +394,89 @@
     "lon": -4.925959,
     "display_name": "Cathedral of the Isles",
     "source": "manual override"
+  },
+  "55.862229,-4.251227|Glasgow Queen Street Station": {
+    "lat": 55.862229,
+    "lon": -4.251227,
+    "display_name": "Glasgow Queen Street Station",
+    "source": "manual override"
+  },
+  "55.952245,-3.189944|Edinburgh Waverley Station": {
+    "lat": 55.952245,
+    "lon": -3.189944,
+    "display_name": "Edinburgh Waverley Station",
+    "source": "manual override"
+  },
+  "55.948611,-3.199913|Edinburgh Castle": {
+    "lat": 55.948611,
+    "lon": -3.199913,
+    "display_name": "Edinburgh Castle",
+    "source": "manual override"
+  },
+  "55.949521,-3.190640|St Giles' Cathedral": {
+    "lat": 55.949521,
+    "lon": -3.19064,
+    "display_name": "St Giles' Cathedral",
+    "source": "manual override"
+  },
+  "55.948471,-3.193769|Howies Victoria Street": {
+    "lat": 55.948471,
+    "lon": -3.193769,
+    "display_name": "Howies Victoria Street",
+    "source": "manual override"
+  },
+  "55.948623,-3.193646|Oink Victoria Street": {
+    "lat": 55.948623,
+    "lon": -3.193646,
+    "display_name": "Oink Victoria Street",
+    "source": "manual override"
+  },
+  "55.950082,-3.190527|The Real Mary King's Close": {
+    "lat": 55.950082,
+    "lon": -3.190527,
+    "display_name": "The Real Mary King's Close",
+    "source": "manual override"
+  },
+  "55.948594,-3.193862|Victoria Street": {
+    "lat": 55.948594,
+    "lon": -3.193862,
+    "display_name": "Victoria Street",
+    "source": "manual override"
+  },
+  "55.948464,-3.193748|Museum Context Edinburgh": {
+    "lat": 55.948464,
+    "lon": -3.193748,
+    "display_name": "Museum Context Edinburgh",
+    "source": "manual override"
+  },
+  "55.946934,-3.191443|Greyfriars Bobby Statue": {
+    "lat": 55.946934,
+    "lon": -3.191443,
+    "display_name": "Greyfriars Bobby Statue",
+    "source": "manual override"
+  },
+  "55.946732,-3.192410|Greyfriars Kirkyard": {
+    "lat": 55.946732,
+    "lon": -3.19241,
+    "display_name": "Greyfriars Kirkyard",
+    "source": "manual override"
+  },
+  "55.947500,-3.189260|National Museum of Scotland": {
+    "lat": 55.9475,
+    "lon": -3.18926,
+    "display_name": "National Museum of Scotland",
+    "source": "manual override"
+  },
+  "55.955174,-3.182576|Calton Hill": {
+    "lat": 55.955174,
+    "lon": -3.182576,
+    "display_name": "Calton Hill",
+    "source": "manual override"
+  },
+  "55.953813,-3.186054|Howies Waterloo Place": {
+    "lat": 55.953813,
+    "lon": -3.186054,
+    "display_name": "Howies Waterloo Place",
+    "source": "manual override"
   }
 }
