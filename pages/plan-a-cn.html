@@ -2055,11 +2055,12 @@
         <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-            <li>最近更新：2026-04-30｜stonfur｜优化电脑端左侧侧栏：侧栏继续固定在页面左侧，但增加最大高度和内部独立滚动，避免长行程日需要把整个网页拖到底才能看到侧栏底部；同时将“版本说明”整块默认折叠，减少左侧卡片高度。</li>
+            <li>最近更新：2026-04-30｜stonfur｜新增 05/24 North Berwick 东海岸小镇备选行程，保留 Largs / Cumbrae 主方案不变；备选页补充 Glasgow Queen Street 往返交通、Scottish Seabird Centre、船游预约、North Berwick Law 天气可选项、费用开放信息、港口餐饮和地图动线。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜优化电脑端左侧侧栏：侧栏继续固定在页面左侧，但增加最大高度和内部独立滚动，避免长行程日需要把整个网页拖到底才能看到侧栏底部；同时将“版本说明”整块默认折叠，减少左侧卡片高度。</li>
               <li>2026-04-30｜stonfur｜将“今日重点”里的“攻略与参考”改为默认折叠显示，减少每日重点区域的信息密度；同时从 05/27 爱丁堡“今日重点”中移除哈利波特路线图和爱丁堡路线参考图，避免与“地图快速跳转”里的路线图重复展示。</li>
               <li>2026-04-30｜stonfur｜整理 reference pages.txt 中的攻略链接：将“今日重点”下方标题从“小红书攻略”改为更通用的“攻略与参考”，并按日期与行程卡补充 Glasgow、Largs / Cumbrae、Highlands、Edinburgh、Kelvingrove 等强相关参考链接；知乎 403 和小红书 404 链接不纳入页面，周边目的地资料收进少量“备选参考”。</li>
               <li>2026-04-30｜stonfur｜优化手机端行程浏览：新增底部固定快捷栏，可随时打开日期切换、费用 / 预约 / 开放、地图快速跳转和附近可选抽屉；手机端不再需要滑到页面顶部才能切换日期，也不用滑到时间线底部才能查看右侧信息。同时压缩手机端时间线卡片的间距、标签、说明、费用 / 开放 / 预约 chips 和链接按钮排布，在不折叠、不删减信息的前提下减少滚动距离，桌面端布局保持不变。</li>
@@ -2268,6 +2269,10 @@
       ],
       edinburghPhoto: [
         { label: "小红书｜爱丁堡摄影师喜欢的 9 个机位", url: "https://www.xiaohongshu.com/explore/68c52a3f000000001d00f394?xsec_token=AB-KzQVFAxKXnBhfSEXBP1ALzFk8ORVEn8xUgod2UY8lM=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      northBerwick: [
+        { label: "小红书｜North Berwick 海岛备选", url: "https://www.xiaohongshu.com/explore/69d5e65900000000200397a9?xsec_token=AB7gjO0W_voebJMcWjiCJJJxkAccf1REk70P_vH-OHXzM=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜苏格兰不只爱丁堡：周边备选", url: "https://www.xiaohongshu.com/explore/68bc77e9000000001d021ac0?xsec_token=ABu_b1pHSHpeLTS4SO89NhitosrCWZTio0lN2GX1F2sCM=&xsec_source=pc_user&source=web_user_page" }
       ],
       edinburghAlternatives: [
         { label: "小红书｜Jupiter Artland 周边备选", url: "https://www.xiaohongshu.com/explore/687286910000000015021d92?xsec_token=ABkQz9pD4Ju1MunD6xwnVQ96oTOWGRYvaCNki6bIxGJrw=&xsec_source=pc_user&source=web_user_page" },
@@ -4019,6 +4024,345 @@
         ]
       },
       {
+        id: "0524-berwick",
+        short: "05/24 备选",
+        dayLabel: "周日",
+        title: "North Berwick 东海岸小镇一日游",
+        intro: "如果 05/24 想把海边感做得更有特色，可以把 Largs / Cumbrae 换成 North Berwick：从 Glasgow Queen Street 经 Edinburgh Waverley 换乘到东海岸小镇，核心是海边、Bass Rock、Scottish Seabird Centre 船游、Alandas Gelato，再按天气和体力决定是否爬 North Berwick Law。",
+        vibe: "东海岸小镇 + 海鸟船游",
+        intensity: "medium",
+        window: "07:30-21:30",
+        travel: "火车换乘 + 步行 + 船游",
+        anchor: "Glasgow Queen Street -> Edinburgh Waverley -> North Berwick -> Scottish Seabird Centre / Harbour -> Boat Trip -> Alandas Gelato -> North Berwick Law / 海边散步 -> Glasgow",
+        mapQuery: "Scottish Seabird Centre North Berwick",
+        bookingChecklist: [
+          {
+            title: "ScotRail Glasgow Queen Street ↔ North Berwick",
+            fee: "Glasgow -> North Berwick 票价按当日 ScotRail 查询；往返需经 Edinburgh Waverley 换乘",
+            hours: "目标 08:00 去程、19:30 左右返程；平均约 1h50m，出发前查实时班次",
+            lead: "建议提前查票并购票",
+            refund: "按票种规则",
+            prepay: "购票时支付",
+            officialUrl: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-north-berwick"
+          },
+          {
+            title: "Scottish Seabird Centre Discovery Experience",
+            fee: "成人 £13.50；concession £11.25；同日有效火车票可享 20% 折扣",
+            hours: "作为天气一般或船游取消时的室内备选；开放时间以官网当天为准",
+            lead: "不强制提前买，想进馆可提前看官网",
+            refund: "按官网票务规则",
+            prepay: "可在线购票或现场确认",
+            officialUrl: "https://www.seabird.org/discovery-experience"
+          },
+          {
+            title: "Seabird Catamaran Cruise",
+            fee: "成人 £32；约 1h15m",
+            hours: "优先查 13:00-15:00 左右船班",
+            lead: "建议提前预约，是这条备选路线的关键项目",
+            refund: "天气 / 船班调整按官网规则",
+            prepay: "预约时支付",
+            officialUrl: "https://www.seabird.org/boats"
+          },
+          {
+            title: "船游备选：Three Islands Seafari / Isle of May",
+            fee: "Three Islands Seafari 成人 £39；Isle of May Round Island Trip 成人 £47",
+            hours: "Seafari 约 1h15m；Isle of May 约 2h，4-7 月运行但占用时间更长",
+            lead: "都建议提前预约；从 Glasgow 往返时优先短线",
+            refund: "天气 / 船班调整按官网规则",
+            prepay: "预约时支付",
+            officialUrl: "https://www.seabird.org/boats"
+          },
+          {
+            title: "Coastal Communities Museum",
+            fee: "免费",
+            hours: "2026 年周三至周六 11:00-16:00；05/24 周日不作为主线安排",
+            lead: "不需要预约；本日仅作为避坑提醒",
+            refund: "不适用",
+            prepay: "无",
+            officialUrl: "https://www.coastalmuseum.org/plan-your-visit"
+          },
+          {
+            title: "North Berwick Law",
+            fee: "免费",
+            hours: "户外全天；天气晴、风不大、鞋合适再去",
+            lead: "不需要预约",
+            refund: "不适用",
+            prepay: "无",
+            officialUrl: "https://visiteastlothian.org/things-to-see-do/outdoor-activities/walking/walking-top-10/north-berwick-and-the-law/"
+          }
+        ],
+        routeLinks: [
+          {
+            title: "官方交通与船游",
+            links: [
+              { label: "ScotRail｜Glasgow Queen Street to North Berwick", url: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-north-berwick" },
+              { label: "Scottish Seabird Centre｜Plan your visit", url: "https://www.seabird.org/plan-your-visit" },
+              { label: "Scottish Seabird Centre｜Boat trips", url: "https://www.seabird.org/boats" },
+              { label: "Visit East Lothian｜North Berwick and the Law", url: "https://visiteastlothian.org/things-to-see-do/outdoor-activities/walking/walking-top-10/north-berwick-and-the-law/" }
+            ]
+          }
+        ],
+        spotGuides: [
+          {
+            title: "North Berwick 核心点",
+            links: [
+              { label: "Scottish Seabird Centre", url: "https://www.seabird.org/plan-your-visit" },
+              { label: "Discovery Experience", url: "https://www.seabird.org/discovery-experience" },
+              { label: "Boat trips", url: "https://www.seabird.org/boats" },
+              { label: "Alandas Gelato North Berwick", url: "https://alandas.co.uk/gelato/gelato-north-berwick/" }
+            ]
+          }
+        ],
+        serviceGuides: {
+          regionalPicks: [
+            {
+              title: "North Berwick 港口午餐",
+              links: [
+                { label: "The Rocketeer｜海边正餐｜harbour 附近最顺路，适合提前电话订位；不要为它牺牲船班时间。", url: "https://www.rocketeerrestaurant.co.uk/all-day-dining-menu/" },
+                { label: "Lobster Shack｜casual seafood｜更轻松的港口海鲜备选，按当天营业和排队情况决定。", url: mapsUrl("Lobster Shack North Berwick") },
+                { label: "Seabird Centre Cafe｜咖啡 / 轻食｜天气差或船游前后最省心的保底。", url: mapsUrl("Scottish Seabird Centre Cafe") },
+                { label: "North Berwick restaurants｜Google Maps 搜索｜热门店满座时直接换，不为午餐拖垮节奏。", url: mapsUrl("restaurants near North Berwick Harbour") }
+              ]
+            },
+            {
+              title: "下午甜品 / 小镇散步",
+              links: [
+                { label: "Alandas Gelato North Berwick｜冰淇淋｜周日适合船游后或傍晚去。", url: "https://alandas.co.uk/gelato/gelato-north-berwick/" },
+                { label: "Quality Street / High Street｜小镇街道｜吃冰淇淋后顺手散步，不用专门绕远。", url: mapsUrl("Quality Street North Berwick") },
+                { label: "West Bay / Milsey Bay｜海边散步｜风大或下雨时替代 North Berwick Law。", url: mapsUrl("West Bay Milsey Bay North Berwick") }
+              ]
+            },
+            {
+              title: "Glasgow 回城后",
+              links: [
+                { label: "Merchant City dinner｜Google Maps 搜索｜21 点左右回到 Glasgow 后，优先选酒店附近。", url: mapsUrl("Merchant City Glasgow dinner") },
+                { label: "Paesano Pizza - Miller Street｜披萨｜排队流动快，适合作为晚归后简单正餐。", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+                { label: "Sugo Pasta Glasgow｜意面｜Central / Queen Street 一带顺路。", url: mapsUrl("Sugo Pasta Glasgow") }
+              ]
+            }
+          ],
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
+        featured: {
+          title: "Scottish Seabird Centre + Bass Rock 船游",
+          text: "North Berwick 备选路线的核心是“有海边氛围，但不只是看海”：上午慢慢走到 harbour 和 Scottish Seabird Centre，下午把时间留给 Bass Rock / 海鸟船游。5 月属于看海鸟的好季节，但船班受天气影响明显，所以一定要提前看官网并保留室内和海边散步备选。",
+          mapQuery: "Scottish Seabird Centre North Berwick",
+          infoUrl: "https://www.seabird.org/boats",
+          guideLinks: [
+            {
+              title: "官方链接",
+              links: [
+                { label: "ScotRail Glasgow Queen Street to North Berwick", url: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-north-berwick" },
+                { label: "Scottish Seabird Centre plan your visit", url: "https://www.seabird.org/plan-your-visit" },
+                { label: "Scottish Seabird Centre boat trips", url: "https://www.seabird.org/boats" },
+                { label: "Discovery Experience", url: "https://www.seabird.org/discovery-experience" },
+                { label: "North Berwick and the Law", url: "https://visiteastlothian.org/things-to-see-do/outdoor-activities/walking/walking-top-10/north-berwick-and-the-law/" },
+                { label: "Alandas Gelato North Berwick", url: "https://alandas.co.uk/gelato/gelato-north-berwick/" }
+              ]
+            },
+            {
+              title: "攻略参考",
+              links: [
+                ...referenceGuideLinks.northBerwick
+              ]
+            }
+          ]
+        },
+        spots: ["Glasgow Queen Street", "Edinburgh Waverley", "North Berwick Station", "Scottish Seabird Centre", "North Berwick Harbour", "Bass Rock", "Alandas Gelato", "North Berwick Law", "West Bay / Milsey Bay"],
+        items: [
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "07:30-07:50",
+            title: "酒店 → Glasgow Queen Street",
+            location: "Aparthotel Adagio Glasgow Central -> Glasgow Queen Street",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Glasgow Queen Street Station",
+            duration: "约 15-20 分钟",
+            ticket: "步行 / 打车按当天状态决定",
+            notes: "比去 Central 稍微多走一点，建议别卡点；早上先把火车票、船游预约和返程方案都放进手机。若行李或天气不舒服，直接打车到 Queen Street。",
+            details: ["酒店据点：Aparthotel Adagio Glasgow Central", "目标 08:00 左右上火车", "预留找站台和买咖啡时间"],
+            links: [{ label: "Glasgow Queen Street", url: mapsUrl("Glasgow Queen Street Station") }]
+          },
+          {
+            type: "transfer",
+            mode: "train",
+            time: "08:00-09:50",
+            title: "Glasgow Queen Street → Edinburgh Waverley → North Berwick",
+            location: "Glasgow Queen Street -> Edinburgh Waverley -> North Berwick",
+            routeOrigin: "Glasgow Queen Street Station",
+            routeDest: "North Berwick Railway Station",
+            duration: "平均约 1h50m",
+            ticket: "票价和班次以 ScotRail App 为准",
+            officialUrl: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-north-berwick",
+            statusUrl: "https://www.scotrail.co.uk/plan-your-journey/service-disruption",
+            notes: "没有直达，需要在 Edinburgh Waverley 换乘；目标是 10 点前后到 North Berwick，给海边散步和午餐留从容时间。",
+            details: ["换乘点：Edinburgh Waverley", "周日班次出发前再确认", "如果临时晚到，优先保住船班"],
+            links: [{ label: "ScotRail", url: "https://www.scotrail.co.uk/train-times/glasgow-queen-street-to-north-berwick" }]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "09:50-10:10",
+            title: "North Berwick 站 → 海边 / Scottish Seabird Centre",
+            location: "North Berwick Railway Station -> Scottish Seabird Centre",
+            routeOrigin: "North Berwick Railway Station",
+            routeDest: "Scottish Seabird Centre",
+            duration: "约 15 分钟步行",
+            ticket: "免费",
+            officialUrl: "https://www.seabird.org/plan-your-visit",
+            notes: "从车站走到 Seabird Centre 和 harbour 一带很顺，先把小镇节奏放慢，不要一下车就急着赶景点。",
+            details: ["官网也提示车站步行约 15 分钟", "顺路看海边和小镇街道"],
+            links: [
+              { label: "Scottish Seabird Centre", url: "https://www.seabird.org/plan-your-visit" },
+              ...referenceGuideLinks.northBerwick
+            ]
+          },
+          {
+            type: "visit",
+            time: "10:10-11:00",
+            title: "North Berwick harbour / Bass Rock 远眺",
+            location: "North Berwick Harbour / Scottish Seabird Centre",
+            duration: "约 50 分钟",
+            fee: "户外免费",
+            hours: "户外全天；Seabird Centre 以官网当天信息为准",
+            reserve: "不需要预约",
+            notes: "先在 harbour、Seabird Centre 外部平台和海边看 Bass Rock，不急着进馆。天气好时这一段会很舒服，也适合判断下午是否爬 Law。",
+            details: ["Bass Rock 远眺", "港口拍照", "按风力调整停留时间"],
+            links: [
+              { label: "Google 地图", url: mapsUrl("North Berwick Harbour") },
+              { label: "Plan your visit", url: "https://www.seabird.org/plan-your-visit" }
+            ]
+          },
+          {
+            type: "optional",
+            time: "11:00-12:00",
+            title: "天气一般：Discovery Experience / 海边咖啡",
+            location: "Scottish Seabird Centre",
+            duration: "约 1 小时",
+            ticket: "成人 £13.50；同日火车票可享 20% 折扣",
+            officialUrl: "https://www.seabird.org/discovery-experience",
+            notes: "天气好不一定进馆，可以把时间留给户外和船游；如果风大、下雨或船游取消，Discovery Experience + 咖啡就是很稳的室内备选。",
+            details: ["不是硬任务", "船游取消时优先启用", "凭同日火车票看折扣规则"],
+            links: [{ label: "Discovery Experience", url: "https://www.seabird.org/discovery-experience" }]
+          },
+          {
+            type: "meal",
+            time: "12:00-13:10",
+            title: "harbour 附近午餐",
+            location: "North Berwick Harbour",
+            area: "harbour / Seabird Centre 周边",
+            duration: "约 1h10m",
+            ticket: "估计 £15-30",
+            notes: "不要为某一家店排太久。The Rocketeer 位置最顺但不必执念；Lobster Shack、Seabird Centre Cafe 或小镇其他餐厅都可以。",
+            details: ["优先靠近 harbour", "船班前不要点太复杂", "热门店可提前电话确认"],
+            links: [
+              { label: "The Rocketeer", url: "https://www.rocketeerrestaurant.co.uk/all-day-dining-menu/" },
+              { label: "Lobster Shack", url: mapsUrl("Lobster Shack North Berwick") },
+              { label: "Seabird Centre Cafe", url: mapsUrl("Scottish Seabird Centre Cafe") }
+            ],
+            tips: ["如果订到 13:30 左右船班，午餐最好 13:10 前结束。"]
+          },
+          {
+            type: "visit",
+            mode: "boat",
+            time: "13:30-14:45",
+            title: "推荐：Seabird Catamaran Cruise / Three Islands Seafari",
+            location: "Scottish Seabird Centre -> Bass Rock",
+            routeOrigin: "Scottish Seabird Centre",
+            routeDest: "Bass Rock",
+            duration: "约 1h15m",
+            fee: "Catamaran 成人 £32；Seafari 成人 £39",
+            hours: "具体船班以 05/24 官网可订时段为准",
+            reserve: "建议提前预约",
+            officialUrl: "https://www.seabird.org/boats",
+            notes: "这是 North Berwick 备选日最值得提前锁定的项目。优先选 Seabird Catamaran Cruise，比较稳；Three Islands Seafari 更刺激；Isle of May 约 2 小时，更适合特别想看海鸟的人。",
+            details: ["优先短线船游", "天气影响较大", "订到船后再微调午餐和 Law 的时间"],
+            links: [
+              { label: "Boat trips", url: "https://www.seabird.org/boats" },
+              { label: "Isle of May NNR", url: "https://www.nature.scot/enjoying-outdoors/visit-our-nature-reserves/isle-may-national-nature-reserve" }
+            ]
+          },
+          {
+            type: "meal",
+            time: "15:00-15:40",
+            title: "Alandas Gelato + 小镇闲逛",
+            location: "Alandas Gelato North Berwick / Quality Street",
+            area: "Quality Street / High Street",
+            duration: "约 40 分钟",
+            ticket: "按购买内容",
+            notes: "船游回来后吃冰淇淋、走 Quality Street / High Street，让下午节奏缓下来。Alandas 是这天的轻松加分项，适合放在爬 Law 之前。",
+            details: ["周日营业时间以官网为准", "不需要预约", "顺路散步即可"],
+            links: [
+              { label: "Alandas Gelato", url: "https://alandas.co.uk/gelato/gelato-north-berwick/" },
+              { label: "Quality Street", url: mapsUrl("Quality Street North Berwick") }
+            ]
+          },
+          {
+            type: "optional",
+            mode: "walk",
+            time: "15:45-17:15",
+            title: "天气好：North Berwick Law；风大下雨：海边继续散步",
+            location: "North Berwick Law / West Bay / Milsey Bay",
+            duration: "约 1.5 小时",
+            ticket: "免费",
+            officialUrl: "https://visiteastlothian.org/things-to-see-do/outdoor-activities/walking/walking-top-10/north-berwick-and-the-law/",
+            notes: "Law 是火山岩小山，视野很好，但有一段 178 米爬升。只有天气晴、风不大、鞋合适、船游后还有体力时再爬；否则 West Bay / Milsey Bay / harbour 海边散步更舒服。",
+            details: ["不是硬任务", "预留上下山和拍照时间", "风大时不要勉强"],
+            links: [
+              { label: "North Berwick and the Law", url: "https://visiteastlothian.org/things-to-see-do/outdoor-activities/walking/walking-top-10/north-berwick-and-the-law/" },
+              { label: "West Bay / Milsey Bay", url: mapsUrl("West Bay Milsey Bay North Berwick") }
+            ]
+          },
+          {
+            type: "visit",
+            time: "17:15-18:30",
+            title: "海边收尾 / 晚餐前休息",
+            location: "West Bay / North Berwick Harbour",
+            duration: "约 1h15m",
+            fee: "户外免费",
+            hours: "户外全天",
+            reserve: "不需要预约",
+            notes: "如果爬完 Law，就慢慢回海边；如果没爬山，就在 harbour、West Bay 或 Milsey Bay 坐一会儿看 Bass Rock。不要把返程压得太晚，给晚餐和换乘留余量。",
+            details: ["看海收尾", "按返程火车倒推晚餐", "天气差可提前进餐或回 Glasgow"],
+            links: [{ label: "North Berwick seafront", url: mapsUrl("North Berwick seafront") }]
+          },
+          {
+            type: "meal",
+            time: "18:30-19:30",
+            title: "North Berwick 晚餐或轻食",
+            location: "North Berwick town centre",
+            area: "town centre / harbour",
+            duration: "约 1 小时",
+            ticket: "估计 £15-30",
+            notes: "如果不想太晚回 Glasgow，就简单吃；如果午餐吃得晚，也可以只买轻食，回 Glasgow 后再补。核心是不要错过合适返程班次。",
+            details: ["按火车时间倒推", "热门店不要久等", "保留回城余量"],
+            links: [
+              { label: "North Berwick dinner", url: mapsUrl("North Berwick dinner") },
+              { label: "The Rocketeer", url: "https://www.rocketeerrestaurant.co.uk/all-day-dining-menu/" }
+            ]
+          },
+          {
+            type: "transfer",
+            mode: "train",
+            time: "19:30-21:30",
+            title: "North Berwick → Edinburgh Waverley → Glasgow Queen Street",
+            location: "North Berwick -> Edinburgh Waverley -> Glasgow Queen Street",
+            routeOrigin: "North Berwick Railway Station",
+            routeDest: "Glasgow Queen Street Station",
+            duration: "平均约 1h46m",
+            ticket: "使用 ScotRail 票 / 实际以 App 为准",
+            officialUrl: "https://www.scotrail.co.uk/train-times/north-berwick-to-glasgow-queen-street",
+            statusUrl: "https://www.scotrail.co.uk/plan-your-journey/service-disruption",
+            notes: "返程仍需换乘。第二天有 ICC 行程，不建议为了晚餐拖到太晚；如果天气差或船游取消，可以提前回 Glasgow。到 Queen Street 后回酒店步行或打车都很近。",
+            details: ["返程前确认换乘站台", "优先 21:30 前回到 Glasgow", "回酒店后早点休息"],
+            links: [{ label: "ScotRail", url: "https://www.scotrail.co.uk/train-times/north-berwick-to-glasgow-queen-street" }]
+          }
+        ]
+      },
+      {
         id: "0528",
         short: "05/28",
         dayLabel: "周四",
@@ -4662,6 +5006,7 @@
       ferry: "渡轮",
       bus: "公交",
       bike: "自行车",
+      boat: "船游",
       taxi: "打车",
       coach: "跟团巴士",
       subway: "地铁",

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>05/24 备选｜North Berwick 东海岸小镇一日游</name>
+    <description>05/24 备选 周日 North Berwick 东海岸小镇一日游，由 pages/plan-a-cn.html 自动生成。</description>
+    <Style id="number-01-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/01.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-02-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/02.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-03-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/03.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-04-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/04.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-05-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/05.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-06-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/06.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-07-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/07.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-08-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/08.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-09-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/09.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-10-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/10.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-11-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/11.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-12-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/12.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-13-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/13.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-14-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/14.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-15-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/15.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-16-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/16.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-17-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/17.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-18-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/18.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-19-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/19.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-20-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/20.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-21-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/21.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="number-22-point">
+      <IconStyle>
+        <scale>1.15</scale>
+        <Icon><href>https://raw.githubusercontent.com/vanilla178/2026-Glasgow/stonfur/maps/google-my-maps/icons/22.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><scale>0.8</scale></LabelStyle>
+    </Style>
+    <Style id="上午-line">
+      <LineStyle>
+        <color>cc70640b</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="下午-line">
+      <LineStyle>
+        <color>cc2e62c4</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="晚上-line">
+      <LineStyle>
+        <color>cc60401e</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="其他-line">
+      <LineStyle>
+        <color>cc66725a</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Placemark>
+      <name>01｜上午｜Aparthotel Adagio Glasgow Central</name>
+      <description>07:30-07:50｜酒店 → Glasgow Queen Street｜Aparthotel Adagio Glasgow Central -&gt; Glasgow Queen Street</description>
+      <styleUrl>#number-01-point</styleUrl>
+      <Point>
+        <coordinates>-4.2560927,55.8563258,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>02｜上午｜Glasgow Queen Street Station</name>
+      <description>07:30-07:50｜酒店 → Glasgow Queen Street｜Aparthotel Adagio Glasgow Central -&gt; Glasgow Queen Street</description>
+      <styleUrl>#number-02-point</styleUrl>
+      <Point>
+        <coordinates>-4.2512270,55.8622290,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>03｜上午｜Edinburgh Waverley Station</name>
+      <description>08:00-09:50｜Glasgow Queen Street → Edinburgh Waverley → North Berwick｜Glasgow Queen Street -&gt; Edinburgh Waverley -&gt; North Berwick</description>
+      <styleUrl>#number-03-point</styleUrl>
+      <Point>
+        <coordinates>-3.1899440,55.9522450,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>04｜上午｜North Berwick Railway Station</name>
+      <description>08:00-09:50｜Glasgow Queen Street → Edinburgh Waverley → North Berwick｜Glasgow Queen Street -&gt; Edinburgh Waverley -&gt; North Berwick</description>
+      <styleUrl>#number-04-point</styleUrl>
+      <Point>
+        <coordinates>-2.7309712,56.0566405,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05｜上午｜Scottish Seabird Centre</name>
+      <description>09:50-10:10｜North Berwick 站 → 海边 / Scottish Seabird Centre｜North Berwick Railway Station -&gt; Scottish Seabird Centre</description>
+      <styleUrl>#number-05-point</styleUrl>
+      <Point>
+        <coordinates>-2.7173382,56.0613132,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>06｜上午｜North Berwick Harbour</name>
+      <description>10:10-11:00｜North Berwick harbour / Bass Rock 远眺｜North Berwick Harbour / Scottish Seabird Centre</description>
+      <styleUrl>#number-06-point</styleUrl>
+      <Point>
+        <coordinates>-2.7185739,56.0612787,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>07｜上午｜Scottish Seabird Centre</name>
+      <description>11:00-12:00｜天气一般：Discovery Experience / 海边咖啡｜Scottish Seabird Centre</description>
+      <styleUrl>#number-07-point</styleUrl>
+      <Point>
+        <coordinates>-2.7173382,56.0613132,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>08｜下午｜North Berwick Harbour</name>
+      <description>12:00-13:10｜harbour 附近午餐｜North Berwick Harbour</description>
+      <styleUrl>#number-08-point</styleUrl>
+      <Point>
+        <coordinates>-2.7185739,56.0612787,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>09｜下午｜Scottish Seabird Centre</name>
+      <description>13:30-14:45｜推荐：Seabird Catamaran Cruise / Three Islands Seafari｜Scottish Seabird Centre -&gt; Bass Rock</description>
+      <styleUrl>#number-09-point</styleUrl>
+      <Point>
+        <coordinates>-2.7173382,56.0613132,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>10｜下午｜Bass Rock</name>
+      <description>13:30-14:45｜推荐：Seabird Catamaran Cruise / Three Islands Seafari｜Scottish Seabird Centre -&gt; Bass Rock</description>
+      <styleUrl>#number-10-point</styleUrl>
+      <Point>
+        <coordinates>-2.6405694,56.0774678,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>11｜下午｜North Berwick Harbour</name>
+      <description>13:30-14:45｜推荐：Seabird Catamaran Cruise / Three Islands Seafari｜Scottish Seabird Centre -&gt; Bass Rock</description>
+      <styleUrl>#number-11-point</styleUrl>
+      <Point>
+        <coordinates>-2.7185739,56.0612787,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>12｜下午｜Alandas Gelato North Berwick</name>
+      <description>15:00-15:40｜Alandas Gelato + 小镇闲逛｜Alandas Gelato North Berwick / Quality Street</description>
+      <styleUrl>#number-12-point</styleUrl>
+      <Point>
+        <coordinates>-2.7173073,56.0582084,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>13｜下午｜Quality Street North Berwick</name>
+      <description>15:00-15:40｜Alandas Gelato + 小镇闲逛｜Alandas Gelato North Berwick / Quality Street</description>
+      <styleUrl>#number-13-point</styleUrl>
+      <Point>
+        <coordinates>-2.7171661,56.0589852,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>14｜下午｜North Berwick Law</name>
+      <description>15:45-17:15｜天气好：North Berwick Law；风大下雨：海边继续散步｜North Berwick Law / West Bay / Milsey Bay</description>
+      <styleUrl>#number-14-point</styleUrl>
+      <Point>
+        <coordinates>-2.7138172,56.0487964,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>15｜下午｜West Bay North Berwick</name>
+      <description>15:45-17:15｜天气好：North Berwick Law；风大下雨：海边继续散步｜North Berwick Law / West Bay / Milsey Bay</description>
+      <styleUrl>#number-15-point</styleUrl>
+      <Point>
+        <coordinates>-2.7217050,56.0609676,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>16｜下午｜Milsey Bay North Berwick</name>
+      <description>15:45-17:15｜天气好：North Berwick Law；风大下雨：海边继续散步｜North Berwick Law / West Bay / Milsey Bay</description>
+      <styleUrl>#number-16-point</styleUrl>
+      <Point>
+        <coordinates>-2.7023154,56.0612419,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>17｜下午｜West Bay North Berwick</name>
+      <description>17:15-18:30｜海边收尾 / 晚餐前休息｜West Bay / North Berwick Harbour</description>
+      <styleUrl>#number-17-point</styleUrl>
+      <Point>
+        <coordinates>-2.7217050,56.0609676,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>18｜下午｜North Berwick Harbour</name>
+      <description>17:15-18:30｜海边收尾 / 晚餐前休息｜West Bay / North Berwick Harbour</description>
+      <styleUrl>#number-18-point</styleUrl>
+      <Point>
+        <coordinates>-2.7185739,56.0612787,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>19｜晚上｜Quality Street North Berwick</name>
+      <description>18:30-19:30｜North Berwick 晚餐或轻食｜North Berwick town centre</description>
+      <styleUrl>#number-19-point</styleUrl>
+      <Point>
+        <coordinates>-2.7171661,56.0589852,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>20｜晚上｜North Berwick Railway Station</name>
+      <description>19:30-21:30｜North Berwick → Edinburgh Waverley → Glasgow Queen Street｜North Berwick -&gt; Edinburgh Waverley -&gt; Glasgow Queen Street</description>
+      <styleUrl>#number-20-point</styleUrl>
+      <Point>
+        <coordinates>-2.7309712,56.0566405,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>21｜晚上｜Edinburgh Waverley Station</name>
+      <description>19:30-21:30｜North Berwick → Edinburgh Waverley → Glasgow Queen Street｜North Berwick -&gt; Edinburgh Waverley -&gt; Glasgow Queen Street</description>
+      <styleUrl>#number-21-point</styleUrl>
+      <Point>
+        <coordinates>-3.1899440,55.9522450,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>22｜晚上｜Glasgow Queen Street Station</name>
+      <description>19:30-21:30｜North Berwick → Edinburgh Waverley → Glasgow Queen Street｜North Berwick -&gt; Edinburgh Waverley -&gt; Glasgow Queen Street</description>
+      <styleUrl>#number-22-point</styleUrl>
+      <Point>
+        <coordinates>-4.2512270,55.8622290,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>05/24 备选｜上午动线</name>
+      <styleUrl>#上午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-4.2560927,55.8563258,0 -4.2512270,55.8622290,0 -3.1899440,55.9522450,0 -2.7309712,56.0566405,0 -2.7173382,56.0613132,0 -2.7185739,56.0612787,0 -2.7173382,56.0613132,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/24 备选｜下午动线</name>
+      <styleUrl>#下午-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-2.7185739,56.0612787,0 -2.7173382,56.0613132,0 -2.6405694,56.0774678,0 -2.7185739,56.0612787,0 -2.7173073,56.0582084,0 -2.7171661,56.0589852,0 -2.7138172,56.0487964,0 -2.7217050,56.0609676,0 -2.7023154,56.0612419,0 -2.7217050,56.0609676,0 -2.7185739,56.0612787,0</coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>05/24 备选｜晚上动线</name>
+      <styleUrl>#晚上-line</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>-2.7171661,56.0589852,0 -2.7309712,56.0566405,0 -3.1899440,55.9522450,0 -4.2512270,55.8622290,0</coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

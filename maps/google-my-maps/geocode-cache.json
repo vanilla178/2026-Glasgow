@@ -622,5 +622,59 @@
     "lon": -4.286218,
     "display_name": "Clyde Arc",
     "source": "manual override"
+  },
+  "56.0566405,-2.7309712|North Berwick Railway Station": {
+    "lat": 56.0566405,
+    "lon": -2.7309712,
+    "display_name": "North Berwick Railway Station",
+    "source": "manual override"
+  },
+  "56.0613132,-2.7173382|Scottish Seabird Centre": {
+    "lat": 56.0613132,
+    "lon": -2.7173382,
+    "display_name": "Scottish Seabird Centre",
+    "source": "manual override"
+  },
+  "56.0612787,-2.7185739|North Berwick Harbour": {
+    "lat": 56.0612787,
+    "lon": -2.7185739,
+    "display_name": "North Berwick Harbour",
+    "source": "manual override"
+  },
+  "56.0774678,-2.6405694|Bass Rock": {
+    "lat": 56.0774678,
+    "lon": -2.6405694,
+    "display_name": "Bass Rock",
+    "source": "manual override"
+  },
+  "56.0582084,-2.7173073|Alandas Gelato": {
+    "lat": 56.0582084,
+    "lon": -2.7173073,
+    "display_name": "Alandas Gelato",
+    "source": "manual override"
+  },
+  "56.0589852,-2.7171661|Quality Street": {
+    "lat": 56.0589852,
+    "lon": -2.7171661,
+    "display_name": "Quality Street",
+    "source": "manual override"
+  },
+  "56.0487964,-2.7138172|North Berwick Law": {
+    "lat": 56.0487964,
+    "lon": -2.7138172,
+    "display_name": "North Berwick Law",
+    "source": "manual override"
+  },
+  "56.0609676,-2.7217050|West Bay": {
+    "lat": 56.0609676,
+    "lon": -2.721705,
+    "display_name": "West Bay",
+    "source": "manual override"
+  },
+  "56.0612419,-2.7023154|Milsey Bay": {
+    "lat": 56.0612419,
+    "lon": -2.7023154,
+    "display_name": "Milsey Bay",
+    "source": "manual override"
   }
 }
