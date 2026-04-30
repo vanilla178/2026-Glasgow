@@ -2250,11 +2250,12 @@
           <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-              <li>最近更新：2026-04-30｜stonfur｜精简每日标题栏并美化时间线分段：移除“在 Google 地图中查看当日路线”总路线按钮，地图入口统一保留在“地图快速跳转”和手机端“地图”抽屉；同时将上午 / 下午 / 晚上由胶囊标签改为横向分隔标题，并加入克制的色彩区分。</li>
+              <li>最近更新：2026-04-30｜stonfur｜优化电脑端日期切换动线：点击左侧日期卡片后，页面会自动滚动到当天“时间线”区域开头，避免切换日期后仍停留在原来的页面滚动位置。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜精简每日标题栏并美化时间线分段：移除“在 Google 地图中查看当日路线”总路线按钮，地图入口统一保留在“地图快速跳转”和手机端“地图”抽屉；同时将上午 / 下午 / 晚上由胶囊标签改为横向分隔标题，并加入克制的色彩区分。</li>
               <li>2026-04-30｜stonfur｜美化时间线的上午 / 下午 / 晚上分段标题：由胶囊标签改为横向分隔标题，并为上午、下午、晚上加入克制的色彩区分；手机端同步改为紧凑分隔线，减少突兀感。</li>
               <li>2026-04-30｜stonfur｜重排顶部与左侧信息层级：将行程提示移入 hero 的关键信息区，将版本说明移到 hero 下方默认折叠展示；左侧侧栏只保留日期切换，手机端同步压缩 hero 提示和版本折叠条，减少首屏冗余。</li>
               <li>2026-04-30｜stonfur｜重新调整电脑端左侧日期切换：还原为整块侧栏统一内部滚动，不再拆分日期列表和提示区的滚动；同时排查并移除桌面端 html / body 横向 overflow 对 sticky 的影响，让左侧卡片在滚动长时间线时继续停留在视野内。</li>
@@ -5532,6 +5533,7 @@
     const sideRouteMap = document.getElementById("sideRouteMap");
     const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
+    const dayCard = document.querySelector(".day-card");
     const mobileDrawer = document.getElementById("mobileDrawer");
     const mobileDrawerBackdrop = document.getElementById("mobileDrawerBackdrop");
     const mobileDrawerClose = document.getElementById("mobileDrawerClose");
@@ -6107,6 +6109,16 @@
       }
     }
 
+    function scrollToTimelineStart() {
+      const target = dayCard || timeline;
+      if (!target) return;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start"
+      });
+    }
+
     function renderDay(dayId) {
       const day = itinerary.find((entry) => entry.id === dayId) || itinerary[0];
       activeDayId = day.id;
@@ -6213,6 +6225,7 @@
       const button = event.target.closest("[data-day]");
       if (!button) return;
       renderDay(button.dataset.day);
+      scrollToTimelineStart();
     });
 
     mobileDockButtons.forEach((button) => {
