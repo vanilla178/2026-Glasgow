@@ -57,7 +57,7 @@
     </Style>
     <Placemark>
       <name>01｜晚上｜Glasgow Airport</name>
-      <description>22:15-23:00｜抵达 Glasgow 并办理入境｜Glasgow Airport</description>
+      <description>22:15-23:00｜抵达 Glasgow Airport + 入境 / 取行李｜Glasgow Airport</description>
       <styleUrl>#number-01-point</styleUrl>
       <Point>
         <coordinates>-4.4357037,55.8705560,0</coordinates>
@@ -65,7 +65,7 @@
     </Placemark>
     <Placemark>
       <name>02｜晚上｜Aparthotel Adagio Glasgow Central</name>
-      <description>23:00-23:40｜前往酒店｜GLA -&gt; city centre</description>
+      <description>23:00-23:40｜Glasgow Airport -&gt; Aparthotel Adagio Glasgow Central｜Glasgow Airport -&gt; Aparthotel Adagio Glasgow Central</description>
       <styleUrl>#number-02-point</styleUrl>
       <Point>
         <coordinates>-4.2560927,55.8563258,0</coordinates>
@@ -81,7 +81,7 @@
     </Placemark>
     <Placemark>
       <name>04｜晚上｜Aparthotel Adagio Glasgow Central</name>
-      <description>00:15 onward｜休息｜Aparthotel Adagio Glasgow Central</description>
+      <description>00:15 onward｜休息 / 次日准备｜Aparthotel Adagio Glasgow Central</description>
       <styleUrl>#number-04-point</styleUrl>
       <Point>
         <coordinates>-4.2560927,55.8563258,0</coordinates>

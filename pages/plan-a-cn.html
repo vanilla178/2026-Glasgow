@@ -496,6 +496,9 @@
       margin: 0 0 22px;
       padding: 20px;
       border-radius: var(--radius-lg);
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
       background:
         linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(247, 239, 228, 0.94));
       border: 1px solid rgba(26, 35, 48, 0.08);
@@ -524,6 +527,9 @@
 
     .trip-map-frame {
       overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
       border-radius: 16px;
       border: 1px solid rgba(31, 42, 51, 0.08);
       background: rgba(255, 252, 246, 0.72);
@@ -534,6 +540,8 @@
     .trip-map-frame iframe {
       display: block;
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
       height: 100%;
       border: 0;
     }
@@ -1556,7 +1564,7 @@
       }
 
       .trip-map-card {
-        padding: 16px;
+        padding: 12px;
         border-radius: 18px;
       }
 
@@ -1566,8 +1574,9 @@
       }
 
       .trip-map-frame {
-        min-height: 300px;
-        aspect-ratio: 4 / 3;
+        min-height: 280px;
+        aspect-ratio: 1 / 1;
+        border-radius: 14px;
       }
 
       .day-overview {
@@ -2009,7 +2018,7 @@
       }
 
       .trip-map-frame {
-        min-height: 260px;
+        min-height: 240px;
       }
 
       .day-tab {
@@ -2076,11 +2085,12 @@
         <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-            <li>最近更新：2026-04-30｜stonfur｜优化手机端日期切换体验：隐藏顶部横向滑动日期卡片，手机端统一通过底部“日期”抽屉切换行程；同时限制整页横向拖拽和横向溢出，减少手机浏览器斜向拖动时出现白边回弹的情况。</li>
+            <li>最近更新：2026-04-30｜stonfur｜统一 05/23 抵达日为类型化时间线：补充深夜抵达、机场进城、酒店周边补给和休息准备的费用 / 预约 / 开放、地图与附近可选信息；同时优化手机端总览 Google My Maps 嵌入宽度，减少窄屏拖动时右侧溢出。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜优化手机端日期切换体验：隐藏顶部横向滑动日期卡片，手机端统一通过底部“日期”抽屉切换行程；同时限制整页横向拖拽和横向溢出，减少手机浏览器斜向拖动时出现白边回弹的情况。</li>
               <li>2026-04-30｜stonfur｜新增 05/26 Glenfinnan Viaduct / Jacobite Steam Train / Glencoe 备选高地团，保留原 05/26 Loch Ness 经典高地团不变；备选页补充 Discover Scotland Tours 集合时间、Glenfinnan Viaduct / Monument / Loch Shiel、Jacobite 火车不保证运行的提醒、午餐补给策略、晚餐建议和 My Maps KML 动线。</li>
               <li>2026-04-30｜stonfur｜新增 05/24 North Berwick 东海岸小镇备选行程，保留 Largs / Cumbrae 主方案不变；备选页补充 Glasgow Queen Street 往返交通、Scottish Seabird Centre、船游预约、North Berwick Law 天气可选项、费用开放信息、港口餐饮和地图动线。</li>
               <li>2026-04-30｜stonfur｜优化电脑端左侧侧栏：侧栏继续固定在页面左侧，但增加最大高度和内部独立滚动，避免长行程日需要把整个网页拖到底才能看到侧栏底部；同时将“版本说明”整块默认折叠，减少左侧卡片高度。</li>
@@ -2450,23 +2460,117 @@
         short: "05/23",
         dayLabel: "周六",
         title: "抵达 Glasgow",
-        intro: " ",
+        intro: "这一天只处理深夜抵达和进城入住：22:15 到达 Glasgow Airport 后预留入境、取行李和出航站楼时间，深夜优先打车到 Aparthotel Adagio Glasgow Central；到酒店后只做简单补给和休息，为 05/24 海边小岛日留体力。",
         vibe: "深夜抵达",
         intensity: "low",
         window: "22:15 onward",
-        travel: "机场进城",
-        anchor: "Merchant City / Aparthotel Adagio Glasgow Central",
-        mapQuery: "Glasgow city centre",
-        bookingChecklist: [],
-        routeLinks: [],
-        spotGuides: [],
-        serviceGuides: mergeGlasgowFoodGuides(glasgowFoodGuides.cityCentre, glasgowFoodGuides.sec, glasgowFoodGuides.westEnd),
+        travel: "Glasgow Airport -> 酒店，深夜优先打车",
+        anchor: "Glasgow Airport -> Aparthotel Adagio Glasgow Central",
+        mapQuery: "Aparthotel Adagio Glasgow Central",
+        bookingChecklist: [
+          {
+            title: "Glasgow Airport 抵达 / 入境缓冲",
+            officialUrl: "https://www.glasgowairport.com/",
+            fee: "不适用",
+            hours: "22:15 抵达；入境、取行李和出航站楼按现场排队情况预留约 45 分钟",
+            lead: "提前准备护照、住宿地址和入境材料",
+            refund: "不适用",
+            prepay: "无"
+          },
+          {
+            title: "机场 -> Aparthotel Adagio Glasgow Central",
+            officialUrl: "https://www.glasgowairport.com/to-and-from/taxi/",
+            fee: "深夜优先打车；费用以现场排队和 App 实时价格为准",
+            hours: "23:00 后按航班实际落地、行李和排队情况执行",
+            lead: "提前保存酒店地址；机场官方 taxi rank 和叫车 App 二选一",
+            refund: "按出租车 / 叫车平台规则",
+            prepay: "现场或 App 支付"
+          },
+          {
+            title: "Airport Express 500 备选",
+            officialUrl: "https://www.firstbus.co.uk/greater-glasgow/routes-and-maps/glasgow-airport-express",
+            fee: "以 First Bus 当日票价为准",
+            hours: "深夜班次出发前再查；不作为 05/23 主方案",
+            lead: "只在打车排队太久或价格异常时作为备选",
+            refund: "按 First Bus 票务规则",
+            prepay: "线上 / App / 现场"
+          },
+          {
+            title: "酒店周边补给",
+            officialUrl: mapsUrl("Tesco Express Glasgow St Enoch"),
+            fee: "按购买内容",
+            hours: "深夜只作为可用时的补给；不要依赖正餐",
+            lead: "晚餐最好在转机段 / 机场提前解决",
+            refund: "不适用",
+            prepay: "现场支付"
+          }
+        ],
+        routeLinks: [
+          {
+            title: "抵达与进城",
+            links: [
+              { label: "Glasgow Airport", url: "https://www.glasgowairport.com/" },
+              { label: "Glasgow Airport｜taxis", url: "https://www.glasgowairport.com/to-and-from/taxi/" },
+              { label: "First Bus｜Airport Express 500", url: "https://www.firstbus.co.uk/greater-glasgow/routes-and-maps/glasgow-airport-express" },
+              { label: "机场到酒店路线", url: dirUrl("Glasgow Airport", "Aparthotel Adagio Glasgow Central") }
+            ]
+          }
+        ],
+        spotGuides: [
+          {
+            title: "抵达与市中心参考",
+            links: [
+              { label: "Glasgow Airport official site", url: "https://www.glasgowairport.com/" },
+              { label: "Glasgow Airport official taxi information", url: "https://www.glasgowairport.com/to-and-from/taxi/" },
+              { label: "People Make Glasgow", url: "https://peoplemakeglasgow.com" },
+              ...referenceGuideLinks.glasgowOverview
+            ]
+          },
+          {
+            title: "酒店周边补给",
+            links: [
+              { label: "Tesco Express Glasgow St Enoch", url: mapsUrl("Tesco Express Glasgow St Enoch") },
+              { label: "Merchant City", url: mapsUrl("Merchant City Glasgow") },
+              { label: "St Enoch Centre", url: mapsUrl("St Enoch Centre Glasgow") }
+            ]
+          }
+        ],
+        serviceGuides: {
+          regionalPicks: [
+            {
+              title: "深夜抵达 / 酒店周边补给",
+              links: [
+                { label: "Tesco Express Glasgow St Enoch｜离酒店近，适合只买水、早餐和零食。", url: mapsUrl("Tesco Express Glasgow St Enoch") },
+                { label: "Merchant City late food search｜如果真的需要热食，只作为抵达后临时搜索。", url: mapsUrl("late night food Merchant City Glasgow") },
+                { label: "Glasgow Airport food and drink｜晚餐最好在机场 / 转机段提前解决。", url: "https://www.glasgowairport.com/at-the-airport/food-and-drink/" }
+              ]
+            },
+            {
+              title: "次日出发前",
+              links: [
+                { label: "Glasgow Central breakfast / coffee｜05/24 去 Largs 前可临时查咖啡。", url: mapsUrl("breakfast coffee near Glasgow Central") },
+                { label: "Aparthotel Adagio Glasgow Central", url: mapsUrl("Aparthotel Adagio Glasgow Central") }
+              ]
+            }
+          ],
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
         featured: {
-          title: "商人城（Merchant City）",
-          text: "位置居中，步行连接方便。",
-          mapQuery: "Merchant City Glasgow",
-          infoUrl: "https://peoplemakeglasgow.com",
+          title: "Aparthotel Adagio Glasgow Central + 深夜抵达进城",
+          text: "05/23 不安排正式游览。核心是顺利从机场到酒店、完成最小补给、尽快睡觉。",
+          mapQuery: "Aparthotel Adagio Glasgow Central",
+          infoUrl: "https://www.glasgowairport.com/to-and-from/taxi/",
           guideLinks: [
+            {
+              title: "官方 / 交通",
+              links: [
+                { label: "Glasgow Airport official site", url: "https://www.glasgowairport.com/" },
+                { label: "Glasgow Airport taxis", url: "https://www.glasgowairport.com/to-and-from/taxi/" },
+                { label: "Airport Express 500", url: "https://www.firstbus.co.uk/greater-glasgow/routes-and-maps/glasgow-airport-express" }
+              ]
+            },
             {
               title: "Glasgow 综合参考",
               links: [
@@ -2476,34 +2580,53 @@
             }
           ]
         },
-        spots: ["Glasgow Airport", "Merchant City", "Aparthotel Adagio Glasgow Central"],
+        spots: ["Glasgow Airport", "Aparthotel Adagio Glasgow Central", "Tesco Express Glasgow St Enoch", "Merchant City"],
         items: [
           {
+            type: "transfer",
+            mode: "flight",
             time: "22:15-23:00",
-            title: "抵达 Glasgow 并办理入境",
+            title: "抵达 Glasgow Airport + 入境 / 取行李",
             location: "Glasgow Airport",
-            notes: "22:15 到达后预留入境、取行李、出航站楼时间。",
-            links: [{ label: "机场", url: "http://glasgowairport.com" }]
+            duration: "约 45 分钟，可按现场延长",
+            ticket: "航班抵达；入境和行李按现场队伍",
+            officialUrl: "https://www.glasgowairport.com/",
+            notes: "22:15 到达后不要再安排任何景点，核心是顺利出航站楼。把住宿地址、护照和行程信息提前放在手机里。",
+            details: ["预留入境和取行李时间", "确认手机网络 / 支付方式", "出航站楼后再决定打车或巴士"],
+            links: [{ label: "Glasgow Airport", url: "https://www.glasgowairport.com/" }]
           },
           {
+            type: "transfer",
+            mode: "taxi",
             time: "23:00-23:40",
-            title: "前往酒店",
-            location: "GLA -> city centre",
+            title: "Glasgow Airport -> Aparthotel Adagio Glasgow Central",
+            location: "Glasgow Airport -> Aparthotel Adagio Glasgow Central",
             routeOrigin: "Glasgow Airport",
             routeDest: "Aparthotel Adagio Glasgow Central",
+            duration: "打车约 20-35 分钟；按排队和路况浮动",
+            ticket: "深夜优先打车；Airport Express 500 仅作备选",
+            officialUrl: "https://www.glasgowairport.com/to-and-from/taxi/",
+            statusUrl: "https://www.firstbus.co.uk/greater-glasgow/routes-and-maps/glasgow-airport-express",
             notes: "深夜到达以打车为主；机场巴士 500 可作为备选，按当日时刻表执行。77 不作为深夜主方案。",
+            details: ["提前保存酒店地址", "有行李时不要折腾换乘", "机场巴士只作备选"],
             links: [
-              { label: "机场巴士（Glasgow Airport Express Service 500）", url: "https://www.glasgowairport.com/media/jxbhzyep/1002_gae-booklet-a5-8pp-ol.pdf" },
+              { label: "Glasgow Airport taxis", url: "https://www.glasgowairport.com/to-and-from/taxi/" },
+              { label: "Airport Express 500", url: "https://www.firstbus.co.uk/greater-glasgow/routes-and-maps/glasgow-airport-express" },
               { label: "小红书｜Glasgow 机场进城参考（线上购票方法）", url: "https://www.xiaohongshu.com/explore/67892b5b0000000018014c09?xsec_token=ABEdYFv2eJmUyGnQR2tRKOoSgij8ohWzQuHdUKEUDgWAQ=&xsec_source=pc_search&source=web_search_result_notes" }
             ]
           },
           {
+            type: "meal",
             time: "23:40-00:15",
             title: "入住酒店 / 简单补给",
             location: "Aparthotel Adagio Glasgow Central 周边",
+            area: "St Enoch / Merchant City",
             routeOrigin: "Aparthotel Adagio Glasgow Central",
             routeDest: "Tesco Express Glasgow St Enoch",
+            duration: "约 30-35 分钟",
+            ticket: "按购买内容；不安排正式晚餐",
             notes: "正餐不放在抵达后安排；晚餐提前在转机段 / 机场解决。到酒店后只保留便利店、外卖、热饮和第二天早餐补给。",
+            details: ["水和早餐优先", "不要再拉长夜间活动", "确认 05/24 出发物品"],
             links: [
               { label: "Tesco Express — Glasgow St Enoch", url: mapsUrl("Tesco Express Glasgow St Enoch") },
               { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" },
@@ -2516,10 +2639,15 @@
             ]
           },
           {
+            type: "optional",
             time: "00:15 onward",
-            title: "休息",
+            title: "休息 / 次日准备",
             location: "Aparthotel Adagio Glasgow Central",
+            duration: "睡眠优先",
+            fee: "免费",
+            reserve: "不需要预约",
             notes: "第二天为 Largs / Cumbrae 海边小岛日，保留早晨从容出发余量。",
+            details: ["手机充电", "准备雨具和舒适鞋", "确认 05/24 火车 / 渡轮信息"],
             links: []
           }
         ]
@@ -5368,6 +5496,7 @@
       bike: "自行车",
       boat: "船游",
       taxi: "打车",
+      flight: "航班",
       coach: "跟团巴士",
       subway: "地铁",
       "bus + ferry": "公交 + 渡轮"
