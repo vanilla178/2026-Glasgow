@@ -1282,6 +1282,12 @@
       color: var(--good);
     }
 
+    .mobile-dock,
+    .mobile-drawer-backdrop,
+    .mobile-drawer {
+      display: none;
+    }
+
     .hidden {
       display: none;
     }
@@ -1370,6 +1376,7 @@
       }
 
       body {
+        padding-bottom: calc(78px + env(safe-area-inset-bottom));
         background:
           linear-gradient(180deg, #efe5d8 0%, #f7f1e8 46%, #f4efe6 100%);
       }
@@ -1531,6 +1538,10 @@
         border-radius: 18px;
       }
 
+      .aside-stack {
+        display: none;
+      }
+
       .gallery-meta {
         padding: 14px 0 0;
         display: grid;
@@ -1549,10 +1560,14 @@
         display: none;
       }
 
+      .timeline {
+        gap: 8px;
+      }
+
       .timeline-item {
         display: block;
-        padding: 12px;
-        border-radius: 16px;
+        padding: 9px 10px;
+        border-radius: 14px;
       }
 
       .timeline-item::before {
@@ -1560,8 +1575,15 @@
       }
 
       .time {
-        margin-bottom: 6px;
-        font-size: 0.78rem;
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 5px;
+        padding: 3px 7px;
+        border-radius: 999px;
+        background: rgba(15, 108, 123, 0.08);
+        font-size: 0.72rem;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
       }
 
       .timeline-body {
@@ -1569,64 +1591,92 @@
       }
 
       .timeline-body h4 {
-        margin-bottom: 4px;
-        font-size: 1rem;
-        line-height: 1.36;
+        margin-bottom: 3px;
+        font-size: 0.94rem;
+        line-height: 1.28;
       }
 
       .timeline-card-head {
-        gap: 6px;
-        margin-bottom: 5px;
+        gap: 5px;
+        margin-bottom: 3px;
       }
 
       .timeline-kind-badge {
-        min-height: 22px;
-        padding: 4px 7px;
-        font-size: 0.68rem;
+        min-height: 19px;
+        padding: 3px 6px;
+        font-size: 0.62rem;
       }
 
       .timeline-body .place {
-        margin-bottom: 6px;
-        font-size: 0.86rem;
-        line-height: 1.45;
+        margin-bottom: 3px;
+        font-size: 0.8rem;
+        line-height: 1.32;
       }
 
       .timeline-body p {
-        font-size: 0.88rem;
-        line-height: 1.58;
+        font-size: 0.84rem;
+        line-height: 1.45;
       }
 
       .timeline-facts,
       .timeline-detail-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 5px;
-        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 6px;
       }
 
       .timeline-fact,
       .timeline-detail {
-        padding: 6px 8px;
-        border-radius: 11px;
-        font-size: 0.78rem;
+        flex: 1 1 132px;
+        min-width: 0;
+        padding: 4px 6px;
+        border-radius: 9px;
+        font-size: 0.72rem;
+        line-height: 1.35;
+      }
+
+      .timeline-fact {
+        gap: 4px;
+      }
+
+      .timeline-fact strong {
+        font-size: 0.6rem;
+        letter-spacing: 0.04em;
+      }
+
+      .timeline-detail {
+        flex-basis: 148px;
       }
 
       .timeline-phase {
-        margin: 8px 0 0;
-        padding: 5px 10px;
-        font-size: 0.72rem;
+        margin: 6px 0 0;
+        padding: 4px 9px;
+        font-size: 0.68rem;
       }
 
       .micro-guide {
-        margin-top: 8px;
-        padding: 8px 10px;
-        border-radius: 12px;
+        margin-top: 6px;
+        padding: 7px 9px;
+        border-radius: 11px;
       }
 
       .micro-guide-row,
       .booking-meta {
         grid-template-columns: 1fr;
-        gap: 3px;
+        gap: 2px;
+      }
+
+      .micro-guide-row {
+        font-size: 0.76rem;
+        line-height: 1.42;
+      }
+
+      .timeline-tip {
+        margin-top: 6px;
+        padding-left: 8px;
+        font-size: 0.76rem;
+        line-height: 1.42;
       }
 
       .link-row {
@@ -1642,13 +1692,224 @@
         border-radius: 12px;
       }
 
+      .timeline-body > .link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 6px;
+      }
+
+      .timeline-body > .link-row .link-chip {
+        flex: 1 1 112px;
+        width: auto;
+        padding: 5px 7px 5px 10px;
+        border-radius: 10px;
+      }
+
+      .timeline-body > .link-row .link-copy {
+        gap: 4px;
+      }
+
+      .timeline-body > .link-row .link-badge {
+        padding: 1px 5px;
+        font-size: 0.56rem;
+      }
+
+      .timeline-body > .link-row .link-title {
+        font-size: 0.74rem;
+      }
+
       .reference-links {
-        margin-top: 8px;
-        padding-top: 8px;
+        margin-top: 6px;
+        padding-top: 6px;
       }
 
       .reference-links summary {
+        font-size: 0.76rem;
+      }
+
+      .mobile-dock {
+        position: fixed;
+        left: max(10px, env(safe-area-inset-left));
+        right: max(10px, env(safe-area-inset-right));
+        bottom: calc(8px + env(safe-area-inset-bottom));
+        z-index: 1000;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+        padding: 6px;
+        border: 1px solid rgba(31, 42, 51, 0.12);
+        border-radius: 18px;
+        background: rgba(255, 252, 246, 0.94);
+        box-shadow: 0 18px 42px rgba(26, 35, 48, 0.18);
+        backdrop-filter: blur(18px);
+      }
+
+      .mobile-dock-button {
+        min-width: 0;
+        min-height: 44px;
+        display: grid;
+        place-items: center;
+        gap: 1px;
+        padding: 7px 4px;
+        border-radius: 13px;
+        border-color: transparent;
+        background: transparent;
+        color: var(--muted);
+        font-family: "Noto Serif SC", serif;
+        cursor: pointer;
+      }
+
+      .mobile-dock-button.active {
+        background: linear-gradient(135deg, rgba(15, 108, 123, 0.14), rgba(201, 111, 65, 0.16));
+        color: var(--brand-3);
+      }
+
+      .mobile-dock-label {
+        font-size: 0.86rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .mobile-dock-hint {
+        font-size: 0.64rem;
+        line-height: 1;
+        color: inherit;
+        opacity: 0.78;
+      }
+
+      .mobile-drawer-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 1001;
+        display: block;
+        background: rgba(26, 35, 48, 0.28);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
+      }
+
+      .mobile-drawer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1002;
+        display: flex;
+        flex-direction: column;
+        max-height: min(78vh, 640px);
+        padding: 8px 14px calc(14px + env(safe-area-inset-bottom));
+        border: 1px solid rgba(31, 42, 51, 0.1);
+        border-bottom: 0;
+        border-radius: 22px 22px 0 0;
+        background: rgba(255, 252, 246, 0.98);
+        box-shadow: 0 -20px 48px rgba(26, 35, 48, 0.22);
+        transform: translateY(calc(100% + 16px));
+        transition: transform 220ms ease;
+      }
+
+      body.mobile-drawer-open {
+        overflow: hidden;
+      }
+
+      body.mobile-drawer-open .mobile-drawer-backdrop {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      body.mobile-drawer-open .mobile-drawer {
+        transform: translateY(0);
+      }
+
+      .mobile-drawer-handle {
+        width: 42px;
+        height: 4px;
+        margin: 0 auto 8px;
+        border-radius: 999px;
+        background: rgba(31, 42, 51, 0.18);
+      }
+
+      .mobile-drawer-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mobile-drawer-kicker {
+        display: block;
+        margin-bottom: 3px;
+        color: var(--muted);
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mobile-drawer-title {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--ink);
+      }
+
+      .mobile-drawer-close {
+        flex: 0 0 auto;
+        padding: 7px 10px;
+        border-radius: 999px;
+        border-color: rgba(31, 42, 51, 0.1);
+        background: rgba(255, 250, 244, 0.76);
+        color: var(--brand-3);
+        font-family: "Noto Serif SC", serif;
         font-size: 0.8rem;
+        cursor: pointer;
+      }
+
+      .mobile-drawer-content {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 12px 0 2px;
+      }
+
+      .mobile-date-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .mobile-date-option {
+        display: grid;
+        gap: 3px;
+        text-align: left;
+        padding: 10px;
+        border-radius: 14px;
+        border: 1px solid rgba(31, 42, 51, 0.08);
+        background: rgba(255, 250, 244, 0.74);
+        color: var(--ink);
+        font-family: "Noto Serif SC", serif;
+        cursor: pointer;
+      }
+
+      .mobile-date-option.active {
+        border-color: rgba(15, 108, 123, 0.24);
+        background: linear-gradient(135deg, rgba(15, 108, 123, 0.12), rgba(201, 111, 65, 0.16));
+      }
+
+      .mobile-date-option strong {
+        font-size: 0.86rem;
+      }
+
+      .mobile-date-option span {
+        color: var(--muted);
+        font-size: 0.74rem;
+        line-height: 1.32;
+      }
+
+      .mobile-drawer .booking-checklist,
+      .mobile-drawer .service-guide-stack {
+        gap: 8px;
       }
 
       .link-title,
@@ -1695,6 +1956,10 @@
 
       .day-tab {
         flex-basis: 124px;
+      }
+
+      .mobile-date-list {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1753,11 +2018,12 @@
         <div class="side-note-card">
           <h3>版本说明</h3>
           <ul>
-            <li>最近更新：2026-04-29｜stonfur｜将 05/25 和 05/28 两个 ICC 汇报日改为完整类型化时间线：05/25 聚焦 Glasgow Cathedral / Necropolis / City Centre + 16:45 汇报，05/28 聚焦 University of Glasgow / Kelvingrove + 14:25 汇报，并补充交通转移、会议准备、费用预约、午晚餐建议、官方链接、会议 / 汇报卡片类型和 Google My Maps KML 动线同步。</li>
+            <li>最近更新：2026-04-30｜stonfur｜优化手机端行程浏览：新增底部固定快捷栏，可随时打开日期切换、费用 / 预约 / 开放、地图快速跳转和附近可选抽屉；手机端不再需要滑到页面顶部才能切换日期，也不用滑到时间线底部才能查看右侧信息。同时压缩手机端时间线卡片的间距、标签、说明、费用 / 开放 / 预约 chips 和链接按钮排布，在不折叠、不删减信息的前提下减少滚动距离，桌面端布局保持不变。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-29｜stonfur｜将 05/25 和 05/28 两个 ICC 汇报日改为完整类型化时间线：05/25 聚焦 Glasgow Cathedral / Necropolis / City Centre + 16:45 汇报，05/28 聚焦 University of Glasgow / Kelvingrove + 14:25 汇报，并补充交通转移、会议准备、费用预约、午晚餐建议、官方链接、会议 / 汇报卡片类型和 Google My Maps KML 动线同步。</li>
               <li>2026-04-29｜stonfur｜将 05/26 苏格兰高地日改为 Discover Scotland Tours 高地一日团主线，补充 Buchanan Bus Station 集合、Loch Lomond / Tarbet、Rannoch Moor、Glencoe、Fort William / Ben Nevis、Fort Augustus / Loch Ness、Perthshire 返程和 Glasgow 晚餐的类型化时间线，并同步更新费用预约、备选团、午晚餐建议、官方链接和 05/26 Google My Maps KML 动线。</li>
               <li>2026-04-29｜stonfur｜将 05/27 爱丁堡一日游改为城堡 + Royal Mile / St Giles + Mary King's Close + Victoria Street / Greyfriars + Calton Hill 的稳妥版路线，并沿用 05/24 的时间线卡片结构，补充交通转移、核心景点、餐饮休息、天气可选项、费用预约、开放时间、官方链接和 Google My Maps KML 动线同步。</li>
               <li>2026-04-29｜stonfur｜将 05/24 从 York 一日往返替换为 Largs + Cumbrae / Millport 海边小岛轻松日，并引入可复用的时间线卡片类型：交通转移、景点游览、餐饮休息和天气可选项。05/24 新增目标班次、预计耗时、票务费用、开放时间、现场确认提醒、午餐/咖啡/晚餐区域建议，并同步更新 Google My Maps 的 05/24 KML 点位，避免旧 York 坐标残留。</li>
@@ -1842,6 +2108,38 @@
       </main>
     </section>
   </div>
+
+  <nav class="mobile-dock" aria-label="手机端行程快捷入口">
+    <button class="mobile-dock-button" type="button" data-mobile-action="dates">
+      <span class="mobile-dock-label">日期</span>
+      <span class="mobile-dock-hint">切换</span>
+    </button>
+    <button class="mobile-dock-button" type="button" data-mobile-action="booking">
+      <span class="mobile-dock-label">预约</span>
+      <span class="mobile-dock-hint">费用</span>
+    </button>
+    <button class="mobile-dock-button" type="button" data-mobile-action="maps">
+      <span class="mobile-dock-label">地图</span>
+      <span class="mobile-dock-hint">动线</span>
+    </button>
+    <button class="mobile-dock-button" type="button" data-mobile-action="nearby">
+      <span class="mobile-dock-label">附近</span>
+      <span class="mobile-dock-hint">可选</span>
+    </button>
+  </nav>
+
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  <section class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-labelledby="mobileDrawerTitle">
+    <div class="mobile-drawer-handle" aria-hidden="true"></div>
+    <div class="mobile-drawer-head">
+      <div>
+        <span class="mobile-drawer-kicker" id="mobileDrawerKicker">移动端快捷入口</span>
+        <h3 class="mobile-drawer-title" id="mobileDrawerTitle">行程信息</h3>
+      </div>
+      <button class="mobile-drawer-close" type="button" id="mobileDrawerClose">关闭</button>
+    </div>
+    <div class="mobile-drawer-content" id="mobileDrawerContent"></div>
+  </section>
 
   <script>
     const dayNotes = [
@@ -4033,6 +4331,15 @@
     const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
     const jumpFeatured = document.getElementById("jumpFeatured");
+    const mobileDrawer = document.getElementById("mobileDrawer");
+    const mobileDrawerBackdrop = document.getElementById("mobileDrawerBackdrop");
+    const mobileDrawerClose = document.getElementById("mobileDrawerClose");
+    const mobileDrawerContent = document.getElementById("mobileDrawerContent");
+    const mobileDrawerKicker = document.getElementById("mobileDrawerKicker");
+    const mobileDrawerTitle = document.getElementById("mobileDrawerTitle");
+    const mobileDockButtons = document.querySelectorAll("[data-mobile-action]");
+    let activeDayId = itinerary[0].id;
+    let mobileDrawerMode = "";
 
     function isImageUrl(url) {
       return /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(String(url || ""));
@@ -4495,12 +4802,90 @@
       `;
     }
 
+    const mobileDrawerMeta = {
+      dates: { kicker: "日期切换", title: "选择一天" },
+      booking: { kicker: "费用 / 预约 / 开放", title: "今日确认事项" },
+      maps: { kicker: "地图快速跳转", title: "今日动线" },
+      nearby: { kicker: "附近可选", title: "餐厅 / 咖啡 / 备选" }
+    };
+
+    function activeDay() {
+      return itinerary.find((entry) => entry.id === activeDayId) || itinerary[0];
+    }
+
+    function renderMobileDateOptions(activeId) {
+      return `
+        <div class="mobile-date-list">
+          ${[...itinerary].sort((a, b) => a.short.localeCompare(b.short)).map((day) => `
+            <button class="mobile-date-option ${day.id === activeId ? "active" : ""}" type="button" data-mobile-day="${day.id}">
+              <strong>${day.short} | ${escapeHtml(day.dayLabel)}</strong>
+              <span>${escapeHtml(day.title)}</span>
+              <span>${escapeHtml(day.window)}</span>
+            </button>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderMobileDrawerContent(mode, day) {
+      if (!mobileDrawerContent) return;
+
+      if (mode === "dates") {
+        mobileDrawerContent.innerHTML = renderMobileDateOptions(day.id);
+        return;
+      }
+
+      if (mode === "booking") {
+        mobileDrawerContent.innerHTML = renderBookingChecklist(day.bookingChecklist);
+        return;
+      }
+
+      if (mode === "maps") {
+        mobileDrawerContent.innerHTML = `
+          ${renderRouteSegments(day)}
+          ${renderLinkRow(day.spots.map((spot) => ({ label: spot, url: mapsUrl(spot) })))}
+          ${renderSideRouteMap(day.sideRouteMap)}
+        `;
+        return;
+      }
+
+      if (mode === "nearby") {
+        mobileDrawerContent.innerHTML = renderServiceGuides(day.serviceGuides);
+      }
+    }
+
+    function setMobileDockActive(mode) {
+      mobileDockButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.mobileAction === mode);
+      });
+    }
+
+    function openMobileDrawer(mode) {
+      const day = activeDay();
+      const meta = mobileDrawerMeta[mode] || mobileDrawerMeta.dates;
+      mobileDrawerMode = mode;
+      mobileDrawerKicker.textContent = meta.kicker;
+      mobileDrawerTitle.textContent = mode === "dates" ? meta.title : `${day.short} | ${meta.title}`;
+      renderMobileDrawerContent(mode, day);
+      setMobileDockActive(mode);
+      document.body.classList.add("mobile-drawer-open");
+      mobileDrawer.setAttribute("aria-hidden", "false");
+    }
+
+    function closeMobileDrawer() {
+      document.body.classList.remove("mobile-drawer-open");
+      mobileDrawer.setAttribute("aria-hidden", "true");
+      mobileDrawerMode = "";
+      setMobileDockActive("");
+    }
+
     function renderLists() {
       noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
     }
 
     function renderDay(dayId) {
       const day = itinerary.find((entry) => entry.id === dayId) || itinerary[0];
+      activeDayId = day.id;
 
       renderTabs(day.id);
 
@@ -4590,6 +4975,11 @@
       mapJumpList.innerHTML = renderLinkRow(day.spots.map((spot) => ({ label: spot, url: mapsUrl(spot) })));
       sideRouteMap.innerHTML = renderSideRouteMap(day.sideRouteMap);
       serviceGuideList.innerHTML = renderServiceGuides(day.serviceGuides);
+      if (mobileDrawerMode) {
+        const meta = mobileDrawerMeta[mobileDrawerMode] || mobileDrawerMeta.dates;
+        mobileDrawerTitle.textContent = mobileDrawerMode === "dates" ? meta.title : `${day.short} | ${meta.title}`;
+        renderMobileDrawerContent(mobileDrawerMode, day);
+      }
 
       featuredCard.classList.remove("fade-in");
       void featuredCard.offsetWidth;
@@ -4604,6 +4994,34 @@
 
     jumpFeatured.addEventListener("click", () => {
       featuredCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    mobileDockButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const mode = button.dataset.mobileAction;
+        if (mobileDrawerMode === mode && document.body.classList.contains("mobile-drawer-open")) {
+          closeMobileDrawer();
+          return;
+        }
+        openMobileDrawer(mode);
+      });
+    });
+
+    mobileDrawerContent.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-mobile-day]");
+      if (!button) return;
+      renderDay(button.dataset.mobileDay);
+      closeMobileDrawer();
+      dayTitle.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    mobileDrawerBackdrop.addEventListener("click", closeMobileDrawer);
+    mobileDrawerClose.addEventListener("click", closeMobileDrawer);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && document.body.classList.contains("mobile-drawer-open")) {
+        closeMobileDrawer();
+      }
     });
 
     renderLists();
