@@ -293,8 +293,12 @@
     }
 
     .side-panel {
+      max-height: calc(100vh - 36px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
       padding: 24px;
       position: sticky;
+      scrollbar-gutter: stable;
       top: 18px;
     }
 
@@ -370,6 +374,20 @@
     }
 
     .side-note-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .side-note-card > summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      list-style-position: inside;
+      text-transform: uppercase;
+    }
+
+    .side-note-card[open] > summary {
       margin-bottom: 10px;
     }
 
@@ -578,6 +596,20 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
+    }
+
+    .featured-guide-details summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      list-style-position: inside;
+      text-transform: uppercase;
+    }
+
+    .featured-guide-details[open] summary {
+      margin-bottom: 10px;
     }
 
     .featured-image-grid {
@@ -1319,6 +1351,11 @@
         position: static;
       }
 
+      .side-panel {
+        max-height: none;
+        overflow-y: visible;
+      }
+
       .hero {
         display: block;
       }
@@ -2015,14 +2052,17 @@
           <h3>行程提示</h3>
           <ul id="noteList"></ul>
         </div>
-        <div class="side-note-card">
-          <h3>版本说明</h3>
+        <details class="side-note-card version-card">
+          <summary>版本说明</summary>
           <ul>
-            <li>最近更新：2026-04-30｜stonfur｜优化手机端行程浏览：新增底部固定快捷栏，可随时打开日期切换、费用 / 预约 / 开放、地图快速跳转和附近可选抽屉；手机端不再需要滑到页面顶部才能切换日期，也不用滑到时间线底部才能查看右侧信息。同时压缩手机端时间线卡片的间距、标签、说明、费用 / 开放 / 预约 chips 和链接按钮排布，在不折叠、不删减信息的前提下减少滚动距离，桌面端布局保持不变。</li>
+            <li>最近更新：2026-04-30｜stonfur｜优化电脑端左侧侧栏：侧栏继续固定在页面左侧，但增加最大高度和内部独立滚动，避免长行程日需要把整个网页拖到底才能看到侧栏底部；同时将“版本说明”整块默认折叠，减少左侧卡片高度。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜将“今日重点”里的“攻略与参考”改为默认折叠显示，减少每日重点区域的信息密度；同时从 05/27 爱丁堡“今日重点”中移除哈利波特路线图和爱丁堡路线参考图，避免与“地图快速跳转”里的路线图重复展示。</li>
+              <li>2026-04-30｜stonfur｜整理 reference pages.txt 中的攻略链接：将“今日重点”下方标题从“小红书攻略”改为更通用的“攻略与参考”，并按日期与行程卡补充 Glasgow、Largs / Cumbrae、Highlands、Edinburgh、Kelvingrove 等强相关参考链接；知乎 403 和小红书 404 链接不纳入页面，周边目的地资料收进少量“备选参考”。</li>
+              <li>2026-04-30｜stonfur｜优化手机端行程浏览：新增底部固定快捷栏，可随时打开日期切换、费用 / 预约 / 开放、地图快速跳转和附近可选抽屉；手机端不再需要滑到页面顶部才能切换日期，也不用滑到时间线底部才能查看右侧信息。同时压缩手机端时间线卡片的间距、标签、说明、费用 / 开放 / 预约 chips 和链接按钮排布，在不折叠、不删减信息的前提下减少滚动距离，桌面端布局保持不变。</li>
               <li>2026-04-29｜stonfur｜将 05/25 和 05/28 两个 ICC 汇报日改为完整类型化时间线：05/25 聚焦 Glasgow Cathedral / Necropolis / City Centre + 16:45 汇报，05/28 聚焦 University of Glasgow / Kelvingrove + 14:25 汇报，并补充交通转移、会议准备、费用预约、午晚餐建议、官方链接、会议 / 汇报卡片类型和 Google My Maps KML 动线同步。</li>
               <li>2026-04-29｜stonfur｜将 05/26 苏格兰高地日改为 Discover Scotland Tours 高地一日团主线，补充 Buchanan Bus Station 集合、Loch Lomond / Tarbet、Rannoch Moor、Glencoe、Fort William / Ben Nevis、Fort Augustus / Loch Ness、Perthshire 返程和 Glasgow 晚餐的类型化时间线，并同步更新费用预约、备选团、午晚餐建议、官方链接和 05/26 Google My Maps KML 动线。</li>
               <li>2026-04-29｜stonfur｜将 05/27 爱丁堡一日游改为城堡 + Royal Mile / St Giles + Mary King's Close + Victoria Street / Greyfriars + Calton Hill 的稳妥版路线，并沿用 05/24 的时间线卡片结构，补充交通转移、核心景点、餐饮休息、天气可选项、费用预约、开放时间、官方链接和 Google My Maps KML 动线同步。</li>
@@ -2041,7 +2081,7 @@
               <li>2026-04-26｜stonfur｜调换 05/24 York 与 05/27 爱丁堡行程。</li>
             </ul>
           </details>
-        </div>
+        </details>
       </aside>
 
       <main class="main-panel">
@@ -2176,6 +2216,67 @@
     function glasgowXhsGuideLinks() {
       return glasgowXhsGuides;
     }
+
+    const referenceGuideLinks = {
+      glasgowOverview: [
+        { label: "小红书｜格拉斯哥不可错过的景点攻略", url: "https://www.xiaohongshu.com/explore/6711d4530000000026035bb2?xsec_token=ABjecmj2bFz253U90jMTtVztWiArDL7nr2A8wHwJqf4pA=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜格拉斯哥10大必去景点（含门票信息）", url: "https://www.xiaohongshu.com/explore/65f2efab0000000014004526?xsec_token=ABEgBGs_-efVK-6EgVaga1L3c98GxZLtba9OhFtByb04g=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜格拉斯哥一日游攻略", url: "https://www.xiaohongshu.com/explore/6785ba5e000000001800ea9b?xsec_token=ABB12iKgG4zN4Id4jXIjxXgfICoPGMI4xauLQEEJRQEAI=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      glasgowCityWalk: [
+        { label: "小红书｜一个人游遍英国：格拉斯哥 citywalk", url: "https://www.xiaohongshu.com/explore/65b2f6660000000010038562?xsec_token=ABukjK66BlQFpKH4Io57e3A7AYkagaFROCNaVKxRxtwFA=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      kelvingrove: [
+        { label: "小红书｜格拉首推凯文葛罗夫博物馆", url: "https://www.xiaohongshu.com/explore/688f41620000000004000226?xsec_token=ABmvp6TKyQRg35X45Mfq4S51Mj4SOCUg-0nlE4czFIMZw=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      cumbrae: [
+        { label: "小红书｜格拉周边 Largs 往返大坎布雷岛一日游", url: "https://www.xiaohongshu.com/explore/681b1bed000000002301c597?xsec_token=ABHrrcwg-SEkgn_Ea8PZ5gzQfhW1deHb4JbVWh54XxKGw=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      glasgowCoastalAlternatives: [
+        { label: "小红书｜格拉斯哥周边看海指南", url: "https://www.xiaohongshu.com/explore/69ea73a2000000001f030c00?xsec_token=ABYgJhaoSVWl8kj1vViDj6OGzbvHFCtjUNolSxsGNwzd4=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜Greenock 格拉斯哥周边一日游", url: "https://www.xiaohongshu.com/explore/6908f7740000000004023e35?xsec_token=AB6g8tTpagWfEokE5NhU-4xw-do6xvxsPV5cOoe1FE8Qg=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜格拉斯哥 1h 直达海边小镇", url: "https://www.xiaohongshu.com/explore/67eb26c0000000001202dc80?xsec_token=ABsT9M4foWcZzFUxHPKCkfqzRCU47UkGwOPHnH0RyV0NU=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      glasgowNatureAlternatives: [
+        { label: "小红书｜格拉斯哥出发春天周边参考", url: "https://www.xiaohongshu.com/explore/69d4e3680000000022002019?xsec_token=ABjJ2JuXI-vL1Zx_NMB-o5Tadak1n6mDNfxw1aX41LKJ8=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      lochLomond: [
+        { label: "小红书｜Luss 湖畔小镇参考", url: "https://www.xiaohongshu.com/explore/693c41a0000000001e007484?xsec_token=ABat56FKMuoEZbsSopqjfjtHydL6j9j5u4X4HqVG-umEI=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜格拉出发 1h Loch Lomond 徒步公园", url: "https://www.xiaohongshu.com/explore/67e27f42000000000d0144a9?xsec_token=ABhKV9GxPqzfOW-2cTsCXzlq6kNoo3wQVDw0Icdq6FIJ8=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      highlands: [
+        { label: "小红书｜苏格兰高地一日团体验", url: "https://www.xiaohongshu.com/explore/699cd9ef000000000b012993?xsec_token=ABoxaGNMMvBS5F_uOw2Ug_rG3yyTHl7x6r2V39iyVLn3g=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜第一次去苏格兰高地路线 / 交通 / 景点", url: "https://www.xiaohongshu.com/explore/687c25870000000012021e6e?xsec_token=ABmz29DpFu9puUQlu3SBNwLN1e1jKVx7bPn0baYu6Hrhw=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜爱丁堡出发高地一日游参考", url: "https://www.xiaohongshu.com/explore/6352e610000000001402b7d6?xsec_token=ABjsw5XJEMt_Y7yZLWk8YV9QfZskQCBiQaFbvMpSZ-aO4=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      stirlingAlternative: [
+        { label: "小红书｜Stirling 周边备选参考", url: "https://www.xiaohongshu.com/explore/67b6f45a0000000029018b47?xsec_token=ABE1IpLLlIev3jtjVP7p3PNywCSOPYvBUXJ4UcEhxgWi8=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      edinburghOverview: [
+        { label: "小红书｜去了爱丁堡才发现英国还有比伦敦更美的地方", url: "https://www.xiaohongshu.com/explore/68c168b2000000001c03ca6d?xsec_token=ABcP4bsPTIuITgkmGMlH5EsuFqkkEkFubNDoQfVxpH4DY=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜爱丁堡一日精华游攻略（含时间线）", url: "https://www.xiaohongshu.com/explore/6970796b000000002103e880?xsec_token=ABpT4EadPxDRl9CZMq0Ut-6UOSQuAhG1805zqPNIKwqEU=&xsec_source=pc_search&source=unknown" },
+        { label: "小红书｜爱丁堡一日游经典路线不走回头路", url: "https://www.xiaohongshu.com/explore/69774475000000000d009a1f?xsec_token=ABtzX4Ll4RZAEiGQBWXukRFq3c3ib8H75_jgqslr5iGfc=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      edinburghRoute: [
+        { label: "小红书｜Day7 一天打卡爱丁堡宝藏路线", url: "https://www.xiaohongshu.com/explore/69a285d6000000001503b537?xsec_token=ABCBRY6OEQVqsLoNSiEtWRNczp8i_x4S_flmp3OW4r_kg=&xsec_source=pc_search&source=unknown" },
+        { label: "小红书｜爱丁堡经典一日游路线", url: "https://www.xiaohongshu.com/explore/6905f7d100000000070340cd?xsec_token=ABFTi7GYUQwsISyb0xyTQOi-n8zJbfeFfvs__k4NMtEm4=&xsec_source=pc_search&source=unknown" },
+        { label: "小红书｜爱丁堡只有一天照着走", url: "https://www.xiaohongshu.com/explore/69d053b0000000002301edde?xsec_token=ABnEw3bgKa3xkrUi5PHhMGO6-FTpnAr57XkIgZ-YqQ6r8=&xsec_source=pc_search&source=unknown" },
+        { label: "小红书｜只有一天在爱丁堡这么走最合适", url: "https://www.xiaohongshu.com/explore/69cf1ac3000000002102c4f5?xsec_token=ABGWactnAXtwsGmGeXFT0nYINEVWJnyefu8NF9kL7GQ98=&xsec_source=pc_search&source=unknown" }
+      ],
+      edinburghHarryPotter: [
+        { label: "小红书｜爱丁堡哈利波特周边最佳路线", url: "https://www.xiaohongshu.com/explore/679d64b20000000018006008?xsec_token=ABUAud6buCfuJMCCIMTv3YQhZyIAn47U-4bdp2RJOtxlU=&xsec_source=pc_search&source=unknown" }
+      ],
+      edinburghPhoto: [
+        { label: "小红书｜爱丁堡摄影师喜欢的 9 个机位", url: "https://www.xiaohongshu.com/explore/68c52a3f000000001d00f394?xsec_token=AB-KzQVFAxKXnBhfSEXBP1ALzFk8ORVEn8xUgod2UY8lM=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      edinburghAlternatives: [
+        { label: "小红书｜Jupiter Artland 周边备选", url: "https://www.xiaohongshu.com/explore/687286910000000015021d92?xsec_token=ABkQz9pD4Ju1MunD6xwnVQ96oTOWGRYvaCNki6bIxGJrw=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜North Berwick 海岛备选", url: "https://www.xiaohongshu.com/explore/69d5e65900000000200397a9?xsec_token=AB7gjO0W_voebJMcWjiCJJJxkAccf1REk70P_vH-OHXzM=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜苏格兰不只爱丁堡：周边备选", url: "https://www.xiaohongshu.com/explore/68bc77e9000000001d021ac0?xsec_token=ABu_b1pHSHpeLTS4SO89NhitosrCWZTio0lN2GX1F2sCM=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜Berwick 有山有海徒步线", url: "https://www.xiaohongshu.com/explore/683436ef00000000230120c7?xsec_token=ABJe7AGyxZGIi57Wzg5_0F1sMwz4oa_MA82m_1uGw0kgI=&xsec_source=pc_user&source=web_user_page" },
+        { label: "小红书｜St Abbs 徒步 + Berwick 小镇", url: "https://www.xiaohongshu.com/explore/663fe0ed000000001e02d2b5?xsec_token=AB0GbenHEsGfbgmXI321bF8pYTeCB7ur4zWpHtHd0eg-g=&xsec_source=pc_user&source=web_user_page" }
+      ]
+    };
 
     const glasgowFoodGuides = {
       cityCentre: {
@@ -2331,7 +2432,15 @@
           text: "位置居中，步行连接方便。",
           mapQuery: "Merchant City Glasgow",
           infoUrl: "https://peoplemakeglasgow.com",
-          guideLinks: []
+          guideLinks: [
+            {
+              title: "Glasgow 综合参考",
+              links: [
+                ...referenceGuideLinks.glasgowOverview,
+                ...referenceGuideLinks.glasgowCityWalk
+              ]
+            }
+          ]
         },
         spots: ["Glasgow Airport", "Merchant City", "Aparthotel Adagio Glasgow Central"],
         items: [
@@ -2363,7 +2472,8 @@
             notes: "正餐不放在抵达后安排；晚餐提前在转机段 / 机场解决。到酒店后只保留便利店、外卖、热饮和第二天早餐补给。",
             links: [
               { label: "Tesco Express — Glasgow St Enoch", url: mapsUrl("Tesco Express Glasgow St Enoch") },
-              { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" }
+              { label: "People Make Glasgow", url: "http://peoplemakeglasgow.com" },
+              ...referenceGuideLinks.glasgowOverview
             ],
             microGuide: [
               { label: "晚餐", text: "提前在转机段 / 机场解决。" },
@@ -2508,13 +2618,24 @@
           infoUrl: "https://www.edinburghcastle.scot/",
           guideLinks: [
             {
-              title: "参考链接",
+              title: "官方与路线参考",
               links: [
-                { label: "哈利波特路线图", url: "../assets/edinburgh-harry-potter-route.png" },
-                { label: "爱丁堡路线参考图", url: "../assets/Edinburgh-route-ref.jpg" },
                 { label: "Edinburgh Castle", url: "https://www.edinburghcastle.scot/" },
-                { label: "The Real Mary King’s Close", url: "https://www.realmarykingsclose.com/" }
+                { label: "The Real Mary King’s Close", url: "https://www.realmarykingsclose.com/" },
+                ...referenceGuideLinks.edinburghOverview,
+                ...referenceGuideLinks.edinburghRoute
               ]
+            },
+            {
+              title: "哈利波特与摄影参考",
+              links: [
+                ...referenceGuideLinks.edinburghHarryPotter,
+                ...referenceGuideLinks.edinburghPhoto
+              ]
+            },
+            {
+              title: "爱丁堡周边备选参考",
+              links: referenceGuideLinks.edinburghAlternatives
             }
           ]
         },
@@ -2582,7 +2703,8 @@
             details: ["官网建议至少预留 2 小时", "One o’Clock Gun 不必硬等", "天气差时提前看临时关闭信息"],
             links: [
               { label: "Tickets", url: "https://www.edinburghcastle.scot/plan-your-visit/tickets/" },
-              { label: "Opening times", url: "https://www.edinburghcastle.scot/plan-your-visit/opening-times/" }
+              { label: "Opening times", url: "https://www.edinburghcastle.scot/plan-your-visit/opening-times/" },
+              ...referenceGuideLinks.edinburghRoute
             ]
           },
           {
@@ -2626,7 +2748,8 @@
             links: [
               { label: "Howies Victoria", url: "https://www.howies.uk.com/venues/howies-victoria-street/" },
               { label: "Oink Victoria Street", url: "https://www.oinkhogroast.co.uk/shops/victoria-street/" },
-              { label: "Makars Mash Bar", url: "https://makarsmash.com/edinburgh/" }
+              { label: "Makars Mash Bar", url: "https://makarsmash.com/edinburgh/" },
+              ...referenceGuideLinks.edinburghOverview
             ],
             tips: ["如果城堡出来晚，就把午餐改成 Oink / 咖啡简餐，不要影响 14:00 预约。"]
           },
@@ -2688,7 +2811,9 @@
             details: ["Victoria Street 拍彩色街景", "Museum Context 入店免费", "Oink 可作为加餐"],
             links: [
               { label: "Victoria Street", url: mapsUrl("Victoria Street Edinburgh") },
-              { label: "Museum Context", url: mapsUrl("Museum Context Victoria Street Edinburgh") }
+              { label: "Museum Context", url: mapsUrl("Museum Context Victoria Street Edinburgh") },
+              ...referenceGuideLinks.edinburghHarryPotter,
+              ...referenceGuideLinks.edinburghPhoto
             ]
           },
           {
@@ -2703,7 +2828,10 @@
             officialUrl: "https://greyfriarskirk.com/visit/kirkyard/",
             notes: "哈利波特粉丝友好点，但不要花太久找每一块墓碑。走一圈、看 Bobby、感受氛围即可。",
             details: ["Tom Riddell / McGonagall 等名字灵感", "墓园是公共空间，保持安静"],
-            links: [{ label: "Greyfriars Kirkyard", url: "https://greyfriarskirk.com/visit/kirkyard/" }]
+            links: [
+              { label: "Greyfriars Kirkyard", url: "https://greyfriarskirk.com/visit/kirkyard/" },
+              ...referenceGuideLinks.edinburghHarryPotter
+            ]
           },
           {
             type: "optional",
@@ -2744,7 +2872,10 @@
             reserve: "不需要预约",
             notes: "傍晚收尾点。5 月底天黑很晚，主要看 Old Town、新城、Arthur’s Seat 和 Firth of Forth 方向。",
             details: ["风大时注意保暖", "天气差则删除本段"],
-            links: [{ label: "Google 地图", url: mapsUrl("Calton Hill Edinburgh") }]
+            links: [
+              { label: "Google 地图", url: mapsUrl("Calton Hill Edinburgh") },
+              ...referenceGuideLinks.edinburghPhoto
+            ]
           },
           {
             type: "meal",
@@ -2922,11 +3053,13 @@
           infoUrl: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/",
           guideLinks: [
             {
-              title: "参考链接",
+              title: "官方与城市攻略",
               links: [
                 { label: "Glasgow Cathedral", url: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/prices-times/" },
                 { label: "Glasgow Necropolis", url: "https://www.glasgownecropolis.org/" },
-                { label: "SEC train access", url: "https://www.sec.co.uk/visitor-information/how-to-get-here/train" }
+                { label: "SEC train access", url: "https://www.sec.co.uk/visitor-information/how-to-get-here/train" },
+                ...referenceGuideLinks.glasgowOverview,
+                ...referenceGuideLinks.glasgowCityWalk
               ]
             }
           ]
@@ -2957,7 +3090,10 @@
             reserve: "建议提前预约 09:30 入内",
             notes: "不建议踩点 9:30 到，先在外观和周边拍照，顺便确认入口。",
             details: ["先拍正面和侧面", "留时间进室内", "不要被外观拍照拖太久"],
-            links: [{ label: "Opening times", url: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/prices-times/" }]
+            links: [
+              { label: "Opening times", url: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/prices-times/" },
+              ...referenceGuideLinks.glasgowOverview
+            ]
           },
           {
             type: "visit",
@@ -2971,7 +3107,10 @@
             officialUrl: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/prices-times/",
             notes: "重点看中殿、彩窗和 Lower Church / Crypt。它不需要 2 小时深度逛，但 Lower Church 开放时值得认真看。",
             details: ["Nave / 中殿", "Stained Glass / 彩窗", "Lower Church / Crypt"],
-            links: [{ label: "Glasgow Cathedral", url: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/prices-times/" }]
+            links: [
+              { label: "Glasgow Cathedral", url: "https://www.historicenvironment.scot/visit-a-place/places/glasgow-cathedral/prices-times/" },
+              ...referenceGuideLinks.glasgowOverview
+            ]
           },
           {
             type: "transfer",
@@ -2998,7 +3137,10 @@
             reserve: "不需要预约",
             notes: "作为城市视角和氛围景点，重点从高处看 Cathedral 和 Glasgow 城市轮廓，不要当成重景点硬逛。",
             details: ["高处回望 Cathedral 最值得", "风大时缩短", "不建议晚上去"],
-            links: [{ label: "Glasgow Necropolis", url: "https://www.glasgownecropolis.org/" }]
+            links: [
+              { label: "Glasgow Necropolis", url: "https://www.glasgownecropolis.org/" },
+              ...referenceGuideLinks.glasgowCityWalk
+            ]
           },
           {
             type: "transfer",
@@ -3042,7 +3184,10 @@
             officialUrl: "https://www.glasgow.gov.uk/article/1066/City-Chambers-Tour",
             notes: "这天不参加导览，只看广场和建筑外观，给汇报准备留时间。",
             details: ["看广场和 City Chambers 外观", "不进入正式导览", "拍照后逐步往酒店方向走"],
-            links: [{ label: "City Chambers Tour", url: "https://www.glasgow.gov.uk/article/1066/City-Chambers-Tour" }]
+            links: [
+              { label: "City Chambers Tour", url: "https://www.glasgow.gov.uk/article/1066/City-Chambers-Tour" },
+              ...referenceGuideLinks.glasgowCityWalk
+            ]
           },
           {
             type: "visit",
@@ -3054,7 +3199,10 @@
             reserve: "不需要预约",
             notes: "作为回酒店前的轻松街区，不安排固定购物任务。",
             details: ["逐步往酒店方向走", "别买太重东西", "雨天可缩短"],
-            links: [{ label: "Buchanan Street", url: mapsUrl("Buchanan Street Glasgow") }]
+            links: [
+              { label: "Buchanan Street", url: mapsUrl("Buchanan Street Glasgow") },
+              ...referenceGuideLinks.glasgowOverview
+            ]
           },
           {
             type: "optional",
@@ -3308,11 +3456,19 @@
           infoUrl: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/",
           guideLinks: [
             {
-              title: "参考链接",
+              title: "官方与跟团参考",
               links: [
                 { label: "Discover Scotland Tours｜Loch Ness Tour from Glasgow", url: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/" },
                 { label: "Rabbie's｜Loch Ness, Glencoe & Highlands", url: "https://www.rabbies.com/en-gb/tour/loch-ness-glencoe-the-highlands-day-tour-from-glasgow" },
-                { label: "Timberbush｜Loch Ness, Glencoe & Highlands", url: "https://www.timberbush-tours.co.uk/our-tours/from-glasgow/1-day-tours/loch-ness-glencoe-highlands" }
+                { label: "Timberbush｜Loch Ness, Glencoe & Highlands", url: "https://www.timberbush-tours.co.uk/our-tours/from-glasgow/1-day-tours/loch-ness-glencoe-highlands" },
+                ...referenceGuideLinks.highlands
+              ]
+            },
+            {
+              title: "Loch Lomond / 周边备选",
+              links: [
+                ...referenceGuideLinks.lochLomond,
+                ...referenceGuideLinks.stirlingAlternative
               ]
             }
           ]
@@ -3372,7 +3528,10 @@
             reserve: "不需要预约",
             notes: "这是高地开场点，主要用于厕所、咖啡和湖边拍照。不要离车太远，严格听集合时间。",
             details: ["看 Ben Lomond 方向", "拍照点到为止", "进入高地前补水"],
-            links: [{ label: "Loch Lomond", url: "https://www.lochlomond-trossachs.org/" }]
+            links: [
+              { label: "Loch Lomond", url: "https://www.lochlomond-trossachs.org/" },
+              ...referenceGuideLinks.lochLomond
+            ]
           },
           {
             type: "transfer",
@@ -3400,7 +3559,10 @@
             officialUrl: "https://www.nts.org.uk/visit/places/glencoe",
             notes: "当天最重要的自然风景点。重点看山谷、Three Sisters 方向、瀑布、云雾和开阔谷地。",
             details: ["广角拍大景", "风雨变化快", "这是高地视觉冲击最强的一段"],
-            links: [{ label: "NTS Glencoe", url: "https://www.nts.org.uk/visit/places/glencoe" }]
+            links: [
+              { label: "NTS Glencoe", url: "https://www.nts.org.uk/visit/places/glencoe" },
+              ...referenceGuideLinks.highlands
+            ]
           },
           {
             type: "transfer",
@@ -3429,7 +3591,8 @@
             links: [
               { label: "The Lock Inn", url: "https://www.visitinvernesslochness.com/listings/lock-inn" },
               { label: "The Bothy", url: "https://www.thehighlandclub.co.uk/restaurants-1/the-bothy" },
-              { label: "Fort Augustus", url: "https://visitfortaugustus.co.uk/" }
+              { label: "Fort Augustus", url: "https://visitfortaugustus.co.uk/" },
+              ...referenceGuideLinks.highlands
             ],
             tips: ["坐游船时不要安排正式坐下午餐；不坐游船时，把水闸 + 湖边 + 午餐作为慢节奏组合。"]
           },
@@ -3471,7 +3634,10 @@
             ticket: "包含在高地团内",
             notes: "Stirling Castle 和 Wallace Monument 只是返程方向的远眺 / 经过，不写成入内参观。约 19:30 回到 Buchanan Bus Station。",
             details: ["不要再安排夜间景点", "回城后直接晚餐", "第二天还有爱丁堡"],
-            links: [{ label: "Stirling Castle", url: mapsUrl("Stirling Castle Scotland") }]
+            links: [
+              { label: "Stirling Castle", url: mapsUrl("Stirling Castle Scotland") },
+              ...referenceGuideLinks.stirlingAlternative
+            ]
           },
           {
             type: "meal",
@@ -3617,11 +3783,19 @@
           infoUrl: "https://millport.org/",
           guideLinks: [
             {
-              title: "官方与实用链接",
+              title: "官方与小岛攻略",
               links: [
                 { label: "Millport visitor information", url: "https://millport.org/" },
                 { label: "CalMac Largs - Cumbrae", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" },
-                { label: "Mapes of Millport bike hire", url: "https://mapesmillport.co.uk/bike-hire/" }
+                { label: "Mapes of Millport bike hire", url: "https://mapesmillport.co.uk/bike-hire/" },
+                ...referenceGuideLinks.cumbrae
+              ]
+            },
+            {
+              title: "海边备选参考",
+              links: [
+                ...referenceGuideLinks.glasgowCoastalAlternatives,
+                ...referenceGuideLinks.glasgowNatureAlternatives
               ]
             }
           ]
@@ -3670,7 +3844,11 @@
             ticket: "免费",
             notes: "顺路看看海边，但主要目标是从容赶渡轮。",
             details: ["不建议在 Largs 上午逛太久", "渡轮前约 10 分钟准备好票"],
-            links: [{ label: "Google 地图", url: mapsUrl("Largs Ferry Terminal") }]
+            links: [
+              { label: "Google 地图", url: mapsUrl("Largs Ferry Terminal") },
+              ...referenceGuideLinks.cumbrae,
+              ...referenceGuideLinks.glasgowCoastalAlternatives
+            ]
           },
           {
             type: "transfer",
@@ -3686,7 +3864,10 @@
             statusUrl: "https://www.calmac.co.uk/service-status",
             notes: "这条线是短渡轮，买日期票后不锁具体班次；当天早上再看一次 CalMac service status。",
             details: ["2026 夏季时刻表：03/27-10/18", "05/24 为周日，海边路线可能更忙"],
-            links: [{ label: "CalMac", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" }]
+            links: [
+              { label: "CalMac", url: "https://www.calmac.co.uk/en-gb/route-information/largs-cumbrae-slip-millport/" },
+              ...referenceGuideLinks.cumbrae
+            ]
           },
           {
             type: "transfer",
@@ -3714,7 +3895,10 @@
             reserve: "不需要预约",
             notes: "先不要急着租车，沿海边 promenade 慢慢走，看看海景和 Crocodile Rock 附近的拍照点。",
             details: ["轻松散步", "按天气和风力调整节奏"],
-            links: [{ label: "Google 地图", url: mapsUrl("Crocodile Rock Millport") }]
+            links: [
+              { label: "Google 地图", url: mapsUrl("Crocodile Rock Millport") },
+              ...referenceGuideLinks.cumbrae
+            ]
           },
           {
             type: "meal",
@@ -3759,7 +3943,10 @@
             officialUrl: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae",
             notes: "英国最小主教座堂之一，适合轻量顺路看；如果还想继续海边散步，也可以把这里缩短。",
             details: ["教堂花园可顺路看", "离 Millport 镇上不远"],
-            links: [{ label: "Cathedral of the Isles", url: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae" }]
+            links: [
+              { label: "Cathedral of the Isles", url: "https://www.nationalchurchestrust.org/church/cathedral-isles-isle-cumbrae" },
+              ...referenceGuideLinks.cumbrae
+            ]
           },
           {
             type: "transfer",
@@ -3793,7 +3980,8 @@
             details: ["Nardini's / Geraldo's 可作为甜品备选", "The Pencil Monument 距离略远，只作为体力好时加项"],
             links: [
               { label: "Largs waterfront", url: mapsUrl("Largs waterfront") },
-              { label: "Nardini's Largs", url: mapsUrl("Nardini's Largs") }
+              { label: "Nardini's Largs", url: mapsUrl("Nardini's Largs") },
+              ...referenceGuideLinks.glasgowCoastalAlternatives
             ]
           },
           {
@@ -3967,12 +4155,14 @@
           infoUrl: "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum",
           guideLinks: [
             {
-              title: "参考链接",
+              title: "官方与 West End 参考",
               links: [
                 { label: "University self-guided tour", url: "https://www.gla.ac.uk/explore/visit/campustours/prospectivestudents/studentsselfguided/" },
                 { label: "University Cloisters", url: "https://www.gla.ac.uk/explore/visit/campustours/prospectivestudents/studentsselfguided/cloisters/" },
                 { label: "Kelvingrove", url: "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum" },
-                { label: "SEC train access", url: "https://www.sec.co.uk/visitor-information/how-to-get-here/train" }
+                { label: "SEC train access", url: "https://www.sec.co.uk/visitor-information/how-to-get-here/train" },
+                ...referenceGuideLinks.kelvingrove,
+                ...referenceGuideLinks.glasgowOverview
               ]
             }
           ]
@@ -4036,7 +4226,8 @@
             details: ["Gilbert Scott Building", "East & West Quadrangles", "Cloisters / Undercroft"],
             links: [
               { label: "Self-guided tour", url: "https://www.gla.ac.uk/explore/visit/campustours/prospectivestudents/studentsselfguided/" },
-              { label: "Cloisters", url: "https://www.gla.ac.uk/explore/visit/campustours/prospectivestudents/studentsselfguided/cloisters/" }
+              { label: "Cloisters", url: "https://www.gla.ac.uk/explore/visit/campustours/prospectivestudents/studentsselfguided/cloisters/" },
+              ...referenceGuideLinks.glasgowOverview
             ]
           },
           {
@@ -4065,7 +4256,10 @@
             officialUrl: "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum",
             notes: "只看重点：主厅、Dalí《Christ of St John of the Cross》、Mackintosh / Glasgow Style 和部分自然历史展区。不要追求全馆扫完。",
             details: ["主厅和建筑内部", "Dalí 代表藏品", "Mackintosh / Glasgow Style"],
-            links: [{ label: "Kelvingrove", url: "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum" }]
+            links: [
+              { label: "Kelvingrove", url: "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum" },
+              ...referenceGuideLinks.kelvingrove
+            ]
           },
           {
             type: "meal",
@@ -4077,7 +4271,10 @@
             ticket: "餐饮自理",
             notes: "中午不要跑远。最稳是在 Kelvingrove Café 或附近买轻食，给去 SEC 留足时间。",
             details: ["轻食优先", "不要正式长餐", "12:15 左右离开"],
-            links: [{ label: "Kelvingrove Café", url: mapsUrl("Kelvingrove Cafe Glasgow") }]
+            links: [
+              { label: "Kelvingrove Café", url: mapsUrl("Kelvingrove Cafe Glasgow") },
+              ...referenceGuideLinks.kelvingrove
+            ]
           },
           {
             type: "transfer",
@@ -4191,7 +4388,8 @@
             links: [
               { label: "Ubiquitous Chip", url: "https://www.ubiquitouschip.co.uk/venues/the-restaurant" },
               { label: "The Finnieston", url: "https://www.thefinniestonbar.com/reservations.php" },
-              { label: "Ox and Finch", url: "https://www.oxandfinch.com/reservations/" }
+              { label: "Ox and Finch", url: "https://www.oxandfinch.com/reservations/" },
+              ...referenceGuideLinks.glasgowOverview
             ]
           },
           {
@@ -4367,7 +4565,7 @@
     }
 
     function normalizeGuideTitle(title) {
-      return title && title.includes("小红书") ? "小红书攻略" : title;
+      return title || "攻略与参考";
     }
 
     function renderMicroGuide(rows) {
@@ -4635,7 +4833,7 @@
 
     function renderFeaturedGuides(groups) {
       if (!groups || !groups.length) {
-        return `<p class="empty-copy">这里可以放当天重点的小红书攻略、路线参考或避坑帖。</p>`;
+        return `<p class="empty-copy">这里可以放当天重点的攻略、路线参考或避坑帖。</p>`;
       }
 
       const links = groups.flatMap((group) => group.links || []);
@@ -4653,9 +4851,11 @@
         : "";
 
       return `
-        <h5>小红书攻略</h5>
-        ${imageHtml}
-        ${renderLinkRow(otherLinks)}
+        <details class="featured-guide-details">
+          <summary>攻略与参考</summary>
+          ${imageHtml}
+          ${renderLinkRow(otherLinks)}
+        </details>
       `;
     }
 
