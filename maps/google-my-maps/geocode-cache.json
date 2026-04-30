@@ -538,5 +538,89 @@
     "lon": -4.251569,
     "display_name": "Sugo Pasta Glasgow",
     "source": "manual override"
+  },
+  "55.859791,-4.257635|Glasgow Central": {
+    "lat": 55.859791,
+    "lon": -4.257635,
+    "display_name": "Glasgow Central",
+    "source": "manual override"
+  },
+  "55.862858,-4.234971|Glasgow Cathedral": {
+    "lat": 55.862858,
+    "lon": -4.234971,
+    "display_name": "Glasgow Cathedral",
+    "source": "manual override"
+  },
+  "55.863225,-4.232968|Glasgow Necropolis": {
+    "lat": 55.863225,
+    "lon": -4.232968,
+    "display_name": "Glasgow Necropolis",
+    "source": "manual override"
+  },
+  "55.859469,-4.244370|Cafe Gandolfi": {
+    "lat": 55.859469,
+    "lon": -4.24437,
+    "display_name": "Cafe Gandolfi",
+    "source": "manual override"
+  },
+  "55.859687,-4.251809|Paesano Miller Street": {
+    "lat": 55.859687,
+    "lon": -4.251809,
+    "display_name": "Paesano Miller Street",
+    "source": "manual override"
+  },
+  "55.861129,-4.249161|Glasgow City Chambers": {
+    "lat": 55.861129,
+    "lon": -4.249161,
+    "display_name": "Glasgow City Chambers",
+    "source": "manual override"
+  },
+  "55.862097,-4.254013|Buchanan Street": {
+    "lat": 55.862097,
+    "lon": -4.254013,
+    "display_name": "Buchanan Street",
+    "source": "manual override"
+  },
+  "55.857307,-4.255274|St Enoch Subway": {
+    "lat": 55.857307,
+    "lon": -4.255274,
+    "display_name": "St Enoch Subway",
+    "source": "manual override"
+  },
+  "55.861699,-4.283733|Exhibition Centre Station": {
+    "lat": 55.861699,
+    "lon": -4.283733,
+    "display_name": "Exhibition Centre Station",
+    "source": "manual override"
+  },
+  "55.860753,-4.287866|Scottish Event Campus": {
+    "lat": 55.860753,
+    "lon": -4.287866,
+    "display_name": "Scottish Event Campus",
+    "source": "manual override"
+  },
+  "55.875582,-4.293305|Hillhead Subway": {
+    "lat": 55.875582,
+    "lon": -4.293305,
+    "display_name": "Hillhead Subway",
+    "source": "manual override"
+  },
+  "55.8685825,-4.2906278|Kelvingrove Cafe": {
+    "lat": 55.8685825,
+    "lon": -4.2906278,
+    "display_name": "Kelvingrove Cafe",
+    "source": "manual override"
+  },
+  "55.875014,-4.293710|Ubiquitous Chip": {
+    "lat": 55.875014,
+    "lon": -4.29371,
+    "display_name": "Ubiquitous Chip",
+    "source": "manual override"
+  },
+  "55.858319,-4.286218|Clyde Arc": {
+    "lat": 55.858319,
+    "lon": -4.286218,
+    "display_name": "Clyde Arc",
+    "source": "manual override"
   }
 }
