@@ -39,7 +39,7 @@
       scroll-behavior: smooth;
       width: 100%;
       max-width: 100%;
-      overflow-x: hidden;
+      overflow-x: visible;
       overscroll-behavior-x: none;
     }
 
@@ -47,7 +47,7 @@
       margin: 0;
       width: 100%;
       max-width: 100%;
-      overflow-x: hidden;
+      overflow-x: visible;
       overscroll-behavior-x: none;
       font-family: "Noto Serif SC", Georgia, serif;
       color: var(--ink);
@@ -75,24 +75,21 @@
       margin: 24px auto 60px;
       position: relative;
       z-index: 1;
-      overflow-x: clip;
-    }
-
-    @supports not (overflow-x: clip) {
-      .shell {
-        overflow-x: hidden;
-      }
+      overflow: visible;
     }
 
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 320px;
+      min-height: 0;
       border-radius: 28px;
       box-shadow: var(--shadow-lg);
-      padding: 0;
+      margin-bottom: 18px;
+      padding: 34px 40px;
       display: grid;
-      grid-template-columns: 1fr 380px;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 28px;
+      align-items: center;
       background: linear-gradient(128deg, #122838 0%, #1a4a5a 50%, #23384d 100%);
       color: #fdf8f0;
     }
@@ -109,33 +106,13 @@
     }
 
     .hero::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 380px;
-      background: rgba(255,248,230,0.04);
-      border-left: 1px solid rgba(255,248,230,0.1);
-      backdrop-filter: blur(8px);
-      pointer-events: none;
-    }
-
-    .hero-copy,
-    .hero-panel {
-      position: relative;
-      z-index: 2;
+      display: none;
     }
 
     .hero-copy {
-      padding: 44px 40px;
-    }
-
-    .hero-panel {
-      padding: 36px 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
     }
 
     .eyebrow {
@@ -163,111 +140,81 @@
 
     .hero-copy p {
       margin: 0;
-      max-width: 52ch;
+      max-width: 60ch;
       color: rgba(255, 248, 239, 0.78);
       font-size: 0.97rem;
       line-height: 1.8;
       font-weight: 300;
     }
 
-    .hero-panel h2 {
-      margin: 0 0 16px;
-      font-family: "Playfair Display", serif;
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: rgba(255,248,239,0.6);
-      letter-spacing: 0.05em;
+    .hero-summary {
+      position: relative;
+      z-index: 2;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      padding-left: 28px;
+      border-left: 1px solid rgba(255, 248, 239, 0.12);
+      color: rgba(255, 248, 239, 0.82);
+    }
+
+    .hero-summary-kicker {
+      color: rgba(255, 248, 239, 0.56);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
-    .hero-panel ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .hero-meta {
       display: grid;
-      gap: 0;
-    }
-
-    .hero-panel ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,248,239,0.08);
-      font-size: 0.88rem;
+      gap: 7px;
+      color: rgba(255, 248, 239, 0.72);
+      font-size: 0.84rem;
       line-height: 1.5;
-      color: rgba(255,248,239,0.85);
     }
 
-    .hero-panel ul li:last-child {
-      border-bottom: none;
+    .hero-meta span:not(:last-child)::after {
+      content: none;
     }
 
-    .hero-panel ul li::before {
+    .hero-alerts {
+      display: grid;
+      gap: 7px;
+      color: rgba(255, 248, 239, 0.86);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .hero-alerts span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-alerts span::before {
       content: "";
       flex-shrink: 0;
       width: 6px;
       height: 6px;
-      margin-top: 6px;
       border-radius: 50%;
       background: var(--brand-2);
     }
 
-    .hero-strap {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .hero-chip {
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 248, 239, 0.16);
-      background: rgba(255, 248, 239, 0.08);
-      color: rgba(255, 248, 239, 0.78);
-      font-size: 0.85rem;
-      letter-spacing: 0.02em;
-    }
-
-    .toolbar {
-      margin: 22px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .pill-row,
     .quick-actions {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
 
-    .pill,
     .ghost-btn,
     .map-btn,
     .link-chip,
     .day-tab {
       border: 1px solid transparent;
       transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
-    }
-
-    .pill {
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: var(--paper);
-      backdrop-filter: blur(10px);
-      border-color: rgba(26, 35, 48, 0.09);
-      color: var(--muted);
-      font-size: 0.88rem;
-      box-shadow: 0 6px 20px rgba(26, 35, 48, 0.06);
-    }
-
-    .pill strong {
-      color: var(--ink);
     }
 
     .ghost-btn,
@@ -309,13 +256,23 @@
     }
 
     .side-panel {
+      align-self: start;
       max-height: calc(100vh - 36px);
       overflow-y: auto;
+      overflow-x: hidden;
       overscroll-behavior: contain;
       padding: 24px;
+      position: -webkit-sticky;
       position: sticky;
-      scrollbar-gutter: stable;
       top: 18px;
+    }
+
+    .date-switch-block {
+      display: block;
+    }
+
+    .side-panel-extra {
+      display: block;
     }
 
     .side-panel h3,
@@ -333,14 +290,40 @@
     .day-tab-list {
       display: grid;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+
+    .side-panel {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(37, 79, 111, 0.28) transparent;
+    }
+
+    .side-panel::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .side-panel::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .side-panel::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: rgba(37, 79, 111, 0.22);
+      background-clip: padding-box;
+      border: 2px solid transparent;
+    }
+
+    .side-panel:hover::-webkit-scrollbar-thumb {
+      background: rgba(37, 79, 111, 0.36);
+      background-clip: padding-box;
+      border: 2px solid transparent;
     }
 
     .day-tab {
       width: 100%;
       text-align: left;
-      border-radius: 18px;
-      padding: 16px;
+      border-radius: 16px;
+      padding: 13px 14px;
       border-color: rgba(31, 42, 51, 0.08);
       background: rgba(255, 250, 244, 0.72);
       cursor: pointer;
@@ -1369,26 +1352,22 @@
       }
 
       .hero,
-      .layout,
-      .content-grid,
-      .side-panel {
+      .content-grid {
         position: static;
-      }
-
-      .side-panel {
-        max-height: none;
-        overflow-y: visible;
       }
 
       .hero {
         display: block;
       }
 
-      .hero-panel {
-        width: auto;
+      .hero-summary {
+        margin-top: 20px;
+        padding-left: 0;
+        padding-top: 16px;
+        border-left: 0;
+        border-top: 1px solid rgba(255, 248, 239, 0.12);
       }
 
-      .layout,
       .content-grid {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -1431,6 +1410,10 @@
     }
 
     @media (max-width: 720px) {
+      html {
+        overflow-x: hidden;
+      }
+
       .shell {
         width: min(var(--max), calc(100% - 14px));
         margin-top: 10px;
@@ -1438,6 +1421,7 @@
 
       body {
         padding-bottom: calc(78px + env(safe-area-inset-bottom));
+        overflow-x: hidden;
         touch-action: pan-y pinch-zoom;
         background:
           linear-gradient(180deg, #efe5d8 0%, #f7f1e8 46%, #f4efe6 100%);
@@ -1453,34 +1437,36 @@
       .hero {
         min-height: auto;
         display: block;
+        margin-bottom: 12px;
         padding: 18px;
       }
 
       h1 {
         max-width: none;
-        font-size: 2.2rem;
+        font-size: 2.15rem;
       }
 
-      .hero-panel {
-        width: auto;
-        margin-top: 18px;
-        padding: 16px;
+      .hero-copy {
+        max-width: none;
       }
 
-      .hero-copy p,
-      .hero-panel {
+      .hero-copy p {
         font-size: 0.92rem;
+        line-height: 1.65;
       }
 
-      .toolbar {
-        display: grid;
-        gap: 10px;
+      .hero-meta {
+        gap: 4px;
+        font-size: 0.78rem;
       }
 
-      .pill-row,
-      .quick-actions {
-        display: grid;
-        grid-template-columns: 1fr;
+      .hero-meta span:not(:last-child)::after {
+        content: none;
+      }
+
+      .hero-alerts {
+        gap: 5px;
+        font-size: 0.8rem;
       }
 
       .layout,
@@ -1490,11 +1476,21 @@
 
       .side-panel {
         order: -1;
+        position: static;
+        max-height: none;
+        overflow: visible;
+        display: block;
       }
 
-      .side-panel > h3 {
+      .day-tab-list,
+      .side-panel-extra {
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+      }
+
+      .date-switch-block {
         display: none;
-        margin-bottom: 10px;
       }
 
       .mini-note {
@@ -2009,6 +2005,14 @@
         padding: 14px;
       }
 
+      .hero {
+        padding: 14px;
+      }
+
+      .hero-copy {
+        padding: 0;
+      }
+
       h1 {
         font-size: 1.95rem;
       }
@@ -2035,61 +2039,50 @@
   <div class="shell">
     <section class="hero">
       <div class="hero-copy">
-        <div class="eyebrow">英国行程</div>
-        <h1>Plan A｜ Glasgow</h1>
+        <div class="eyebrow">英国行程 · ICC 2026</div>
+        <h1>Plan A | Glasgow</h1>
         <p>
-          苏格兰地区为主，包含格拉斯哥、爱丁堡、苏格兰高地与海边小岛轻松日
+          以 Glasgow 为据点，兼顾 ICC 汇报、爱丁堡、高地与海岛轻松日。
         </p>
-        <div class="hero-strap">
-          <div class="hero-chip">05/23-05/28</div>
-          <div class="hero-chip">住宿地：Glasgow</div>
-          <div class="hero-chip">当地时间：BST</div>
+      </div>
+      <div class="hero-summary" aria-label="行程关键信息">
+        <div class="hero-summary-kicker">关键信息</div>
+        <div class="hero-meta">
+          <span>05/23-05/28</span>
+          <span>住宿地 Glasgow</span>
+          <span>当地时间 BST</span>
+        </div>
+        <div class="hero-alerts" aria-label="重要时间提醒">
+          <span>05/25 16:45 ICC 汇报</span>
+          <span>05/28 14:25 ICC 汇报</span>
         </div>
       </div>
-      <aside class="hero-panel">
-        <h2>每日概览</h2>
-        <ul>
-          <li>05/23｜抵达 Glasgow</li>
-          <li>05/24｜Largs + Cumbrae / Millport 海边小岛</li>
-          <li>05/25｜Glasgow Cathedral、Necropolis、ICC 汇报</li>
-          <li>05/26｜Loch Lomond、Glencoe、Loch Ness 高地团</li>
-          <li>05/27｜爱丁堡城堡、Mary King's Close、Calton Hill</li>
-          <li>05/28｜University of Glasgow、Kelvingrove、ICC 汇报</li>
-        </ul>
-      </aside>
     </section>
-
-    <div class="toolbar">
-      <div class="pill-row">
-        <div class="pill"><strong>日期：</strong>05/23-05/28</div>
-        <div class="pill"><strong>时区：</strong>当地时间（BST）</div>
-        <div class="pill"><strong>据点城市：</strong>Glasgow</div>
-      </div>
-      <div class="quick-actions">
-        <a class="ghost-btn" href="#tripMap">查看总动线图</a>
-        <button class="ghost-btn" type="button" id="jumpFeatured">跳转到今日重点</button>
-      </div>
-    </div>
 
     <section class="layout">
       <aside class="side-panel">
-        <h3>日期切换</h3>
-        <div class="day-tab-list" id="dayTabs"></div>
-        <div class="mini-note">
+        <div class="date-switch-block">
+          <h3>日期切换</h3>
+          <div class="day-tab-list" id="dayTabs"></div>
+        </div>
+        <div class="side-panel-extra">
+          <div class="mini-note">
           <strong>阅读提示：</strong>可切换日期预览每日安排
-        </div>
-        <div class="side-note-card">
-          <h3>行程提示</h3>
-          <ul id="noteList"></ul>
-        </div>
-        <details class="side-note-card version-card">
+          </div>
+          <div class="side-note-card">
+            <h3>行程提示</h3>
+            <ul id="noteList"></ul>
+          </div>
+          <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-            <li>最近更新：2026-04-30｜stonfur｜统一 05/23 抵达日为类型化时间线：补充深夜抵达、机场进城、酒店周边补给和休息准备的费用 / 预约 / 开放、地图与附近可选信息；同时优化手机端总览 Google My Maps 嵌入宽度，减少窄屏拖动时右侧溢出。</li>
+              <li>最近更新：2026-04-30｜stonfur｜重新调整电脑端左侧日期切换：还原为整块侧栏统一内部滚动，不再拆分日期列表和提示区的滚动；同时排查并移除桌面端 html / body 横向 overflow 对 sticky 的影响，让左侧卡片在滚动长时间线时继续停留在视野内。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜精简并重新平衡顶部 hero：删除重复的日期 / 时区 / 据点 toolbar 和静态“每日概览”列表，桌面端改为左侧行程标题、右侧关键信息与 ICC 汇报硬约束；手机端保持单栏紧凑显示，首屏更快进入日期切换和实际行程内容。</li>
+              <li>2026-04-30｜stonfur｜统一 05/23 抵达日为类型化时间线：补充深夜抵达、机场进城、酒店周边补给和休息准备的费用 / 预约 / 开放、地图与附近可选信息；同时优化手机端总览 Google My Maps 嵌入宽度，减少窄屏拖动时右侧溢出。</li>
               <li>2026-04-30｜stonfur｜优化手机端日期切换体验：隐藏顶部横向滑动日期卡片，手机端统一通过底部“日期”抽屉切换行程；同时限制整页横向拖拽和横向溢出，减少手机浏览器斜向拖动时出现白边回弹的情况。</li>
               <li>2026-04-30｜stonfur｜新增 05/26 Glenfinnan Viaduct / Jacobite Steam Train / Glencoe 备选高地团，保留原 05/26 Loch Ness 经典高地团不变；备选页补充 Discover Scotland Tours 集合时间、Glenfinnan Viaduct / Monument / Loch Shiel、Jacobite 火车不保证运行的提醒、午餐补给策略、晚餐建议和 My Maps KML 动线。</li>
               <li>2026-04-30｜stonfur｜新增 05/24 North Berwick 东海岸小镇备选行程，保留 Largs / Cumbrae 主方案不变；备选页补充 Glasgow Queen Street 往返交通、Scottish Seabird Centre、船游预约、North Berwick Law 天气可选项、费用开放信息、港口餐饮和地图动线。</li>
@@ -2115,7 +2108,8 @@
               <li>2026-04-26｜stonfur｜调换 05/24 York 与 05/27 爱丁堡行程。</li>
             </ul>
           </details>
-        </details>
+          </details>
+        </div>
       </aside>
 
       <main class="main-panel">
@@ -5360,7 +5354,6 @@
     const sideRouteMap = document.getElementById("sideRouteMap");
     const serviceGuideList = document.getElementById("serviceGuideList");
     const featuredCard = document.getElementById("featuredCard");
-    const jumpFeatured = document.getElementById("jumpFeatured");
     const mobileDrawer = document.getElementById("mobileDrawer");
     const mobileDrawerBackdrop = document.getElementById("mobileDrawerBackdrop");
     const mobileDrawerClose = document.getElementById("mobileDrawerClose");
@@ -6024,10 +6017,6 @@
       const button = event.target.closest("[data-day]");
       if (!button) return;
       renderDay(button.dataset.day);
-    });
-
-    jumpFeatured.addEventListener("click", () => {
-      featuredCard.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     mobileDockButtons.forEach((button) => {
