@@ -762,16 +762,65 @@
     .timeline-phase {
       position: relative;
       z-index: 1;
-      width: max-content;
-      margin: 6px 0 0 104px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(15, 108, 123, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      margin: 12px 0 2px;
+      padding: 0 0 0 104px;
       color: var(--brand-3);
-      border: 1px solid rgba(15, 108, 123, 0.12);
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .timeline-phase::before {
+      content: "";
+      position: absolute;
+      left: 88px;
+      top: 50%;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--phase-color, var(--brand));
+      box-shadow: 0 0 0 5px var(--phase-halo, rgba(15, 108, 123, 0.1));
+      transform: translate(-50%, -50%);
+    }
+
+    .timeline-phase::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background: linear-gradient(90deg, var(--phase-line, rgba(15, 108, 123, 0.26)), transparent);
+    }
+
+    .timeline-phase.phase-morning {
+      --phase-color: #0f6c7b;
+      --phase-halo: rgba(15, 108, 123, 0.12);
+      --phase-line: rgba(15, 108, 123, 0.28);
+      color: #1e5665;
+    }
+
+    .timeline-phase.phase-afternoon {
+      --phase-color: #c96f41;
+      --phase-halo: rgba(201, 111, 65, 0.13);
+      --phase-line: rgba(201, 111, 65, 0.3);
+      color: #8d532e;
+    }
+
+    .timeline-phase.phase-evening {
+      --phase-color: #4f5f83;
+      --phase-halo: rgba(79, 95, 131, 0.13);
+      --phase-line: rgba(79, 95, 131, 0.3);
+      color: #405071;
+    }
+
+    .timeline-phase.phase-other {
+      --phase-color: #6f7882;
+      --phase-halo: rgba(111, 120, 130, 0.12);
+      --phase-line: rgba(111, 120, 130, 0.26);
+      color: var(--muted);
     }
 
     .timeline-item {
@@ -1466,6 +1515,14 @@
       .timeline-item::before {
         left: 68px;
       }
+
+      .timeline-phase {
+        padding-left: 90px;
+      }
+
+      .timeline-phase::before {
+        left: 74px;
+      }
     }
 
     @media (max-width: 720px) {
@@ -1814,8 +1871,18 @@
 
       .timeline-phase {
         margin: 6px 0 0;
-        padding: 4px 9px;
+        padding: 0;
+        gap: 8px;
         font-size: 0.68rem;
+      }
+
+      .timeline-phase::before {
+        position: static;
+        flex: 0 0 auto;
+        width: 7px;
+        height: 7px;
+        transform: none;
+        box-shadow: 0 0 0 4px var(--phase-halo, rgba(15, 108, 123, 0.1));
       }
 
       .micro-guide {
@@ -2183,11 +2250,13 @@
           <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-              <li>最近更新：2026-04-30｜stonfur｜重排顶部与左侧信息层级：将行程提示移入 hero 的关键信息区，将版本说明移到 hero 下方默认折叠展示；左侧侧栏只保留日期切换，手机端同步压缩 hero 提示和版本折叠条，减少首屏冗余。</li>
+              <li>最近更新：2026-04-30｜stonfur｜精简每日标题栏并美化时间线分段：移除“在 Google 地图中查看当日路线”总路线按钮，地图入口统一保留在“地图快速跳转”和手机端“地图”抽屉；同时将上午 / 下午 / 晚上由胶囊标签改为横向分隔标题，并加入克制的色彩区分。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜美化时间线的上午 / 下午 / 晚上分段标题：由胶囊标签改为横向分隔标题，并为上午、下午、晚上加入克制的色彩区分；手机端同步改为紧凑分隔线，减少突兀感。</li>
+              <li>2026-04-30｜stonfur｜重排顶部与左侧信息层级：将行程提示移入 hero 的关键信息区，将版本说明移到 hero 下方默认折叠展示；左侧侧栏只保留日期切换，手机端同步压缩 hero 提示和版本折叠条，减少首屏冗余。</li>
               <li>2026-04-30｜stonfur｜重新调整电脑端左侧日期切换：还原为整块侧栏统一内部滚动，不再拆分日期列表和提示区的滚动；同时排查并移除桌面端 html / body 横向 overflow 对 sticky 的影响，让左侧卡片在滚动长时间线时继续停留在视野内。</li>
               <li>2026-04-30｜stonfur｜精简并重新平衡顶部 hero：删除重复的日期 / 时区 / 据点 toolbar 和静态“每日概览”列表，桌面端改为左侧行程标题、右侧关键信息与 ICC 汇报硬约束；手机端保持单栏紧凑显示，首屏更快进入日期切换和实际行程内容。</li>
               <li>2026-04-30｜stonfur｜统一 05/23 抵达日为类型化时间线：补充深夜抵达、机场进城、酒店周边补给和休息准备的费用 / 预约 / 开放、地图与附近可选信息；同时优化手机端总览 Google My Maps 嵌入宽度，减少窄屏拖动时右侧溢出。</li>
@@ -2225,7 +2294,6 @@
           <div>
             <h2 id="dayTitle">05/23｜抵达 Glasgow</h2>
           </div>
-          <a class="map-btn" id="dayMapButton" href="#" target="_blank" rel="noreferrer">在 Google 地图中查看当日路线</a>
         </div>
         <section class="day-overview" id="dayOverview"></section>
 
@@ -5447,7 +5515,6 @@
     const dayTabs = document.getElementById("dayTabs");
     const dayTitle = document.getElementById("dayTitle");
     const dayOverview = document.getElementById("dayOverview");
-    const dayMapButton = document.getElementById("dayMapButton");
     const featuredTitle = document.getElementById("featuredTitle");
     const featuredText = document.getElementById("featuredText");
     const featuredTags = document.getElementById("featuredTags");
@@ -5694,6 +5761,15 @@
       if (hour < 12) return "上午";
       if (hour < 18) return "下午";
       return "晚上";
+    }
+
+    function dayPartClass(part) {
+      const classMap = {
+        "上午": "phase-morning",
+        "下午": "phase-afternoon",
+        "晚上": "phase-evening"
+      };
+      return classMap[part] || "phase-other";
     }
 
     function shortRoutePoint(point) {
@@ -6039,7 +6115,6 @@
 
       dayTitle.textContent = `${day.short} | ${day.dayLabel} | ${day.title}`;
       dayOverview.innerHTML = renderDayOverview(day);
-      dayMapButton.href = mapsUrl(day.mapQuery);
 
       featuredTitle.textContent = day.featured.title;
       featuredText.textContent = day.featured.text;
@@ -6097,7 +6172,7 @@
         ];
 
         const part = getDayPart(item.time);
-        const partHeading = part !== previousPart ? `<div class="timeline-phase">${escapeHtml(part)}</div>` : "";
+        const partHeading = part !== previousPart ? `<div class="timeline-phase ${dayPartClass(part)}">${escapeHtml(part)}</div>` : "";
         previousPart = part;
 
         return `
