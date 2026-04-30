@@ -87,7 +87,7 @@
       margin-bottom: 18px;
       padding: 34px 40px;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
       gap: 28px;
       align-items: center;
       background: linear-gradient(128deg, #122838 0%, #1a4a5a 50%, #23384d 100%);
@@ -203,6 +203,65 @@
       background: var(--brand-2);
     }
 
+    .hero-note-card {
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 248, 239, 0.12);
+    }
+
+    .hero-note-list {
+      display: grid;
+      gap: 7px;
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(255, 248, 239, 0.72);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    .hero-note-list li {
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .hero-note-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255, 248, 239, 0.44);
+    }
+
+    .top-version-slot {
+      margin: -4px 0 18px;
+    }
+
+    .top-version-slot:empty {
+      display: none;
+    }
+
+    .top-version-slot .version-card {
+      margin-top: 0;
+      padding: 14px 18px;
+      border-radius: 20px;
+      background: rgba(255, 252, 246, 0.78);
+      box-shadow: 0 14px 34px rgba(20, 30, 44, 0.09);
+      backdrop-filter: blur(14px);
+    }
+
+    .top-version-slot .version-card > summary {
+      color: var(--ink);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+    }
+
+    .top-version-slot .version-card > ul {
+      margin-top: 10px;
+    }
+
     .quick-actions {
       display: flex;
       gap: 8px;
@@ -272,7 +331,7 @@
     }
 
     .side-panel-extra {
-      display: block;
+      display: none;
     }
 
     .side-panel h3,
@@ -1438,12 +1497,13 @@
         min-height: auto;
         display: block;
         margin-bottom: 12px;
-        padding: 18px;
+        padding: 16px;
       }
 
       h1 {
         max-width: none;
-        font-size: 2.15rem;
+        margin: 12px 0 8px;
+        font-size: 2rem;
       }
 
       .hero-copy {
@@ -1451,13 +1511,21 @@
       }
 
       .hero-copy p {
-        font-size: 0.92rem;
-        line-height: 1.65;
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+
+      .hero-summary {
+        margin-top: 12px;
+        padding-top: 12px;
+        gap: 8px;
       }
 
       .hero-meta {
-        gap: 4px;
-        font-size: 0.78rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        font-size: 0.74rem;
       }
 
       .hero-meta span:not(:last-child)::after {
@@ -1465,8 +1533,41 @@
       }
 
       .hero-alerts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 10px;
+        font-size: 0.76rem;
+      }
+
+      .hero-note-card {
+        padding: 9px 10px;
+        border: 1px solid rgba(255, 248, 239, 0.12);
+        border-radius: 16px;
+        background: rgba(255, 248, 239, 0.06);
+      }
+
+      .hero-summary-kicker {
+        font-size: 0.68rem;
+      }
+
+      .hero-note-list {
         gap: 5px;
-        font-size: 0.8rem;
+        margin-top: 6px;
+        font-size: 0.72rem;
+        line-height: 1.38;
+      }
+
+      .top-version-slot {
+        margin: 0 0 12px;
+      }
+
+      .top-version-slot .version-card {
+        padding: 12px 14px;
+        border-radius: 18px;
+      }
+
+      .top-version-slot .version-card > summary {
+        font-size: 0.86rem;
       }
 
       .layout,
@@ -1479,7 +1580,7 @@
         position: static;
         max-height: none;
         overflow: visible;
-        display: block;
+        display: none;
       }
 
       .day-tab-list,
@@ -2056,8 +2157,14 @@
           <span>05/25 16:45 ICC 汇报</span>
           <span>05/28 14:25 ICC 汇报</span>
         </div>
+        <div class="hero-note-card" aria-label="行程提示">
+          <div class="hero-summary-kicker">行程提示</div>
+          <ul class="hero-note-list" id="heroNoteList"></ul>
+        </div>
       </div>
     </section>
+
+    <section class="top-version-slot" id="topVersionSlot" aria-label="版本说明"></section>
 
     <section class="layout">
       <aside class="side-panel">
@@ -2076,11 +2183,12 @@
           <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-              <li>最近更新：2026-04-30｜stonfur｜重新调整电脑端左侧日期切换：还原为整块侧栏统一内部滚动，不再拆分日期列表和提示区的滚动；同时排查并移除桌面端 html / body 横向 overflow 对 sticky 的影响，让左侧卡片在滚动长时间线时继续停留在视野内。</li>
+              <li>最近更新：2026-04-30｜stonfur｜重排顶部与左侧信息层级：将行程提示移入 hero 的关键信息区，将版本说明移到 hero 下方默认折叠展示；左侧侧栏只保留日期切换，手机端同步压缩 hero 提示和版本折叠条，减少首屏冗余。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜重新调整电脑端左侧日期切换：还原为整块侧栏统一内部滚动，不再拆分日期列表和提示区的滚动；同时排查并移除桌面端 html / body 横向 overflow 对 sticky 的影响，让左侧卡片在滚动长时间线时继续停留在视野内。</li>
               <li>2026-04-30｜stonfur｜精简并重新平衡顶部 hero：删除重复的日期 / 时区 / 据点 toolbar 和静态“每日概览”列表，桌面端改为左侧行程标题、右侧关键信息与 ICC 汇报硬约束；手机端保持单栏紧凑显示，首屏更快进入日期切换和实际行程内容。</li>
               <li>2026-04-30｜stonfur｜统一 05/23 抵达日为类型化时间线：补充深夜抵达、机场进城、酒店周边补给和休息准备的费用 / 预约 / 开放、地图与附近可选信息；同时优化手机端总览 Google My Maps 嵌入宽度，减少窄屏拖动时右侧溢出。</li>
               <li>2026-04-30｜stonfur｜优化手机端日期切换体验：隐藏顶部横向滑动日期卡片，手机端统一通过底部“日期”抽屉切换行程；同时限制整页横向拖拽和横向溢出，减少手机浏览器斜向拖动时出现白边回弹的情况。</li>
@@ -2211,9 +2319,9 @@
 
   <script>
     const dayNotes = [
-      "05/24 是海边小岛轻松日，火车、渡轮和岛上公交都建议出发前再查一次官方状态。",
-      "5 月 25 日是英国 Spring Bank Holiday，05/24 周日海边小镇和渡轮可能比平时更忙。",
-      "Highlands 一日游可以同时比较 Rabbie's、Timberbush 和 Discover Scotland Tours。"
+      "05/24 海边小岛：出发前再查火车 / 渡轮 / 岛上公交状态。",
+      "05/25 Spring Bank Holiday：05/24 海边小镇和渡轮可能更忙。",
+      "Highlands 团：可比较 Rabbie's / Timberbush / Discover Scotland Tours。"
     ];
 
     const globalRouteLinks = [
@@ -5348,7 +5456,10 @@
     const featuredGuidePanel = document.getElementById("featuredGuidePanel");
     const timeline = document.getElementById("timeline");
     const bookingList = document.getElementById("bookingList");
+    const heroNoteList = document.getElementById("heroNoteList");
     const noteList = document.getElementById("noteList");
+    const topVersionSlot = document.getElementById("topVersionSlot");
+    const versionCard = document.querySelector(".version-card");
     const mapJumpList = document.getElementById("mapJumpList");
     const routeSegmentList = document.getElementById("routeSegmentList");
     const sideRouteMap = document.getElementById("sideRouteMap");
@@ -5363,6 +5474,10 @@
     const mobileDockButtons = document.querySelectorAll("[data-mobile-action]");
     let activeDayId = itinerary[0].id;
     let mobileDrawerMode = "";
+
+    if (topVersionSlot && versionCard) {
+      topVersionSlot.appendChild(versionCard);
+    }
 
     function isImageUrl(url) {
       return /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(String(url || ""));
@@ -5907,7 +6022,13 @@
     }
 
     function renderLists() {
-      noteList.innerHTML = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      const notesHtml = dayNotes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      if (heroNoteList) {
+        heroNoteList.innerHTML = notesHtml;
+      }
+      if (noteList) {
+        noteList.innerHTML = notesHtml;
+      }
     }
 
     function renderDay(dayId) {
