@@ -9,6 +9,7 @@
 - `plan-a-cn-0524-berwick.kml`：05/24 North Berwick 备选行程，可按需导入为 `05/24B` 图层。
 - `plan-a-cn-0525.kml`
 - `plan-a-cn-0526.kml`
+- `plan-a-cn-0526-glenfinnan.kml`：05/26 Glenfinnan / Jacobite Steam Train 备选高地团，可按需导入为 `05/26B` 图层。
 - `plan-a-cn-0527.kml`
 - `plan-a-cn-0528.kml`
 - `icons/`：KML 使用的数字图钉图标，按 `01.png`、`02.png` 这样的格式命名。
@@ -26,11 +27,12 @@
    - `plan-a-cn-0524-berwick.kml`（可选，作为 `05/24B` 备选图层）
    - `plan-a-cn-0525.kml`
    - `plan-a-cn-0526.kml`
+   - `plan-a-cn-0526-glenfinnan.kml`（可选，作为 `05/26B` 备选图层）
    - `plan-a-cn-0527.kml`
    - `plan-a-cn-0528.kml`
 4. 将分享权限设置为 `Anyone with the link can view`。
 
-导入后，My Maps 会把每个 KML 作为一个独立日期图层。KML 内部不会再按上午 / 下午 / 晚上拆分 Folder，避免超过 My Maps 的图层数量限制。建议图层顺序保持 `05/23` 到 `05/28`；如果导入 North Berwick 备选图层，可以放在 `05/24` 后面并命名为 `05/24B North Berwick`。
+导入后，My Maps 会把每个 KML 作为一个独立日期图层。KML 内部不会再按上午 / 下午 / 晚上拆分 Folder，避免超过 My Maps 的图层数量限制。建议图层顺序保持 `05/23` 到 `05/28`；如果导入备选图层，可以分别放在对应日期后面并命名为 `05/24B North Berwick`、`05/26B Glenfinnan`。
 
 ## 后续维护
 
@@ -42,7 +44,7 @@
 4. 导入新的那一天 KML。
 5. 手动把该图层拖回日期顺序位置。
 
-如果修改多天行程，建议重新导入全部 KML，避免旧图层残留；如果不使用 `05/24B` 备选路线，可以不导入 `plan-a-cn-0524-berwick.kml`。
+如果修改多天行程，建议重新导入全部 KML，避免旧图层残留；如果不使用备选路线，可以不导入 `plan-a-cn-0524-berwick.kml` 或 `plan-a-cn-0526-glenfinnan.kml`。
 
 ## 重新生成
 

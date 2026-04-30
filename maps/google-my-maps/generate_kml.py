@@ -78,6 +78,7 @@ PLACE_QUERIES: dict[str, str] = {
     "Largs Railway Station": "55.792497,-4.867033|Largs Railway Station",
     "Largs waterfront": "55.797000,-4.868762|Largs waterfront",
     "Loch Lomond": "56.101506,-4.639122|Loch Lomond",
+    "Luss Loch Lomond": "56.1005705,-4.6425873|Luss / Loch Lomond",
     "Makars Mash Bar Edinburgh": "Makars Mash Bar Edinburgh",
     "Mapes of Millport": "55.753643,-4.926052|Mapes of Millport",
     "Merchant City": "Merchant City, Glasgow, UK",
@@ -94,6 +95,11 @@ PLACE_QUERIES: dict[str, str] = {
     "Paesano Miller Street": "55.859687,-4.251809|Paesano Miller Street",
     "Pitlochry": "56.703468,-3.729967|Pitlochry",
     "Rannoch Moor": "56.669838,-4.766830|Rannoch Moor",
+    "Buachaille Etive Mor": "56.6339671,-4.9367794|Buachaille Etive Mor",
+    "Glenfinnan Viaduct": "56.8758236,-5.4293199|Glenfinnan Viaduct",
+    "Glenfinnan Monument": "56.8691729,-5.4370496|Glenfinnan Monument",
+    "Loch Shiel Glenfinnan": "56.8744275,-5.4386924|Loch Shiel",
+    "Loch Lomond and The Trossachs National Park": "56.2301709,-4.5337863|Loch Lomond & The Trossachs National Park",
     "Riverside Museum": "Riverside Museum, Glasgow",
     "Scott Monument": "Scott Monument Edinburgh",
     "Scottish Event Campus": "55.860753,-4.287866|Scottish Event Campus",
@@ -172,6 +178,18 @@ ITEM_POINT_OVERRIDES: list[dict[str, object]] = [
     {"day": "0526", "title": "Perthshire 茶歇", "points": ["Pitlochry"]},
     {"day": "0526", "title": "Stirling Castle 远眺", "points": ["Pitlochry", "Stirling Castle", "Buchanan Bus Station"]},
     {"day": "0526", "title": "Glasgow 市中心晚餐", "points": ["Buchanan Bus Station", "Shilling Brewing Co", "Sugo Pasta Glasgow"]},
+    {"day": "0526-glenfinnan", "title": "酒店 → Buchanan Bus Station", "points": ["Aparthotel Adagio Glasgow Central", "Buchanan Bus Station"]},
+    {"day": "0526-glenfinnan", "title": "到达 Buchanan Bus Station", "points": ["Buchanan Bus Station"]},
+    {"day": "0526-glenfinnan", "title": "Discover Scotland Tours 发车", "points": ["Buchanan Bus Station", "Luss Loch Lomond"]},
+    {"day": "0526-glenfinnan", "title": "Luss / Loch Lomond", "points": ["Luss Loch Lomond"]},
+    {"day": "0526-glenfinnan", "title": "Rannoch Moor / Buachaille", "points": ["Luss Loch Lomond", "Rannoch Moor", "Buachaille Etive Mor"]},
+    {"day": "0526-glenfinnan", "title": "Glencoe 山谷", "points": ["Buachaille Etive Mor", "Glencoe Three Sisters Viewpoint", "Glencoe"]},
+    {"day": "0526-glenfinnan", "title": "Fort William 方向", "points": ["Glencoe", "Fort William"]},
+    {"day": "0526-glenfinnan", "title": "Glenfinnan Viaduct", "points": ["Glenfinnan Viaduct"]},
+    {"day": "0526-glenfinnan", "title": "Glenfinnan Monument", "points": ["Glenfinnan Monument", "Loch Shiel Glenfinnan"]},
+    {"day": "0526-glenfinnan", "title": "返程：Loch Lomond", "points": ["Glenfinnan Monument", "Loch Lomond and The Trossachs National Park"]},
+    {"day": "0526-glenfinnan", "title": "返回 Glasgow", "points": ["Loch Lomond and The Trossachs National Park", "Buchanan Bus Station"]},
+    {"day": "0526-glenfinnan", "title": "Glasgow 市中心晚餐", "points": ["Buchanan Bus Station", "Shilling Brewing Co", "Sugo Pasta Glasgow"]},
     {"day": "0527", "title": "酒店 → Glasgow Queen Street", "points": ["Aparthotel Adagio Glasgow Central", "Glasgow Queen Street Station"]},
     {"day": "0527", "title": "Glasgow Queen Street → Edinburgh Waverley", "points": ["Glasgow Queen Street Station", "Edinburgh Waverley Station"]},
     {"day": "0527", "title": "Waverley → Edinburgh Castle", "points": ["Edinburgh Waverley Station", "Edinburgh Castle"]},
@@ -264,9 +282,20 @@ LOCATION_OVERRIDES: dict[str, str] = {
     "York riverside": "Ouse Bridge, York",
     "Near York station": "York Railway Station",
     "Buchanan Bus Station": PLACE_QUERIES["Buchanan Bus Station"],
+    "Luss Loch Lomond": PLACE_QUERIES["Luss Loch Lomond"],
+    "Luss / Loch Lomond": PLACE_QUERIES["Luss Loch Lomond"],
     "Tarbet Loch Lomond": PLACE_QUERIES["Tarbet Loch Lomond"],
     "Glencoe": PLACE_QUERIES["Glencoe"],
+    "Buachaille Etive Mor": PLACE_QUERIES["Buachaille Etive Mor"],
     "Fort William": PLACE_QUERIES["Fort William"],
+    "Glenfinnan": PLACE_QUERIES["Glenfinnan Monument"],
+    "Glenfinnan Viaduct": PLACE_QUERIES["Glenfinnan Viaduct"],
+    "Glenfinnan Monument": PLACE_QUERIES["Glenfinnan Monument"],
+    "Glenfinnan Monument / Loch Shiel": PLACE_QUERIES["Glenfinnan Monument"],
+    "Loch Shiel": PLACE_QUERIES["Loch Shiel Glenfinnan"],
+    "Loch Shiel Glenfinnan": PLACE_QUERIES["Loch Shiel Glenfinnan"],
+    "Loch Lomond and The Trossachs National Park": PLACE_QUERIES["Loch Lomond and The Trossachs National Park"],
+    "Loch Lomond & The Trossachs National Park": PLACE_QUERIES["Loch Lomond and The Trossachs National Park"],
     "Fort Augustus": PLACE_QUERIES["Fort Augustus"],
     "Pitlochry": PLACE_QUERIES["Pitlochry"],
     "Stirling Castle": PLACE_QUERIES["Stirling Castle"],
@@ -534,7 +563,7 @@ def route_point(raw: str, day: Day) -> tuple[str, str]:
         query = f"{query_base}, East Lothian, Scotland, UK"
     elif day.id == "0527":
         query = f"{query_base}, Edinburgh, UK"
-    elif day.id == "0526":
+    elif day.id == "0526" or day.id == "0526-glenfinnan":
         query = f"{query_base}, Scotland, UK"
     else:
         query = f"{query_base}, Glasgow, UK"

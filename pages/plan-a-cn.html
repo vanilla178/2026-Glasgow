@@ -2055,11 +2055,12 @@
         <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-            <li>最近更新：2026-04-30｜stonfur｜新增 05/24 North Berwick 东海岸小镇备选行程，保留 Largs / Cumbrae 主方案不变；备选页补充 Glasgow Queen Street 往返交通、Scottish Seabird Centre、船游预约、North Berwick Law 天气可选项、费用开放信息、港口餐饮和地图动线。</li>
+            <li>最近更新：2026-04-30｜stonfur｜新增 05/26 Glenfinnan Viaduct / Jacobite Steam Train / Glencoe 备选高地团，保留原 05/26 Loch Ness 经典高地团不变；备选页补充 Discover Scotland Tours 集合时间、Glenfinnan Viaduct / Monument / Loch Shiel、Jacobite 火车不保证运行的提醒、午餐补给策略、晚餐建议和 My Maps KML 动线。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜新增 05/24 North Berwick 东海岸小镇备选行程，保留 Largs / Cumbrae 主方案不变；备选页补充 Glasgow Queen Street 往返交通、Scottish Seabird Centre、船游预约、North Berwick Law 天气可选项、费用开放信息、港口餐饮和地图动线。</li>
               <li>2026-04-30｜stonfur｜优化电脑端左侧侧栏：侧栏继续固定在页面左侧，但增加最大高度和内部独立滚动，避免长行程日需要把整个网页拖到底才能看到侧栏底部；同时将“版本说明”整块默认折叠，减少左侧卡片高度。</li>
               <li>2026-04-30｜stonfur｜将“今日重点”里的“攻略与参考”改为默认折叠显示，减少每日重点区域的信息密度；同时从 05/27 爱丁堡“今日重点”中移除哈利波特路线图和爱丁堡路线参考图，避免与“地图快速跳转”里的路线图重复展示。</li>
               <li>2026-04-30｜stonfur｜整理 reference pages.txt 中的攻略链接：将“今日重点”下方标题从“小红书攻略”改为更通用的“攻略与参考”，并按日期与行程卡补充 Glasgow、Largs / Cumbrae、Highlands、Edinburgh、Kelvingrove 等强相关参考链接；知乎 403 和小红书 404 链接不纳入页面，周边目的地资料收进少量“备选参考”。</li>
@@ -2249,6 +2250,12 @@
         { label: "小红书｜苏格兰高地一日团体验", url: "https://www.xiaohongshu.com/explore/699cd9ef000000000b012993?xsec_token=ABoxaGNMMvBS5F_uOw2Ug_rG3yyTHl7x6r2V39iyVLn3g=&xsec_source=pc_user&source=web_user_page" },
         { label: "小红书｜第一次去苏格兰高地路线 / 交通 / 景点", url: "https://www.xiaohongshu.com/explore/687c25870000000012021e6e?xsec_token=ABmz29DpFu9puUQlu3SBNwLN1e1jKVx7bPn0baYu6Hrhw=&xsec_source=pc_user&source=web_user_page" },
         { label: "小红书｜爱丁堡出发高地一日游参考", url: "https://www.xiaohongshu.com/explore/6352e610000000001402b7d6?xsec_token=ABjsw5XJEMt_Y7yZLWk8YV9QfZskQCBiQaFbvMpSZ-aO4=&xsec_source=pc_user&source=web_user_page" }
+      ],
+      glenfinnan: [
+        { label: "官网｜Discover Scotland Tours Glenfinnan Viaduct Tour", url: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/" },
+        { label: "官网｜West Coast Railways Jacobite timetable", url: "https://westcoastrailways.co.uk/jacobite/timetables" },
+        { label: "官网｜NTS Glenfinnan Monument", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument" },
+        { label: "官网｜NTS Glenfinnan planning your visit", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit" }
       ],
       stirlingAlternative: [
         { label: "小红书｜Stirling 周边备选参考", url: "https://www.xiaohongshu.com/explore/67b6f45a0000000029018b47?xsec_token=ABE1IpLLlIev3jtjVP7p3PNywCSOPYvBUXJ4UcEhxgWi8=&xsec_source=pc_user&source=web_user_page" }
@@ -3643,6 +3650,337 @@
               { label: "Stirling Castle", url: mapsUrl("Stirling Castle Scotland") },
               ...referenceGuideLinks.stirlingAlternative
             ]
+          },
+          {
+            type: "meal",
+            time: "20:00-21:30",
+            title: "Glasgow 市中心晚餐",
+            location: "Buchanan Bus Station -> Glasgow City Centre",
+            area: "Buchanan / George Square / Merchant City",
+            duration: "约 1h30m",
+            ticket: "约 £20-35",
+            notes: "坐车一天后不要横跨城市找餐厅。优先 Shilling Brewing Co. 或 Sugo Pasta，想快一点可 Paesano，想 pub food 可 The Raven。",
+            details: ["以当天体力为准", "离酒店近优先", "吃完直接回酒店休息"],
+            links: [
+              { label: "Shilling Brewing Co.", url: "https://shillingbrewingcompany.co.uk/" },
+              { label: "Sugo Pasta", url: "https://www.sugopasta.co.uk/" },
+              { label: "Paesano Pizza", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+              { label: "The Raven", url: "https://theravenglasgow.com/" }
+            ]
+          }
+        ]
+      },
+      {
+        id: "0526-glenfinnan",
+        short: "05/26 备选",
+        dayLabel: "周二",
+        title: "Glenfinnan Viaduct / Jacobite Steam Train / Glencoe 备选一日团",
+        intro: "如果 05/26 想把高地日从“尼斯湖经典线”换成更有哈利波特和火车氛围的路线，可以选择 Discover Scotland Tours 的 Glenfinnan Viaduct Tour from Glasgow：从 Buchanan Bus Station 出发，经 Luss / Loch Lomond、Rannoch Moor、Glencoe，下午去 Glenfinnan Viaduct、Glenfinnan Monument 和 Loch Shiel。",
+        vibe: "高地自然风景 + 哈利波特火车氛围线",
+        intensity: "high",
+        window: "07:35-21:30",
+        travel: "Discover Scotland Tours 小团巴士；全日跟团",
+        anchor: "Buchanan Bus Station -> Luss / Loch Lomond -> Rannoch Moor -> Glencoe -> Glenfinnan Viaduct / Loch Shiel -> Glasgow",
+        mapQuery: "Glenfinnan Viaduct Scotland",
+        bookingChecklist: [
+          {
+            title: "Discover Scotland Tours｜Glenfinnan Viaduct Tour from Glasgow",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/",
+            fee: "from £63；餐食和饮料不包含",
+            hours: "Buchanan Bus Station 23-32 站台；08:15 check-in 关闭，08:30 发车，约 19:30 返回 Glasgow",
+            lead: "需要提前预约；这是这条备选路线的核心",
+            refund: "迟到错过团通常不退款；其余按 Discover Scotland Tours 预订条款",
+            prepay: "需要预付款"
+          },
+          {
+            title: "Jacobite Steam Train 过桥",
+            officialUrl: "https://westcoastrailways.co.uk/jacobite/timetables",
+            fee: "免费观看高架桥；不坐火车",
+            hours: "2026 运行日期仍需出发前确认；是否准点经过取决于 West Coast Railways 当天运行",
+            lead: "不需要自己订火车票；跟团只是在 Glenfinnan 看高架桥和可能经过的火车",
+            refund: "如果火车不运行或延误，团费通常不因此单独退款",
+            prepay: "不适用"
+          },
+          {
+            title: "Glenfinnan Monument / Visitor Centre",
+            officialUrl: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit",
+            fee: "Visitor Centre 免费；Monument 单独成人 £5；跟团是否额外收费以当天安排为准",
+            hours: "5 月主季通常 visitor centre / shop 09:30-18:00；Monument 11:00-12:30、14:00-16:00",
+            lead: "不需要自己预约；跟随导游安排",
+            refund: "不适用",
+            prepay: "通常不需要"
+          },
+          {
+            title: "Glenfinnan 午餐 / Café",
+            officialUrl: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit",
+            fee: "约 £8-20；建议自带三明治 / 面包 / 能量棒备用",
+            hours: "Monument View Café 和 Viaduct View Café 以 NTS 当天开放为准",
+            lead: "不需要预约，但游客集中时可能排队",
+            refund: "不适用",
+            prepay: "现场支付"
+          },
+          {
+            title: "Glasgow 晚餐",
+            officialUrl: "https://shillingbrewingcompany.co.uk/",
+            fee: "约 £20-35",
+            hours: "约 19:30 回到 Buchanan 后再吃；只选市中心 / 酒店附近",
+            lead: "Shilling / Sugo / Paesano / The Raven 按体力选择",
+            refund: "餐厅预订规则各自为准",
+            prepay: "通常不需要"
+          }
+        ],
+        routeLinks: [
+          {
+            title: "官方团与关键信息",
+            links: [
+              { label: "Discover Scotland Tours｜Glenfinnan Viaduct Tour", url: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/" },
+              { label: "West Coast Railways｜Jacobite timetable", url: "https://westcoastrailways.co.uk/jacobite/timetables" },
+              { label: "National Trust for Scotland｜Glenfinnan Monument", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument" },
+              { label: "NTS｜Planning your visit", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit" }
+            ]
+          }
+        ],
+        spotGuides: [
+          {
+            title: "Glenfinnan / Glencoe 主线点位",
+            links: [
+              { label: "Glenfinnan Monument", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument" },
+              { label: "Glenfinnan planning your visit", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit" },
+              { label: "NTS Glencoe", url: "https://www.nts.org.uk/visit/places/glencoe" },
+              { label: "Loch Lomond & The Trossachs", url: "https://www.lochlomond-trossachs.org/" }
+            ]
+          },
+          {
+            title: "晚餐 / 回城后",
+            links: [
+              { label: "Shilling Brewing Co.", url: "https://shillingbrewingcompany.co.uk/" },
+              { label: "Sugo Pasta", url: "https://www.sugopasta.co.uk/" },
+              { label: "Paesano Pizza Miller Street", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+              { label: "The Raven Glasgow", url: "https://theravenglasgow.com/" }
+            ]
+          }
+        ],
+        serviceGuides: {
+          regionalPicks: [
+            {
+              title: "Glenfinnan 午餐 / 补给",
+              links: [
+                { label: "自带轻食｜最稳策略｜早上在 Glasgow 买水、三明治或面包、能量棒，避免 Glenfinnan café 排队影响看桥。", url: mapsUrl("Tesco Express Glasgow city centre") },
+                { label: "Monument View Café｜NTS café｜时间宽裕时买热饮、轻食或外带小食。", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit" },
+                { label: "Viaduct View Café｜NTS takeaway｜以当天开放和导游集合时间为准。", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit" }
+              ]
+            },
+            {
+              title: "Glasgow 晚餐回城后",
+              links: [
+                { label: "Shilling Brewing Co.｜pizza + beer｜Buchanan / George Square 附近，坐车一天后最稳。", url: "https://shillingbrewingcompany.co.uk/" },
+                { label: "Sugo Pasta｜意面｜简单稳定，适合不想再找复杂餐厅。", url: "https://www.sugopasta.co.uk/" },
+                { label: "Paesano Pizza｜Miller Street｜walk-in 友好，想快一点可以选。", url: "https://www.paesanopizza.co.uk/glasgow-citycentre" },
+                { label: "The Raven｜pub food / burger / craft beer｜厨房时间需当天确认。", url: "https://theravenglasgow.com/" }
+              ]
+            },
+            {
+              title: "和尼斯湖主线怎么选",
+              links: [
+                { label: "选 Glenfinnan｜更适合哈利波特粉丝、想看高架桥和 Loch Shiel；但不去 Loch Ness，且不保证看到蒸汽火车。", url: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/" },
+                { label: "选 Loch Ness｜更经典、更稳，Fort Augustus 午餐选择也更明确；但电影 / 火车属性弱。", url: "https://www.discoverscotlandtours.com/tours/loch-ness-haunting-glencoe-highlands/" }
+              ]
+            }
+          ],
+          restaurants: [],
+          cafes: [],
+          souvenirs: []
+        },
+        featured: {
+          title: "Glenfinnan Viaduct + Loch Shiel",
+          text: "这条 05/26 备选不去 Loch Ness，而是把下午重点放在 Glenfinnan Viaduct、Glenfinnan Monument 和 Loch Shiel。它的记忆点更偏哈利波特火车和电影氛围；但 Jacobite Steam Train 是否运行、是否准点经过高架桥不能保证，所以页面里只把它写成加分项，不写成刚性承诺。",
+          mapQuery: "Glenfinnan Viaduct Scotland",
+          infoUrl: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/",
+          guideLinks: [
+            {
+              title: "官方与跟团参考",
+              links: [
+                ...referenceGuideLinks.glenfinnan,
+                ...referenceGuideLinks.highlands
+              ]
+            },
+            {
+              title: "Loch Lomond / Glencoe 参考",
+              links: [
+                ...referenceGuideLinks.lochLomond
+              ]
+            }
+          ]
+        },
+        spots: ["Buchanan Bus Station", "Luss / Loch Lomond", "Rannoch Moor", "Buachaille Etive Mor", "Glencoe", "Glenfinnan Viaduct", "Glenfinnan Monument", "Loch Shiel", "Loch Lomond & The Trossachs National Park", "Glasgow City Centre"],
+        items: [
+          {
+            type: "transfer",
+            mode: "taxi",
+            time: "07:35-07:55",
+            title: "酒店 → Buchanan Bus Station",
+            location: "Aparthotel Adagio Glasgow Central -> Buchanan Bus Station",
+            routeOrigin: "Aparthotel Adagio Glasgow Central",
+            routeDest: "Buchanan Bus Station",
+            duration: "约 10-20 分钟，按叫车和路况浮动",
+            ticket: "打车约 £10-20；步行也可但不要压线",
+            notes: "Glenfinnan 团 08:15 关闭 check-in，比尼斯湖团稍晚，但仍不值得压线。建议 08:00 前后到达站台区域。",
+            details: ["前一晚确认集合邮件", "早餐和轻食提前准备", "防水外套 + 好走的鞋"],
+            links: [{ label: "Buchanan Bus Station", url: mapsUrl("Buchanan Bus Station Glasgow") }]
+          },
+          {
+            type: "transfer",
+            mode: "walk",
+            time: "08:00-08:15",
+            title: "到达 Buchanan Bus Station，找 23-32 站台并 check-in",
+            location: "Buchanan Bus Station",
+            duration: "约 15 分钟缓冲",
+            ticket: "团票提前购买",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/",
+            notes: "Discover 官网写明集合点为 Buchanan Bus Station 的 23-32 站台，08:15 关闭 check-in；迟到可能无法参团且不退款。",
+            details: ["看站内信息屏", "找 Discover Scotland Tours", "08:15 前完成 check-in"],
+            links: [{ label: "Discover Glenfinnan tour", url: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/" }]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "08:30-09:45",
+            title: "Discover Scotland Tours 发车，前往 Luss / Loch Lomond",
+            location: "Buchanan Bus Station -> Luss / Loch Lomond",
+            routeOrigin: "Buchanan Bus Station",
+            routeDest: "Luss Loch Lomond",
+            duration: "约 1h15m",
+            ticket: "包含在高地团基础团费内",
+            officialUrl: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/",
+            notes: "这条线从 Loch Lomond 西岸的 Luss 开场，用湖景、咖啡和短暂停留进入高地节奏。",
+            details: ["08:30 发车", "small group tour", "英文司机导游"],
+            links: [{ label: "路线", url: dirUrl("Buchanan Bus Station Glasgow", "Luss Loch Lomond") }]
+          },
+          {
+            type: "visit",
+            time: "09:45-10:15",
+            title: "Luss / Loch Lomond 早间茶歇",
+            location: "Luss / Loch Lomond",
+            duration: "约 30 分钟，以导游当天安排为准",
+            fee: "湖边免费；咖啡小食约 £3-8",
+            hours: "户外停靠点；店铺以当天营业为准",
+            reserve: "不需要预约",
+            notes: "这里是轻松开场：湖边、码头、Luss 小村街道和 Ben Lomond 方向。不要深度玩，严格听集合时间。",
+            details: ["湖边拍照", "咖啡 / 热巧", "不要离车太远"],
+            links: [
+              { label: "Loch Lomond & The Trossachs", url: "https://www.lochlomond-trossachs.org/" },
+              ...referenceGuideLinks.lochLomond
+            ]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "10:15-11:30",
+            title: "Rannoch Moor / Buachaille Etive Mòr 车览",
+            location: "Luss / Loch Lomond -> Rannoch Moor -> Buachaille Etive Mor",
+            routeOrigin: "Luss Loch Lomond",
+            routeDest: "Rannoch Moor",
+            duration: "约 1h15m 车览 + 视情况短暂停靠",
+            ticket: "包含在高地团内",
+            notes: "这一段主要看荒原、远山、云雾和开阔高地景观。能不能停车取决于当天路况和导游安排，有停车就拍大景，没有就车窗看。",
+            details: ["风大地湿很常见", "防水外套比伞好用", "不要追求每个点都下车"],
+            links: [
+              { label: "Rannoch Moor", url: mapsUrl("Rannoch Moor Scotland") },
+              { label: "Buachaille Etive Mor", url: mapsUrl("Buachaille Etive Mor Scotland") }
+            ]
+          },
+          {
+            type: "visit",
+            time: "11:30-12:30",
+            title: "Glencoe 山谷停靠",
+            location: "Glencoe",
+            duration: "约 30-60 分钟，以导游安排为准",
+            fee: "免费",
+            hours: "户外全天；天气和停车点以当天情况为准",
+            reserve: "不需要预约",
+            officialUrl: "https://www.nts.org.uk/visit/places/glencoe",
+            notes: "Glencoe 仍然是这条备选线里最重要的自然景观点。尼斯湖线和 Glenfinnan 线都会覆盖这一段，真正差别在下午去 Loch Ness 还是 Glenfinnan。",
+            details: ["山谷 / Three Sisters 方向", "广角拍大景", "天气变化很快"],
+            links: [
+              { label: "NTS Glencoe", url: "https://www.nts.org.uk/visit/places/glencoe" },
+              ...referenceGuideLinks.highlands
+            ]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "12:30-14:00",
+            title: "Fort William 方向 → Glenfinnan",
+            location: "Glencoe -> Fort William -> Glenfinnan Viaduct",
+            routeOrigin: "Glencoe",
+            routeDest: "Glenfinnan Viaduct",
+            duration: "约 1h30m，主要车览",
+            ticket: "包含在高地团内",
+            notes: "不把 Fort William 写成深度停留，只作为通往 Glenfinnan 的地理线索。午餐不要完全依赖这一段，早上最好已经带好轻食。",
+            details: ["Ben Nevis / Great Glen 方向车览", "坐车时间较长", "抵达后优先看集合时间"],
+            links: [{ label: "Glenfinnan Viaduct", url: mapsUrl("Glenfinnan Viaduct Scotland") }]
+          },
+          {
+            type: "visit",
+            time: "14:00-15:15",
+            title: "Glenfinnan Viaduct / Jacobite Steam Train 观景",
+            location: "Glenfinnan Viaduct",
+            duration: "约 1h15m，以火车和导游当天安排为准",
+            fee: "看高架桥免费；团费已包含交通和导游",
+            hours: "Jacobite 2026 运行日期和当天准点情况出发前再确认",
+            reserve: "不需要自己订火车票",
+            officialUrl: "https://westcoastrailways.co.uk/jacobite/timetables",
+            notes: "这里是备选路线的核心：你不是坐 Jacobite，而是在 Glenfinnan 看高架桥和可能经过的火车。Discover 会尽量赶上火车，但不能保证。",
+            details: ["Harry Potter 氛围线", "火车经过很短", "把“看到火车”当加分项"],
+            links: [
+              { label: "Discover Glenfinnan tour", url: "https://www.discoverscotlandtours.com/tours/glenfinnan-viaduct-glencoe-loch-shiel-tour-from-glasgow/" },
+              { label: "Jacobite timetable", url: "https://westcoastrailways.co.uk/jacobite/timetables" }
+            ]
+          },
+          {
+            type: "meal",
+            time: "15:15-16:15",
+            title: "Glenfinnan Monument / Loch Shiel / Visitor Centre 补给",
+            location: "Glenfinnan Monument / Loch Shiel",
+            area: "Glenfinnan Visitor Centre",
+            duration: "约 1 小时，以导游安排为准",
+            ticket: "Visitor Centre 免费；Monument 单独成人 £5；午餐轻食约 £8-20",
+            officialUrl: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit",
+            notes: "Glenfinnan 不只有高架桥。Loch Shiel、Monument、visitor centre 和 café 都适合放在火车后面；但游客集中时 café 可能排队，所以自带轻食最稳。",
+            details: ["Loch Shiel 湖景", "Monument 是否入内看团方安排", "Café 排队时优先自带轻食"],
+            links: [
+              { label: "NTS Glenfinnan", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument" },
+              { label: "Planning your visit", url: "https://www.nts.org.uk/visit/places/glenfinnan-monument/planning-your-visit" }
+            ],
+            tips: ["这天午餐不要安排成正式餐厅；水、三明治和能量棒比临场排队更可靠。"]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "16:15-18:15",
+            title: "返程：Loch Lomond & The Trossachs National Park 茶歇",
+            location: "Glenfinnan -> Loch Lomond & The Trossachs National Park",
+            routeOrigin: "Glenfinnan Monument",
+            routeDest: "Loch Lomond and The Trossachs National Park",
+            duration: "约 2 小时车程 + 茶歇，以当天安排为准",
+            ticket: "包含在高地团内；茶歇自理",
+            notes: "回程停靠主要用于上厕所、买咖啡和活动腿，不写成正式景点。当天导游可能根据路况调整具体休息点。",
+            details: ["热饮 / 厕所 / 伸展", "别走远", "以导游集合时间为准"],
+            links: [{ label: "Loch Lomond & The Trossachs", url: "https://www.lochlomond-trossachs.org/" }]
+          },
+          {
+            type: "transfer",
+            mode: "coach",
+            time: "18:15-19:30",
+            title: "返回 Glasgow Buchanan Bus Station",
+            location: "Loch Lomond & The Trossachs National Park -> Buchanan Bus Station",
+            routeOrigin: "Loch Lomond and The Trossachs National Park",
+            routeDest: "Buchanan Bus Station",
+            duration: "约 1h15m，以交通情况为准",
+            ticket: "包含在高地团内",
+            notes: "预计 19:30 左右回到 Glasgow。当天坐车时间很长，晚上不要再加正式景点。",
+            details: ["回城后直接晚餐", "第二天还有爱丁堡", "晚餐选市中心附近"],
+            links: [{ label: "Buchanan Bus Station", url: mapsUrl("Buchanan Bus Station Glasgow") }]
           },
           {
             type: "meal",

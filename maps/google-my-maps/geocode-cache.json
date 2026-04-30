@@ -676,5 +676,41 @@
     "lon": -2.7023154,
     "display_name": "Milsey Bay",
     "source": "manual override"
+  },
+  "56.1005705,-4.6425873|Luss / Loch Lomond": {
+    "lat": 56.1005705,
+    "lon": -4.6425873,
+    "display_name": "Luss / Loch Lomond",
+    "source": "manual override"
+  },
+  "56.6339671,-4.9367794|Buachaille Etive Mor": {
+    "lat": 56.6339671,
+    "lon": -4.9367794,
+    "display_name": "Buachaille Etive Mor",
+    "source": "manual override"
+  },
+  "56.8758236,-5.4293199|Glenfinnan Viaduct": {
+    "lat": 56.8758236,
+    "lon": -5.4293199,
+    "display_name": "Glenfinnan Viaduct",
+    "source": "manual override"
+  },
+  "56.8691729,-5.4370496|Glenfinnan Monument": {
+    "lat": 56.8691729,
+    "lon": -5.4370496,
+    "display_name": "Glenfinnan Monument",
+    "source": "manual override"
+  },
+  "56.8744275,-5.4386924|Loch Shiel": {
+    "lat": 56.8744275,
+    "lon": -5.4386924,
+    "display_name": "Loch Shiel",
+    "source": "manual override"
+  },
+  "56.2301709,-4.5337863|Loch Lomond & The Trossachs National Park": {
+    "lat": 56.2301709,
+    "lon": -4.5337863,
+    "display_name": "Loch Lomond & The Trossachs National Park",
+    "source": "manual override"
   }
 }
