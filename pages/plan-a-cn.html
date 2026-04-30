@@ -37,10 +37,18 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overscroll-behavior-x: none;
     }
 
     body {
       margin: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overscroll-behavior-x: none;
       font-family: "Noto Serif SC", Georgia, serif;
       color: var(--ink);
       background:
@@ -63,9 +71,17 @@
 
     .shell {
       width: min(var(--max), calc(100% - 32px));
+      max-width: 100%;
       margin: 24px auto 60px;
       position: relative;
       z-index: 1;
+      overflow-x: clip;
+    }
+
+    @supports not (overflow-x: clip) {
+      .shell {
+        overflow-x: hidden;
+      }
     }
 
     .hero {
@@ -1414,6 +1430,7 @@
 
       body {
         padding-bottom: calc(78px + env(safe-area-inset-bottom));
+        touch-action: pan-y pinch-zoom;
         background:
           linear-gradient(180deg, #efe5d8 0%, #f7f1e8 46%, #f4efe6 100%);
       }
@@ -1468,6 +1485,7 @@
       }
 
       .side-panel > h3 {
+        display: none;
         margin-bottom: 10px;
       }
 
@@ -1492,6 +1510,7 @@
       .side-note-card ul {
         font-size: 0.82rem;
         line-height: 1.58;
+        overflow-wrap: anywhere;
       }
 
       .version-history {
@@ -1500,9 +1519,10 @@
       }
 
       .day-tab-list {
-        display: flex;
+        display: none;
         overflow-x: auto;
         overscroll-behavior-x: contain;
+        touch-action: pan-x pan-y pinch-zoom;
         scroll-snap-type: x proximity;
         gap: 6px;
         margin: 0 -4px 14px;
@@ -1906,6 +1926,7 @@
         flex: 1 1 auto;
         min-height: 0;
         overflow-y: auto;
+        overflow-x: hidden;
         overscroll-behavior: contain;
         padding: 12px 0 2px;
       }
@@ -2055,11 +2076,12 @@
         <details class="side-note-card version-card">
           <summary>版本说明</summary>
           <ul>
-            <li>最近更新：2026-04-30｜stonfur｜新增 05/26 Glenfinnan Viaduct / Jacobite Steam Train / Glencoe 备选高地团，保留原 05/26 Loch Ness 经典高地团不变；备选页补充 Discover Scotland Tours 集合时间、Glenfinnan Viaduct / Monument / Loch Shiel、Jacobite 火车不保证运行的提醒、午餐补给策略、晚餐建议和 My Maps KML 动线。</li>
+            <li>最近更新：2026-04-30｜stonfur｜优化手机端日期切换体验：隐藏顶部横向滑动日期卡片，手机端统一通过底部“日期”抽屉切换行程；同时限制整页横向拖拽和横向溢出，减少手机浏览器斜向拖动时出现白边回弹的情况。</li>
           </ul>
           <details class="version-history">
             <summary>过往更新</summary>
             <ul>
+              <li>2026-04-30｜stonfur｜新增 05/26 Glenfinnan Viaduct / Jacobite Steam Train / Glencoe 备选高地团，保留原 05/26 Loch Ness 经典高地团不变；备选页补充 Discover Scotland Tours 集合时间、Glenfinnan Viaduct / Monument / Loch Shiel、Jacobite 火车不保证运行的提醒、午餐补给策略、晚餐建议和 My Maps KML 动线。</li>
               <li>2026-04-30｜stonfur｜新增 05/24 North Berwick 东海岸小镇备选行程，保留 Largs / Cumbrae 主方案不变；备选页补充 Glasgow Queen Street 往返交通、Scottish Seabird Centre、船游预约、North Berwick Law 天气可选项、费用开放信息、港口餐饮和地图动线。</li>
               <li>2026-04-30｜stonfur｜优化电脑端左侧侧栏：侧栏继续固定在页面左侧，但增加最大高度和内部独立滚动，避免长行程日需要把整个网页拖到底才能看到侧栏底部；同时将“版本说明”整块默认折叠，减少左侧卡片高度。</li>
               <li>2026-04-30｜stonfur｜将“今日重点”里的“攻略与参考”改为默认折叠显示，减少每日重点区域的信息密度；同时从 05/27 爱丁堡“今日重点”中移除哈利波特路线图和爱丁堡路线参考图，避免与“地图快速跳转”里的路线图重复展示。</li>
